@@ -72,6 +72,30 @@ function prepItems() {
     return p.match.some((word) => has(names, word));
   }).sort((a, b) => DAY_ORDER.indexOf(a.day) - DAY_ORDER.indexOf(b.day));
 }
+const hhmm = (min) => `${String(Math.floor(min / 60)).padStart(2, '0')}:${String(min % 60).padStart(2, '0')}`;
+// Маршрут дня: шаги route_plan, для которых в программе есть подходящая услуга; время — от начала дня подряд
+function routePlan() {
+  const plan = rules.route_plan, names = included().map((i) => i.name).join(' | ');
+  const [h, m] = plan.start.split(':').map(Number);
+  const start = h * 60 + m;
+  let t = start;
+  const steps = [];
+  for (const s of plan.steps) {
+    const skip = s.only_without ? s.only_without.some((w) => has(names, w)) : !s.match.some((w) => has(names, w));
+    if (skip) continue;
+    steps.push({ ...s, time: hhmm(t), at: t });
+    t += s.minutes;
+  }
+  return { steps, minutes: t - start };
+}
+function routeBlock() {
+  const r = routePlan();
+  if (!r.steps.length) return '';
+  return `<section class="result-block route"><span class="result-label">Маршрут на один день · ${fmtDate(program.date)}</span>` +
+    `<h3>Около ${Math.floor(r.minutes / 60)} ч ${r.minutes % 60} мин в клинике</h3><ol class="route-list">${r.steps.map((s) =>
+      `<li><b>${s.time}</b>${escapeHtml(s.title)}</li>`).join('')}</ol>` +
+    `<p class="card-note">${escapeHtml(rules.route_plan.final)}</p><small class="src">Время ориентировочное — расписание кабинетов уточняет клиника.</small></section>`;
+}
 function dayDate(day) {
   if (day === 'eve') return addDays(program.date, -1);
   if (day === 'now') return new Date().toISOString().slice(0, 10);
@@ -124,6 +148,7 @@ function renderProgram() {
     h += `<section class="result-block extra"><span class="result-label">Добавлено под вас</span><h3>К пакету — по вашим ответам</h3><ul>${extra.map((i) => itemLine(i)).join('')}</ul>` +
       '<small class="src">Каждую добавку проверяет врач-куратор. Цена — по прайсу PRIME.</small></section>';
   }
+  h += routeBlock();
   if (r.free.length) h += `<p class="next-visit"><b>Когда повторить бесплатно:</b> ${r.free.map((s) => `${escapeHtml(plainName(s))} — ${YEAR + s.repeat_years}`).join(' · ')}</p>`;
   h += `<div class="form-actions"><button id="to-review" class="back-button" type="button">← К ответам</button><button class="primary-button" type="button" data-flow="prep">Подготовка к чекапу <span aria-hidden="true">→</span></button></div>`;
   $('result').innerHTML = h;
@@ -145,7 +170,9 @@ function renderPrep() {
     for (const p of list) {
       if (p.day !== lastDay) { h += `<h3 class="prep-day">${DAYS[p.day]}${p.day === 'now' ? '' : `, ${fmtDate(dayDate(p.day))}`}</h3>`; lastDay = p.day; }
       const ok = program.prep[p.id];
-      h += `<section class="prep-item ${ok ? 'ok' : ''} ${p.when_answer ? 'personal' : ''}"><h4>${escapeHtml(p.title)}</h4><p>${escapeHtml(p.text)}</p>` +
+      const endo = p.id === 'pr_gastro' && routePlan().steps.find((s) => s.endoscopy);
+      const personal = endo ? `<p class="prep-time">Ваше время по маршруту — ${endo.time}: воду можно пить до ${hhmm(endo.at - 120)}.</p>` : '';
+      h += `<section class="prep-item ${ok ? 'ok' : ''} ${p.when_answer ? 'personal' : ''}"><h4>${escapeHtml(p.title)}</h4><p>${escapeHtml(p.text)}</p>${personal}` +
         (ok ? '<p class="prep-ok">✓ Понятно — пункт подтверждён</p>'
           : `<p class="prep-q">${escapeHtml(p.question)}</p><div class="choices">${p.options.map((o, idx) =>
             `<button type="button" class="choice" data-prep="${p.id}" data-idx="${idx}">${escapeHtml(o)}</button>`).join('')}</div><p class="prep-fb" id="fb-${p.id}" role="status"></p>`) +
@@ -180,6 +207,8 @@ function renderCurator() {
   if (a.companion === 'no') flags.push(['warn', 'Некому проводить после наркоза']);
   const prepDone = list.filter((p) => program.prep[p.id]).length;
   flags.push([prepDone === list.length ? 'ok' : '', `Подготовка: подтверждено ${prepDone} из ${list.length}`]);
+  const feedback = store.get(CARD_KEY, []).find((x) => x.date === program.date)?.feedback;
+  if (feedback) flags.push([feedback.score >= 4 ? 'ok' : 'warn', `Оценка пациента: ${feedback.score} из 5${feedback.text ? ` — «${feedback.text}»` : ''}`]);
   let h = flowNav('curator') + `<p class="who-line">Экран врача-куратора · ${a.sex === 'F' ? 'Ж' : 'М'}, ${full} ${plural(full)}</p>`;
   h += `<div class="flag-row">${flags.map(([cls, t]) => `<span class="tag ${cls === 'warn' ? 'warn' : ''} ${cls === 'ok' ? 'good' : ''}">${escapeHtml(t)}</span>`).join('')}</div>`;
   h += `<section class="result-block doctor"><span class="result-label">Со слов пациента</span><ul>${r.doctor.map((d) => `<li>${escapeHtml(d)}</li>`).join('') || '<li class="muted">Ничего не отмечено</li>'}</ul></section>`;
@@ -192,6 +221,7 @@ function renderCurator() {
     `<div class="add-row"><select id="add-service" class="number-input"><option value="">Добавить услугу PRIME…</option>${rules.prime_catalog.map((c) => `<option value="${c.id}">${escapeHtml(c.name)}</option>`).join('')}</select>` +
     '<button type="button" class="secondary-button" id="add-btn">Добавить</button></div>' +
     `<small class="src">В программе: ${included().length} · добавки из таблицы анамнеза — черновик, утверждает медэксперт</small></section>`;
+  h += routeBlock();
   h += program.approved ? `<p class="review-notice ok-notice">Программа утверждена ${fmtDate(program.approved)}. Пациент видит её и подготовку.</p>`
     : '<div class="form-actions"><button class="primary-button" type="button" id="approve">Утвердить программу <span aria-hidden="true">✓</span></button></div>';
   if (program.approved) h += renderSheetForm();
@@ -283,6 +313,13 @@ function renderCard() {
       `<p class="card-conc">${c.outcome === 'refer' ? `Нужна консультация <b>${escapeHtml(spec ? spec.replace(/^Консультация /, '') : 'профильного специалиста')}</b>` : 'Всё в порядке — следующий чекап через год.'}</p>` +
       (c.note ? `<p class="card-note">${escapeHtml(c.note)}</p>` : '') +
       `<ul>${last.items.map((i) => `<li class="${i.result === 'dev' ? 'dev' : ''}">${escapeHtml(i.name)} — ${RESULT_TEXT[i.result]}</li>`).join('')}</ul></section>`;
+    const fb = last.feedback;
+    h += `<section class="result-block extra"><span class="result-label">Ваша оценка</span>` + (fb
+      ? `<p class="card-note">Спасибо! Оценка ${fb.score} из 5${fb.text ? ` — «${escapeHtml(fb.text)}»` : ''}. Её видит клиника.</p>`
+      : `<h3>Как прошёл чекап?</h3><div class="rating" role="group" aria-label="Оценка от 1 до 5">${[1, 2, 3, 4, 5].map((n) =>
+        `<button type="button" class="choice" data-score="${n}" aria-pressed="false">${n}</button>`).join('')}</div>` +
+        '<label for="fb-text" class="sheet-label">Что улучшить? Необязательно</label><textarea id="fb-text" class="number-input text-area" rows="2" maxlength="500"></textarea>' +
+        '<p class="prep-fb" id="fb-msg" role="status"></p><div class="form-actions"><button class="primary-button" type="button" id="fb-send">Отправить оценку</button></div>') + '</section>';
     if (card.length > 1) h += `<section class="result-block prep"><span class="result-label">История</span><ul>${card.slice(1).map((x) => `<li>Чекап ${fmtDate(x.date)} ${new Date(x.date).getFullYear()}</li>`).join('')}</ul></section>`;
   }
   h += `<section class="result-block route"><span class="result-label">Напоминания</span><ul>${reminders().map((x) =>
@@ -291,6 +328,19 @@ function renderCard() {
   h += '<div class="form-actions"><button class="back-button" type="button" data-flow="result">← Программа</button><button class="primary-button" type="button" id="to-calendar">Добавить в календарь <span aria-hidden="true">↓</span></button></div>';
   $('result').innerHTML = h;
   bindFlow($('result'));
+  let score = 0;
+  $('result').querySelectorAll('[data-score]').forEach((b) => b.addEventListener('click', () => {
+    score = Number(b.dataset.score);
+    $('result').querySelectorAll('[data-score]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    $('fb-msg').textContent = '';
+  }));
+  $('fb-send')?.addEventListener('click', () => {
+    if (!score) { $('fb-msg').textContent = 'Выберите оценку от 1 до 5.'; return; }
+    const all = store.get(CARD_KEY, []);
+    all[0].feedback = { score, text: $('fb-text').value.trim(), at: new Date().toISOString() };
+    store.set(CARD_KEY, all);
+    renderCard();
+  });
   $('to-calendar').addEventListener('click', () => {
     const link = document.createElement('a');
     link.href = URL.createObjectURL(new Blob([icsFile()], { type: 'text/calendar' }));

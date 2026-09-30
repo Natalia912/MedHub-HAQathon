@@ -898,3 +898,35 @@ footer {
     padding:0;
   }
 }
+
+/* --- маршрут дня и оценка --- */
+.route-list li b {
+  font-weight:500;
+  font-variant-numeric:tabular-nums;
+  display:inline-block;
+  min-width:52px;
+  color:#167953;
+}
+.prep-time {
+  margin-top:8px !important;
+  color:#167953;
+  font-weight:450;
+}
+.rating {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.rating .choice {
+  font:inherit;
+  font-size:14px;
+  min-width:52px;
+  justify-content:center;
+  background:#fff;
+  color:var(--ink);
+}
+.rating .choice[aria-pressed=true] {
+  border-color:#167953;
+  background:#edf7f0;
+  color:#167953;
+}
