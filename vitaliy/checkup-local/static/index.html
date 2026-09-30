@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Check-up Intelligence — PRIME</title>
+<link rel="stylesheet" href="/static/style.css">
+<style>/* правки 30.09 после ревью медэксперта — поверх темы */
+.exams li.opt { color:#667b71; } .exams li.opt.on { color:inherit; }
+.play-btn { background:#ffca79; color:#184d3b; border:0; border-radius:999px; font:600 15px Geologica,system-ui,sans-serif; padding:7px 16px; cursor:pointer; }
+.brand { display:flex; align-items:center; gap:10px; color:#fff; text-decoration:none; font-weight:600; }
+.prep-img { width:56px; height:56px; float:left; margin:0 12px 4px 0; } .prep-img.big { width:88px; height:88px; }
+.prep-line::after, .card.prep::after { content:""; display:block; clear:both; }
+.pill-opt { background:#eef1f0; color:#667b71; font-size:11px; border-radius:10px; padding:1px 7px; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/"><img src="/static/anketa/logo.svg" alt="Green Clinic" height="34"> <span>зелёный коридор чекапа PRIME</span></a>
+  <button class="play-btn" id="btn-play" title="Автопоказ: один пациент проходит все этапы">▶ Демо</button>
+  <nav class="steps" id="steps">
+    <button data-view="anketa" class="step active"><b>1</b> Анкета</button>
+    <button data-view="program" class="step"><b>2</b> Программа</button>
+    <button data-view="prep" class="step"><b>3</b> Подготовка</button>
+    <button data-view="curator" class="step"><b>4</b> Куратор</button>
+    <button data-view="card" class="step"><b>5</b> Карта здоровья</button>
+    <button data-view="morning" class="step step-clinic"><b>★</b> Утро клиники</button>
+    <button data-view="scenario" class="step step-clinic"><b>▶</b> 12 пациентов</button>
+  </nav>
+</header>
+
+<main>
+  <!-- 1. Анкета -->
+  <section id="view-anketa" class="view active">
+    <div class="view-head">
+      <h1>Подберём программу обследования за 2 минуты</h1>
+      <p class="lead">Покажем, что положено бесплатно по госпрограмме и что есть в пакетах PRIME. Диагноз не ставим — итог утверждает врач-куратор.</p>
+      <p class="muted small">Имя и ИИН не спрашиваем. Ответы нужны только для подбора программы.</p>
+      <div class="samples"><span class="muted small">Демо-пациенты:</span> <span id="sample-buttons"></span></div>
+    </div>
+    <form id="anketa" class="form" autocomplete="off"></form>
+    <div id="stop" class="alert-red hidden"></div>
+    <div class="actions"><button id="btn-predict" class="btn-primary">Подобрать программу →</button></div>
+  </section>
+
+  <!-- 2. Программа -->
+  <section id="view-program" class="view">
+    <div class="view-head"><h1>Ваша программа</h1><p class="lead" id="program-lead"></p></div>
+    <div id="program"></div>
+  </section>
+
+  <!-- 3. Подготовка -->
+  <section id="view-prep" class="view">
+    <div class="view-head"><h1>Подготовка по дням</h1>
+      <p class="lead">Под каждым пунктом — короткий вопрос. Ответьте, чтобы убедиться, что всё понятно.</p></div>
+    <div id="prep"></div>
+  </section>
+
+  <!-- 4. Куратор -->
+  <section id="view-curator" class="view">
+    <div class="view-head"><h1>Экран врача-куратора</h1>
+      <p class="lead">Правила врач утверждает один раз — скрипт применяет их к каждому пациенту. Здесь куратор проверяет программу, убирает или добавляет пункт и утверждает.</p></div>
+    <div id="curator"></div>
+  </section>
+
+  <!-- 5. Карта здоровья -->
+  <section id="view-card" class="view">
+    <div class="view-head"><h1>Карта здоровья</h1>
+      <p class="lead">Итог чекапа в одном месте: что пройдено, что осталось, когда повторить.</p></div>
+    <div id="card"></div>
+  </section>
+
+  <!-- ★ Утро клиники -->
+  <section id="view-morning" class="view">
+    <div class="view-head"><h1>Утро клиники: карусель кабинетов</h1>
+      <p class="lead">Пациенты одного утра с их утверждёнными программами. Каждый идёт в свободный кабинет своей программы: куратор и кровь — сначала, натощак — раньше, наркоз — последним. Скрипт подсказывает, к какому времени звать каждого, чтобы не ждать в коридоре.</p></div>
+    <div id="morning"></div>
+  </section>
+  <!-- ▶ Демо-сценарий -->
+  <section id="view-scenario" class="view">
+    <div class="view-head"><h1>Демо: 12 пациентов проходят все этапы</h1>
+      <p class="lead">Анкета → программа PRIME → информированное согласие → подготовка → утро клиники → карта здоровья и повтор. Всё считает скрипт по правилам с источниками; утверждает врач-куратор.</p></div>
+    <div id="scenario"></div>
+  </section>
+</main>
+
+<footer class="foot muted small" id="foot"></footer>
+<script src="/static/app.js"></script>
+<script src="/static/spotlight.js"></script>
+<script src="/static/tour.js"></script>
+</body>
+</html>

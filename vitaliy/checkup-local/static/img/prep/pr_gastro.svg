@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-labelledby="pr-gastro-title">
+<title id="pr-gastro-title">Гастроскопия: не есть 8 часов и не пить 2 часа</title>
+<circle cx="48" cy="48" r="45" fill="#eef5f1"/>
+<g stroke="#184d3b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="30" cy="30" r="13" fill="#eef5f1"/>
+<circle cx="30" cy="30" r="8" fill="none"/>
+<path d="M10 20v9a3 3 0 0 0 6 0v-9m-3 0v23" fill="none"/>
+<path d="m20 18 22 25" fill="none" stroke="#c2410c" stroke-width="3.8"/>
+<path d="M30 52c-3 5-11 13-11 19a11 11 0 0 0 22 0c0-6-8-14-11-19Z" fill="#167953"/>
+<path d="m19 57 22 24" fill="none" stroke="#c2410c" stroke-width="3.8"/>
+<circle cx="65" cy="30" r="16" fill="#ffca79"/>
+<circle cx="65" cy="68" r="16" fill="#ffca79"/>
+<path d="M65 14v3m0 26v3M49 30h3m26 0h3M65 52v3m0 26v3M49 68h3m26 0h3" fill="none"/>
+<g text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#184d3b" stroke="none"><text x="65" y="36">8ч</text><text x="65" y="74">2ч</text></g>
+</g>
+</svg>

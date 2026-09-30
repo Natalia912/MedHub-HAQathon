@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268 72" role="img" aria-label="Qorgan — норма, контроль, защита">
+  <title>Qorgan</title>
+  <desc>Логотип Qorgan (қаз. Қорған — щит): navy-щит с белой галочкой (защита + проверено) и wordmark. Цвета: navy #0F3A52, teal #0D9488.</desc>
+  <path d="M18 16 Q18 14 20 14 L52 14 Q54 14 54 16 L54 38 Q54 52 36 61 Q18 52 18 38 Z" fill="#0F3A52"/>
+  <path d="M27 37 L34 44 L46 29" fill="none" stroke="#FFFFFF" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="72" y="49" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+        font-size="36" font-weight="600" letter-spacing="-0.5" fill="#0F3A52">Qorgan</text>
+</svg>

@@ -1,0 +1,365 @@
+[
+ {
+  "name": "Ж 42, демо: без болезней, диабет у мамы, 2 родов, спираль",
+  "input": {
+   "for_child": false,
+   "sex": "F",
+   "birth_date": "1984-05-12",
+   "urgent": "none",
+   "pregnant": "no",
+   "pregnancies": 2,
+   "births": 2,
+   "contraception": "iud",
+   "discharge": "no",
+   "smoke_status": "never",
+   "attached_to": "green_clinic",
+   "family_history": [
+    "diabetes"
+   ],
+   "companion": "yes",
+   "birth_year": 1984,
+   "checkup_year": 2026,
+   "smoking": {
+    "pack_years": 0,
+    "quit_years_ago": 0
+   }
+  },
+  "screen": {
+   "red_flag": false,
+   "free_rules": [
+    "scr_cvd",
+    "scr_breast",
+    "scr_cervix",
+    "scr_hepatitis"
+   ],
+   "not_eligible": [],
+   "package": "prime_extended",
+   "package_name": "Check-up «Женский расширенный после 40 лет»",
+   "free_in_package": [
+    "ПАП-тест",
+    "Маммография (2D/3D)"
+   ],
+   "partly_free_in_package": [
+    "Расширенные анализы крови (40+ показателей: гормоны, витамины, печёночные и почечные пробы)",
+    "Липидный профиль и глюкоза",
+    "Анализ на гепатиты B и C"
+   ],
+   "not_for_pregnancy": [],
+   "extra": [],
+   "for_doctor": [
+    "В семье: Сахарный диабет",
+    "Беременностей: 2, родов: 2",
+    "Предохранение: Спираль"
+   ]
+  }
+ },
+ {
+  "name": "Ж 42, на учёте по давлению, выделения, рак кишечника у отца",
+  "input": {
+   "for_child": false,
+   "sex": "F",
+   "birth_date": "1984-05-12",
+   "urgent": "none",
+   "pregnant": "no",
+   "pregnancies": 1,
+   "births": 1,
+   "discharge": "yes",
+   "conditions": [
+    "pressure",
+    "bowel"
+   ],
+   "registered": [
+    "hypertension"
+   ],
+   "smoke_status": "never",
+   "family_history": [
+    "colorectal_cancer"
+   ],
+   "companion": "no",
+   "birth_year": 1984,
+   "checkup_year": 2026,
+   "smoking": {
+    "pack_years": 0,
+    "quit_years_ago": 0
+   }
+  },
+  "screen": {
+   "red_flag": false,
+   "free_rules": [
+    "scr_breast",
+    "scr_cervix",
+    "scr_hepatitis"
+   ],
+   "not_eligible": [
+    "scr_cvd"
+   ],
+   "package": "prime_extended",
+   "package_name": "Check-up «Женский расширенный после 40 лет»",
+   "free_in_package": [
+    "ПАП-тест",
+    "Маммография (2D/3D)"
+   ],
+   "partly_free_in_package": [
+    "Анализ на гепатиты B и C"
+   ],
+   "not_for_pregnancy": [],
+   "extra": [
+    "Обследование на половые инфекции"
+   ],
+   "for_doctor": [
+    "Есть или было: Повышенное давление; Запоры, полипы или опухоль кишечника",
+    "На учёте: Повышенное давление",
+    "В семье: Рак кишечника",
+    "Рак кишечника в семье — обсудить колоноскопию раньше обычного возраста",
+    "Беременностей: 1, родов: 1"
+   ]
+  }
+ },
+ {
+  "name": "Ж 39 (40 исполнится в декабре): пакет базовый, скрининг по году — как 40",
+  "input": {
+   "for_child": false,
+   "sex": "F",
+   "birth_date": "1986-12-20",
+   "urgent": "none",
+   "smoke_status": "never",
+   "birth_year": 1986,
+   "checkup_year": 2026,
+   "smoking": {
+    "pack_years": 0,
+    "quit_years_ago": 0
+   }
+  },
+  "screen": {
+   "red_flag": false,
+   "free_rules": [
+    "scr_cvd",
+    "scr_breast",
+    "scr_hepatitis"
+   ],
+   "not_eligible": [],
+   "package": "prime_basic",
+   "package_name": "Check-up «Женский базовый до 40 лет»",
+   "free_in_package": [],
+   "partly_free_in_package": [
+    "Осмотр офтальмолога с измерением давления в глазу",
+    "Липидный профиль и глюкоза"
+   ],
+   "not_for_pregnancy": [],
+   "extra": [],
+   "for_doctor": []
+  }
+ },
+ {
+  "name": "Ж 44, беременна",
+  "input": {
+   "for_child": false,
+   "sex": "F",
+   "birth_date": "1982-03-01",
+   "urgent": "none",
+   "pregnant": "yes",
+   "pregnancies": 1,
+   "birth_year": 1982,
+   "checkup_year": 2026
+  },
+  "screen": {
+   "red_flag": false,
+   "free_rules": [
+    "scr_cvd",
+    "scr_breast"
+   ],
+   "not_eligible": [
+    "scr_hepatitis"
+   ],
+   "package": "prime_extended",
+   "package_name": "Check-up «Женский расширенный после 40 лет»",
+   "free_in_package": [
+    "Маммография (2D/3D)"
+   ],
+   "partly_free_in_package": [
+    "Расширенные анализы крови (40+ показателей: гормоны, витамины, печёночные и почечные пробы)",
+    "Липидный профиль и глюкоза"
+   ],
+   "not_for_pregnancy": [
+    "КТ грудной клетки",
+    "Тест на хеликобактер",
+    "Маммография (2D/3D)"
+   ],
+   "extra": [],
+   "for_doctor": [
+    "Беременность: Да",
+    "Беременностей: 1"
+   ]
+  }
+ },
+ {
+  "name": "М 38, боль при мочеиспускании",
+  "input": {
+   "for_child": false,
+   "sex": "M",
+   "birth_date": "1988-01-10",
+   "urgent": "none",
+   "dysuria": "yes",
+   "smoke_status": "never",
+   "birth_year": 1988,
+   "checkup_year": 2026,
+   "smoking": {
+    "pack_years": 0,
+    "quit_years_ago": 0
+   }
+  },
+  "screen": {
+   "red_flag": false,
+   "free_rules": [
+    "scr_hepatitis"
+   ],
+   "not_eligible": [],
+   "package": "prime_basic",
+   "package_name": "Check-up «Мужской базовый до 40 лет»",
+   "free_in_package": [],
+   "partly_free_in_package": [],
+   "not_for_pregnancy": [],
+   "extra": [
+    "Обследование на половые инфекции",
+    "Консультация уролога"
+   ],
+   "for_doctor": []
+  }
+ },
+ {
+  "name": "М 52, курит 25 лет по пачке",
+  "input": {
+   "for_child": false,
+   "sex": "M",
+   "birth_date": "1974-02-02",
+   "urgent": "none",
+   "smoke_status": "smokes",
+   "cigs_per_day": 20,
+   "smoke_years": 25,
+   "birth_year": 1974,
+   "checkup_year": 2026,
+   "smoking": {
+    "pack_years": 25,
+    "quit_years_ago": 0
+   }
+  },
+  "screen": {
+   "red_flag": false,
+   "free_rules": [
+    "scr_cvd",
+    "scr_cerebro",
+    "scr_colorectal",
+    "scr_hepatitis",
+    "scr_lung"
+   ],
+   "not_eligible": [],
+   "package": "prime_extended",
+   "package_name": "Check-up «Мужской расширенный после 40 лет»",
+   "free_in_package": [
+    "Гликированный гемоглобин"
+   ],
+   "partly_free_in_package": [
+    "Расширенные анализы крови (40+ показателей: гормоны, витамины, печёночные и почечные пробы)",
+    "Липидный профиль и глюкоза",
+    "Анализ на гепатиты B и C",
+    "УЗДГ сосудов шеи и ног",
+    "КТ грудной клетки"
+   ],
+   "not_for_pregnancy": [],
+   "extra": [],
+   "for_doctor": [
+    "Курение: Курю, ≈ 25 пачка-лет"
+   ]
+  }
+ },
+ {
+  "name": "М 50, на учёте по кишечнику, вредное производство",
+  "input": {
+   "for_child": false,
+   "sex": "M",
+   "birth_date": "1976-06-06",
+   "urgent": "none",
+   "conditions": [
+    "bowel"
+   ],
+   "registered": [
+    "colorectal"
+   ],
+   "smoke_status": "never",
+   "hazardous_work_10y": true,
+   "birth_year": 1976,
+   "checkup_year": 2026,
+   "smoking": {
+    "pack_years": 0,
+    "quit_years_ago": 0
+   }
+  },
+  "screen": {
+   "red_flag": false,
+   "free_rules": [
+    "scr_cvd",
+    "scr_cerebro",
+    "scr_hepatitis",
+    "scr_lung"
+   ],
+   "not_eligible": [
+    "scr_colorectal"
+   ],
+   "package": "prime_extended",
+   "package_name": "Check-up «Мужской расширенный после 40 лет»",
+   "free_in_package": [
+    "Гликированный гемоглобин"
+   ],
+   "partly_free_in_package": [
+    "Расширенные анализы крови (40+ показателей: гормоны, витамины, печёночные и почечные пробы)",
+    "Липидный профиль и глюкоза",
+    "Анализ на гепатиты B и C",
+    "УЗДГ сосудов шеи и ног",
+    "КТ грудной клетки"
+   ],
+   "not_for_pregnancy": [],
+   "extra": [],
+   "for_doctor": [
+    "Есть или было: Запоры, полипы или опухоль кишечника",
+    "На учёте: Запоры, полипы или опухоль кишечника"
+   ]
+  }
+ },
+ {
+  "name": "Ребёнок, мальчик 10 лет",
+  "input": {
+   "for_child": true,
+   "sex": "M",
+   "birth_date": "2016-04-04",
+   "urgent": "none",
+   "birth_year": 2016,
+   "checkup_year": 2026
+  },
+  "screen": {
+   "red_flag": false,
+   "free_rules": [],
+   "not_eligible": [],
+   "package": "prime_child",
+   "package_name": "Check-up «Детский» 1–17 лет",
+   "free_in_package": [],
+   "partly_free_in_package": [],
+   "not_for_pregnancy": [],
+   "extra": [],
+   "for_doctor": []
+  }
+ },
+ {
+  "name": "М 45, боль в груди — красный флаг",
+  "input": {
+   "for_child": false,
+   "sex": "M",
+   "birth_date": "1981-01-01",
+   "urgent": "chest_pain",
+   "birth_year": 1981,
+   "checkup_year": 2026
+  },
+  "screen": {
+   "red_flag": true
+  }
+ }
+]

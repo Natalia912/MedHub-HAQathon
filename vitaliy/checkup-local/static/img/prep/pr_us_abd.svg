@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-labelledby="pr-us-abd-title">
+<title id="pr-us-abd-title">УЗИ брюшной полости: прийти натощак, не есть 6–8 часов</title>
+<circle cx="48" cy="48" r="45" fill="#eef5f1"/>
+<g stroke="#184d3b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M29 17v6l-12 5m26-11v6l12 5M22 33c6 12 5 22-1 39m29-39c-6 12-5 22 1 39" fill="none"/>
+<ellipse cx="36" cy="51" rx="13" ry="16" fill="#ffca79" stroke="none"/>
+<path d="M25 67c4 0 8 3 11 7 3-4 7-7 11-7" fill="none"/>
+<path d="M36 50v2" fill="none"/>
+<circle cx="68" cy="59" r="13" fill="#eef5f1"/>
+<circle cx="68" cy="59" r="8" fill="none"/>
+<path d="M83 45v9a3 3 0 0 0 6 0v-9m-3 0v28" fill="none"/>
+<path d="m57 46 24 26" fill="none" stroke="#c2410c" stroke-width="3.8"/>
+</g>
+</svg>

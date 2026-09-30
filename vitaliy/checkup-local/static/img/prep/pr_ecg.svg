@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-labelledby="pr-ecg-title">
+<title id="pr-ecg-title">ЭКГ и ЭхоКГ: не пить кофе и не курить за 2 часа</title>
+<circle cx="48" cy="48" r="45" fill="#eef5f1"/>
+<g stroke="#184d3b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M47 37h6a7 7 0 0 1 0 14h-6" fill="none"/>
+<path d="M18 34h30v18a8 8 0 0 1-8 8H26a8 8 0 0 1-8-8Z" fill="#ffca79"/>
+<path d="M15 64h36M27 27c-5-4 4-6 0-10m12 10c-5-4 4-6 0-10" fill="none"/>
+<path d="m14 63 41-36" fill="none" stroke="#c2410c" stroke-width="3.8"/>
+<rect x="49" y="69" width="33" height="8" rx="1.5" fill="#eef5f1"/>
+<path d="M73 69h7.5q1.5 0 1.5 1.5v5q0 1.5-1.5 1.5H73Z" fill="#ffca79"/>
+<path d="M81 61c-7-6 5-8 0-14m-6 16c-4-4 1-6 0-9" fill="none"/>
+<path d="m59 82 24-24" fill="none" stroke="#c2410c" stroke-width="3.8"/>
+</g>
+</svg>

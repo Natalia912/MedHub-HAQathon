@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#167953">
+  <title>Анкета здоровья — Green Clinic</title>
+  <link rel="stylesheet" href="/static/anketa/style.css">
+  <script src="/static/anketa/app.js" defer></script>
+  <script src="/static/spotlight.js" defer></script>
+  <script src="/static/anketa/demo.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#form-panel">Перейти к анкете</a>
+  <header class="site-header">
+    <a class="brand" href="https://greenclinic.kz/ru/" aria-label="Green Clinic — сайт клиники"><img src="/static/anketa/logo.svg" alt="Green Clinic" width="166" height="62"></a>
+    <span class="header-caption">Забота о здоровье начинается с вас</span>
+    <span class="language" aria-label="Язык: русский">RU</span>
+  </header>
+  <main class="layout">
+    <aside class="intro">
+      <span class="eyebrow"><span class="status-dot"></span> ПЕРСОНАЛЬНЫЙ CHECK-UP</span>
+      <h1>Первый шаг <br>к заботе <br><span>о себе.</span></h1>
+      <p class="intro-copy">Расскажите немного о себе, чтобы подобрать программу обследования.</p>
+      <div class="time-note"><span aria-hidden="true">◷</span> Всего 1–2 минуты</div>
+      <ol class="steps" id="steps-nav" aria-label="Этапы анкеты"></ol>
+      <div class="privacy-note"><span aria-hidden="true">↳</span><p>Без имени, ИИН и телефона.<br>Ответы остаются в этой вкладке.</p></div>
+    </aside>
+    <section class="form-panel" id="form-panel" aria-labelledby="step-title">
+      <div class="panel-top"><span id="step-counter">ШАГ 01</span><span>АНКЕТА ЗДОРОВЬЯ</span></div>
+      <div class="progress-track" role="progressbar" aria-label="Прогресс анкеты" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0"><span id="progress-fill"></span></div>
+      <h2 id="step-title" tabindex="-1">Давайте познакомимся</h2>
+      <p id="step-description" class="description">Начнём с основного. Это поможет учесть возраст и пол при подборе обследований.</p>
+      <p id="load-error" role="alert" hidden></p>
+      <button id="retry" class="secondary-button" type="button" hidden>Попробовать снова</button>
+      <noscript>Для заполнения анкеты включите JavaScript в браузере.</noscript>
+      <form id="patient-form" autocomplete="off">
+        <div id="fields"><p role="status">Загружаем анкету…</p></div>
+        <div id="urgent-alert" class="urgent-alert" role="alert" hidden>
+          <span class="eyebrow">ВАЖНО ПРЯМО СЕЙЧАС</span>
+          <h3>Обратитесь за медицинской помощью</h3>
+          <p>При этих симптомах чекап не подходит. Звоните 103 или обратитесь к врачу сегодня.</p>
+          <a class="emergency-call" href="tel:103">Позвонить 103 ↗</a>
+        </div>
+        <div class="form-actions" id="form-actions">
+          <button id="back" class="back-button" type="button" hidden>← Назад</button>
+          <button id="skip" class="back-button" type="button" hidden>Пропустить</button>
+          <button id="next" class="primary-button" type="submit" disabled>Продолжить <span aria-hidden="true">→</span></button>
+        </div>
+      </form>
+      <section id="review" hidden aria-label="Проверка ответов"></section>
+      <section id="result" hidden aria-label="Программа обследования"></section>
+      <div class="panel-note"><span aria-hidden="true">✳</span><p>Анкета не ставит диагноз.<br>Программу обследования необходимо обсудить с врачом.</p></div>
+    </section>
+  </main>
+  <footer><span>GREEN CLINIC <span class="footer-dot">·</span> С заботой о вас</span><span>Персональный подход к вашему здоровью</span></footer>
+</body>
+</html>

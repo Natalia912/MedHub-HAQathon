@@ -1,0 +1,213 @@
+{
+ "_about": "12 демо-пациентов (синтетика): 9 эталонных анкет из формы команды + 3 контрольных пациента. Сценарий: все проходят анкета → программа → согласие → подготовка → куратор → утро клиники → карта здоровья.",
+ "patients": [
+  {
+   "name": "Ж 42, демо: без болезней, диабет у мамы, 2 родов, спираль",
+   "input": {
+    "for_child": false,
+    "sex": "F",
+    "birth_date": "1984-05-12",
+    "urgent": "none",
+    "pregnant": "no",
+    "pregnancies": 2,
+    "births": 2,
+    "contraception": "iud",
+    "discharge": "no",
+    "smoke_status": "never",
+    "attached_to": "green_clinic",
+    "family_history": [
+     "diabetes"
+    ],
+    "companion": "yes",
+    "birth_year": 1984,
+    "checkup_year": 2026,
+    "smoking": {
+     "pack_years": 0,
+     "quit_years_ago": 0
+    }
+   },
+   "from": "sample_inputs"
+  },
+  {
+   "name": "Ж 42, на учёте по давлению, выделения, рак кишечника у отца",
+   "input": {
+    "for_child": false,
+    "sex": "F",
+    "birth_date": "1984-05-12",
+    "urgent": "none",
+    "pregnant": "no",
+    "pregnancies": 1,
+    "births": 1,
+    "discharge": "yes",
+    "conditions": [
+     "pressure",
+     "bowel"
+    ],
+    "registered": [
+     "hypertension"
+    ],
+    "smoke_status": "never",
+    "family_history": [
+     "colorectal_cancer"
+    ],
+    "companion": "no",
+    "birth_year": 1984,
+    "checkup_year": 2026,
+    "smoking": {
+     "pack_years": 0,
+     "quit_years_ago": 0
+    }
+   },
+   "from": "sample_inputs"
+  },
+  {
+   "name": "Ж 39 (40 исполнится в декабре): пакет базовый, скрининг по году — как 40",
+   "input": {
+    "for_child": false,
+    "sex": "F",
+    "birth_date": "1986-12-20",
+    "urgent": "none",
+    "smoke_status": "never",
+    "birth_year": 1986,
+    "checkup_year": 2026,
+    "smoking": {
+     "pack_years": 0,
+     "quit_years_ago": 0
+    }
+   },
+   "from": "sample_inputs"
+  },
+  {
+   "name": "Ж 44, беременна",
+   "input": {
+    "for_child": false,
+    "sex": "F",
+    "birth_date": "1982-03-01",
+    "urgent": "none",
+    "pregnant": "yes",
+    "pregnancies": 1,
+    "birth_year": 1982,
+    "checkup_year": 2026
+   },
+   "from": "sample_inputs"
+  },
+  {
+   "name": "М 38, боль при мочеиспускании",
+   "input": {
+    "for_child": false,
+    "sex": "M",
+    "birth_date": "1988-01-10",
+    "urgent": "none",
+    "dysuria": "yes",
+    "smoke_status": "never",
+    "birth_year": 1988,
+    "checkup_year": 2026,
+    "smoking": {
+     "pack_years": 0,
+     "quit_years_ago": 0
+    }
+   },
+   "from": "sample_inputs"
+  },
+  {
+   "name": "М 52, курит 25 лет по пачке",
+   "input": {
+    "for_child": false,
+    "sex": "M",
+    "birth_date": "1974-02-02",
+    "urgent": "none",
+    "smoke_status": "smokes",
+    "cigs_per_day": 20,
+    "smoke_years": 25,
+    "birth_year": 1974,
+    "checkup_year": 2026,
+    "smoking": {
+     "pack_years": 25,
+     "quit_years_ago": 0
+    }
+   },
+   "from": "sample_inputs"
+  },
+  {
+   "name": "М 50, на учёте по кишечнику, вредное производство",
+   "input": {
+    "for_child": false,
+    "sex": "M",
+    "birth_date": "1976-06-06",
+    "urgent": "none",
+    "conditions": [
+     "bowel"
+    ],
+    "registered": [
+     "colorectal"
+    ],
+    "smoke_status": "never",
+    "hazardous_work_10y": true,
+    "birth_year": 1976,
+    "checkup_year": 2026,
+    "smoking": {
+     "pack_years": 0,
+     "quit_years_ago": 0
+    }
+   },
+   "from": "sample_inputs"
+  },
+  {
+   "name": "Ребёнок, мальчик 10 лет",
+   "input": {
+    "for_child": true,
+    "sex": "M",
+    "birth_date": "2016-04-04",
+    "urgent": "none",
+    "birth_year": 2016,
+    "checkup_year": 2026
+   },
+   "from": "sample_inputs"
+  },
+  {
+   "name": "М 45, боль в груди — красный флаг",
+   "input": {
+    "for_child": false,
+    "sex": "M",
+    "birth_date": "1981-01-01",
+    "urgent": "chest_pain",
+    "birth_year": 1981,
+    "checkup_year": 2026
+   },
+   "from": "sample_inputs"
+  },
+  {
+   "name": "М 50, без учёта",
+   "input": {
+    "sex": "M",
+    "birth_year": 1976,
+    "checkup_year": 2026,
+    "urgent": "none",
+    "attached_to": "green_clinic"
+   },
+   "from": "examples"
+  },
+  {
+   "name": "Ж 30",
+   "input": {
+    "sex": "F",
+    "birth_year": 1996,
+    "checkup_year": 2026,
+    "urgent": "none",
+    "attached_to": "green_clinic"
+   },
+   "from": "examples"
+  },
+  {
+   "name": "Ж 41 — нечётный год, скрининга нет",
+   "input": {
+    "sex": "F",
+    "birth_year": 1985,
+    "checkup_year": 2026,
+    "urgent": "none",
+    "attached_to": "green_clinic"
+   },
+   "from": "examples"
+  }
+ ]
+}
