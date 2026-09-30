@@ -1,0 +1,263 @@
+{
+  "checked_files_before": 76,
+  "changed_historical_files": [
+    "reports/scenarios/REPORT.md",
+    "reports/scenarios/sources/AUDIT.md"
+  ],
+  "removed_files": [
+    "reports/scenarios/sources/744d7f79e6872a31572dda9d75269a8a8b7bcd4a/app/main.py",
+    "reports/scenarios/sources/c2f39680aee388365daa180329a58edfb0f4081c/app/main.py",
+    "reports/scenarios/sources/d52847ad1cfcfab54fcdaec7061bffc93496d283/app/main.py",
+    "reports/scenarios/sources/df733c43d5ab655ef08036366a44bae04e59182f/app/main.py"
+  ],
+  "immutable_json_docx_logs_unchanged": true,
+  "markdown_files_checked": 24,
+  "local_links_checked": 48,
+  "broken_links": [],
+  "links": [
+    {
+      "file": "reference/README.md",
+      "target": "../docs/CONTRACT.md",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "../docs/INPUT_CONTRACT.md",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "df733c4/spec/rules.json",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "df733c4/clinical/prime_checkup_packages.md",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "df733c4/app/config/fields.py",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "df733c4/ml/sample_inputs.json",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "df733c4/ml/README.md",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "../reports/scenarios/sources/744d7f79e6872a31572dda9d75269a8a8b7bcd4a/app/config/fields.py",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "../reports/scenarios/sources/744d7f79e6872a31572dda9d75269a8a8b7bcd4a/spec/rules.json",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "../tests/fixtures/Scenarios.docx",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "../tests/fixtures/prime_scenarios.json",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "../reports/scenarios/REPORT.md",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "../reports/packaging/source_audit/source_audit.md",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "../reports/packaging/source_audit/source_audit.json",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "../prime_checkup/",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "../prime_checkup/data/",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "../prime_checkup/config/clinic_fields.py",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "df733c4/spec/rules.json",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "df733c4/app/config/fields.py",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "df733c4/spec/CONTRACT.md",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "../docs/CONTRACT.md",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "../tests/fixtures/Scenarios.docx",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "../reports/scenarios/results.json",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "../reports/scenarios/sources/AUDIT.md",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "../prime_checkup/data/catalog_migration.json",
+      "exists": true
+    },
+    {
+      "file": "reference/README.md",
+      "target": "../tests/fixtures/prime_scenarios.json",
+      "exists": true
+    },
+    {
+      "file": "reports/scenarios/REPORT.md",
+      "target": "../../reference/README.md",
+      "exists": true
+    },
+    {
+      "file": "reports/scenarios/REPORT.md",
+      "target": "../../tests/fixtures/Scenarios.docx",
+      "exists": true
+    },
+    {
+      "file": "reports/scenarios/REPORT.md",
+      "target": "baseline_manifest.json",
+      "exists": true
+    },
+    {
+      "file": "reports/scenarios/REPORT.md",
+      "target": "results.json",
+      "exists": true
+    },
+    {
+      "file": "reports/scenarios/REPORT.md",
+      "target": "sources/AUDIT.md",
+      "exists": true
+    },
+    {
+      "file": "reports/scenarios/REPORT.md",
+      "target": "live_http.json",
+      "exists": true
+    },
+    {
+      "file": "reports/scenarios/REPORT.md",
+      "target": "mapping_amendments.json",
+      "exists": true
+    },
+    {
+      "file": "reports/scenarios/REPORT.md",
+      "target": "../../tests/fixtures/prime_scenarios.json",
+      "exists": true
+    },
+    {
+      "file": "reports/scenarios/REPORT.md",
+      "target": "../../tools/run_scenarios.py",
+      "exists": true
+    },
+    {
+      "file": "reports/scenarios/REPORT.md",
+      "target": "results.json",
+      "exists": true
+    },
+    {
+      "file": "reports/scenarios/REPORT.md",
+      "target": "regression_final.log",
+      "exists": true
+    },
+    {
+      "file": "reports/scenarios/REPORT.md",
+      "target": "../../techdock.md",
+      "exists": true
+    },
+    {
+      "file": "reports/scenarios/REPORT.md",
+      "target": "../../docs/INPUT_CONTRACT.md",
+      "exists": true
+    },
+    {
+      "file": "reports/scenarios/sources/AUDIT.md",
+      "target": "../../packaging/reference_review.md",
+      "exists": true
+    },
+    {
+      "file": "reports/scenarios/sources/AUDIT.md",
+      "target": "audit.json",
+      "exists": true
+    },
+    {
+      "file": "reports/scenarios/sources/AUDIT.md",
+      "target": "findings.json",
+      "exists": true
+    },
+    {
+      "file": "reports/scenarios/sources/AUDIT.md",
+      "target": "git-status-source-audit.txt",
+      "exists": true
+    },
+    {
+      "file": "reports/scenarios/sources/AUDIT.md",
+      "target": "d52847ad1cfcfab54fcdaec7061bffc93496d283/spec/rules.json",
+      "exists": true
+    },
+    {
+      "file": "reports/packaging/reference_review.md",
+      "target": "../../reference/README.md",
+      "exists": true
+    },
+    {
+      "file": "reports/packaging/reference_review.md",
+      "target": "../scenarios/REPORT.md",
+      "exists": true
+    },
+    {
+      "file": "reports/packaging/reference_review.md",
+      "target": "../scenarios/sources/AUDIT.md",
+      "exists": true
+    },
+    {
+      "file": "reports/packaging/reference_review.md",
+      "target": "reference_review_before.json",
+      "exists": true
+    }
+  ],
+  "gui_copies_remaining": [],
+  "declarative_schema_copies": 5,
+  "final_note": "Root completed techdock.md; final link audit is reports/packaging/package_audit.json. Historical content preservation remains unchanged.",
+  "later_duplicate_omissions": "reports/scenarios/evidence_index.json records four byte-preserved payloads retained as equal objects within unchanged results.json; this earlier review predates omission of their standalone copies."
+}

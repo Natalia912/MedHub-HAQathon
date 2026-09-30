@@ -1,0 +1,82 @@
+[
+  {
+    "id": "basic",
+    "label": "35 лет, без жалоб",
+    "input": {
+      "age": 35,
+      "sex": "F",
+      "complaints_state": "none",
+      "complaints": [],
+      "family_crc": "no",
+      "visit_date": "2026-10-01",
+      "availability": "normal"
+    }
+  },
+  {
+    "id": "extended",
+    "label": "42 года, без жалоб",
+    "input": {
+      "age": 42,
+      "sex": "M",
+      "complaints_state": "none",
+      "complaints": [],
+      "family_crc": "no",
+      "visit_date": "2026-10-01",
+      "availability": "normal"
+    }
+  },
+  {
+    "id": "child",
+    "label": "Ребёнок 10 лет",
+    "input": {
+      "age": 10,
+      "sex": "M",
+      "complaints_state": "none",
+      "complaints": [],
+      "family_crc": "no",
+      "visit_date": "2026-10-01",
+      "availability": "normal"
+    }
+  },
+  {
+    "id": "needs_input",
+    "label": "Нужен ответ",
+    "input": {
+      "age": 35,
+      "sex": "F",
+      "complaints_state": "none",
+      "complaints": [],
+      "family_crc": "unknown",
+      "visit_date": "2026-10-01",
+      "availability": "normal"
+    }
+  },
+  {
+    "id": "review",
+    "label": "Остановка подбора",
+    "input": {
+      "age": 35,
+      "sex": "F",
+      "complaints_state": "list",
+      "complaints": [
+        "chest_pain"
+      ],
+      "family_crc": "no",
+      "visit_date": "2026-10-01",
+      "availability": "normal"
+    }
+  },
+  {
+    "id": "busy",
+    "label": "Занятый день",
+    "input": {
+      "age": 35,
+      "sex": "F",
+      "complaints_state": "none",
+      "complaints": [],
+      "family_crc": "no",
+      "visit_date": "2026-10-01",
+      "availability": "busy"
+    }
+  }
+]

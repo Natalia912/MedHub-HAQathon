@@ -1,39 +1,49 @@
-# ml/ — движок `predict()` (Даниил)
+# PRIME — автономная серверная поставка
 
-Анкета готова и работает в форме Натальи (`app/`). Здесь — всё, что нужно движку, чтобы подключиться к ней.
+Процедурный конструктор: анкета → рекомендация PRIME и отдельные скрининги → окончательный выбор услуг → ограничения, порядок и деморасписание. Python/FastAPI, без GUI, ML/LLM, БД, записи в клинику и отправок. `demo=true`, `medical_validated=false`.
 
-## Что приходит на вход
-Форма собирает вход функцией `collectInput()` в `app/static/app.js`; поля — `spec/CONTRACT.md` (раздел «Вход»
-и таблица полей от 30.09.2026). Главное для правил:
-- `sex`, `birth_date` и `birth_year` (из даты), `checkup_year`, `for_child`;
-- `urgent` — любое значение, кроме `none`, = красный флаг, пакет не предлагать;
-- `pregnant` (`yes`/`unsure` → без КТ и маммографии), `registered` (коды учёта — уже переведены формой
-  из простых пунктов `conditions`), `last_screening` (`{"scr_breast": 2025}`), `smoking` (`pack_years`,
-  `quit_years_ago`), `hazardous_work_10y`, `attached_to`, `family_history`;
-- `discharge` (Ж) / `dysuria` (М) = `yes` → «Сверх пакета»: обследование на половые инфекции (состав назначает
-  врач) + гинеколог / уролог, если их нет в пакете;
-- остальное (`conditions`, `conditions_other`, `last_period`, `pregnancies`, `births`, `contraception`,
-  `anesthesia_reaction`, `blood_thinners`, `allergy`, `medications`, `companion`) — только в блок «Для врача».
+В этой папке находятся все исходники, данные, закреплённые источники, тесты и сценарии. Соседние app/spec/contract и старое окружение не требуются. Основное описание — [techdock.md](techdock.md), [контракт](docs/CONTRACT.md), [интеграция](docs/INTEGRATION.md).
 
-`complaints` анкета больше не спрашивает (решение медэксперта 30.09.2026).
+## Установка и запуск (PowerShell)
 
-## Два возраста — не путать
-- **Скрининг** (приказ ДСМ-174/2020): `age_year = checkup_year − birth_year` — по году достижения.
-- **Пакет PRIME**: полных лет по `birth_date`. Женщине, которой 40 исполнится в декабре, сейчас — базовый пакет,
-  а скрининг уже как в 40 (пример в `sample_inputs.json`).
-- Пакет: ребёнок (`for_child` или младше 18) → `prime_child`; 18–39 → `prime_basic`; 40+ → `prime_extended`.
-  Состав: `exams` + `female_exams` / `male_exams`; названия — `name_f` / `name_m`, ссылки — `url_f` / `url_m`.
+Проверено с Python 3.12.1. Из указанной папки:
 
-## Эталон
-- `sample_inputs.json` — 9 пациентов: **ровно тот вход, который отправляет форма**, и то, что сейчас показывает
-  экран (`screen`: бесплатные скрининги, пакет, что в пакете положено бесплатно / частично / не при беременности,
-  сверх пакета, для врача). Снято из работающей формы 30.09.2026.
-- `spec/examples.json` — 12 контрольных примеров; экран проходит все 12.
-- Сейчас результат считает сам экран (`compute()` в `app/static/app.js`) по `spec/rules.json` — это и есть
-  эталонная логика. Когда `predict()` пройдёт `examples.json` и совпадёт с `sample_inputs.json`, экран можно
-  переключить на `/predict`.
+```powershell
+Set-Location 'C:\Users\user\Desktop\medhub-app\medhub-app\ml'
+python -m venv .venv
+.venv\Scripts\python.exe -m pip install -r requirements.txt
+.venv\Scripts\python.exe -m uvicorn prime_checkup.main:app --host 127.0.0.1 --port 8000
+```
 
-## Совпадения госскрининга и пакета (`prime_overlap` в `rules.json`)
-Полностью бесплатно, если обследование прямо есть в первом этапе скрининга (маммография, ПАП-тест,
-гликированный гемоглобин) — в пакете не продаём. Иначе — «часть бесплатно» (гепатиты, холестерин и сахар,
-УЗДГ, осмотр глаз).
+Swagger: http://127.0.0.1:8000/docs. API: POST `/recommend`, `/plan`, `/predict`; GET `/health`. Главной HTML-страницы нет. Если 8000 занят прежним тестером, используйте `--port 8001` и соответствующий URL. Активация venv и изменение ExecutionPolicy не нужны.
+
+Для проверок дополнительно:
+
+```powershell
+.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
+.venv\Scripts\python.exe -m unittest discover -s tests -v
+.venv\Scripts\python.exe -m prime_checkup.compat
+.venv\Scripts\python.exe -m tools.run_scenarios
+.venv\Scripts\python.exe -m tools.verify_package --label local
+```
+
+Последняя команда объединяет регрессию, шесть legacy-профилей, все 48 состояний, реальный временный Uvicorn и подключение router к отдельному FastAPI. Она сама выбирает свободный localhost-порт, останавливает только свой процесс и сохраняет результат в `reports/packaging`. Scenario runner использует TestClient; S25 вызывает реальный планировщик отдельно. DOCX разобран стандартными zipfile/XML, дополнительный python-docx не требуется. Нет зависимости от Jinja2/python-multipart.
+
+## Проверка вручную за пять шагов
+
+1. Запустите сервер и откройте `/docs` либо используйте curl.exe ниже.
+2. POST `/recommend` из `docs/recommend-request.json`: basic/male, 14 услуг, расписание not_run.
+3. POST `/plan` из `docs/preset-request.json`: тот же пресет и полный демомаршрут.
+4. POST `/plan` из `docs/plan-request.json`: custom, явное исключение/добавление, выбор сохранён даже при infeasible.
+5. POST `/plan` из `docs/empty-request.json`: needs_input без маршрута. Смена catalog_version на устаревшую даёт 409; urgent=chest_pain останавливает подбор.
+
+```powershell
+curl.exe --fail-with-body -H "Content-Type: application/json" --data-binary "@docs/recommend-request.json" http://127.0.0.1:8000/recommend
+curl.exe --fail-with-body -H "Content-Type: application/json" --data-binary "@docs/preset-request.json" http://127.0.0.1:8000/plan
+```
+
+Каталог и стабильные ID: `prime_checkup/data/demo_catalog.json`, миграция ID рядом. Активные правила: `demo_rules.json`, `screening_rules.json`; связи со скринингами — `screening_links.json`; технические длительности/слоты — `prime_slots.json`. Их изменение требует согласования оснований, обновления версий и регрессии. Границы 40 лет, нераскрытые группы, нулевой буфер и демодлительности не являются медицинской валидацией.
+
+В изученных материалах не обнаружены реальные результаты скрининга: годовая история взята из синтетического примера, карта waiting/received/reviewed демонстрирует вымышленные состояния. Её Python-provider и fixture перенесены, HTML-страница исключена. Обычные планы не получают результатов или даты напоминания.
+
+Отдельно сохранены [предыдущий отчёт врачу](reports/scenarios/REPORT.md) и [проверка упаковки](reports/packaging/REPORT.md). Предыдущие результаты не заменяются новым прогоном. Вопросы врачу и выключенный scope S18 остаются открытыми. При упаковке commit/push/deploy не выполняются; содержимое для передачи ограничено этой папкой, `.venv` и кеши исключены.

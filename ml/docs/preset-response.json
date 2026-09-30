@@ -1,0 +1,4839 @@
+{
+  "status": "ready",
+  "demo": true,
+  "medical_validated": false,
+  "package": {
+    "id": "prime_basic",
+    "variant_id": "male",
+    "name": "Check-up «Мужской базовый до 40 лет»",
+    "title": "Выбранный пресет PRIME",
+    "source": "PRIME",
+    "url": "https://primegc.kz/services/muzhskoy-bazovyy-check-up-do-40-let/",
+    "price": null,
+    "preliminary": false,
+    "reason": "Состав выбран пользователем; это не врачебное назначение."
+  },
+  "items": [
+    {
+      "procedure_id": "prime_curator_consultation_group",
+      "name": "Консультация врача-куратора (первичная и итоговая)",
+      "is_group": true,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [
+        "prime_curator_initial",
+        "prime_curator_final"
+      ],
+      "actions": [
+        {
+          "procedure_id": "prime_curator_consultation_group",
+          "name": "Первичная консультация врача-куратора",
+          "is_group": false,
+          "after_results": false,
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated",
+          "medical_validated": false,
+          "reasons": [
+            {
+              "rule_id": "prime_basic",
+              "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+              "source": "PRIME",
+              "validation_status": "demo_unvalidated"
+            },
+            {
+              "rule_id": "selected_preset",
+              "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+              "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+              "validation_status": "demo_unvalidated"
+            }
+          ],
+          "highlighted": false,
+          "conditional": false,
+          "required": true,
+          "tags": [],
+          "action_ids": [],
+          "actions": [],
+          "clinical_flags": [],
+          "screening_matches": [],
+          "parent_procedure_id": "prime_curator_consultation_group",
+          "action_id": "prime_curator_initial"
+        },
+        {
+          "procedure_id": "prime_curator_consultation_group",
+          "name": "Итоговая консультация врача-куратора",
+          "is_group": false,
+          "after_results": true,
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated",
+          "medical_validated": false,
+          "reasons": [
+            {
+              "rule_id": "prime_basic",
+              "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+              "source": "PRIME",
+              "validation_status": "demo_unvalidated"
+            },
+            {
+              "rule_id": "selected_preset",
+              "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+              "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+              "validation_status": "demo_unvalidated"
+            }
+          ],
+          "highlighted": false,
+          "conditional": false,
+          "required": true,
+          "tags": [],
+          "action_ids": [],
+          "actions": [],
+          "clinical_flags": [],
+          "screening_matches": [],
+          "parent_procedure_id": "prime_curator_consultation_group",
+          "action_id": "prime_curator_final"
+        }
+      ],
+      "clinical_flags": [],
+      "screening_matches": [],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic",
+        "prime_extended"
+      ],
+      "why": "Входит в основной состав пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_ophthalmology_pressure_exam",
+      "name": "Осмотр офтальмолога с измерением давления в глазу",
+      "is_group": false,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [
+        {
+          "screening_id": "scr_cvd",
+          "match_degree": "partial",
+          "outcome": "not_eligible",
+          "explanation": "Измерение внутриглазного давления входит в описанный осмотр; полный осмотр не равен компоненту скрининга."
+        }
+      ],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "why": "Входит в основной состав пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_basic_blood_group",
+      "name": "Общий анализ крови (34 показателя), С-реактивный белок, коагулограмма",
+      "is_group": true,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "why": "Входит в основной состав пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_lipids_glucose_group",
+      "name": "Липидный профиль и глюкоза",
+      "is_group": true,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [
+        {
+          "screening_id": "scr_cvd",
+          "match_degree": "partial",
+          "outcome": "not_eligible",
+          "explanation": "В исходной подсказке есть липидный профиль; состав группы не приравнивается ко всем компонентам скрининга."
+        }
+      ],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic",
+        "prime_extended"
+      ],
+      "why": "Входит в основной состав пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_thyroid_vitamins_group",
+      "name": "Гормоны щитовидной железы, витамины D и B12",
+      "is_group": true,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "why": "Входит в основной состав пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_liver_kidney_urine_group",
+      "name": "Печёночные и почечные пробы, общий анализ мочи",
+      "is_group": true,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "why": "Входит в основной состав пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_echocardiography",
+      "name": "ЭхоКГ",
+      "is_group": false,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "why": "Входит в основной состав пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_neck_leg_vessels_doppler",
+      "name": "УЗДГ сосудов шеи и ног",
+      "is_group": false,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [
+        {
+          "screening_id": "scr_cerebro",
+          "match_degree": "partial",
+          "outcome": "not_eligible",
+          "explanation": "Исходная подсказка связывает исследование сосудов шеи и ног с УЗДГ брахиоцефального ствола; объёмы различаются, требуется уточнение."
+        }
+      ],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic",
+        "prime_extended"
+      ],
+      "why": "Входит в основной состав пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_lung_ct",
+      "name": "КТ лёгких",
+      "is_group": false,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [
+        "pregnancy_review"
+      ],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [
+        {
+          "screening_id": "scr_lung",
+          "match_degree": "partial",
+          "outcome": "not_eligible",
+          "explanation": "КТ лёгких сопоставлено исходной подсказкой с КТ грудной клетки и средостения; совпадение протокола и полного объёма не подтверждено."
+        }
+      ],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "why": "Входит в основной состав пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_endoscopy_group",
+      "name": "Гастроскопия и колоноскопия под анестезией",
+      "is_group": true,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic",
+        "prime_extended"
+      ],
+      "why": "Входит в основной состав пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_helicobacter_test",
+      "name": "Тест на хеликобактер",
+      "is_group": false,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic",
+        "prime_extended"
+      ],
+      "why": "Входит в основной состав пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_hba1c",
+      "name": "Гликированный гемоглобин",
+      "is_group": false,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в дополнение для выбранного пола пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [
+        {
+          "screening_id": "scr_cvd",
+          "match_degree": "exact",
+          "outcome": "not_eligible",
+          "explanation": "Явное соответствие на уровне компонента «гликированный гемоглобин»; это не весь скрининг и не подтверждение оплаты."
+        }
+      ],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic",
+        "prime_extended"
+      ],
+      "why": "Входит в дополнение для выбранного пола пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_psa_total_free_group",
+      "name": "ПСА общий и свободный",
+      "is_group": true,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в дополнение для выбранного пола пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic",
+        "prime_extended"
+      ],
+      "why": "Входит в дополнение для выбранного пола пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_prostate_bladder_scrotum_ultrasound_group",
+      "name": "УЗИ предстательной железы (ТРУЗИ), мочевого пузыря и мошонки",
+      "is_group": true,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в дополнение для выбранного пола пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "why": "Входит в дополнение для выбранного пола пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    }
+  ],
+  "questions": [],
+  "warnings": [
+    {
+      "code": "UNVALIDATED",
+      "message": "Медицинские правила не подтверждены врачом. Это демонстрация механики каталога."
+    },
+    {
+      "code": "AGE_40",
+      "message": "Граница 40 лет импортирована из spec/rules.json и требует проверки."
+    },
+    {
+      "code": "TEST_SCHEDULE",
+      "message": "Длительности, ресурсы, слоты и нулевой буфер переходов — тестовые. Порядок категорий требует проверки клиникой."
+    },
+    {
+      "code": "OPAQUE_GROUPS",
+      "message": "Состав каталожных групп не раскрыт. Пересечение с отдельными анализами неизвестно."
+    }
+  ],
+  "trace": [
+    {
+      "rule_id": "clinic_urgent",
+      "outcome": "not_matched",
+      "action": "require_review",
+      "source": "reference/df733c4/app/config/fields.py: urgent; spec/rules.json:cmp_chest_pain",
+      "validation_status": "demo_unvalidated",
+      "explanation": "Проверка ответа о текущем самочувствии."
+    },
+    {
+      "rule_id": "prime_child",
+      "outcome": "not_matched",
+      "action": "choose_package",
+      "source": "PRIME",
+      "validation_status": "demo_unvalidated",
+      "explanation": "Полный возраст 35; диапазон каталога 1–17."
+    },
+    {
+      "rule_id": "prime_basic",
+      "outcome": "matched",
+      "action": "choose_package",
+      "source": "PRIME",
+      "validation_status": "demo_unvalidated",
+      "explanation": "Полный возраст 35; диапазон каталога 18–39."
+    },
+    {
+      "rule_id": "prime_extended",
+      "outcome": "not_matched",
+      "action": "choose_package",
+      "source": "PRIME",
+      "validation_status": "demo_unvalidated",
+      "explanation": "Полный возраст 35; диапазон каталога 40–120."
+    },
+    {
+      "rule_id": "cmp_fatigue",
+      "source_rule_id": "cmp_fatigue",
+      "outcome": "skipped",
+      "action": "highlight",
+      "explanation": "Новая анкета не спрашивает fatigue; правило действует только в техническом legacy-режиме.",
+      "source": "CLINIC_RULE — spec/rules.json:complaints.cmp_fatigue",
+      "validation_status": "demo_unvalidated",
+      "needs_doctor_validation": true,
+      "medical_validated": false
+    },
+    {
+      "rule_id": "cmp_family_crc",
+      "source_rule_id": "cmp_family_crc",
+      "outcome": "not_matched",
+      "action": "note",
+      "explanation": "В демо сработало правило семейного анамнеза; изменение программы требует обсуждения с врачом",
+      "source": "CLINIC_RULE — spec/rules.json:complaints.cmp_family_crc",
+      "validation_status": "demo_unvalidated",
+      "needs_doctor_validation": true,
+      "medical_validated": false
+    },
+    {
+      "rule_id": "catalog_indications",
+      "outcome": "not_matched",
+      "action": "require_review",
+      "source": "reference/df733c4/spec/rules.json:packages",
+      "validation_status": "demo_unvalidated",
+      "explanation": "Ветка проверена; дополнительных ограничений состава по этому правилу не установлено."
+    },
+    {
+      "rule_id": "clinic_pregnancy",
+      "outcome": "skipped",
+      "action": "require_review",
+      "source": "reference/df733c4/app/config/fields.py:pregnant",
+      "validation_status": "demo_unvalidated",
+      "explanation": "Ветка проверена; дополнительных ограничений состава по этому правилу не установлено."
+    },
+    {
+      "rule_id": "clinic_preparation",
+      "outcome": "not_matched",
+      "action": "require_review",
+      "source": "Scenarios.docx 1.1:S19; 744d7f7/spec/rules.json:prep_catalog.pr_thinners/pr_anesthesia",
+      "validation_status": "demo_unvalidated",
+      "explanation": "Ветка проверена; дополнительных ограничений состава по этому правилу не установлено."
+    }
+  ],
+  "schedule": {
+    "status": "feasible",
+    "route": [
+      {
+        "procedure_id": "prime_curator_consultation_group",
+        "name": "Первичная консультация врача-куратора",
+        "start": 540,
+        "end": 550,
+        "resources": [
+          "Тестовый кабинет консультаций"
+        ],
+        "action_id": "prime_curator_initial",
+        "category": -1,
+        "status": "ready"
+      },
+      {
+        "procedure_id": "prime_basic_blood_group",
+        "name": "Общий анализ крови (34 показателя), С-реактивный белок, коагулограмма",
+        "start": 550,
+        "end": 570,
+        "resources": [
+          "Тестовая лаборатория"
+        ],
+        "action_id": "prime_basic_blood_group",
+        "category": 0,
+        "status": "ready"
+      },
+      {
+        "procedure_id": "prime_hba1c",
+        "name": "Гликированный гемоглобин",
+        "start": 570,
+        "end": 580,
+        "resources": [
+          "Тестовая лаборатория"
+        ],
+        "action_id": "prime_hba1c",
+        "category": 0,
+        "status": "ready"
+      },
+      {
+        "procedure_id": "prime_helicobacter_test",
+        "name": "Тест на хеликобактер",
+        "start": 590,
+        "end": 600,
+        "resources": [
+          "Тестовая лаборатория"
+        ],
+        "action_id": "prime_helicobacter_test",
+        "category": 0,
+        "status": "ready"
+      },
+      {
+        "procedure_id": "prime_liver_kidney_urine_group",
+        "name": "Печёночные и почечные пробы, общий анализ мочи",
+        "start": 600,
+        "end": 620,
+        "resources": [
+          "Тестовая лаборатория"
+        ],
+        "action_id": "prime_liver_kidney_urine_group",
+        "category": 0,
+        "status": "ready"
+      },
+      {
+        "procedure_id": "prime_lipids_glucose_group",
+        "name": "Липидный профиль и глюкоза",
+        "start": 620,
+        "end": 640,
+        "resources": [
+          "Тестовая лаборатория"
+        ],
+        "action_id": "prime_lipids_glucose_group",
+        "category": 0,
+        "status": "ready"
+      },
+      {
+        "procedure_id": "prime_psa_total_free_group",
+        "name": "ПСА общий и свободный",
+        "start": 640,
+        "end": 660,
+        "resources": [
+          "Тестовая лаборатория"
+        ],
+        "action_id": "prime_psa_total_free_group",
+        "category": 0,
+        "status": "ready"
+      },
+      {
+        "procedure_id": "prime_thyroid_vitamins_group",
+        "name": "Гормоны щитовидной железы, витамины D и B12",
+        "start": 660,
+        "end": 680,
+        "resources": [
+          "Тестовая лаборатория"
+        ],
+        "action_id": "prime_thyroid_vitamins_group",
+        "category": 0,
+        "status": "ready"
+      },
+      {
+        "procedure_id": "prime_prostate_bladder_scrotum_ultrasound_group",
+        "name": "УЗИ предстательной железы (ТРУЗИ), мочевого пузыря и мошонки",
+        "start": 680,
+        "end": 700,
+        "resources": [
+          "Тестовый кабинет диагностики"
+        ],
+        "action_id": "prime_prostate_bladder_scrotum_ultrasound_group",
+        "category": 1,
+        "status": "ready"
+      },
+      {
+        "procedure_id": "prime_echocardiography",
+        "name": "ЭхоКГ",
+        "start": 700,
+        "end": 710,
+        "resources": [
+          "Тестовый кабинет диагностики"
+        ],
+        "action_id": "prime_echocardiography",
+        "category": 1,
+        "status": "ready"
+      },
+      {
+        "procedure_id": "prime_neck_leg_vessels_doppler",
+        "name": "УЗДГ сосудов шеи и ног",
+        "start": 720,
+        "end": 730,
+        "resources": [
+          "Тестовый кабинет диагностики"
+        ],
+        "action_id": "prime_neck_leg_vessels_doppler",
+        "category": 1,
+        "status": "ready"
+      },
+      {
+        "procedure_id": "prime_lung_ct",
+        "name": "КТ лёгких",
+        "start": 750,
+        "end": 760,
+        "resources": [
+          "Тестовый кабинет КТ / маммографии"
+        ],
+        "action_id": "prime_lung_ct",
+        "category": 2,
+        "status": "ready"
+      },
+      {
+        "procedure_id": "prime_ophthalmology_pressure_exam",
+        "name": "Осмотр офтальмолога с измерением давления в глазу",
+        "start": 780,
+        "end": 790,
+        "resources": [
+          "Тестовый кабинет консультаций"
+        ],
+        "action_id": "prime_ophthalmology_pressure_exam",
+        "category": 3,
+        "status": "ready"
+      },
+      {
+        "procedure_id": "prime_endoscopy_group",
+        "name": "Гастроскопия и колоноскопия под анестезией",
+        "start": 790,
+        "end": 810,
+        "resources": [
+          "Тестовая эндоскопия"
+        ],
+        "action_id": "prime_endoscopy_group",
+        "category": 4,
+        "status": "ready"
+      }
+    ],
+    "after_results": [
+      {
+        "action_id": "prime_curator_final",
+        "procedure_id": "prime_curator_consultation_group",
+        "name": "Итоговая консультация врача-куратора",
+        "category": 5,
+        "status": "draft",
+        "reason": "после готовности результатов"
+      }
+    ],
+    "reason": null,
+    "errors": []
+  },
+  "health_card": [
+    {
+      "procedure_id": "prime_curator_consultation_group",
+      "name": "Консультация врача-куратора (первичная и итоговая)",
+      "status": "не пройдено",
+      "result": "нет данных"
+    },
+    {
+      "procedure_id": "prime_ophthalmology_pressure_exam",
+      "name": "Осмотр офтальмолога с измерением давления в глазу",
+      "status": "не пройдено",
+      "result": "нет данных"
+    },
+    {
+      "procedure_id": "prime_basic_blood_group",
+      "name": "Общий анализ крови (34 показателя), С-реактивный белок, коагулограмма",
+      "status": "не пройдено",
+      "result": "нет данных"
+    },
+    {
+      "procedure_id": "prime_lipids_glucose_group",
+      "name": "Липидный профиль и глюкоза",
+      "status": "не пройдено",
+      "result": "нет данных"
+    },
+    {
+      "procedure_id": "prime_thyroid_vitamins_group",
+      "name": "Гормоны щитовидной железы, витамины D и B12",
+      "status": "не пройдено",
+      "result": "нет данных"
+    },
+    {
+      "procedure_id": "prime_liver_kidney_urine_group",
+      "name": "Печёночные и почечные пробы, общий анализ мочи",
+      "status": "не пройдено",
+      "result": "нет данных"
+    },
+    {
+      "procedure_id": "prime_echocardiography",
+      "name": "ЭхоКГ",
+      "status": "не пройдено",
+      "result": "нет данных"
+    },
+    {
+      "procedure_id": "prime_neck_leg_vessels_doppler",
+      "name": "УЗДГ сосудов шеи и ног",
+      "status": "не пройдено",
+      "result": "нет данных"
+    },
+    {
+      "procedure_id": "prime_lung_ct",
+      "name": "КТ лёгких",
+      "status": "не пройдено",
+      "result": "нет данных"
+    },
+    {
+      "procedure_id": "prime_endoscopy_group",
+      "name": "Гастроскопия и колоноскопия под анестезией",
+      "status": "не пройдено",
+      "result": "нет данных"
+    },
+    {
+      "procedure_id": "prime_helicobacter_test",
+      "name": "Тест на хеликобактер",
+      "status": "не пройдено",
+      "result": "нет данных"
+    },
+    {
+      "procedure_id": "prime_hba1c",
+      "name": "Гликированный гемоглобин",
+      "status": "не пройдено",
+      "result": "нет данных"
+    },
+    {
+      "procedure_id": "prime_psa_total_free_group",
+      "name": "ПСА общий и свободный",
+      "status": "не пройдено",
+      "result": "нет данных"
+    },
+    {
+      "procedure_id": "prime_prostate_bladder_scrotum_ultrasound_group",
+      "name": "УЗИ предстательной железы (ТРУЗИ), мочевого пузыря и мошонки",
+      "status": "не пройдено",
+      "result": "нет данных"
+    }
+  ],
+  "reminder_draft": {
+    "status": "requires_clinician",
+    "due_date": null,
+    "basis": "требует назначения врача",
+    "sent": false
+  },
+  "versions": {
+    "engine": "demo-3",
+    "catalog": "demo-2",
+    "rules": "demo-2",
+    "slots": "demo-2",
+    "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+    "screening": "demo-2"
+  },
+  "errors": [],
+  "input_context": {
+    "input_version": "clinic_v2",
+    "as_of_date": "2026-09-30",
+    "visit_date": "2026-10-01",
+    "checkup_year": 2026,
+    "availability": "normal",
+    "defaulted": [],
+    "source_sha": "744d7f79e6872a31572dda9d75269a8a8b7bcd4a",
+    "adapter_version": "intake-2",
+    "input_format": "clinic_v2",
+    "age_full": 35,
+    "age_year": 35,
+    "answers": {
+      "allergy": {
+        "state": "unanswered",
+        "value": null,
+        "source": "clinic_v2:unanswered"
+      },
+      "anesthesia_reaction": {
+        "state": "unanswered",
+        "value": null,
+        "source": "clinic_v2:unanswered"
+      },
+      "attached_to": {
+        "state": "unknown",
+        "value": "unknown",
+        "source": "clinic_v2:provided"
+      },
+      "birth_date": {
+        "state": "answered",
+        "value": "1991-01-10",
+        "source": "clinic_v2:provided"
+      },
+      "birth_year": {
+        "state": "unanswered",
+        "value": null,
+        "source": "clinic_v2:unanswered"
+      },
+      "births": {
+        "state": "not_applicable",
+        "value": null,
+        "source": "clinic_v2:unanswered"
+      },
+      "blood_thinners": {
+        "state": "answered",
+        "value": "no",
+        "source": "clinic_v2:provided"
+      },
+      "cigs_per_day": {
+        "state": "unanswered",
+        "value": null,
+        "source": "clinic_v2:unanswered"
+      },
+      "companion": {
+        "state": "answered",
+        "value": "yes",
+        "source": "clinic_v2:provided"
+      },
+      "conditions": {
+        "state": "answered",
+        "value": [
+          "none"
+        ],
+        "source": "clinic_v2:provided"
+      },
+      "conditions_other": {
+        "state": "unanswered",
+        "value": null,
+        "source": "clinic_v2:unanswered"
+      },
+      "contraception": {
+        "state": "not_applicable",
+        "value": null,
+        "source": "clinic_v2:unanswered"
+      },
+      "discharge": {
+        "state": "not_applicable",
+        "value": null,
+        "source": "clinic_v2:unanswered"
+      },
+      "dysuria": {
+        "state": "answered",
+        "value": "no",
+        "source": "clinic_v2:provided"
+      },
+      "family_history": {
+        "state": "answered",
+        "value": [
+          "none"
+        ],
+        "source": "clinic_v2:provided"
+      },
+      "for_child": {
+        "state": "answered",
+        "value": false,
+        "source": "clinic_v2:provided"
+      },
+      "hazardous_work_10y": {
+        "state": "answered",
+        "value": false,
+        "source": "clinic_v2:provided"
+      },
+      "last_period": {
+        "state": "not_applicable",
+        "value": null,
+        "source": "clinic_v2:unanswered"
+      },
+      "last_screening": {
+        "state": "answered",
+        "value": {
+          "scr_cvd": "never",
+          "scr_cerebro": "never",
+          "scr_breast": "never",
+          "scr_cervix": "never",
+          "scr_colorectal": "never",
+          "scr_hepatitis": "never",
+          "scr_lung": "never"
+        },
+        "source": "clinic_v2:provided"
+      },
+      "medications": {
+        "state": "unanswered",
+        "value": null,
+        "source": "clinic_v2:unanswered"
+      },
+      "pregnancies": {
+        "state": "not_applicable",
+        "value": null,
+        "source": "clinic_v2:unanswered"
+      },
+      "pregnant": {
+        "state": "not_applicable",
+        "value": null,
+        "source": "clinic_v2:unanswered"
+      },
+      "quit_years_ago": {
+        "state": "unanswered",
+        "value": null,
+        "source": "clinic_v2:unanswered"
+      },
+      "registered": {
+        "state": "answered",
+        "value": [
+          "none"
+        ],
+        "source": "clinic_v2:provided"
+      },
+      "registered_absent": {
+        "state": "unanswered",
+        "value": null,
+        "source": "clinic_v2:unanswered"
+      },
+      "registered_on": {
+        "state": "not_applicable",
+        "value": null,
+        "source": "clinic_v2:unanswered"
+      },
+      "risk_group": {
+        "state": "unanswered",
+        "value": null,
+        "source": "clinic_v2:unanswered"
+      },
+      "sex": {
+        "state": "answered",
+        "value": "M",
+        "source": "clinic_v2:provided"
+      },
+      "smoke_status": {
+        "state": "unanswered",
+        "value": null,
+        "source": "clinic_v2:unanswered"
+      },
+      "smoke_years": {
+        "state": "unanswered",
+        "value": null,
+        "source": "clinic_v2:unanswered"
+      },
+      "smoking": {
+        "state": "answered",
+        "value": {
+          "pack_years": 0
+        },
+        "source": "clinic_v2:provided"
+      },
+      "urgent": {
+        "state": "answered",
+        "value": "none",
+        "source": "clinic_v2:provided"
+      }
+    },
+    "registration": {
+      "confirmed_codes": [],
+      "ambiguous_codes": [],
+      "negative_codes": [
+        "breast_cancer",
+        "cerebrovascular",
+        "cervical_cancer",
+        "chronic_hepatitis",
+        "colorectal",
+        "diabetes",
+        "glaucoma",
+        "hypertension",
+        "ihd",
+        "lung_cancer"
+      ],
+      "negative_source": null,
+      "known_negative": true,
+      "known_complete": false,
+      "source": "clinic_v2:unanswered"
+    },
+    "smoking": {
+      "status": "reported_exposure",
+      "pack_years": 0.0,
+      "quit_years_ago": null,
+      "source": "clinic_v2:reported_smoking",
+      "questions": []
+    },
+    "history": [
+      {
+        "screening_id": "scr_cvd",
+        "performed_status": "never",
+        "performed_year": null,
+        "performed_on": null,
+        "date_precision": "not_applicable",
+        "range_start": null,
+        "range_end": null,
+        "source": "clinic_v2:last_screening",
+        "result_status": "unknown",
+        "review_status": "unknown",
+        "medical_validated": false
+      },
+      {
+        "screening_id": "scr_cerebro",
+        "performed_status": "never",
+        "performed_year": null,
+        "performed_on": null,
+        "date_precision": "not_applicable",
+        "range_start": null,
+        "range_end": null,
+        "source": "clinic_v2:last_screening",
+        "result_status": "unknown",
+        "review_status": "unknown",
+        "medical_validated": false
+      },
+      {
+        "screening_id": "scr_breast",
+        "performed_status": "never",
+        "performed_year": null,
+        "performed_on": null,
+        "date_precision": "not_applicable",
+        "range_start": null,
+        "range_end": null,
+        "source": "clinic_v2:last_screening",
+        "result_status": "unknown",
+        "review_status": "unknown",
+        "medical_validated": false
+      },
+      {
+        "screening_id": "scr_cervix",
+        "performed_status": "never",
+        "performed_year": null,
+        "performed_on": null,
+        "date_precision": "not_applicable",
+        "range_start": null,
+        "range_end": null,
+        "source": "clinic_v2:last_screening",
+        "result_status": "unknown",
+        "review_status": "unknown",
+        "medical_validated": false
+      },
+      {
+        "screening_id": "scr_colorectal",
+        "performed_status": "never",
+        "performed_year": null,
+        "performed_on": null,
+        "date_precision": "not_applicable",
+        "range_start": null,
+        "range_end": null,
+        "source": "clinic_v2:last_screening",
+        "result_status": "unknown",
+        "review_status": "unknown",
+        "medical_validated": false
+      },
+      {
+        "screening_id": "scr_hepatitis",
+        "performed_status": "never",
+        "performed_year": null,
+        "performed_on": null,
+        "date_precision": "not_applicable",
+        "range_start": null,
+        "range_end": null,
+        "source": "clinic_v2:last_screening",
+        "result_status": "unknown",
+        "review_status": "unknown",
+        "medical_validated": false
+      },
+      {
+        "screening_id": "scr_lung",
+        "performed_status": "never",
+        "performed_year": null,
+        "performed_on": null,
+        "date_precision": "not_applicable",
+        "range_start": null,
+        "range_end": null,
+        "source": "clinic_v2:last_screening",
+        "result_status": "unknown",
+        "review_status": "unknown",
+        "medical_validated": false
+      }
+    ]
+  },
+  "screening": [
+    {
+      "rule_id": "scr_cvd",
+      "name": "Скрининг АГ, ИБС, сахарного диабета, глаукомы",
+      "outcome": "not_eligible",
+      "reason": "Возраст по году достижения не входит в перечень демоправила.",
+      "missing_fields": [],
+      "source": "DSM174 прил. 1 п.1, прил. 2 п.1",
+      "source_path": "reference/df733c4/spec/rules.json:screening",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "limitations": [
+        "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора."
+      ],
+      "payment": {
+        "status": "requires_verification",
+        "source_code": "free_gobmp",
+        "guaranteed": false,
+        "text": "Возможность пройти по госпрограмме уточняется в поликлинике; оплата и доступность не подтверждены."
+      },
+      "where": "Уточнить поликлинику прикрепления",
+      "where_source": "Ответ attached_to; предоставленное правило: DSM174 прил. 1 п.1, прил. 2 п.1",
+      "repeat_years_reference": {
+        "years": 2,
+        "source": "DSM174 прил. 1 п.1, прил. 2 п.1",
+        "text": "Справочная периодичность из правила; не персональная дата следующего визита."
+      },
+      "prime_matches": [
+        {
+          "procedure_id": "prime_blood_panel_40plus_group",
+          "name": "Расширенные анализы крови (40+ показателей: гормоны, витамины, печёночные и почечные пробы)",
+          "match_degree": "unknown",
+          "explanation": "prime_overlap упоминает группу 40+ показателей, но её состав не раскрыт; совпадение отдельных анализов не подтверждено.",
+          "source": "app/data/screening_links.json",
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f"
+        },
+        {
+          "procedure_id": "prime_lipids_glucose_group",
+          "name": "Липидный профиль и глюкоза",
+          "match_degree": "partial",
+          "explanation": "В исходной подсказке есть липидный профиль; состав группы не приравнивается ко всем компонентам скрининга.",
+          "source": "app/data/screening_links.json",
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f"
+        },
+        {
+          "procedure_id": "prime_hba1c",
+          "name": "Гликированный гемоглобин",
+          "match_degree": "exact",
+          "explanation": "Явное соответствие на уровне компонента «гликированный гемоглобин»; это не весь скрининг и не подтверждение оплаты.",
+          "source": "app/data/screening_links.json",
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f"
+        },
+        {
+          "procedure_id": "prime_ophthalmology_pressure_exam",
+          "name": "Осмотр офтальмолога с измерением давления в глазу",
+          "match_degree": "partial",
+          "explanation": "Измерение внутриглазного давления входит в описанный осмотр; полный осмотр не равен компоненту скрининга.",
+          "source": "app/data/screening_links.json",
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f"
+        }
+      ],
+      "choices": [
+        {
+          "kind": "public_program",
+          "label": "Обсудить прохождение по госпрограмме в поликлинике",
+          "where": "Уточнить поликлинику прикрепления",
+          "requires_confirmation": true
+        },
+        {
+          "kind": "prime_service",
+          "procedure_id": "prime_blood_panel_40plus_group",
+          "label": "Выбрать услугу PRIME: Расширенные анализы крови (40+ показателей: гормоны, витамины, печёночные и почечные пробы)",
+          "match_degree": "unknown",
+          "explanation": "prime_overlap упоминает группу 40+ показателей, но её состав не раскрыт; совпадение отдельных анализов не подтверждено.",
+          "requires_explicit_selection": true
+        },
+        {
+          "kind": "prime_service",
+          "procedure_id": "prime_lipids_glucose_group",
+          "label": "Выбрать услугу PRIME: Липидный профиль и глюкоза",
+          "match_degree": "partial",
+          "explanation": "В исходной подсказке есть липидный профиль; состав группы не приравнивается ко всем компонентам скрининга.",
+          "requires_explicit_selection": true
+        },
+        {
+          "kind": "prime_service",
+          "procedure_id": "prime_hba1c",
+          "label": "Выбрать услугу PRIME: Гликированный гемоглобин",
+          "match_degree": "exact",
+          "explanation": "Явное соответствие на уровне компонента «гликированный гемоглобин»; это не весь скрининг и не подтверждение оплаты.",
+          "requires_explicit_selection": true
+        },
+        {
+          "kind": "prime_service",
+          "procedure_id": "prime_ophthalmology_pressure_exam",
+          "label": "Выбрать услугу PRIME: Осмотр офтальмолога с измерением давления в глазу",
+          "match_degree": "partial",
+          "explanation": "Измерение внутриглазного давления входит в описанный осмотр; полный осмотр не равен компоненту скрининга.",
+          "requires_explicit_selection": true
+        }
+      ]
+    },
+    {
+      "rule_id": "scr_cerebro",
+      "name": "Скрининг цереброваскулярных заболеваний",
+      "outcome": "not_eligible",
+      "reason": "Возраст по году достижения не входит в перечень демоправила.",
+      "missing_fields": [],
+      "source": "DSM174 прил. 1 п.2, прил. 2 п.4",
+      "source_path": "reference/df733c4/spec/rules.json:screening",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "limitations": [
+        "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора."
+      ],
+      "payment": {
+        "status": "requires_verification",
+        "source_code": "free_osms",
+        "guaranteed": false,
+        "text": "Возможность пройти по госпрограмме уточняется в поликлинике; оплата и доступность не подтверждены."
+      },
+      "where": "Уточнить поликлинику прикрепления",
+      "where_source": "Ответ attached_to; предоставленное правило: DSM174 прил. 1 п.2, прил. 2 п.4",
+      "repeat_years_reference": {
+        "years": 2,
+        "source": "DSM174 прил. 1 п.2, прил. 2 п.4",
+        "text": "Справочная периодичность из правила; не персональная дата следующего визита."
+      },
+      "prime_matches": [
+        {
+          "procedure_id": "prime_neck_leg_vessels_doppler",
+          "name": "УЗДГ сосудов шеи и ног",
+          "match_degree": "partial",
+          "explanation": "Исходная подсказка связывает исследование сосудов шеи и ног с УЗДГ брахиоцефального ствола; объёмы различаются, требуется уточнение.",
+          "source": "app/data/screening_links.json",
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f"
+        }
+      ],
+      "choices": [
+        {
+          "kind": "public_program",
+          "label": "Обсудить прохождение по госпрограмме в поликлинике",
+          "where": "Уточнить поликлинику прикрепления",
+          "requires_confirmation": true
+        },
+        {
+          "kind": "prime_service",
+          "procedure_id": "prime_neck_leg_vessels_doppler",
+          "label": "Выбрать услугу PRIME: УЗДГ сосудов шеи и ног",
+          "match_degree": "partial",
+          "explanation": "Исходная подсказка связывает исследование сосудов шеи и ног с УЗДГ брахиоцефального ствола; объёмы различаются, требуется уточнение.",
+          "requires_explicit_selection": true
+        }
+      ]
+    },
+    {
+      "rule_id": "scr_breast",
+      "name": "Скрининг рака молочной железы",
+      "outcome": "not_eligible",
+      "reason": "Пол не соответствует указанным критериям демоправила.",
+      "missing_fields": [],
+      "source": "DSM174 прил. 1 п.3, прил. 2 п.2",
+      "source_path": "reference/df733c4/spec/rules.json:screening",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "limitations": [
+        "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора."
+      ],
+      "payment": {
+        "status": "requires_verification",
+        "source_code": "free_gobmp",
+        "guaranteed": false,
+        "text": "Возможность пройти по госпрограмме уточняется в поликлинике; оплата и доступность не подтверждены."
+      },
+      "where": "Уточнить поликлинику прикрепления",
+      "where_source": "Ответ attached_to; предоставленное правило: DSM174 прил. 1 п.3, прил. 2 п.2",
+      "repeat_years_reference": {
+        "years": 2,
+        "source": "DSM174 прил. 1 п.3, прил. 2 п.2",
+        "text": "Справочная периодичность из правила; не персональная дата следующего визита."
+      },
+      "prime_matches": [
+        {
+          "procedure_id": "prime_mammography_2d3d",
+          "name": "Маммография (2D/3D)",
+          "match_degree": "partial",
+          "explanation": "Каталог указывает 2D/3D, правило — четыре снимка и вторую читку; равенство объёма не установлено. Клиническая пометка позиции сохраняется отдельно.",
+          "source": "app/data/screening_links.json",
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f"
+        }
+      ],
+      "choices": [
+        {
+          "kind": "public_program",
+          "label": "Обсудить прохождение по госпрограмме в поликлинике",
+          "where": "Уточнить поликлинику прикрепления",
+          "requires_confirmation": true
+        },
+        {
+          "kind": "prime_service",
+          "procedure_id": "prime_mammography_2d3d",
+          "label": "Выбрать услугу PRIME: Маммография (2D/3D)",
+          "match_degree": "partial",
+          "explanation": "Каталог указывает 2D/3D, правило — четыре снимка и вторую читку; равенство объёма не установлено. Клиническая пометка позиции сохраняется отдельно.",
+          "requires_explicit_selection": true
+        }
+      ]
+    },
+    {
+      "rule_id": "scr_cervix",
+      "name": "Скрининг рака шейки матки",
+      "outcome": "not_eligible",
+      "reason": "Пол не соответствует указанным критериям демоправила.",
+      "missing_fields": [],
+      "source": "DSM174 прил. 1 п.4, прил. 2 п.3",
+      "source_path": "reference/df733c4/spec/rules.json:screening",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "limitations": [
+        "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора."
+      ],
+      "payment": {
+        "status": "requires_verification",
+        "source_code": "free_gobmp",
+        "guaranteed": false,
+        "text": "Возможность пройти по госпрограмме уточняется в поликлинике; оплата и доступность не подтверждены."
+      },
+      "where": "Уточнить поликлинику прикрепления",
+      "where_source": "Ответ attached_to; предоставленное правило: DSM174 прил. 1 п.4, прил. 2 п.3",
+      "repeat_years_reference": {
+        "years": 4,
+        "source": "DSM174 прил. 1 п.4, прил. 2 п.3",
+        "text": "Справочная периодичность из правила; не персональная дата следующего визита."
+      },
+      "prime_matches": [
+        {
+          "procedure_id": "prime_pap_test",
+          "name": "ПАП-тест",
+          "match_degree": "partial",
+          "explanation": "ПАП-тест указан в обоих источниках; метод жидкостной цитологии не раскрыт в каталоге, полный скрининг не подтверждён.",
+          "source": "app/data/screening_links.json",
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f"
+        }
+      ],
+      "choices": [
+        {
+          "kind": "public_program",
+          "label": "Обсудить прохождение по госпрограмме в поликлинике",
+          "where": "Уточнить поликлинику прикрепления",
+          "requires_confirmation": true
+        },
+        {
+          "kind": "prime_service",
+          "procedure_id": "prime_pap_test",
+          "label": "Выбрать услугу PRIME: ПАП-тест",
+          "match_degree": "partial",
+          "explanation": "ПАП-тест указан в обоих источниках; метод жидкостной цитологии не раскрыт в каталоге, полный скрининг не подтверждён.",
+          "requires_explicit_selection": true
+        }
+      ]
+    },
+    {
+      "rule_id": "scr_colorectal",
+      "name": "Скрининг колоректального рака",
+      "outcome": "not_eligible",
+      "reason": "Возраст по году достижения не входит в перечень демоправила.",
+      "missing_fields": [],
+      "source": "DSM174 прил. 1 п.5, прил. 2 п.5",
+      "source_path": "reference/df733c4/spec/rules.json:screening",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "limitations": [
+        "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора."
+      ],
+      "payment": {
+        "status": "requires_verification",
+        "source_code": "free_gobmp",
+        "guaranteed": false,
+        "text": "Возможность пройти по госпрограмме уточняется в поликлинике; оплата и доступность не подтверждены."
+      },
+      "where": "Уточнить поликлинику прикрепления",
+      "where_source": "Ответ attached_to; предоставленное правило: DSM174 прил. 1 п.5, прил. 2 п.5",
+      "repeat_years_reference": {
+        "years": 2,
+        "source": "DSM174 прил. 1 п.5, прил. 2 п.5",
+        "text": "Справочная периодичность из правила; не персональная дата следующего визита."
+      },
+      "prime_matches": [],
+      "choices": [
+        {
+          "kind": "public_program",
+          "label": "Обсудить прохождение по госпрограмме в поликлинике",
+          "where": "Уточнить поликлинику прикрепления",
+          "requires_confirmation": true
+        }
+      ]
+    },
+    {
+      "rule_id": "scr_hepatitis",
+      "name": "Скрининг гепатитов B и C",
+      "outcome": "candidate",
+      "reason": "Подходит по указанным критериям предоставленного демоправила. Условия и доступность уточняются в поликлинике.",
+      "missing_fields": [],
+      "source": "DSM174 прил. 1 п.6 и прил. 2 п.6 в ред. приказа № 75 от 10.07.2026",
+      "source_path": "reference/df733c4/spec/rules.json:screening",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "limitations": [
+        "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора."
+      ],
+      "payment": {
+        "status": "public_program_candidate",
+        "source_code": "free_gobmp",
+        "guaranteed": false,
+        "text": "Возможность пройти по госпрограмме уточняется в поликлинике; оплата и доступность не подтверждены."
+      },
+      "where": "Уточнить поликлинику прикрепления",
+      "where_source": "Ответ attached_to; предоставленное правило: DSM174 прил. 1 п.6 и прил. 2 п.6 в ред. приказа № 75 от 10.07.2026",
+      "repeat_years_reference": {
+        "years": 3,
+        "source": "DSM174 прил. 1 п.6 и прил. 2 п.6 в ред. приказа № 75 от 10.07.2026",
+        "text": "Справочная периодичность из правила; не персональная дата следующего визита."
+      },
+      "prime_matches": [
+        {
+          "procedure_id": "prime_hepatitis_bc_group",
+          "name": "Анализ на гепатиты B и C",
+          "match_degree": "partial",
+          "explanation": "Общая группа анализов B/C сопоставлена с экспресс-тестами anti-HCV и HBsAg только по исходной подсказке; метод и состав требуется уточнить.",
+          "source": "app/data/screening_links.json",
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f"
+        }
+      ],
+      "choices": [
+        {
+          "kind": "public_program",
+          "label": "Обсудить прохождение по госпрограмме в поликлинике",
+          "where": "Уточнить поликлинику прикрепления",
+          "requires_confirmation": true
+        },
+        {
+          "kind": "prime_service",
+          "procedure_id": "prime_hepatitis_bc_group",
+          "label": "Выбрать услугу PRIME: Анализ на гепатиты B и C",
+          "match_degree": "partial",
+          "explanation": "Общая группа анализов B/C сопоставлена с экспресс-тестами anti-HCV и HBsAg только по исходной подсказке; метод и состав требуется уточнить.",
+          "requires_explicit_selection": true
+        }
+      ]
+    },
+    {
+      "rule_id": "scr_lung",
+      "name": "Скрининг рака лёгкого",
+      "outcome": "not_eligible",
+      "reason": "Возраст по году достижения не входит в перечень демоправила.",
+      "missing_fields": [],
+      "source": "DSM174 прил. 1 п.7 и прил. 2 п.7 (введены приказом № 75 от 10.07.2026)",
+      "source_path": "reference/df733c4/spec/rules.json:screening",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "limitations": [
+        "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+        "Соответствие профессии перечню вредных работ по приказу № 170 проверяется отдельно."
+      ],
+      "payment": {
+        "status": "requires_verification",
+        "source_code": "free_gobmp",
+        "guaranteed": false,
+        "text": "Возможность пройти по госпрограмме уточняется в поликлинике; оплата и доступность не подтверждены."
+      },
+      "where": "Уточнить поликлинику прикрепления",
+      "where_source": "Ответ attached_to; предоставленное правило: DSM174 прил. 1 п.7 и прил. 2 п.7 (введены приказом № 75 от 10.07.2026)",
+      "repeat_years_reference": {
+        "years": 2,
+        "source": "DSM174 прил. 1 п.7 и прил. 2 п.7 (введены приказом № 75 от 10.07.2026)",
+        "text": "Справочная периодичность из правила; не персональная дата следующего визита."
+      },
+      "prime_matches": [
+        {
+          "procedure_id": "prime_lung_ct",
+          "name": "КТ лёгких",
+          "match_degree": "partial",
+          "explanation": "КТ лёгких сопоставлено исходной подсказкой с КТ грудной клетки и средостения; совпадение протокола и полного объёма не подтверждено.",
+          "source": "app/data/screening_links.json",
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f"
+        },
+        {
+          "procedure_id": "prime_chest_ct",
+          "name": "КТ грудной клетки",
+          "match_degree": "partial",
+          "explanation": "КТ грудной клетки сопоставлено исходной подсказкой с КТ грудной клетки и средостения; совпадение протокола и полного объёма не подтверждено.",
+          "source": "app/data/screening_links.json",
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f"
+        }
+      ],
+      "choices": [
+        {
+          "kind": "public_program",
+          "label": "Обсудить прохождение по госпрограмме в поликлинике",
+          "where": "Уточнить поликлинику прикрепления",
+          "requires_confirmation": true
+        },
+        {
+          "kind": "prime_service",
+          "procedure_id": "prime_lung_ct",
+          "label": "Выбрать услугу PRIME: КТ лёгких",
+          "match_degree": "partial",
+          "explanation": "КТ лёгких сопоставлено исходной подсказкой с КТ грудной клетки и средостения; совпадение протокола и полного объёма не подтверждено.",
+          "requires_explicit_selection": true
+        },
+        {
+          "kind": "prime_service",
+          "procedure_id": "prime_chest_ct",
+          "label": "Выбрать услугу PRIME: КТ грудной клетки",
+          "match_degree": "partial",
+          "explanation": "КТ грудной клетки сопоставлено исходной подсказкой с КТ грудной клетки и средостения; совпадение протокола и полного объёма не подтверждено.",
+          "requires_explicit_selection": true
+        }
+      ]
+    }
+  ],
+  "doctor_summary": [
+    {
+      "field": "conditions",
+      "label": "Что из этого у вас есть или было?",
+      "value": [
+        "none"
+      ],
+      "state": "answered",
+      "source": "clinic_v2:provided"
+    },
+    {
+      "field": "registered",
+      "label": "Сообщённые диагнозы на учёте",
+      "value": [
+        "none"
+      ],
+      "state": "answered",
+      "source": "clinic_v2:provided"
+    },
+    {
+      "field": "family_history",
+      "label": "Было ли у родителей, братьев, сестёр?",
+      "value": [
+        "none"
+      ],
+      "state": "answered",
+      "source": "clinic_v2:provided"
+    },
+    {
+      "field": "dysuria",
+      "label": "Есть ли боль или жжение при мочеиспускании, выделения?",
+      "value": "no",
+      "state": "answered",
+      "source": "clinic_v2:provided"
+    },
+    {
+      "field": "blood_thinners",
+      "label": "Принимаете препараты, разжижающие кровь?",
+      "value": "no",
+      "state": "answered",
+      "source": "clinic_v2:provided"
+    },
+    {
+      "field": "companion",
+      "label": "Сможет ли кто-то проводить вас домой в день обследования?",
+      "value": "yes",
+      "state": "answered",
+      "source": "clinic_v2:provided"
+    }
+  ],
+  "proposed_extras": [],
+  "alternatives": [],
+  "catalog": [
+    {
+      "procedure_id": "prime_abdomen_thyroid_ultrasound_group",
+      "name": "УЗИ брюшной полости и щитовидной железы",
+      "source_package_ids": [
+        "prime_extended"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": true,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "catalog_match",
+        "reason": "Явные ссылки каталога не выявили несовпадения варианта. Наличие в каталоге не означает медицинского одобрения; граница 40 лет относится к выбору пакета.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "M"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [],
+      "requires_review": false,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": []
+    },
+    {
+      "procedure_id": "prime_abdomen_ultrasound",
+      "name": "УЗИ брюшной полости",
+      "source_package_ids": [
+        "prime_child"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": false,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "requires_review",
+        "reason": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "child_catalog_only"
+      },
+      "applicability_flags": [
+        {
+          "code": "cross_population_requires_review",
+          "message": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "requires_review": true,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": [
+        {
+          "code": "cross_population_requires_review",
+          "message": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ]
+    },
+    {
+      "procedure_id": "prime_basic_blood_group",
+      "name": "Общий анализ крови (34 показателя), С-реактивный белок, коагулограмма",
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": true,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "catalog_match",
+        "reason": "Явные ссылки каталога не выявили несовпадения варианта. Наличие в каталоге не означает медицинского одобрения; граница 40 лет относится к выбору пакета.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [],
+      "requires_review": false,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": []
+    },
+    {
+      "procedure_id": "prime_blood_count",
+      "name": "Общий анализ крови",
+      "source_package_ids": [
+        "prime_child"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": false,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "requires_review",
+        "reason": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "child_catalog_only"
+      },
+      "applicability_flags": [
+        {
+          "code": "cross_population_requires_review",
+          "message": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "requires_review": true,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": [
+        {
+          "code": "cross_population_requires_review",
+          "message": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ]
+    },
+    {
+      "procedure_id": "prime_blood_panel_40plus_group",
+      "name": "Расширенные анализы крови (40+ показателей: гормоны, витамины, печёночные и почечные пробы)",
+      "source_package_ids": [
+        "prime_extended"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": true,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "catalog_match",
+        "reason": "Явные ссылки каталога не выявили несовпадения варианта. Наличие в каталоге не означает медицинского одобрения; граница 40 лет относится к выбору пакета.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [],
+      "requires_review": false,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": []
+    },
+    {
+      "procedure_id": "prime_breast_ultrasound",
+      "name": "УЗИ молочных желёз",
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": false,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "requires_review",
+        "reason": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [
+        {
+          "code": "sex_variant_requires_review",
+          "message": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "requires_review": true,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": [
+        {
+          "code": "sex_variant_requires_review",
+          "message": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ]
+    },
+    {
+      "procedure_id": "prime_chest_ct",
+      "name": "КТ грудной клетки",
+      "source_package_ids": [
+        "prime_extended"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": false,
+      "tags": [
+        "pregnancy_review"
+      ],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "catalog_match",
+        "reason": "Явные ссылки каталога не выявили несовпадения варианта. Наличие в каталоге не означает медицинского одобрения; граница 40 лет относится к выбору пакета.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [],
+      "requires_review": false,
+      "known_constraints": [
+        "pregnancy_review"
+      ],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": []
+    },
+    {
+      "procedure_id": "prime_child_curator_conclusion",
+      "name": "Заключение врача-куратора с рекомендациями",
+      "source_package_ids": [
+        "prime_child"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": false,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "requires_review",
+        "reason": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "child_catalog_only"
+      },
+      "applicability_flags": [
+        {
+          "code": "cross_population_requires_review",
+          "message": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "requires_review": true,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": [
+        {
+          "code": "cross_population_requires_review",
+          "message": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ]
+    },
+    {
+      "procedure_id": "prime_child_ecg_neurosonography_group",
+      "name": "ЭКГ; нейросонография — детям до года",
+      "source_package_ids": [
+        "prime_child"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": true,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "requires_review",
+        "reason": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги. Группа содержит действие с отдельным возрастным условием для младенцев. Состав для указанного возраста требует решения врача; компоненты группы автоматически не вычитаются, диапазон пакета 1–17 лет не расширяется.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "child_catalog_only"
+      },
+      "applicability_flags": [
+        {
+          "code": "cross_population_requires_review",
+          "message": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "code": "AGE_DEPENDENT_GROUP",
+          "message": "Группа содержит действие с отдельным возрастным условием для младенцев. Состав для указанного возраста требует решения врача; компоненты группы автоматически не вычитаются, диапазон пакета 1–17 лет не расширяется.",
+          "source": "app/data/demo_catalog.json:procedures.prime_child_ecg_neurosonography_group",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "requires_review": true,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": [
+        {
+          "code": "cross_population_requires_review",
+          "message": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "code": "AGE_DEPENDENT_GROUP",
+          "message": "Группа содержит действие с отдельным возрастным условием для младенцев. Состав для указанного возраста требует решения врача; компоненты группы автоматически не вычитаются, диапазон пакета 1–17 лет не расширяется.",
+          "source": "app/data/demo_catalog.json:procedures.prime_child_ecg_neurosonography_group",
+          "validation_status": "demo_unvalidated"
+        }
+      ]
+    },
+    {
+      "procedure_id": "prime_child_extended_labs_group",
+      "name": "Развёрнутый анализ крови, биохимия, гормоны щитовидной железы, витамины D и B12, ферритин",
+      "source_package_ids": [
+        "prime_child"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": true,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "requires_review",
+        "reason": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "child_catalog_only"
+      },
+      "applicability_flags": [
+        {
+          "code": "cross_population_requires_review",
+          "message": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "requires_review": true,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": [
+        {
+          "code": "cross_population_requires_review",
+          "message": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ]
+    },
+    {
+      "procedure_id": "prime_child_extended_ultrasound_group",
+      "name": "УЗИ брюшной полости, почек, щитовидной железы, сердца (ЭхоКГ); тазобедренных суставов — младенцам",
+      "source_package_ids": [
+        "prime_child"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": true,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "requires_review",
+        "reason": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги. Группа содержит действие с отдельным возрастным условием для младенцев. Состав для указанного возраста требует решения врача; компоненты группы автоматически не вычитаются, диапазон пакета 1–17 лет не расширяется.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "child_catalog_only"
+      },
+      "applicability_flags": [
+        {
+          "code": "cross_population_requires_review",
+          "message": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "code": "AGE_DEPENDENT_GROUP",
+          "message": "Группа содержит действие с отдельным возрастным условием для младенцев. Состав для указанного возраста требует решения врача; компоненты группы автоматически не вычитаются, диапазон пакета 1–17 лет не расширяется.",
+          "source": "app/data/demo_catalog.json:procedures.prime_child_extended_ultrasound_group",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "requires_review": true,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": [
+        {
+          "code": "cross_population_requires_review",
+          "message": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "code": "AGE_DEPENDENT_GROUP",
+          "message": "Группа содержит действие с отдельным возрастным условием для младенцев. Состав для указанного возраста требует решения врача; компоненты группы автоматически не вычитаются, диапазон пакета 1–17 лет не расширяется.",
+          "source": "app/data/demo_catalog.json:procedures.prime_child_extended_ultrasound_group",
+          "validation_status": "demo_unvalidated"
+        }
+      ]
+    },
+    {
+      "procedure_id": "prime_child_glucose_biochemistry_group",
+      "name": "Глюкоза крови, основные биохимические показатели",
+      "source_package_ids": [
+        "prime_child"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": true,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "requires_review",
+        "reason": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "child_catalog_only"
+      },
+      "applicability_flags": [
+        {
+          "code": "cross_population_requires_review",
+          "message": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "requires_review": true,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": [
+        {
+          "code": "cross_population_requires_review",
+          "message": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ]
+    },
+    {
+      "procedure_id": "prime_child_specialists_group",
+      "name": "Консультации детских кардиолога, невролога, эндокринолога, офтальмолога, ЛОРа, хирурга",
+      "source_package_ids": [
+        "prime_child"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": true,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "requires_review",
+        "reason": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "child_catalog_only"
+      },
+      "applicability_flags": [
+        {
+          "code": "cross_population_requires_review",
+          "message": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "requires_review": true,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": [
+        {
+          "code": "cross_population_requires_review",
+          "message": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ]
+    },
+    {
+      "procedure_id": "prime_curator_consultation_group",
+      "name": "Консультация врача-куратора (первичная и итоговая)",
+      "source_package_ids": [
+        "prime_basic",
+        "prime_extended"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": true,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [
+        "prime_curator_initial",
+        "prime_curator_final"
+      ],
+      "applicability": {
+        "status": "catalog_match",
+        "reason": "Явные ссылки каталога не выявили несовпадения варианта. Наличие в каталоге не означает медицинского одобрения; граница 40 лет относится к выбору пакета.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [],
+      "requires_review": false,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": []
+    },
+    {
+      "procedure_id": "prime_ecg",
+      "name": "ЭКГ",
+      "source_package_ids": [
+        "prime_basic",
+        "prime_child"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": false,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "catalog_match",
+        "reason": "Явные ссылки каталога не выявили несовпадения варианта. Наличие в каталоге не означает медицинского одобрения; граница 40 лет относится к выбору пакета.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "child_and_adult_catalog"
+      },
+      "applicability_flags": [],
+      "requires_review": false,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": []
+    },
+    {
+      "procedure_id": "prime_echo_ecg_group",
+      "name": "ЭхоКГ, ЭКГ",
+      "source_package_ids": [
+        "prime_extended"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": true,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "catalog_match",
+        "reason": "Явные ссылки каталога не выявили несовпадения варианта. Наличие в каталоге не означает медицинского одобрения; граница 40 лет относится к выбору пакета.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [],
+      "requires_review": false,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": []
+    },
+    {
+      "procedure_id": "prime_echocardiography",
+      "name": "ЭхоКГ",
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": false,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "catalog_match",
+        "reason": "Явные ссылки каталога не выявили несовпадения варианта. Наличие в каталоге не означает медицинского одобрения; граница 40 лет относится к выбору пакета.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [],
+      "requires_review": false,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": []
+    },
+    {
+      "procedure_id": "prime_endoscopy_group",
+      "name": "Гастроскопия и колоноскопия под анестезией",
+      "source_package_ids": [
+        "prime_basic",
+        "prime_extended"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": true,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "catalog_match",
+        "reason": "Явные ссылки каталога не выявили несовпадения варианта. Наличие в каталоге не означает медицинского одобрения; граница 40 лет относится к выбору пакета.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [],
+      "requires_review": false,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": []
+    },
+    {
+      "procedure_id": "prime_female_extended_ultrasound_group",
+      "name": "УЗИ малого таза (трансвагинально), молочных желёз, брюшной полости, почек, щитовидной железы",
+      "source_package_ids": [
+        "prime_extended"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": true,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "requires_review",
+        "reason": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [
+        {
+          "code": "sex_variant_requires_review",
+          "message": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "requires_review": true,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": [
+        {
+          "code": "sex_variant_requires_review",
+          "message": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ]
+    },
+    {
+      "procedure_id": "prime_ferritin_iron_folate_group",
+      "name": "Ферритин, железо, фолиевая кислота",
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": true,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "requires_review",
+        "reason": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [
+        {
+          "code": "sex_variant_requires_review",
+          "message": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "requires_review": true,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": [
+        {
+          "code": "sex_variant_requires_review",
+          "message": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ]
+    },
+    {
+      "procedure_id": "prime_gynecology_consult",
+      "name": "Консультация гинеколога",
+      "source_package_ids": [
+        "prime_basic",
+        "prime_extended"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": false,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "requires_review",
+        "reason": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [
+        {
+          "code": "sex_variant_requires_review",
+          "message": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "requires_review": true,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": [
+        {
+          "code": "sex_variant_requires_review",
+          "message": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ]
+    },
+    {
+      "procedure_id": "prime_hba1c",
+      "name": "Гликированный гемоглобин",
+      "source_package_ids": [
+        "prime_basic",
+        "prime_extended"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": false,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "catalog_match",
+        "reason": "Явные ссылки каталога не выявили несовпадения варианта. Наличие в каталоге не означает медицинского одобрения; граница 40 лет относится к выбору пакета.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "M"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [],
+      "requires_review": false,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": []
+    },
+    {
+      "procedure_id": "prime_helicobacter_test",
+      "name": "Тест на хеликобактер",
+      "source_package_ids": [
+        "prime_basic",
+        "prime_extended"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": false,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "catalog_match",
+        "reason": "Явные ссылки каталога не выявили несовпадения варианта. Наличие в каталоге не означает медицинского одобрения; граница 40 лет относится к выбору пакета.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [],
+      "requires_review": false,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": []
+    },
+    {
+      "procedure_id": "prime_hepatitis_bc_group",
+      "name": "Анализ на гепатиты B и C",
+      "source_package_ids": [
+        "prime_extended"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": true,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "catalog_match",
+        "reason": "Явные ссылки каталога не выявили несовпадения варианта. Наличие в каталоге не означает медицинского одобрения; граница 40 лет относится к выбору пакета.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [],
+      "requires_review": false,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": []
+    },
+    {
+      "procedure_id": "prime_lipids_glucose_group",
+      "name": "Липидный профиль и глюкоза",
+      "source_package_ids": [
+        "prime_basic",
+        "prime_extended"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": true,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "catalog_match",
+        "reason": "Явные ссылки каталога не выявили несовпадения варианта. Наличие в каталоге не означает медицинского одобрения; граница 40 лет относится к выбору пакета.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [],
+      "requires_review": false,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": []
+    },
+    {
+      "procedure_id": "prime_liver_kidney_urine_group",
+      "name": "Печёночные и почечные пробы, общий анализ мочи",
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": true,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "catalog_match",
+        "reason": "Явные ссылки каталога не выявили несовпадения варианта. Наличие в каталоге не означает медицинского одобрения; граница 40 лет относится к выбору пакета.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [],
+      "requires_review": false,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": []
+    },
+    {
+      "procedure_id": "prime_lung_ct",
+      "name": "КТ лёгких",
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": false,
+      "tags": [
+        "pregnancy_review"
+      ],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "catalog_match",
+        "reason": "Явные ссылки каталога не выявили несовпадения варианта. Наличие в каталоге не означает медицинского одобрения; граница 40 лет относится к выбору пакета.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [],
+      "requires_review": false,
+      "known_constraints": [
+        "pregnancy_review"
+      ],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": []
+    },
+    {
+      "procedure_id": "prime_mammography_2d3d",
+      "name": "Маммография (2D/3D)",
+      "source_package_ids": [
+        "prime_extended"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": false,
+      "tags": [
+        "pregnancy_review"
+      ],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "requires_review",
+        "reason": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [
+        {
+          "code": "sex_variant_requires_review",
+          "message": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "requires_review": true,
+      "known_constraints": [
+        "pregnancy_review"
+      ],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": [
+        {
+          "code": "sex_variant_requires_review",
+          "message": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ]
+    },
+    {
+      "procedure_id": "prime_neck_leg_vessels_doppler",
+      "name": "УЗДГ сосудов шеи и ног",
+      "source_package_ids": [
+        "prime_basic",
+        "prime_extended"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": false,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "catalog_match",
+        "reason": "Явные ссылки каталога не выявили несовпадения варианта. Наличие в каталоге не означает медицинского одобрения; граница 40 лет относится к выбору пакета.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [],
+      "requires_review": false,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": []
+    },
+    {
+      "procedure_id": "prime_ophthalmology_consult",
+      "name": "Консультация офтальмолога",
+      "source_package_ids": [
+        "prime_child",
+        "prime_extended"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": false,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "catalog_match",
+        "reason": "Явные ссылки каталога не выявили несовпадения варианта. Наличие в каталоге не означает медицинского одобрения; граница 40 лет относится к выбору пакета.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "child_and_adult_catalog"
+      },
+      "applicability_flags": [],
+      "requires_review": false,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": []
+    },
+    {
+      "procedure_id": "prime_ophthalmology_if_indicated",
+      "name": "Консультация офтальмолога (по показаниям)",
+      "source_package_ids": [
+        "prime_extended"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": false,
+      "tags": [
+        "requires_indication"
+      ],
+      "conditional": true,
+      "action_ids": [],
+      "applicability": {
+        "status": "requires_review",
+        "reason": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [
+        {
+          "code": "sex_variant_requires_review",
+          "message": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "requires_review": true,
+      "known_constraints": [
+        "requires_indication"
+      ],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": [
+        {
+          "code": "sex_variant_requires_review",
+          "message": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "code": "INDICATION_REQUIRED",
+          "message": "В источнике: по показаниям. Необходимость включения определяет врач; автоматически не запланировано.",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/"
+        }
+      ]
+    },
+    {
+      "procedure_id": "prime_ophthalmology_pressure_exam",
+      "name": "Осмотр офтальмолога с измерением давления в глазу",
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": false,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "catalog_match",
+        "reason": "Явные ссылки каталога не выявили несовпадения варианта. Наличие в каталоге не означает медицинского одобрения; граница 40 лет относится к выбору пакета.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [],
+      "requires_review": false,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": []
+    },
+    {
+      "procedure_id": "prime_pap_test",
+      "name": "ПАП-тест",
+      "source_package_ids": [
+        "prime_extended"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": false,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "requires_review",
+        "reason": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [
+        {
+          "code": "sex_variant_requires_review",
+          "message": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "requires_review": true,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": [
+        {
+          "code": "sex_variant_requires_review",
+          "message": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ]
+    },
+    {
+      "procedure_id": "prime_pediatric_conclusion",
+      "name": "Заключение педиатра с рекомендациями",
+      "source_package_ids": [
+        "prime_child"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": false,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "requires_review",
+        "reason": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "child_catalog_only"
+      },
+      "applicability_flags": [
+        {
+          "code": "cross_population_requires_review",
+          "message": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "requires_review": true,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": [
+        {
+          "code": "cross_population_requires_review",
+          "message": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ]
+    },
+    {
+      "procedure_id": "prime_pediatric_full_consult",
+      "name": "Консультация педиатра с полным осмотром",
+      "source_package_ids": [
+        "prime_child"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": false,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "requires_review",
+        "reason": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "child_catalog_only"
+      },
+      "applicability_flags": [
+        {
+          "code": "cross_population_requires_review",
+          "message": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "requires_review": true,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": [
+        {
+          "code": "cross_population_requires_review",
+          "message": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ]
+    },
+    {
+      "procedure_id": "prime_prostate_bladder_scrotum_ultrasound_group",
+      "name": "УЗИ предстательной железы (ТРУЗИ), мочевого пузыря и мошонки",
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": true,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "catalog_match",
+        "reason": "Явные ссылки каталога не выявили несовпадения варианта. Наличие в каталоге не означает медицинского одобрения; граница 40 лет относится к выбору пакета.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "M"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [],
+      "requires_review": false,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": []
+    },
+    {
+      "procedure_id": "prime_prostate_scrotum_ultrasound_group",
+      "name": "УЗИ предстательной железы (ТРУЗИ) и мошонки",
+      "source_package_ids": [
+        "prime_extended"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": true,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "catalog_match",
+        "reason": "Явные ссылки каталога не выявили несовпадения варианта. Наличие в каталоге не означает медицинского одобрения; граница 40 лет относится к выбору пакета.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "M"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [],
+      "requires_review": false,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": []
+    },
+    {
+      "procedure_id": "prime_psa_total_free_group",
+      "name": "ПСА общий и свободный",
+      "source_package_ids": [
+        "prime_basic",
+        "prime_extended"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": true,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "catalog_match",
+        "reason": "Явные ссылки каталога не выявили несовпадения варианта. Наличие в каталоге не означает медицинского одобрения; граница 40 лет относится к выбору пакета.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "M"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [],
+      "requires_review": false,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": []
+    },
+    {
+      "procedure_id": "prime_thyroid_vitamins_group",
+      "name": "Гормоны щитовидной железы, витамины D и B12",
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": true,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "catalog_match",
+        "reason": "Явные ссылки каталога не выявили несовпадения варианта. Наличие в каталоге не означает медицинского одобрения; граница 40 лет относится к выбору пакета.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [],
+      "requires_review": false,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": []
+    },
+    {
+      "procedure_id": "prime_transvaginal_ultrasound",
+      "name": "УЗИ малого таза (трансвагинально)",
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": false,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "requires_review",
+        "reason": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [
+        {
+          "code": "sex_variant_requires_review",
+          "message": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "requires_review": true,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": [
+        {
+          "code": "sex_variant_requires_review",
+          "message": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ]
+    },
+    {
+      "procedure_id": "prime_tumor_markers_expanded_group",
+      "name": "Онкомаркеры: CA 15-3, CA 125, CA 72-4, CA 19-9, РЭА, АФП, S100, CYFRA",
+      "source_package_ids": [
+        "prime_extended"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": true,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "requires_review",
+        "reason": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [
+        {
+          "code": "sex_variant_requires_review",
+          "message": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "requires_review": true,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": [
+        {
+          "code": "sex_variant_requires_review",
+          "message": "Услуга указана только в женской части каталога. Применимость к указанному полу требует проверки; это не заключение о противопоказании.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ]
+    },
+    {
+      "procedure_id": "prime_urinalysis",
+      "name": "Общий анализ мочи",
+      "source_package_ids": [
+        "prime_child"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": false,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "requires_review",
+        "reason": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "F",
+          "M"
+        ],
+        "age_scope": "child_catalog_only"
+      },
+      "applicability_flags": [
+        {
+          "code": "cross_population_requires_review",
+          "message": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "requires_review": true,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": [
+        {
+          "code": "cross_population_requires_review",
+          "message": "Услуга представлена только в детском пакетах. Применимость вне этой группы не описана и требует решения врача; возраст пакета не считается противопоказанием услуги.",
+          "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+          "validation_status": "demo_unvalidated"
+        }
+      ]
+    },
+    {
+      "procedure_id": "prime_urology_consult",
+      "name": "Консультация уролога",
+      "source_package_ids": [
+        "prime_extended"
+      ],
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "is_group": false,
+      "tags": [],
+      "conditional": false,
+      "action_ids": [],
+      "applicability": {
+        "status": "catalog_match",
+        "reason": "Явные ссылки каталога не выявили несовпадения варианта. Наличие в каталоге не означает медицинского одобрения; граница 40 лет относится к выбору пакета.",
+        "source": "app/data/demo_catalog.json:packages (явные ссылки на ID услуг)",
+        "sex_scope": [
+          "M"
+        ],
+        "age_scope": "adult_catalog_only"
+      },
+      "applicability_flags": [],
+      "requires_review": false,
+      "known_constraints": [],
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "clinical_flags": []
+    }
+  ],
+  "package_options": [
+    {
+      "id": "prime_child",
+      "package_id": "prime_child",
+      "variant_id": "mini",
+      "name": "Мини Check-up «Детский» 1–17 лет",
+      "url": "https://primegc.kz/services/mini-check-up-paket-detskiy-1-17-let/",
+      "source": "PRIME",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "selected_procedure_ids": [
+        "prime_pediatric_full_consult",
+        "prime_ophthalmology_consult",
+        "prime_blood_count",
+        "prime_urinalysis",
+        "prime_child_glucose_biochemistry_group",
+        "prime_abdomen_ultrasound",
+        "prime_ecg",
+        "prime_pediatric_conclusion"
+      ],
+      "eligible": false,
+      "reason": "Пресет предусмотрен каталогом для возраста 1–17 лет.",
+      "age_min": 1,
+      "age_max": 17,
+      "sex": null,
+      "medical_validated": false
+    },
+    {
+      "id": "prime_child",
+      "package_id": "prime_child",
+      "variant_id": "extended",
+      "name": "Расширенный Check-up «Детский» 1–17 лет",
+      "url": "https://primegc.kz/services/rasshirennyy-check-up-detskiy-1-17-let/",
+      "source": "PRIME",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "selected_procedure_ids": [
+        "prime_child_specialists_group",
+        "prime_child_extended_labs_group",
+        "prime_child_extended_ultrasound_group",
+        "prime_child_ecg_neurosonography_group",
+        "prime_child_curator_conclusion"
+      ],
+      "eligible": false,
+      "reason": "Пресет предусмотрен каталогом для возраста 1–17 лет.",
+      "age_min": 1,
+      "age_max": 17,
+      "sex": null,
+      "medical_validated": false
+    },
+    {
+      "id": "prime_basic",
+      "package_id": "prime_basic",
+      "variant_id": "female",
+      "name": "Check-up «Женский базовый до 40 лет»",
+      "url": "https://primegc.kz/services/zhenskiy-bazovyy-chekap-do-40-let/",
+      "source": "PRIME",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "selected_procedure_ids": [
+        "prime_curator_consultation_group",
+        "prime_ophthalmology_pressure_exam",
+        "prime_basic_blood_group",
+        "prime_lipids_glucose_group",
+        "prime_thyroid_vitamins_group",
+        "prime_liver_kidney_urine_group",
+        "prime_echocardiography",
+        "prime_neck_leg_vessels_doppler",
+        "prime_lung_ct",
+        "prime_endoscopy_group",
+        "prime_helicobacter_test",
+        "prime_gynecology_consult",
+        "prime_ecg",
+        "prime_ferritin_iron_folate_group",
+        "prime_transvaginal_ultrasound",
+        "prime_breast_ultrasound"
+      ],
+      "eligible": false,
+      "reason": "Пол не соответствует варианту пресета либо требует уточнения.",
+      "age_min": 18,
+      "age_max": 39,
+      "sex": "F",
+      "medical_validated": false
+    },
+    {
+      "id": "prime_basic",
+      "package_id": "prime_basic",
+      "variant_id": "male",
+      "name": "Check-up «Мужской базовый до 40 лет»",
+      "url": "https://primegc.kz/services/muzhskoy-bazovyy-check-up-do-40-let/",
+      "source": "PRIME",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "selected_procedure_ids": [
+        "prime_curator_consultation_group",
+        "prime_ophthalmology_pressure_exam",
+        "prime_basic_blood_group",
+        "prime_lipids_glucose_group",
+        "prime_thyroid_vitamins_group",
+        "prime_liver_kidney_urine_group",
+        "prime_echocardiography",
+        "prime_neck_leg_vessels_doppler",
+        "prime_lung_ct",
+        "prime_endoscopy_group",
+        "prime_helicobacter_test",
+        "prime_hba1c",
+        "prime_psa_total_free_group",
+        "prime_prostate_bladder_scrotum_ultrasound_group"
+      ],
+      "eligible": true,
+      "reason": "Возраст и пол соответствуют варианту каталога; медицинские ограничения услуг проверяются отдельно.",
+      "age_min": 18,
+      "age_max": 39,
+      "sex": "M",
+      "medical_validated": false
+    },
+    {
+      "id": "prime_extended",
+      "package_id": "prime_extended",
+      "variant_id": "female",
+      "name": "Check-up «Женский расширенный после 40 лет»",
+      "url": "https://primegc.kz/services/check-up-zhenskiy-rasshirennyy-paket-posle-40-let/",
+      "source": "PRIME",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "selected_procedure_ids": [
+        "prime_curator_consultation_group",
+        "prime_blood_panel_40plus_group",
+        "prime_lipids_glucose_group",
+        "prime_hepatitis_bc_group",
+        "prime_echo_ecg_group",
+        "prime_neck_leg_vessels_doppler",
+        "prime_chest_ct",
+        "prime_endoscopy_group",
+        "prime_helicobacter_test",
+        "prime_gynecology_consult",
+        "prime_ophthalmology_if_indicated",
+        "prime_tumor_markers_expanded_group",
+        "prime_pap_test",
+        "prime_mammography_2d3d",
+        "prime_female_extended_ultrasound_group"
+      ],
+      "eligible": false,
+      "reason": "Пресет предусмотрен каталогом для возраста 40–120 лет.",
+      "age_min": 40,
+      "age_max": 120,
+      "sex": "F",
+      "medical_validated": false
+    },
+    {
+      "id": "prime_extended",
+      "package_id": "prime_extended",
+      "variant_id": "male",
+      "name": "Check-up «Мужской расширенный после 40 лет»",
+      "url": "https://primegc.kz/services/check-up-muzhskoy-rasshirennyy-posle-40-let/",
+      "source": "PRIME",
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "selected_procedure_ids": [
+        "prime_curator_consultation_group",
+        "prime_blood_panel_40plus_group",
+        "prime_lipids_glucose_group",
+        "prime_hepatitis_bc_group",
+        "prime_echo_ecg_group",
+        "prime_neck_leg_vessels_doppler",
+        "prime_chest_ct",
+        "prime_endoscopy_group",
+        "prime_helicobacter_test",
+        "prime_urology_consult",
+        "prime_ophthalmology_consult",
+        "prime_hba1c",
+        "prime_psa_total_free_group",
+        "prime_prostate_scrotum_ultrasound_group",
+        "prime_abdomen_thyroid_ultrasound_group"
+      ],
+      "eligible": false,
+      "reason": "Пресет предусмотрен каталогом для возраста 40–120 лет.",
+      "age_min": 40,
+      "age_max": 120,
+      "sex": "M",
+      "medical_validated": false
+    }
+  ],
+  "stage": "plan",
+  "model_version": "procedural-demo-3",
+  "age_full": 35,
+  "age_year": 35,
+  "context": {
+    "as_of_date": "2026-09-30",
+    "visit_date": "2026-10-01",
+    "checkup_year": 2026,
+    "availability": "normal"
+  },
+  "route": [
+    {
+      "action_id": "prime_curator_initial",
+      "procedure_id": "prime_curator_consultation_group",
+      "name": "Первичная консультация врача-куратора",
+      "category": -1,
+      "status": "ready"
+    },
+    {
+      "action_id": "prime_basic_blood_group",
+      "procedure_id": "prime_basic_blood_group",
+      "name": "Общий анализ крови (34 показателя), С-реактивный белок, коагулограмма",
+      "category": 0,
+      "status": "ready"
+    },
+    {
+      "action_id": "prime_hba1c",
+      "procedure_id": "prime_hba1c",
+      "name": "Гликированный гемоглобин",
+      "category": 0,
+      "status": "ready"
+    },
+    {
+      "action_id": "prime_helicobacter_test",
+      "procedure_id": "prime_helicobacter_test",
+      "name": "Тест на хеликобактер",
+      "category": 0,
+      "status": "ready"
+    },
+    {
+      "action_id": "prime_liver_kidney_urine_group",
+      "procedure_id": "prime_liver_kidney_urine_group",
+      "name": "Печёночные и почечные пробы, общий анализ мочи",
+      "category": 0,
+      "status": "ready"
+    },
+    {
+      "action_id": "prime_lipids_glucose_group",
+      "procedure_id": "prime_lipids_glucose_group",
+      "name": "Липидный профиль и глюкоза",
+      "category": 0,
+      "status": "ready"
+    },
+    {
+      "action_id": "prime_psa_total_free_group",
+      "procedure_id": "prime_psa_total_free_group",
+      "name": "ПСА общий и свободный",
+      "category": 0,
+      "status": "ready"
+    },
+    {
+      "action_id": "prime_thyroid_vitamins_group",
+      "procedure_id": "prime_thyroid_vitamins_group",
+      "name": "Гормоны щитовидной железы, витамины D и B12",
+      "category": 0,
+      "status": "ready"
+    },
+    {
+      "action_id": "prime_prostate_bladder_scrotum_ultrasound_group",
+      "procedure_id": "prime_prostate_bladder_scrotum_ultrasound_group",
+      "name": "УЗИ предстательной железы (ТРУЗИ), мочевого пузыря и мошонки",
+      "category": 1,
+      "status": "ready"
+    },
+    {
+      "action_id": "prime_echocardiography",
+      "procedure_id": "prime_echocardiography",
+      "name": "ЭхоКГ",
+      "category": 1,
+      "status": "ready"
+    },
+    {
+      "action_id": "prime_neck_leg_vessels_doppler",
+      "procedure_id": "prime_neck_leg_vessels_doppler",
+      "name": "УЗДГ сосудов шеи и ног",
+      "category": 1,
+      "status": "ready"
+    },
+    {
+      "action_id": "prime_lung_ct",
+      "procedure_id": "prime_lung_ct",
+      "name": "КТ лёгких",
+      "category": 2,
+      "status": "ready"
+    },
+    {
+      "action_id": "prime_ophthalmology_pressure_exam",
+      "procedure_id": "prime_ophthalmology_pressure_exam",
+      "name": "Осмотр офтальмолога с измерением давления в глазу",
+      "category": 3,
+      "status": "ready"
+    },
+    {
+      "action_id": "prime_endoscopy_group",
+      "procedure_id": "prime_endoscopy_group",
+      "name": "Гастроскопия и колоноскопия под анестезией",
+      "category": 4,
+      "status": "ready"
+    }
+  ],
+  "after_results": [
+    {
+      "action_id": "prime_curator_final",
+      "procedure_id": "prime_curator_consultation_group",
+      "name": "Итоговая консультация врача-куратора",
+      "category": 5,
+      "status": "draft",
+      "reason": "после готовности результатов"
+    }
+  ],
+  "next_visit": [
+    {
+      "kind": "results_review",
+      "date": null,
+      "year": null,
+      "status": "requires_clinician",
+      "basis": null,
+      "reason": "Дату определят после готовности результатов и решения врача"
+    }
+  ],
+  "selected_items": [
+    {
+      "procedure_id": "prime_curator_consultation_group",
+      "name": "Консультация врача-куратора (первичная и итоговая)",
+      "is_group": true,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [
+        "prime_curator_initial",
+        "prime_curator_final"
+      ],
+      "actions": [
+        {
+          "procedure_id": "prime_curator_consultation_group",
+          "name": "Первичная консультация врача-куратора",
+          "is_group": false,
+          "after_results": false,
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated",
+          "medical_validated": false,
+          "reasons": [
+            {
+              "rule_id": "prime_basic",
+              "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+              "source": "PRIME",
+              "validation_status": "demo_unvalidated"
+            },
+            {
+              "rule_id": "selected_preset",
+              "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+              "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+              "validation_status": "demo_unvalidated"
+            }
+          ],
+          "highlighted": false,
+          "conditional": false,
+          "required": true,
+          "tags": [],
+          "action_ids": [],
+          "actions": [],
+          "clinical_flags": [],
+          "screening_matches": [],
+          "parent_procedure_id": "prime_curator_consultation_group",
+          "action_id": "prime_curator_initial"
+        },
+        {
+          "procedure_id": "prime_curator_consultation_group",
+          "name": "Итоговая консультация врача-куратора",
+          "is_group": false,
+          "after_results": true,
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated",
+          "medical_validated": false,
+          "reasons": [
+            {
+              "rule_id": "prime_basic",
+              "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+              "source": "PRIME",
+              "validation_status": "demo_unvalidated"
+            },
+            {
+              "rule_id": "selected_preset",
+              "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+              "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+              "validation_status": "demo_unvalidated"
+            }
+          ],
+          "highlighted": false,
+          "conditional": false,
+          "required": true,
+          "tags": [],
+          "action_ids": [],
+          "actions": [],
+          "clinical_flags": [],
+          "screening_matches": [],
+          "parent_procedure_id": "prime_curator_consultation_group",
+          "action_id": "prime_curator_final"
+        }
+      ],
+      "clinical_flags": [],
+      "screening_matches": [],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic",
+        "prime_extended"
+      ],
+      "why": "Входит в основной состав пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_ophthalmology_pressure_exam",
+      "name": "Осмотр офтальмолога с измерением давления в глазу",
+      "is_group": false,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [
+        {
+          "screening_id": "scr_cvd",
+          "match_degree": "partial",
+          "outcome": "not_eligible",
+          "explanation": "Измерение внутриглазного давления входит в описанный осмотр; полный осмотр не равен компоненту скрининга."
+        }
+      ],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "why": "Входит в основной состав пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_basic_blood_group",
+      "name": "Общий анализ крови (34 показателя), С-реактивный белок, коагулограмма",
+      "is_group": true,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "why": "Входит в основной состав пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_lipids_glucose_group",
+      "name": "Липидный профиль и глюкоза",
+      "is_group": true,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [
+        {
+          "screening_id": "scr_cvd",
+          "match_degree": "partial",
+          "outcome": "not_eligible",
+          "explanation": "В исходной подсказке есть липидный профиль; состав группы не приравнивается ко всем компонентам скрининга."
+        }
+      ],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic",
+        "prime_extended"
+      ],
+      "why": "Входит в основной состав пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_thyroid_vitamins_group",
+      "name": "Гормоны щитовидной железы, витамины D и B12",
+      "is_group": true,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "why": "Входит в основной состав пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_liver_kidney_urine_group",
+      "name": "Печёночные и почечные пробы, общий анализ мочи",
+      "is_group": true,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "why": "Входит в основной состав пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_echocardiography",
+      "name": "ЭхоКГ",
+      "is_group": false,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "why": "Входит в основной состав пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_neck_leg_vessels_doppler",
+      "name": "УЗДГ сосудов шеи и ног",
+      "is_group": false,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [
+        {
+          "screening_id": "scr_cerebro",
+          "match_degree": "partial",
+          "outcome": "not_eligible",
+          "explanation": "Исходная подсказка связывает исследование сосудов шеи и ног с УЗДГ брахиоцефального ствола; объёмы различаются, требуется уточнение."
+        }
+      ],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic",
+        "prime_extended"
+      ],
+      "why": "Входит в основной состав пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_lung_ct",
+      "name": "КТ лёгких",
+      "is_group": false,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [
+        "pregnancy_review"
+      ],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [
+        {
+          "screening_id": "scr_lung",
+          "match_degree": "partial",
+          "outcome": "not_eligible",
+          "explanation": "КТ лёгких сопоставлено исходной подсказкой с КТ грудной клетки и средостения; совпадение протокола и полного объёма не подтверждено."
+        }
+      ],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "why": "Входит в основной состав пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_endoscopy_group",
+      "name": "Гастроскопия и колоноскопия под анестезией",
+      "is_group": true,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic",
+        "prime_extended"
+      ],
+      "why": "Входит в основной состав пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_helicobacter_test",
+      "name": "Тест на хеликобактер",
+      "is_group": false,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic",
+        "prime_extended"
+      ],
+      "why": "Входит в основной состав пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_hba1c",
+      "name": "Гликированный гемоглобин",
+      "is_group": false,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в дополнение для выбранного пола пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [
+        {
+          "screening_id": "scr_cvd",
+          "match_degree": "exact",
+          "outcome": "not_eligible",
+          "explanation": "Явное соответствие на уровне компонента «гликированный гемоглобин»; это не весь скрининг и не подтверждение оплаты."
+        }
+      ],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic",
+        "prime_extended"
+      ],
+      "why": "Входит в дополнение для выбранного пола пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_psa_total_free_group",
+      "name": "ПСА общий и свободный",
+      "is_group": true,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в дополнение для выбранного пола пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic",
+        "prime_extended"
+      ],
+      "why": "Входит в дополнение для выбранного пола пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    },
+    {
+      "procedure_id": "prime_prostate_bladder_scrotum_ultrasound_group",
+      "name": "УЗИ предстательной железы (ТРУЗИ), мочевого пузыря и мошонки",
+      "is_group": true,
+      "after_results": false,
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated",
+      "medical_validated": false,
+      "reasons": [
+        {
+          "rule_id": "prime_basic",
+          "explanation": "Входит в дополнение для выбранного пола пакета «Check-up базовый до 40 лет».",
+          "source": "PRIME",
+          "validation_status": "demo_unvalidated"
+        },
+        {
+          "rule_id": "selected_preset",
+          "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+          "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+          "validation_status": "demo_unvalidated"
+        }
+      ],
+      "highlighted": false,
+      "conditional": false,
+      "required": true,
+      "tags": [],
+      "action_ids": [],
+      "actions": [],
+      "clinical_flags": [],
+      "screening_matches": [],
+      "selection_reason": {
+        "rule_id": "selected_preset",
+        "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+        "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+        "validation_status": "demo_unvalidated"
+      },
+      "source_package_ids": [
+        "prime_basic"
+      ],
+      "why": "Входит в дополнение для выбранного пола пакета «Check-up базовый до 40 лет». Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "rule_id": "prime_basic",
+      "payment": "paid_prime",
+      "requires_review": false
+    }
+  ],
+  "added_items": [],
+  "removed_recommended_items": [],
+  "unresolved_items": [],
+  "route_status": "ready",
+  "total_price": null,
+  "price_text": "цена не указана",
+  "summary": {
+    "prime_count": 14,
+    "screening_candidate_count": 1
+  },
+  "not_eligible": [
+    {
+      "rule_id": "scr_cvd",
+      "why": "Возраст по году достижения не входит в перечень демоправила.",
+      "source": "DSM174 прил. 1 п.1, прил. 2 п.1"
+    },
+    {
+      "rule_id": "scr_cerebro",
+      "why": "Возраст по году достижения не входит в перечень демоправила.",
+      "source": "DSM174 прил. 1 п.2, прил. 2 п.4"
+    },
+    {
+      "rule_id": "scr_breast",
+      "why": "Пол не соответствует указанным критериям демоправила.",
+      "source": "DSM174 прил. 1 п.3, прил. 2 п.2"
+    },
+    {
+      "rule_id": "scr_cervix",
+      "why": "Пол не соответствует указанным критериям демоправила.",
+      "source": "DSM174 прил. 1 п.4, прил. 2 п.3"
+    },
+    {
+      "rule_id": "scr_colorectal",
+      "why": "Возраст по году достижения не входит в перечень демоправила.",
+      "source": "DSM174 прил. 1 п.5, прил. 2 п.5"
+    },
+    {
+      "rule_id": "scr_lung",
+      "why": "Возраст по году достижения не входит в перечень демоправила.",
+      "source": "DSM174 прил. 1 п.7 и прил. 2 п.7 (введены приказом № 75 от 10.07.2026)"
+    }
+  ],
+  "red_flags": [],
+  "reasons": [
+    {
+      "procedure_id": "prime_curator_consultation_group",
+      "rule_id": "prime_basic",
+      "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+      "source": "PRIME",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_curator_consultation_group",
+      "rule_id": "selected_preset",
+      "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_ophthalmology_pressure_exam",
+      "rule_id": "prime_basic",
+      "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+      "source": "PRIME",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_ophthalmology_pressure_exam",
+      "rule_id": "selected_preset",
+      "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_basic_blood_group",
+      "rule_id": "prime_basic",
+      "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+      "source": "PRIME",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_basic_blood_group",
+      "rule_id": "selected_preset",
+      "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_lipids_glucose_group",
+      "rule_id": "prime_basic",
+      "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+      "source": "PRIME",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_lipids_glucose_group",
+      "rule_id": "selected_preset",
+      "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_thyroid_vitamins_group",
+      "rule_id": "prime_basic",
+      "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+      "source": "PRIME",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_thyroid_vitamins_group",
+      "rule_id": "selected_preset",
+      "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_liver_kidney_urine_group",
+      "rule_id": "prime_basic",
+      "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+      "source": "PRIME",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_liver_kidney_urine_group",
+      "rule_id": "selected_preset",
+      "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_echocardiography",
+      "rule_id": "prime_basic",
+      "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+      "source": "PRIME",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_echocardiography",
+      "rule_id": "selected_preset",
+      "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_neck_leg_vessels_doppler",
+      "rule_id": "prime_basic",
+      "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+      "source": "PRIME",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_neck_leg_vessels_doppler",
+      "rule_id": "selected_preset",
+      "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_lung_ct",
+      "rule_id": "prime_basic",
+      "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+      "source": "PRIME",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_lung_ct",
+      "rule_id": "selected_preset",
+      "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_endoscopy_group",
+      "rule_id": "prime_basic",
+      "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+      "source": "PRIME",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_endoscopy_group",
+      "rule_id": "selected_preset",
+      "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_helicobacter_test",
+      "rule_id": "prime_basic",
+      "explanation": "Входит в основной состав пакета «Check-up базовый до 40 лет».",
+      "source": "PRIME",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_helicobacter_test",
+      "rule_id": "selected_preset",
+      "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_hba1c",
+      "rule_id": "prime_basic",
+      "explanation": "Входит в дополнение для выбранного пола пакета «Check-up базовый до 40 лет».",
+      "source": "PRIME",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_hba1c",
+      "rule_id": "selected_preset",
+      "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_psa_total_free_group",
+      "rule_id": "prime_basic",
+      "explanation": "Входит в дополнение для выбранного пола пакета «Check-up базовый до 40 лет».",
+      "source": "PRIME",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_psa_total_free_group",
+      "rule_id": "selected_preset",
+      "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_prostate_bladder_scrotum_ultrasound_group",
+      "rule_id": "prime_basic",
+      "explanation": "Входит в дополнение для выбранного пола пакета «Check-up базовый до 40 лет».",
+      "source": "PRIME",
+      "validation_status": "demo_unvalidated"
+    },
+    {
+      "procedure_id": "prime_prostate_bladder_scrotum_ultrasound_group",
+      "rule_id": "selected_preset",
+      "explanation": "Из выбранного пользователем пресета «Check-up «Мужской базовый до 40 лет»».",
+      "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/",
+      "validation_status": "demo_unvalidated"
+    }
+  ],
+  "needs_doctor_review": true,
+  "error": null,
+  "mode": "preset",
+  "base_package": {
+    "id": "prime_basic",
+    "package_id": "prime_basic",
+    "variant_id": "male",
+    "name": "Check-up «Мужской базовый до 40 лет»",
+    "url": "https://primegc.kz/services/muzhskoy-bazovyy-check-up-do-40-let/",
+    "source": "PRIME",
+    "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+    "selected_procedure_ids": [
+      "prime_curator_consultation_group",
+      "prime_ophthalmology_pressure_exam",
+      "prime_basic_blood_group",
+      "prime_lipids_glucose_group",
+      "prime_thyroid_vitamins_group",
+      "prime_liver_kidney_urine_group",
+      "prime_echocardiography",
+      "prime_neck_leg_vessels_doppler",
+      "prime_lung_ct",
+      "prime_endoscopy_group",
+      "prime_helicobacter_test",
+      "prime_hba1c",
+      "prime_psa_total_free_group",
+      "prime_prostate_bladder_scrotum_ultrasound_group"
+    ],
+    "eligible": true,
+    "reason": "Возраст и пол соответствуют варианту каталога; медицинские ограничения услуг проверяются отдельно.",
+    "age_min": 18,
+    "age_max": 39,
+    "sex": "M",
+    "medical_validated": false
+  },
+  "recommended_package": {
+    "id": "prime_basic",
+    "name": "Check-up «Мужской базовый до 40 лет»",
+    "price": null,
+    "source": "PRIME",
+    "title": "Кандидат по каталогу PRIME",
+    "reason": "Полный возраст 35: диапазон 18–39 лет; дата визита 2026-10-01; пол M.",
+    "url": "https://primegc.kz/services/muzhskoy-bazovyy-check-up-do-40-let/",
+    "preliminary": false,
+    "variant_id": "male",
+    "payment": "paid_prime"
+  },
+  "variant_id": "male",
+  "selected_procedure_ids": [
+    "prime_curator_consultation_group",
+    "prime_ophthalmology_pressure_exam",
+    "prime_basic_blood_group",
+    "prime_lipids_glucose_group",
+    "prime_thyroid_vitamins_group",
+    "prime_liver_kidney_urine_group",
+    "prime_echocardiography",
+    "prime_neck_leg_vessels_doppler",
+    "prime_lung_ct",
+    "prime_endoscopy_group",
+    "prime_helicobacter_test",
+    "prime_hba1c",
+    "prime_psa_total_free_group",
+    "prime_prostate_bladder_scrotum_ultrasound_group"
+  ]
+}

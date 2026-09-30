@@ -1,0 +1,195 @@
+{
+  "captured_at_utc": "2026-09-30T08:53:33.938428+00:00",
+  "local_head": "e690a15be33212e5901f2ab4f9f056c4065cb87a",
+  "checked_app_sha256": "9215c3979f8689a0cc76cf71d996a0a9c4dd7963e49499bcc35efeaba71fae8e",
+  "sha256": {
+    "app/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "app/choice_catalog.py": "8e445fd801349c5f1c69f0eca4224d42d0d29e2c5cbc542699206b10e064804d",
+    "app/choice_route.py": "30baeb40487a8440b1eb3789b4e477e5d7ca6fc4c42dbe3b229e374af826c0ac",
+    "app/config/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "app/config/clinic_fields.py": "1642be8a97f47c3b4395f258859a3b4854385bef1cb965a377004697f5270c24",
+    "app/config/fields.py": "42aa4e81b20200e1535e183313c7ccd0dd622e4e5055d34b8e4f3497065da5a8",
+    "app/data/catalog_migration.json": "7ebd53f555788303f5a9c28314306041fcf57208f2e581abc45fb40c45b903bf",
+    "app/data/completed.json": "432dd09f55a85744bc2be8d24f1d1b9382fd776364f859bf722ff9c40e0264c8",
+    "app/data/demo_catalog.json": "0688315b0e849457119667b3258cf77236c6a1d1ed49c71c5169390f3fe7df9b",
+    "app/data/demo_rules.json": "b6106d0bdfbae550c2758ac2f2a7fceba732c4c37e1297a821bf8e370fd1eec7",
+    "app/data/examples.json": "562a7c0242e2b7002a693316fa1079e60d8e82292a1e948be313acc8afb561ed",
+    "app/data/prime_slots.json": "b88ed7fa666dba5823552c9400b8f5b6f207bc660330c4297d5a39f5405c5cf7",
+    "app/data/scheduler_demo.json": "3f36bb59cae0a397284957ef07de678f11a43b85ecf7778ce2353fcc7599a6e1",
+    "app/data/screening_links.json": "a6a209acd6218fd2f5c3e9383bb7562353a3b59afefe1c63505ca0c66c4159e8",
+    "app/data/screening_rules.json": "f28e29fff957f2b27e61fa349f1ed71ac57352c4cc835f51aee1967e4b775474",
+    "app/engine.py": "07837bd85984c7a6edef8be5c107217269559c9766d8cf4678513c1686149cbb",
+    "app/intake.py": "78afec72a64bfdef276e086e237152d1f2c8f3da5d0adff1cafa7d3b0f15251c",
+    "app/main.py": "7c7303483b9a72ae4afca9824e526486a0b16cc2fc2c2f9a84bc33b9ac8213d2",
+    "app/offline/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "app/offline/cache.py": "79cba82f7fe24f9e0e23120584a03a2afe8bc8dfa4d0bb44afe95778eac01922",
+    "app/scheduler.py": "5928c81cae26b6e0ab3c9214d989c4eb3a8a47f9e7d1b4d7ce1238c5eecdf993",
+    "app/schemas.py": "afc5d242a48d1cb0ad3b75cd8519b6e89377df6903d4a15a273f201add6bade4",
+    "app/screening.py": "6908c1b9a4d0545397a7999219b957c10d979d7513cd2dc692c9fd041f814fa2",
+    "app/selection.py": "81872fe8addb92f3d9c70afbeb9ee8252989ce143db107c61c4eba4333104086",
+    "app/static/style.css": "3218bedb622678a82d1f2c00df0549fb6825063a5065f78912a75f45f8aa7f51",
+    "app/templates/base.html": "aa1261fd852d83c528ca3e801c06adf50a04cea8e50d28f0c7f405b31273119d",
+    "app/templates/clinic_form.html": "0ec83c5469e640b848c751cc6456a539a16806916b1cd819a75b94bf96c4c4ba",
+    "app/templates/completed.html": "52c4bf6a94cd567ffa93a973b38409ab7f02a3100ffde42d3b880f3576326a3e",
+    "app/templates/debug.html": "e1b93cf475f972589abbd9aab724c00e40df3972b88d0828c6953f65c2fee007",
+    "app/templates/form.html": "f3cccf1ab90a18484d69d8c0c2ae5fb172d1f98f075fe8955afd2b8e18f56c70",
+    "app/templates/index.html": "478683bbd54b958e8cbe44b37c0b30782fc4302f54bafabc021a11768441f97b",
+    "app/templates/result.html": "db1a8b0552238267825c85df32ae1d3907007a20f3add179422db1834826d1b8",
+    "app/templates/selection.html": "60a85b576933f404229b31ba52920420fae92afb048899ba9698ab3d91388846",
+    "docs/INPUT_CONTRACT.md": "25142dc8e482682daf7975ad072c7c8d69d7374e714d35eb039ee9cf72c315fc",
+    "docs/plan-request.json": "870abe9fec4d76168c9e845bc2f689ffd4b3a9a215211b350ca10ff99cbbffe4",
+    "docs/recommend-request.json": "90f07abcc2727d83212688de422e6166dce0a7cc63d059dc2b89e6759e453f12",
+    "docs/sample_comparison.json": "9b04af9a1cdb2ed27df1e0cf902d314a86d2f3ad6b855548e35b43a042c693b4",
+    "docs/sample_comparison.md": "75df0039112dccb17acbc6d6b3bfd76992a2baed95ab0a18ca646cab457fed5a",
+    "docs/TWO_STEP_API.md": "c132cfc7fd25fe4773779b2ed3f469de8c643fa2703ccd05170db73a1d53e981",
+    "README.md": "6fd8f6fdf88c7814622008a0bd8574eb5f503262e7d8de50c14c8a7278d7876a",
+    "reports/scenarios/REPORT.md": "cd46185a1e2a627df1eebca05165db0ef724ea931e6de7ba30c68db08e492d69",
+    "Scenarios.docx": "837a0d3d446575b3b3d37574344be7293783f5e40813e64d4e5688829af01879",
+    "techdock.md": "e989b00ff49f037b6463df7a9bfc2117cffdb601ffa1c64ccd03aa642bc22ec4",
+    "tests/fixtures/prime_scenarios.json": "5d60c6004fdf86645f0d678291e850601008d5288c66a46367c1a7bb6dae1693",
+    "tests/test_catalog.py": "1954cbc57f78f81a4c6de0fe4487db92a12688022d40ca2f5ed8395414c1696f",
+    "tests/test_choice_catalog.py": "124ca7688958f1065b5806041cc0165d45ee4559e7defa49ba53ab5df25f88f6",
+    "tests/test_choice_route.py": "39bf2715c3368f7295a940f7370e82eb4d0fb72a7d7f4188a1fa91fc3a8d2eee",
+    "tests/test_clinic_integration.py": "67a32e75ccd7c35091b42e0bb30360c1bb7cd91a7b11c7f0c3f6bb8ac25993cb",
+    "tests/test_completed.py": "635ba1ef71a5d7221d16cb883a029adca6ae15af2e78fefae14e85ee54268820",
+    "tests/test_current_intake.py": "264acd95979909be1b944e68ecc39f2b38ebe8ce510a7ed0a748faaa00348ab1",
+    "tests/test_engine.py": "b0c66a137013e84e5392f13a81c2ff6ee782e86ad05a2a4ff379820911139a8a",
+    "tests/test_http.py": "a69842d2115d1a19f13b48c325221ea1f4f7688e2024b655158eb0470ce4caeb",
+    "tests/test_intake.py": "2da5ba1a9f49c02cfaff32d6014ab62349a6ded6393990bef6fd5b4d785908d4",
+    "tests/test_preparation_review.py": "23ef177d37dcaf1d04fb3d8410ecfec23f7e14ce37691068349aadb41e0084d7",
+    "tests/test_scheduler.py": "ad85bb32d51f30a201554ead9ac6138327f508e3733ab9cf0e1daf72832422ff",
+    "tests/test_screening.py": "8b69333ad87fda698faf6b36b5af4e846de35eec6d43cacbe7e7618f81aedb16",
+    "tests/test_selection.py": "2eedd32e77d8e141b240a5f1567787de1485551da73386fe3ea69569fa612c87",
+    "tests/test_two_step_http.py": "c576d28bc23a8417fbd9e77816084055ee05800ee225465fab3dbb29c3576433",
+    "tools/build_scenario_fixture.py": "ffe1e36674632b486050ea11e72ee61028d9089907e79ed429b20e0e183cb8e2",
+    "tools/compare_samples.py": "0c1c9eb9f9d2bcf1b16dbacac180a24e944f5d24e582afbcd9c7cc4e4d74f73d",
+    "tools/reevaluate_scenario_capture.py": "3a2f7cb99224c5ffd75c55f12264156268ea9f47c47df6da7910dfc0a9c62ebb",
+    "tools/run_scenarios.py": "0d9df5997d7dd29c23f72d96de72bfb6a22c929cb5320bf736ff1d62ae81c7b6",
+    "tools/scenario_assertions.py": "e6e04be753c28e0a1335ef5b3950c1969c2f88ee617abfb108078f08c88b520b",
+    "tools/scenario_http_checks.py": "e2ce3517d710a9a672c31a0be6adad37764d0a82318487108ef8a4a47608666d",
+    "tools/scenario_live_smoke.py": "28a753150db8f37ae160f70a5e3b029d61dd2e8596eec10ea52d5cde0ecfbb4b"
+  },
+  "changed_since_baseline": [
+    {
+      "file": "app/engine.py",
+      "before_sha256": "7e120df821145bdeecb7ac1f8347123797169f7c5616597bb1350cada7fa198a",
+      "after_sha256": "07837bd85984c7a6edef8be5c107217269559c9766d8cf4678513c1686149cbb"
+    },
+    {
+      "file": "app/intake.py",
+      "before_sha256": "975654c2b450add8b5379922ff28f2a685ca4d29942cb766212850921039f2bb",
+      "after_sha256": "78afec72a64bfdef276e086e237152d1f2c8f3da5d0adff1cafa7d3b0f15251c"
+    },
+    {
+      "file": "app/screening.py",
+      "before_sha256": "7e7e71916c5d6faacc32d542ab620b74f8414df0d8489d2df0f7dfd343d4ec1f",
+      "after_sha256": "6908c1b9a4d0545397a7999219b957c10d979d7513cd2dc692c9fd041f814fa2"
+    },
+    {
+      "file": "app/selection.py",
+      "before_sha256": "7cb42cc6ef9c3f4c55a70f8fd82b272adc437074d4e2edfdf95e0d105da7ecd8",
+      "after_sha256": "81872fe8addb92f3d9c70afbeb9ee8252989ce143db107c61c4eba4333104086"
+    },
+    {
+      "file": "docs/INPUT_CONTRACT.md",
+      "before_sha256": "0b393843a5af75fd3d3b422ed248e2895ce77e5a6049532943ed6b50dac13e88",
+      "after_sha256": "25142dc8e482682daf7975ad072c7c8d69d7374e714d35eb039ee9cf72c315fc"
+    },
+    {
+      "file": "docs/TWO_STEP_API.md",
+      "before_sha256": "01b101436381a40e4991847367b2c51962e26e2ee637167802f6d2bc50c3a977",
+      "after_sha256": "c132cfc7fd25fe4773779b2ed3f469de8c643fa2703ccd05170db73a1d53e981"
+    },
+    {
+      "file": "techdock.md",
+      "before_sha256": "34d5236cf8830bb0f93fe5f1bc2a38c13477e3b8f0a173514adbc4ec7013c313",
+      "after_sha256": "e989b00ff49f037b6463df7a9bfc2117cffdb601ffa1c64ccd03aa642bc22ec4"
+    },
+    {
+      "file": "tests/test_clinic_integration.py",
+      "before_sha256": "ef0682bd4f91457d9978a0b46cfeeb9d6676edb7f5b29cbbaccf6d276c2e9c44",
+      "after_sha256": "67a32e75ccd7c35091b42e0bb30360c1bb7cd91a7b11c7f0c3f6bb8ac25993cb"
+    },
+    {
+      "file": "tests/test_intake.py",
+      "before_sha256": "8d3728be4cb33f668f8483eaed65e75f7b2b14992bd3109a92d63041787db2b5",
+      "after_sha256": "2da5ba1a9f49c02cfaff32d6014ab62349a6ded6393990bef6fd5b4d785908d4"
+    },
+    {
+      "file": "tests/test_screening.py",
+      "before_sha256": "e35a6ccf67b1ebb2ced7fb22d118e603a397a2be71fcf3653a92e051d7962979",
+      "after_sha256": "8b69333ad87fda698faf6b36b5af4e846de35eec6d43cacbe7e7618f81aedb16"
+    }
+  ],
+  "docx_unchanged": true,
+  "scheduler_catalog_slots_cards_unchanged": true,
+  "git_diff_check_exit": 0,
+  "missing_document_links": [],
+  "results_sha256": "a8275024d12f328427de5ced004d87a577da64957f047127f0460d81bd413187",
+  "newly_recorded_files": [
+    {
+      "file": "README.md",
+      "before_sha256": null,
+      "after_sha256": "6fd8f6fdf88c7814622008a0bd8574eb5f503262e7d8de50c14c8a7278d7876a"
+    },
+    {
+      "file": "reports/scenarios/REPORT.md",
+      "before_sha256": null,
+      "after_sha256": "cd46185a1e2a627df1eebca05165db0ef724ea931e6de7ba30c68db08e492d69"
+    },
+    {
+      "file": "tests/fixtures/prime_scenarios.json",
+      "before_sha256": null,
+      "after_sha256": "5d60c6004fdf86645f0d678291e850601008d5288c66a46367c1a7bb6dae1693"
+    },
+    {
+      "file": "tests/test_current_intake.py",
+      "before_sha256": null,
+      "after_sha256": "264acd95979909be1b944e68ecc39f2b38ebe8ce510a7ed0a748faaa00348ab1"
+    },
+    {
+      "file": "tests/test_preparation_review.py",
+      "before_sha256": null,
+      "after_sha256": "23ef177d37dcaf1d04fb3d8410ecfec23f7e14ce37691068349aadb41e0084d7"
+    },
+    {
+      "file": "tools/build_scenario_fixture.py",
+      "before_sha256": null,
+      "after_sha256": "ffe1e36674632b486050ea11e72ee61028d9089907e79ed429b20e0e183cb8e2"
+    },
+    {
+      "file": "tools/compare_samples.py",
+      "before_sha256": null,
+      "after_sha256": "0c1c9eb9f9d2bcf1b16dbacac180a24e944f5d24e582afbcd9c7cc4e4d74f73d"
+    },
+    {
+      "file": "tools/reevaluate_scenario_capture.py",
+      "before_sha256": null,
+      "after_sha256": "3a2f7cb99224c5ffd75c55f12264156268ea9f47c47df6da7910dfc0a9c62ebb"
+    },
+    {
+      "file": "tools/run_scenarios.py",
+      "before_sha256": null,
+      "after_sha256": "0d9df5997d7dd29c23f72d96de72bfb6a22c929cb5320bf736ff1d62ae81c7b6"
+    },
+    {
+      "file": "tools/scenario_assertions.py",
+      "before_sha256": null,
+      "after_sha256": "e6e04be753c28e0a1335ef5b3950c1969c2f88ee617abfb108078f08c88b520b"
+    },
+    {
+      "file": "tools/scenario_http_checks.py",
+      "before_sha256": null,
+      "after_sha256": "e2ce3517d710a9a672c31a0be6adad37764d0a82318487108ef8a4a47608666d"
+    },
+    {
+      "file": "tools/scenario_live_smoke.py",
+      "before_sha256": null,
+      "after_sha256": "28a753150db8f37ae160f70a5e3b029d61dd2e8596eec10ea52d5cde0ecfbb4b"
+    }
+  ],
+  "inventory_note": "The baseline did not hash tools/. A missing before hash means not measured, not necessarily newly created. tools/compare_samples.py was pre-existing and was only read in this task.",
+  "preexisting_read_only_unmeasured": [
+    "tools/compare_samples.py"
+  ]
+}

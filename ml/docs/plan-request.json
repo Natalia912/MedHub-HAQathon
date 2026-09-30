@@ -1,0 +1,61 @@
+{
+  "patient": {
+    "input_version": "clinic_v2",
+    "sex": "M",
+    "for_child": false,
+    "birth_date": "1991-01-10",
+    "urgent": "none",
+    "conditions": [
+      "none"
+    ],
+    "registered": [
+      "none"
+    ],
+    "family_history": [
+      "none"
+    ],
+    "smoking": {
+      "pack_years": 0
+    },
+    "hazardous_work_10y": false,
+    "last_screening": {
+      "scr_cvd": "never",
+      "scr_cerebro": "never",
+      "scr_breast": "never",
+      "scr_cervix": "never",
+      "scr_colorectal": "never",
+      "scr_hepatitis": "never",
+      "scr_lung": "never"
+    },
+    "attached_to": "unknown",
+    "dysuria": "no",
+    "blood_thinners": "no",
+    "companion": "yes"
+  },
+  "context": {
+    "as_of_date": "2026-09-30",
+    "checkup_year": 2026,
+    "visit_date": "2026-10-01",
+    "availability": "normal"
+  },
+  "mode": "custom",
+  "base_package_id": "prime_basic",
+  "variant_id": "male",
+  "catalog_version": "demo-2",
+  "selected_procedure_ids": [
+    "prime_curator_consultation_group",
+    "prime_ophthalmology_pressure_exam",
+    "prime_basic_blood_group",
+    "prime_thyroid_vitamins_group",
+    "prime_liver_kidney_urine_group",
+    "prime_echocardiography",
+    "prime_neck_leg_vessels_doppler",
+    "prime_lung_ct",
+    "prime_endoscopy_group",
+    "prime_helicobacter_test",
+    "prime_hba1c",
+    "prime_psa_total_free_group",
+    "prime_prostate_bladder_scrotum_ultrasound_group",
+    "prime_hepatitis_bc_group"
+  ]
+}

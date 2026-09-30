@@ -1,0 +1,12 @@
+d52847ad1cfcfab54fcdaec7061bffc93496d283 revert: убрать движок из main — переносится в pull request из ветки engine
+22fd6e281ced7d1367fb6c24b922925422d5f74d ml: движок чекапа — анкета → пакет PRIME + бесплатный госскрининг (№75) + маршрут и подготовка; /recommend, /plan, /catalog; 12/12 контрольных
+1aefecf49806afe2e7289e3e43b6eebaebd1f88a restore: вернуть файлы, выпавшие при слиянии PR #3 (revert-merge): приказ №75, examples/QUESTIONNAIRE по №75, demo/, ml/, pitch/ — app/ не тронут
+34c8785e5fbfc9cd2df20786340fc7d04cf5f277 Merge pull request #3 from Natalia912/second-draft
+1818481e870890a03f70600c9ba4853c6e8c54bf Merge branch 'main' into second-draft
+744d7f79e6872a31572dda9d75269a8a8b7bcd4a merge: ветка Натальи second-draft — app/ в её версии; прежний вариант app/ с ноутбука Виталия сохранён в ветке vitaliy-app-draft
+fb7e138290e52328077ebfeddadbdc2b828c4ed7 app: программа → подготовка → экран куратора и итоговый лист → карта здоровья
+cb37fb009ef46b6cc1b1595f35f142cc1d4336a2 spec: таблица добавок по анамнезу (черновик, утверждает врач), справочник подготовки, каталог услуг PRIME
+3bfc711c87b76370156f03e3cbf49826ae091d1b Revert "Merge branch 'main' into second-draft"
+4cbcca500e829ade37b7bb27f3568b63d86d42cb Merge branch 'main' into second-draft
+c20c43a7ff5e67e3028145b8cec07fd3aeca6771 updated web form based on selected fields
+df733c43d5ab655ef08036366a44bae04e59182f ml: вход готовой анкеты для движка Даниила — README и 9 эталонных пациентов из работающей формы

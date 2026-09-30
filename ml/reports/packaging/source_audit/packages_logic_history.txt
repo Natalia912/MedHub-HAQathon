@@ -1,0 +1,8 @@
+7775fb5281533c7f5b1dbc0948d5092a41841959 added the plan for the day after the package selection
+74e0d08b725f3a07530d2a74463b16ce74777a5d package selection logic and package display
+22fd6e281ced7d1367fb6c24b922925422d5f74d ml: движок чекапа — анкета → пакет PRIME + бесплатный госскрининг (№75) + маршрут и подготовка; /recommend, /plan, /catalog; 12/12 контрольных
+1aefecf49806afe2e7289e3e43b6eebaebd1f88a restore: вернуть файлы, выпавшие при слиянии PR #3 (revert-merge): приказ №75, examples/QUESTIONNAIRE по №75, demo/, ml/, pitch/ — app/ не тронут
+34c8785e5fbfc9cd2df20786340fc7d04cf5f277 Merge pull request #3 from Natalia912/second-draft
+1818481e870890a03f70600c9ba4853c6e8c54bf Merge branch 'main' into second-draft
+744d7f79e6872a31572dda9d75269a8a8b7bcd4a merge: ветка Натальи second-draft — app/ в её версии; прежний вариант app/ с ноутбука Виталия сохранён в ветке vitaliy-app-draft
+fb7e138290e52328077ebfeddadbdc2b828c4ed7 app: программа → подготовка → экран куратора и итоговый лист → карта здоровья

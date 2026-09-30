@@ -1,0 +1,40 @@
+[
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "started_at_utc": "2026-09-30T08:44:38.540803+00:00",
+    "returncode": 0,
+    "log": "regression_final.log",
+    "summary": [
+      "",
+      "----------------------------------------------------------------------",
+      "Ran 156 tests in 1.758s",
+      "",
+      "OK"
+    ]
+  },
+  {
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-X",
+      "utf8",
+      "-m",
+      "contract.predict_contract"
+    ],
+    "started_at_utc": "2026-09-30T08:44:40.742911+00:00",
+    "returncode": 0,
+    "log": "contract_final.log",
+    "summary": [
+      "Демонстрационный контракт: 6 профилей проверены."
+    ]
+  }
+]

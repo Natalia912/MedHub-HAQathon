@@ -1,0 +1,57 @@
+{
+  "scope": "Targeted adapter and screening regression; not the full Scenarios.docx run or Uvicorn check",
+  "command": ".venv\\Scripts\\python.exe -m unittest tests.test_current_intake tests.test_intake tests.test_screening tests.test_clinic_integration -v",
+  "actual_runs": [
+    {
+      "run": 1,
+      "tests": 58,
+      "failures": 1,
+      "errors": 0,
+      "exit_code": 1,
+      "failure": "test_unknown_screening_does_not_block_or_change_prime_composition: test helper gained explicit registered=['none'], but its unknown variant removed only conditions",
+      "fix": "The unknown test variant also removes registered; explicit absence and omission are separate facts"
+    },
+    {
+      "run": 2,
+      "tests": 58,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0,
+      "result": "OK"
+    },
+    {
+      "run": 3,
+      "command": ".venv\\Scripts\\python.exe -m unittest tests.test_current_intake -v",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0,
+      "result": "OK after preserving other context and rejecting last_period before birth in clinic_v2"
+    },
+    {
+      "run": 4,
+      "command": ".venv\\Scripts\\python.exe -m unittest tests.test_current_intake -v",
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0,
+      "result": "OK after distinguishing missing/unknown/never screening history in clinic_v2"
+    }
+  ],
+  "new_test_functions": 14,
+  "existing_test_changes": [
+    {
+      "file": "tests/test_intake.py",
+      "reason": "conditions=['none'] is no longer asserted to establish negative registration; an explicit registered=['none'] control now proves that fact"
+    },
+    {
+      "file": "tests/test_screening.py",
+      "reason": "Two smoking/applicability profiles now explicitly state registered=['none'] so they continue testing the smoking branch with a known negative registration answer"
+    },
+    {
+      "file": "tests/test_clinic_integration.py",
+      "reason": "The known-negative patient helper now supplies registered=['none']; the intentionally unknown case removes that answer as well as conditions"
+    }
+  ],
+  "evidence_limit": "Counts, exit codes and the failure were observed in the execution tool output. No standalone transcript log was saved for these four targeted runs. Final complete regression evidence is recorded separately by the parent runner."
+}

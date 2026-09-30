@@ -1,0 +1,344 @@
+{
+  "version": "demo-1-to-demo-2",
+  "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+  "medical_validated": false,
+  "records": [
+    {
+      "old_id": "prime_pediatric_consult",
+      "old_name": "Консультация педиатра",
+      "new_ids": [
+        "prime_pediatric_full_consult"
+      ],
+      "relation": "changed_scope",
+      "reason": "Новая исходная строка явно включает полный осмотр; предыдущий общий ID не используется для расширенного описания."
+    },
+    {
+      "old_id": "prime_ophthalmology_consult",
+      "old_name": "Консультация офтальмолога",
+      "new_ids": [
+        "prime_ophthalmology_consult"
+      ],
+      "relation": "same_scope",
+      "reason": "Объём услуги сохранён; актуальная исходная формулировка сохранена в каталоге."
+    },
+    {
+      "old_id": "prime_blood_count",
+      "old_name": "Общий анализ крови",
+      "new_ids": [
+        "prime_blood_count"
+      ],
+      "relation": "same_scope",
+      "reason": "Объём услуги сохранён; актуальная исходная формулировка сохранена в каталоге."
+    },
+    {
+      "old_id": "prime_urinalysis",
+      "old_name": "Общий анализ мочи",
+      "new_ids": [
+        "prime_urinalysis"
+      ],
+      "relation": "same_scope",
+      "reason": "Объём услуги сохранён; актуальная исходная формулировка сохранена в каталоге."
+    },
+    {
+      "old_id": "prime_abdomen_ultrasound",
+      "old_name": "УЗИ органов брюшной полости",
+      "new_ids": [
+        "prime_abdomen_ultrasound"
+      ],
+      "relation": "same_scope",
+      "reason": "Объём услуги сохранён; актуальная исходная формулировка сохранена в каталоге."
+    },
+    {
+      "old_id": "prime_ecg",
+      "old_name": "ЭКГ",
+      "new_ids": [
+        "prime_ecg"
+      ],
+      "relation": "same_scope",
+      "reason": "Объём услуги сохранён; актуальная исходная формулировка сохранена в каталоге."
+    },
+    {
+      "old_id": "prime_physical_development",
+      "old_name": "Оценка физического развития",
+      "new_ids": [],
+      "relation": "removed_from_source",
+      "reason": "В актуальном составе этой самостоятельной позиции нет; автоматически не добавляется."
+    },
+    {
+      "old_id": "prime_pediatric_conclusion",
+      "old_name": "Заключение педиатра",
+      "new_ids": [
+        "prime_pediatric_conclusion"
+      ],
+      "relation": "same_scope",
+      "reason": "Объём услуги сохранён; актуальная исходная формулировка сохранена в каталоге."
+    },
+    {
+      "old_id": "prime_specialist_consults_group",
+      "old_name": "Консультации узких специалистов",
+      "new_ids": [
+        "prime_child_specialists_group"
+      ],
+      "relation": "changed_scope",
+      "reason": "В новой детской альтернативе перечислены конкретные специальности; прежняя нераскрытая группа не объявляется той же услугой."
+    },
+    {
+      "old_id": "prime_hormones_group",
+      "old_name": "Гормоны",
+      "new_ids": [
+        "prime_child_extended_labs_group"
+      ],
+      "relation": "changed_scope",
+      "reason": "Вместо самостоятельного нераскрытого блока детская альтернатива содержит общую лабораторную строку с указанными гормонами и другими анализами; эквивалентность не утверждается."
+    },
+    {
+      "old_id": "prime_vitamins_group",
+      "old_name": "Витамины",
+      "new_ids": [
+        "prime_child_extended_labs_group"
+      ],
+      "relation": "changed_scope",
+      "reason": "Вместо самостоятельных витаминов детская альтернатива содержит новую общую лабораторную группу; пересечение фиксируется как изменение строки, а не полная эквивалентность."
+    },
+    {
+      "old_id": "prime_echocardiography",
+      "old_name": "ЭхоКГ",
+      "new_ids": [
+        "prime_echocardiography"
+      ],
+      "relation": "same_scope",
+      "reason": "Объём услуги сохранён; актуальная исходная формулировка сохранена в каталоге."
+    },
+    {
+      "old_id": "prime_psychomotor_development",
+      "old_name": "Оценка психомоторного развития",
+      "new_ids": [],
+      "relation": "removed_from_source",
+      "reason": "В актуальном составе этой самостоятельной позиции нет; автоматически не добавляется."
+    },
+    {
+      "old_id": "prime_vascular_doppler",
+      "old_name": "УЗДГ артерий и вен",
+      "new_ids": [
+        "prime_neck_leg_vessels_doppler"
+      ],
+      "relation": "changed_scope",
+      "reason": "Источник теперь явно задаёт сосуды шеи и ног вместо прежних артерий и вен без локализации; новое описание имеет отдельный ID."
+    },
+    {
+      "old_id": "prime_lung_ct",
+      "old_name": "КТ лёгких",
+      "new_ids": [
+        "prime_lung_ct"
+      ],
+      "relation": "same_scope",
+      "reason": "Объём услуги сохранён; актуальная исходная формулировка сохранена в каталоге."
+    },
+    {
+      "old_id": "prime_colonoscopy",
+      "old_name": "Колоноскопия под анестезией",
+      "new_ids": [
+        "prime_endoscopy_group"
+      ],
+      "relation": "changed_scope",
+      "reason": "Колоноскопия больше не отдельная строка: источник объединяет её с гастроскопией под анестезией. Старое действие не подмешивается к новой группе."
+    },
+    {
+      "old_id": "prime_vitamin_d",
+      "old_name": "Витамин D",
+      "new_ids": [
+        "prime_thyroid_vitamins_group"
+      ],
+      "relation": "changed_scope",
+      "reason": "Отдельная позиция витамина D заменена новой строкой группы гормонов и витаминов; группа не раскрывается на основе старого каталога."
+    },
+    {
+      "old_id": "prime_vitamin_b12",
+      "old_name": "Витамин B12",
+      "new_ids": [
+        "prime_thyroid_vitamins_group"
+      ],
+      "relation": "changed_scope",
+      "reason": "Отдельная позиция витамина B12 заменена новой строкой группы гормонов и витаминов; группа не раскрывается на основе старого каталога."
+    },
+    {
+      "old_id": "prime_anemia_group",
+      "old_name": "Анализ на анемию",
+      "new_ids": [
+        "prime_ferritin_iron_folate_group"
+      ],
+      "relation": "changed_scope",
+      "reason": "Старой нераскрытой строки «Анализ на анемию» больше нет. Новая женская группа железа, ферритина и фолиевой кислоты имеет собственный объём; это документирование изменения источника, а не клиническая эквивалентность."
+    },
+    {
+      "old_id": "prime_thyroid_hormones_group",
+      "old_name": "Гормоны щитовидной железы",
+      "new_ids": [
+        "prime_thyroid_vitamins_group"
+      ],
+      "relation": "changed_scope",
+      "reason": "Гормоны щитовидной железы входят в новую исходную строку с витаминами D и B12; старую самостоятельную группу не добавляем."
+    },
+    {
+      "old_id": "prime_gynecology_consult",
+      "old_name": "Консультация гинеколога",
+      "new_ids": [
+        "prime_gynecology_consult"
+      ],
+      "relation": "same_scope",
+      "reason": "Объём услуги сохранён; актуальная исходная формулировка сохранена в каталоге."
+    },
+    {
+      "old_id": "prime_pelvis_ultrasound",
+      "old_name": "УЗИ органов малого таза",
+      "new_ids": [
+        "prime_transvaginal_ultrasound",
+        "prime_female_extended_ultrasound_group"
+      ],
+      "relation": "changed_scope",
+      "reason": "Уточнён трансвагинальный вариант в basic; extended включает его в более широкую ультразвуковую группу. Обе строки имеют новые отдельные ID."
+    },
+    {
+      "old_id": "prime_breast_ultrasound",
+      "old_name": "УЗИ молочных желёз",
+      "new_ids": [
+        "prime_breast_ultrasound"
+      ],
+      "relation": "same_scope",
+      "reason": "Объём услуги сохранён; актуальная исходная формулировка сохранена в каталоге."
+    },
+    {
+      "old_id": "prime_psa",
+      "old_name": "ПСА",
+      "new_ids": [
+        "prime_psa_total_free_group"
+      ],
+      "relation": "changed_scope",
+      "reason": "Актуальная строка явно включает общий и свободный ПСА; для неё используется уже существующий соответствующий ID, а прежний общий ПСА retired."
+    },
+    {
+      "old_id": "prime_trus",
+      "old_name": "ТРУЗИ",
+      "new_ids": [
+        "prime_prostate_bladder_scrotum_ultrasound_group",
+        "prime_prostate_scrotum_ultrasound_group"
+      ],
+      "relation": "changed_scope",
+      "reason": "В basic дополнительно названы мочевой пузырь и мошонка, в extended — мошонка. Объёмы различаются и сохранены разными группами."
+    },
+    {
+      "old_id": "prime_chest_ct",
+      "old_name": "КТ грудной клетки",
+      "new_ids": [
+        "prime_chest_ct"
+      ],
+      "relation": "same_scope",
+      "reason": "Объём услуги сохранён; актуальная исходная формулировка сохранена в каталоге."
+    },
+    {
+      "old_id": "prime_gastroscopy",
+      "old_name": "Гастроскопия под анестезией",
+      "new_ids": [
+        "prime_endoscopy_group"
+      ],
+      "relation": "changed_scope",
+      "reason": "Гастроскопия больше не отдельная строка: источник объединяет её с колоноскопией под анестезией. Группа не дублируется двумя услугами."
+    },
+    {
+      "old_id": "prime_neck_leg_doppler",
+      "old_name": "УЗДГ артерий шеи и ног",
+      "new_ids": [
+        "prime_neck_leg_vessels_doppler"
+      ],
+      "relation": "changed_scope",
+      "reason": "Вместо прежней формулировки «артерий шеи и ног» источник теперь говорит «сосудов шеи и ног». Равнозначность расширенного объёма не предполагается; новый ID."
+    },
+    {
+      "old_id": "prime_blood_panel_40plus_group",
+      "old_name": "Расширенные анализы крови (40+ показателей: гормоны, витамины, печёночные и почечные пробы)",
+      "new_ids": [
+        "prime_blood_panel_40plus_group"
+      ],
+      "relation": "same_scope",
+      "reason": "Объём услуги сохранён; актуальная исходная формулировка сохранена в каталоге."
+    },
+    {
+      "old_id": "prime_curator_conclusion",
+      "old_name": "Заключение врача-куратора",
+      "new_ids": [
+        "prime_curator_consultation_group"
+      ],
+      "relation": "changed_scope",
+      "reason": "Новая единая строка включает первичную и итоговую консультации; она учтена одной услугой с двумя действиями. Старое отдельное заключение не дублируется."
+    },
+    {
+      "old_id": "prime_tumor_markers_group",
+      "old_name": "Онкомаркеры CA 15-3, CA 125, CA 72-4, CA 19-9, РЭА",
+      "new_ids": [
+        "prime_tumor_markers_expanded_group"
+      ],
+      "relation": "changed_scope",
+      "reason": "К исходному перечню добавлены АФП, S100 и CYFRA; изменённый состав группы требует нового ID."
+    },
+    {
+      "old_id": "prime_pap_test",
+      "old_name": "ПАП-тест",
+      "new_ids": [
+        "prime_pap_test"
+      ],
+      "relation": "same_scope",
+      "reason": "Объём услуги сохранён; актуальная исходная формулировка сохранена в каталоге."
+    },
+    {
+      "old_id": "prime_mammography",
+      "old_name": "Маммография",
+      "new_ids": [
+        "prime_mammography_2d3d"
+      ],
+      "relation": "changed_scope",
+      "reason": "Источник уточнил вариант 2D/3D; он сохранён новым ID без приравнивания к неизвестному старому объёму."
+    },
+    {
+      "old_id": "prime_psa_total_free_group",
+      "old_name": "ПСА общий и свободный",
+      "new_ids": [
+        "prime_psa_total_free_group"
+      ],
+      "relation": "same_scope",
+      "reason": "Объём услуги сохранён; актуальная исходная формулировка сохранена в каталоге."
+    }
+  ],
+  "new_ids": [
+    "prime_pediatric_full_consult",
+    "prime_child_glucose_biochemistry_group",
+    "prime_child_specialists_group",
+    "prime_child_extended_labs_group",
+    "prime_child_extended_ultrasound_group",
+    "prime_child_ecg_neurosonography_group",
+    "prime_child_curator_conclusion",
+    "prime_curator_consultation_group",
+    "prime_ophthalmology_pressure_exam",
+    "prime_basic_blood_group",
+    "prime_lipids_glucose_group",
+    "prime_thyroid_vitamins_group",
+    "prime_liver_kidney_urine_group",
+    "prime_neck_leg_vessels_doppler",
+    "prime_endoscopy_group",
+    "prime_helicobacter_test",
+    "prime_ferritin_iron_folate_group",
+    "prime_transvaginal_ultrasound",
+    "prime_hba1c",
+    "prime_prostate_bladder_scrotum_ultrasound_group",
+    "prime_hepatitis_bc_group",
+    "prime_echo_ecg_group",
+    "prime_ophthalmology_if_indicated",
+    "prime_tumor_markers_expanded_group",
+    "prime_mammography_2d3d",
+    "prime_female_extended_ultrasound_group",
+    "prime_urology_consult",
+    "prime_prostate_scrotum_ultrasound_group",
+    "prime_abdomen_thyroid_ultrasound_group",
+    "prime_curator_initial",
+    "prime_curator_final"
+  ]
+}

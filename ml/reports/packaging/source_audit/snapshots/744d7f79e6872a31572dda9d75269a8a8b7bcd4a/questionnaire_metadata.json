@@ -1,0 +1,558 @@
+{
+  "source": {
+    "source_path": "app/config/fields.py",
+    "sha256": "9a6d1c79640cc36e4e24af178bd712a5cdfe04c2bca0858ae6534f1ba9c32f75",
+    "bytes": 10889,
+    "git_blob": "b5a8c0f71a0aa2a5391b092610a5e55479457a2e",
+    "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/744d7f79e6872a31572dda9d75269a8a8b7bcd4a/app/config/fields.py",
+    "saved_path": null,
+    "retention": "hash/link/static inspection only; no executable or UI source copied"
+  },
+  "fields": [
+    {
+      "name": "for_child",
+      "label": "Для кого подбираем программу?",
+      "type": "boolean",
+      "step": 0,
+      "default": false,
+      "options": [
+        [
+          false,
+          "Для себя"
+        ],
+        [
+          true,
+          "Для ребёнка"
+        ]
+      ]
+    },
+    {
+      "name": "sex",
+      "label": "Пол",
+      "type": "select",
+      "step": 0,
+      "required": true,
+      "options": [
+        [
+          "M",
+          "Мужской"
+        ],
+        [
+          "F",
+          "Женский"
+        ]
+      ]
+    },
+    {
+      "name": "birth_date",
+      "label": "Дата рождения",
+      "type": "date",
+      "step": 0,
+      "required": true,
+      "min": "1920-01-01",
+      "max": "2025-12-31",
+      "hint": "Дата рождения человека, для которого заполняете анкету. Год рождения определится автоматически."
+    },
+    {
+      "name": "checkup_year",
+      "label": "Год обследования",
+      "type": "number",
+      "step": 0,
+      "default": "current_year",
+      "min": 1920,
+      "max": 9999
+    },
+    {
+      "name": "urgent",
+      "label": "Что-то беспокоит прямо сейчас?",
+      "type": "select",
+      "step": 1,
+      "required": true,
+      "layout": "stack",
+      "options": [
+        [
+          "chest_pain",
+          "Боль или давление в груди"
+        ],
+        [
+          "dyspnea",
+          "Сильная одышка"
+        ],
+        [
+          "stroke_signs",
+          "Внезапная слабость в руке или ноге, нарушение речи"
+        ],
+        [
+          "none",
+          "Нет, ничего из перечисленного"
+        ]
+      ]
+    },
+    {
+      "name": "pregnant",
+      "label": "Беременны или можете быть беременны?",
+      "type": "select",
+      "step": 1,
+      "show_if": {
+        "sex": "F",
+        "age_min": 18,
+        "age_max": 55
+      },
+      "options": [
+        [
+          "yes",
+          "Да"
+        ],
+        [
+          "no",
+          "Нет"
+        ],
+        [
+          "unsure",
+          "Не уверена"
+        ]
+      ],
+      "hint": "Если да или не уверены, обсудите обследования с врачом."
+    },
+    {
+      "name": "conditions",
+      "label": "Что у вас есть или было раньше?",
+      "type": "multiselect",
+      "step": 2,
+      "hint": "Отметьте известные вам заболевания или состояния. Если нет или не знаете — оставьте без выбора.",
+      "options": [
+        [
+          "pressure",
+          "Повышенное давление"
+        ],
+        [
+          "heart",
+          "Заболевания сердца"
+        ],
+        [
+          "diabetes",
+          "Сахарный диабет"
+        ],
+        [
+          "glaucoma",
+          "Глаукома"
+        ],
+        [
+          "head_vessels",
+          "Заболевания сосудов головного мозга"
+        ],
+        [
+          "legs",
+          "Заболевания сосудов ног"
+        ],
+        [
+          "breast",
+          "Заболевания молочной железы"
+        ],
+        [
+          "hpv",
+          "ВПЧ"
+        ],
+        [
+          "bowel",
+          "Заболевания кишечника"
+        ],
+        [
+          "lungs",
+          "Заболевания лёгких"
+        ],
+        [
+          "tb",
+          "Туберкулёз"
+        ],
+        [
+          "hepatitis",
+          "Гепатит"
+        ],
+        [
+          "urine",
+          "Заболевания мочевыделительной системы"
+        ],
+        [
+          "bleeding",
+          "Кровотечения"
+        ]
+      ]
+    },
+    {
+      "name": "conditions_other",
+      "label": "Другие заболевания или состояния",
+      "type": "text",
+      "step": 2,
+      "hint": "Свой вариант, если его нет в списке."
+    },
+    {
+      "name": "registered",
+      "label": "По каким диагнозам состоите на учёте у врача?",
+      "type": "multiselect",
+      "step": 2,
+      "hint": "Выберите всё подходящее. Если нет — оставьте без выбора.",
+      "options": [
+        [
+          "hypertension",
+          "Гипертония"
+        ],
+        [
+          "ihd",
+          "Ишемическая болезнь сердца"
+        ],
+        [
+          "diabetes",
+          "Сахарный диабет"
+        ],
+        [
+          "glaucoma",
+          "Глаукома"
+        ],
+        [
+          "cerebrovascular",
+          "Инсульт / сосуды головного мозга"
+        ],
+        [
+          "breast_cancer",
+          "Онкология молочной железы"
+        ],
+        [
+          "cervical_cancer",
+          "Онкология шейки матки"
+        ],
+        [
+          "colorectal",
+          "Онкология / полипы кишечника"
+        ],
+        [
+          "lung_cancer",
+          "Рак лёгких"
+        ],
+        [
+          "chronic_hepatitis",
+          "Хронический гепатит"
+        ]
+      ]
+    },
+    {
+      "name": "last_screening.scr_breast",
+      "label": "Маммография",
+      "type": "number",
+      "step": 2,
+      "section": "screening",
+      "min": 1920,
+      "max": "checkup_year",
+      "show_if": {
+        "sex": "F",
+        "age_min": 40,
+        "age_max": 76
+      }
+    },
+    {
+      "name": "last_screening.scr_cervix",
+      "label": "Мазок / ПАП-тест",
+      "type": "number",
+      "step": 2,
+      "section": "screening",
+      "min": 1920,
+      "max": "checkup_year",
+      "show_if": {
+        "sex": "F",
+        "age_min": 30,
+        "age_max": 74
+      }
+    },
+    {
+      "name": "last_screening.scr_colorectal",
+      "label": "Тест на скрытую кровь",
+      "type": "number",
+      "step": 2,
+      "section": "screening",
+      "min": 1920,
+      "max": "checkup_year",
+      "show_if": {
+        "age_min": 50,
+        "age_max": 76
+      }
+    },
+    {
+      "name": "last_screening.scr_cvd",
+      "label": "Анализы на холестерин и сахар",
+      "type": "number",
+      "step": 2,
+      "section": "screening",
+      "min": 1920,
+      "max": "checkup_year",
+      "show_if": {
+        "age_min": 40,
+        "age_max": 76
+      }
+    },
+    {
+      "name": "attached_to",
+      "label": "Вы прикреплены к поликлинике?",
+      "type": "select",
+      "step": 2,
+      "layout": "stack",
+      "options": [
+        [
+          "green_clinic",
+          "К Green Clinic"
+        ],
+        [
+          "other",
+          "К другой поликлинике"
+        ],
+        [
+          "unknown",
+          "Не знаю"
+        ]
+      ]
+    },
+    {
+      "name": "family_history",
+      "label": "Какие заболевания были у родителей, братьев или сестёр?",
+      "type": "multiselect",
+      "step": 3,
+      "options": [
+        [
+          "colorectal_cancer",
+          "Рак кишечника"
+        ],
+        [
+          "breast_cancer",
+          "Рак молочной железы"
+        ],
+        [
+          "other_cancer",
+          "Другие онкологические заболевания"
+        ],
+        [
+          "early_cvd",
+          "Инфаркт / инсульт до 60 лет"
+        ],
+        [
+          "hypertension",
+          "Гипертония"
+        ],
+        [
+          "diabetes",
+          "Сахарный диабет"
+        ],
+        [
+          "tb",
+          "Туберкулёз"
+        ]
+      ],
+      "hint": "Если нет или не знаете — оставьте без выбора."
+    },
+    {
+      "name": "smoking.pack_years",
+      "label": "Стаж курения в пачка-летах",
+      "type": "number",
+      "step": 3,
+      "min": 0,
+      "increment": "any",
+      "placeholder": "Например, 25",
+      "hint": "Число пачек в день × число лет курения. Например, 1 пачка в день в течение 25 лет = 25 пачка-лет. Если никогда не курили — 0; если не знаете — оставьте пустым."
+    },
+    {
+      "name": "smoking.quit_years_ago",
+      "label": "Сколько лет назад бросили курить?",
+      "type": "number",
+      "step": 3,
+      "min": 0,
+      "increment": "any",
+      "placeholder": "Например, 5",
+      "hint": "Если курите сейчас — 0. Если никогда не курили или не знаете — оставьте пустым."
+    },
+    {
+      "name": "hazardous_work_10y",
+      "label": "Работали 10 лет на вредном производстве?",
+      "type": "boolean",
+      "step": 3,
+      "options": [
+        [
+          true,
+          "Да"
+        ],
+        [
+          false,
+          "Нет"
+        ]
+      ],
+      "hint": "Если не знаете — оставьте без ответа."
+    },
+    {
+      "name": "risk_group",
+      "label": "Относитесь ли вы к группе риска по гепатитам?",
+      "type": "multiselect",
+      "step": 3,
+      "hint": "Необязательно. Отметьте только то, что вам известно.",
+      "layout": "stack",
+      "options": [
+        [
+          "medical_worker_invasive",
+          "Медработник, выполняющий инвазивные процедуры"
+        ],
+        [
+          "planned_surgery",
+          "Плановая операция"
+        ],
+        [
+          "hemodialysis_oncology_hematology",
+          "Гемодиализ / лечение в онкологии или гематологии"
+        ],
+        [
+          "transfusion_transplant",
+          "Переливание крови / трансплантация"
+        ],
+        [
+          "pregnancy",
+          "Беременность"
+        ],
+        [
+          "hiv_key_population",
+          "ВИЧ / ключевые группы риска"
+        ]
+      ]
+    },
+    {
+      "name": "last_period",
+      "label": "Начало последних месячных",
+      "type": "date",
+      "step": 4,
+      "min": "birth_date",
+      "max": "today",
+      "show_if": {
+        "sex": "F"
+      }
+    },
+    {
+      "name": "pregnancies",
+      "label": "Сколько было беременностей?",
+      "type": "number",
+      "step": 4,
+      "min": 0,
+      "show_if": {
+        "sex": "F"
+      },
+      "placeholder": "Количество"
+    },
+    {
+      "name": "births",
+      "label": "Сколько было родов?",
+      "type": "number",
+      "step": 4,
+      "min": 0,
+      "show_if": {
+        "sex": "F"
+      },
+      "placeholder": "Количество"
+    },
+    {
+      "name": "contraception",
+      "label": "Какой метод контрацепции используете?",
+      "type": "select",
+      "step": 4,
+      "show_if": {
+        "sex": "F"
+      },
+      "options": [
+        [
+          "none",
+          "Не использую"
+        ],
+        [
+          "condom",
+          "Презерватив"
+        ],
+        [
+          "pills",
+          "Таблетки"
+        ],
+        [
+          "iud",
+          "Внутриматочная спираль"
+        ],
+        [
+          "other",
+          "Другой"
+        ],
+        [
+          "not_needed",
+          "Не требуется"
+        ]
+      ]
+    },
+    {
+      "name": "discharge",
+      "label": "Есть необычные выделения или запах?",
+      "type": "select",
+      "step": 4,
+      "show_if": {
+        "sex": "F"
+      },
+      "options": {
+        "source_expression_only": "YES_NO_UNSURE"
+      }
+    },
+    {
+      "name": "dysuria",
+      "label": "Есть боль, жжение при мочеиспускании или выделения?",
+      "type": "select",
+      "step": 4,
+      "show_if": {
+        "sex": "M"
+      },
+      "options": {
+        "source_expression_only": "YES_NO_UNSURE"
+      }
+    },
+    {
+      "name": "anesthesia_reaction",
+      "label": "Были нежелательные реакции на наркоз?",
+      "type": "select",
+      "step": 5,
+      "options": {
+        "source_expression_only": "YES_NO_UNSURE"
+      }
+    },
+    {
+      "name": "blood_thinners",
+      "label": "Принимаете препараты, разжижающие кровь?",
+      "type": "select",
+      "step": 5,
+      "options": {
+        "source_expression_only": "YES_NO_UNSURE"
+      }
+    },
+    {
+      "name": "allergy",
+      "label": "Есть ли у вас аллергия?",
+      "type": "select",
+      "step": 5,
+      "options": {
+        "source_expression_only": "YES_NO_UNSURE"
+      }
+    },
+    {
+      "name": "companion",
+      "label": "Есть ли человек, который сможет вас сопровождать?",
+      "type": "select",
+      "step": 5,
+      "hint": "После наркоза нельзя садиться за руль.",
+      "options": {
+        "source_expression_only": "YES_NO_UNSURE"
+      }
+    },
+    {
+      "name": "medications",
+      "label": "Какие лекарства принимаете сейчас?",
+      "type": "text",
+      "step": 5,
+      "hint": "Укажите названия, если помните. Вопрос можно пропустить."
+    }
+  ]
+}

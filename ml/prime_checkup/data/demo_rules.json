@@ -1,0 +1,47 @@
+{
+  "version": "demo-2",
+  "rules": [
+    {
+      "id": "cmp_fatigue",
+      "source_rule_id": "cmp_fatigue",
+      "source": "CLINIC_RULE — spec/rules.json:complaints.cmp_fatigue",
+      "needs_doctor_validation": true,
+      "validation_status": "demo_unvalidated",
+      "action": "highlight",
+      "procedure_ids": [
+        "prime_vitamin_d",
+        "prime_vitamin_b12",
+        "prime_anemia_group",
+        "prime_thyroid_hormones_group"
+      ],
+      "explanation": "В демо выделены только уже включённые позиции из исходного правила усталости; дополнительные обследования не назначены.",
+      "medical_validated": false,
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f"
+    },
+    {
+      "id": "cmp_family_crc",
+      "source_rule_id": "cmp_family_crc",
+      "source": "CLINIC_RULE — spec/rules.json:complaints.cmp_family_crc",
+      "needs_doctor_validation": true,
+      "validation_status": "demo_unvalidated",
+      "action": "note",
+      "procedure_ids": [],
+      "explanation": "В демо сработало правило семейного анамнеза; изменение программы требует обсуждения с врачом",
+      "medical_validated": false,
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f"
+    },
+    {
+      "id": "cmp_chest_pain",
+      "source_rule_id": "cmp_chest_pain",
+      "source": "CLINIC_RULE — spec/rules.json:complaints.cmp_chest_pain",
+      "needs_doctor_validation": true,
+      "validation_status": "demo_unvalidated",
+      "action": "require_review",
+      "procedure_ids": [],
+      "explanation": "Сработало правило остановки подбора из исходного набора; требуется обращение к врачу",
+      "medical_validated": false,
+      "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f"
+    }
+  ],
+  "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f"
+}

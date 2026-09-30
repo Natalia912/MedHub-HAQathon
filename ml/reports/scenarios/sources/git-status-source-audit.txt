@@ -1,0 +1,31 @@
+ M README.md
+ M app/config/fields.py
+ M app/main.py
+ D app/static/app.js
+ D app/static/index.html
+ M app/static/style.css
+ M contract/predict_contract.py
+ M requirements.txt
+ M run-windows.sh
+ M run.sh
+ M spec/CONTRACT.md
+?? Scenarios.docx
+?? app/choice_catalog.py
+?? app/choice_route.py
+?? app/config/clinic_fields.py
+?? app/data/
+?? app/engine.py
+?? app/intake.py
+?? app/scheduler.py
+?? app/schemas.py
+?? app/screening.py
+?? app/selection.py
+?? app/templates/
+?? docs/
+?? reference/
+?? reports/
+?? requirements-dev.txt
+?? run.ps1
+?? techdock.md
+?? tests/
+?? tools/

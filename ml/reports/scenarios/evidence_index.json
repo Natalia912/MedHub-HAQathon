@@ -1,0 +1,37 @@
+{
+  "reason": "Exact standalone duplicates are omitted from the package; canonical historical results are unchanged. Historical capture.path/hash strings retain their original meaning. after_adapter_rechecked.json has unique assertions and is retained.",
+  "duplicates": [
+    {
+      "omitted_duplicate": "after_adapter_results.json",
+      "canonical_file": "results.json",
+      "json_pointer": "/after_adapter_before_preparation_fix",
+      "original_sha256": "4255a56cc5846458a9a1b295f29c3d705cab767d3396418676bf0c5cce100221",
+      "bytes": 23652559,
+      "full_object_equality": true
+    },
+    {
+      "omitted_duplicate": "after_results.json",
+      "canonical_file": "results.json",
+      "json_pointer": "/final",
+      "original_sha256": "7cd13e55f55e875ba408f4a4d8fd8c056b1501c42990f1cb9a482e25db6e638e",
+      "bytes": 27149855,
+      "full_object_equality": true
+    },
+    {
+      "omitted_duplicate": "before_results.json",
+      "canonical_file": "results.json",
+      "json_pointer": "/before",
+      "original_sha256": "a5ae12154d78ddac409d23abf38e0e90dc5e29d59b923b4012f8599723332c81",
+      "bytes": 2560019,
+      "full_object_equality": true
+    },
+    {
+      "omitted_duplicate": "before_rechecked.json",
+      "canonical_file": "results.json",
+      "json_pointer": "/before_rechecked",
+      "original_sha256": "e620727df3d32113de40bfadb19682d9e4692ac7d9549cb8d513a30429efee6d",
+      "bytes": 2970288,
+      "full_object_equality": true
+    }
+  ]
+}

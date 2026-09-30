@@ -1,0 +1,831 @@
+{
+  "audit_date": "2026-09-30",
+  "source_repository": "https://github.com/Natalia912/MedHub-HAQathon",
+  "source_worktree": "C:\\Users\\user\\Desktop\\medhub-app\\MedHub-HAQathon",
+  "actual_refs": {
+    "local_head": "e690a15be33212e5901f2ab4f9f056c4065cb87a",
+    "main": "d52847ad1cfcfab54fcdaec7061bffc93496d283",
+    "engine": "c2f39680aee388365daa180329a58edfb0f4081c",
+    "packages_logic": "7775fb5281533c7f5b1dbc0948d5092a41841959"
+  },
+  "expected_refs": {
+    "catalog_source": "df733c43d5ab655ef08036366a44bae04e59182f",
+    "scenario_source": "744d7f79e6872a31572dda9d75269a8a8b7bcd4a",
+    "main": "d52847ad1cfcfab54fcdaec7061bffc93496d283",
+    "engine": "c2f39680aee388365daa180329a58edfb0f4081c",
+    "packages_logic": "7775fb5281533c7f5b1dbc0948d5092a41841959"
+  },
+  "newer_ref_differences": {},
+  "network_fetch": "git -c safe.directory=<source> fetch origin succeeded; only remote tracking metadata updated",
+  "remote_code_executed": false,
+  "ui_files_copied": false,
+  "alternative_engine_copied": false,
+  "snapshots": {
+    "catalog_source": {
+      "sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "tree": "b1a7232050508c9d3e508442db70a3be57020961",
+      "files": {
+        "spec/rules.json": {
+          "source_path": "spec/rules.json",
+          "sha256": "55127939715b266d61d72ca6df28738df2b457fbe5a49c83fadd6700045f5351",
+          "bytes": 17145,
+          "git_blob": "5b56ccf4b56e787431ad685f3b2e8aa850a3d277",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/df733c43d5ab655ef08036366a44bae04e59182f/spec/rules.json",
+          "saved_path": "snapshots/df733c43d5ab655ef08036366a44bae04e59182f/spec/rules.json"
+        },
+        "spec/CONTRACT.md": {
+          "source_path": "spec/CONTRACT.md",
+          "sha256": "b2bf20f8b1b769ba5c539f8d83e929f32c5ba63cffa322de3c1394625c0dbc71",
+          "bytes": 6970,
+          "git_blob": "99dd176dad6ea365b6e7a4513384dbeaaec784d0",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/df733c43d5ab655ef08036366a44bae04e59182f/spec/CONTRACT.md",
+          "saved_path": "snapshots/df733c43d5ab655ef08036366a44bae04e59182f/spec/CONTRACT.md"
+        },
+        "spec/QUESTIONNAIRE.md": {
+          "source_path": "spec/QUESTIONNAIRE.md",
+          "sha256": "555f2997ee9e23bd6572d4a8e761b5e7d36abef0a36707953132ea4d33c6744f",
+          "bytes": 9015,
+          "git_blob": "de348ec90ad0ae2e7a61d6e61765d315b6d8b678",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/df733c43d5ab655ef08036366a44bae04e59182f/spec/QUESTIONNAIRE.md",
+          "saved_path": "snapshots/df733c43d5ab655ef08036366a44bae04e59182f/spec/QUESTIONNAIRE.md"
+        },
+        "ml/README.md": {
+          "source_path": "ml/README.md",
+          "sha256": "bd5356701103fcd09f105c4327e65f86b85b691a79a7be40ad369886f93ea3d7",
+          "bytes": 3888,
+          "git_blob": "e9db4185f10c461ad241563516287a773b578d40",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/df733c43d5ab655ef08036366a44bae04e59182f/ml/README.md",
+          "saved_path": "snapshots/df733c43d5ab655ef08036366a44bae04e59182f/ml/README.md"
+        },
+        "app/README.md": {
+          "source_path": "app/README.md",
+          "sha256": "2561bca891303b4d6378aeace138ba9164f9d5864d7b0cb2841173d0d5a4770b",
+          "bytes": 2625,
+          "git_blob": "f86a31a9c3aff6822c1e5aa5fe06870658be55ef",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/df733c43d5ab655ef08036366a44bae04e59182f/app/README.md",
+          "saved_path": "snapshots/df733c43d5ab655ef08036366a44bae04e59182f/app/README.md"
+        },
+        "app/config/fields.py": {
+          "source_path": "app/config/fields.py",
+          "sha256": "002df282aaa169edf86dc900aa03b6de38190fab2d29f7864fcf6bea319ca42c",
+          "bytes": 14417,
+          "git_blob": "2d747ba787d244bc16870a36e8937f943aa322d5",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/df733c43d5ab655ef08036366a44bae04e59182f/app/config/fields.py",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        },
+        "app/main.py": {
+          "source_path": "app/main.py",
+          "sha256": "cbea3d29ea0b176de100c65ee052a32902d192a614c95c65fe6b01cc98a12827",
+          "bytes": 1418,
+          "git_blob": "9ad3f0e36b075dfcba7fe389f617b182ab9dbdf4",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/df733c43d5ab655ef08036366a44bae04e59182f/app/main.py",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        },
+        "app/static/app.js": {
+          "source_path": "app/static/app.js",
+          "sha256": "1e2a06b9da12deb553382cf7b8b3605791ceb2b1b23d82ca7626f44f4582ee79",
+          "bytes": 29565,
+          "git_blob": "0d2652b9ef5ad1f8f42e125486ec491810f3dbb8",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/df733c43d5ab655ef08036366a44bae04e59182f/app/static/app.js",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        },
+        ".gitignore": {
+          "source_path": ".gitignore",
+          "sha256": "06b4e1d4d9b58470670799e3e339de6e511a47d5c8c4c11cd013064aa591ca29",
+          "bytes": 202,
+          "git_blob": "1820850feab7be0e2192ceb4d1af1f1771aaa722",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/df733c43d5ab655ef08036366a44bae04e59182f/.gitignore",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        }
+      },
+      "missing": [
+        "app/recommendations.py",
+        "app/itinerary.py",
+        "ml/engine.py",
+        "ml/router.py"
+      ],
+      "questionnaire_count": 27,
+      "questionnaire_metadata": {
+        "path": "snapshots/df733c43d5ab655ef08036366a44bae04e59182f/questionnaire_metadata.json",
+        "sha256": "bb970ab9a3697034c14cdcafb760ca39895bd8f17bb70ecbe02f6b4898e578eb"
+      },
+      "main_routes": [
+        [
+          "get",
+          "/"
+        ],
+        [
+          "get",
+          "/health"
+        ],
+        [
+          "get",
+          "/fields"
+        ],
+        [
+          "get",
+          "/steps"
+        ],
+        [
+          "get",
+          "/rules"
+        ],
+        [
+          "post",
+          "/predict"
+        ]
+      ],
+      "main_includes_ml_router": false
+    },
+    "scenario_source": {
+      "sha": "744d7f79e6872a31572dda9d75269a8a8b7bcd4a",
+      "tree": "60b9da2311d7453814217cd49fec53ec4b56b42d",
+      "files": {
+        "spec/rules.json": {
+          "source_path": "spec/rules.json",
+          "sha256": "6eff8853e7b275baf7afc270a7b00e6afe8aee11b7e0617aad5f59ff4a176924",
+          "bytes": 29039,
+          "git_blob": "bd432767f606d881a206584fddfc144b804732ba",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/744d7f79e6872a31572dda9d75269a8a8b7bcd4a/spec/rules.json",
+          "saved_path": "snapshots/744d7f79e6872a31572dda9d75269a8a8b7bcd4a/spec/rules.json"
+        },
+        "spec/CONTRACT.md": {
+          "source_path": "spec/CONTRACT.md",
+          "sha256": "53985ad528d7f3c710372619836b85569142cd250a8c66e2ccc33254f50a0e14",
+          "bytes": 6969,
+          "git_blob": "58396b8b20fc323461e50e01c6b8a7bb3eb3201c",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/744d7f79e6872a31572dda9d75269a8a8b7bcd4a/spec/CONTRACT.md",
+          "saved_path": "snapshots/744d7f79e6872a31572dda9d75269a8a8b7bcd4a/spec/CONTRACT.md"
+        },
+        "spec/QUESTIONNAIRE.md": {
+          "source_path": "spec/QUESTIONNAIRE.md",
+          "sha256": "555f2997ee9e23bd6572d4a8e761b5e7d36abef0a36707953132ea4d33c6744f",
+          "bytes": 9015,
+          "git_blob": "de348ec90ad0ae2e7a61d6e61765d315b6d8b678",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/744d7f79e6872a31572dda9d75269a8a8b7bcd4a/spec/QUESTIONNAIRE.md",
+          "saved_path": "snapshots/744d7f79e6872a31572dda9d75269a8a8b7bcd4a/spec/QUESTIONNAIRE.md"
+        },
+        "ml/README.md": {
+          "source_path": "ml/README.md",
+          "sha256": "bd5356701103fcd09f105c4327e65f86b85b691a79a7be40ad369886f93ea3d7",
+          "bytes": 3888,
+          "git_blob": "e9db4185f10c461ad241563516287a773b578d40",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/744d7f79e6872a31572dda9d75269a8a8b7bcd4a/ml/README.md",
+          "saved_path": "snapshots/744d7f79e6872a31572dda9d75269a8a8b7bcd4a/ml/README.md"
+        },
+        "app/README.md": {
+          "source_path": "app/README.md",
+          "sha256": "6ec27f7365225dee642089204a34fde0c858e3b9b05df32a17f7f893bcf0d1d3",
+          "bytes": 3705,
+          "git_blob": "eceeaec5926930824e353fd97e94ee1e564e57e4",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/744d7f79e6872a31572dda9d75269a8a8b7bcd4a/app/README.md",
+          "saved_path": "snapshots/744d7f79e6872a31572dda9d75269a8a8b7bcd4a/app/README.md"
+        },
+        "app/config/fields.py": {
+          "source_path": "app/config/fields.py",
+          "sha256": "9a6d1c79640cc36e4e24af178bd712a5cdfe04c2bca0858ae6534f1ba9c32f75",
+          "bytes": 10889,
+          "git_blob": "b5a8c0f71a0aa2a5391b092610a5e55479457a2e",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/744d7f79e6872a31572dda9d75269a8a8b7bcd4a/app/config/fields.py",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        },
+        "app/main.py": {
+          "source_path": "app/main.py",
+          "sha256": "a2ea5d98963d8a5fc86729cadd91ce1a229d6caa3bc0cbda4a34be9ac236978f",
+          "bytes": 546,
+          "git_blob": "f1d664a923b6ec3f3b6eaae9c55b2477e893032e",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/744d7f79e6872a31572dda9d75269a8a8b7bcd4a/app/main.py",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        },
+        "app/static/app.js": {
+          "source_path": "app/static/app.js",
+          "sha256": "8a97d618b865ce55c619112d8ced4078c4e00c26e9b7ff4f1fada9285fb5081a",
+          "bytes": 11893,
+          "git_blob": "7f3148bd56409a4eeaa2df8ceb92003dab99f2c5",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/744d7f79e6872a31572dda9d75269a8a8b7bcd4a/app/static/app.js",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        },
+        ".gitignore": {
+          "source_path": ".gitignore",
+          "sha256": "06b4e1d4d9b58470670799e3e339de6e511a47d5c8c4c11cd013064aa591ca29",
+          "bytes": 202,
+          "git_blob": "1820850feab7be0e2192ceb4d1af1f1771aaa722",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/744d7f79e6872a31572dda9d75269a8a8b7bcd4a/.gitignore",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        }
+      },
+      "missing": [
+        "app/recommendations.py",
+        "app/itinerary.py",
+        "ml/engine.py",
+        "ml/router.py"
+      ],
+      "questionnaire_count": 30,
+      "questionnaire_metadata": {
+        "path": "snapshots/744d7f79e6872a31572dda9d75269a8a8b7bcd4a/questionnaire_metadata.json",
+        "sha256": "8831ff0742d74fe892108fba4bcc206aece379fd7f799a7349544bab8b40b8b8"
+      },
+      "main_routes": [
+        [
+          "get",
+          "/"
+        ],
+        [
+          "get",
+          "/health"
+        ],
+        [
+          "get",
+          "/fields"
+        ]
+      ],
+      "main_includes_ml_router": false
+    },
+    "main": {
+      "sha": "d52847ad1cfcfab54fcdaec7061bffc93496d283",
+      "tree": "60b9da2311d7453814217cd49fec53ec4b56b42d",
+      "files": {
+        "spec/rules.json": {
+          "source_path": "spec/rules.json",
+          "sha256": "6eff8853e7b275baf7afc270a7b00e6afe8aee11b7e0617aad5f59ff4a176924",
+          "bytes": 29039,
+          "git_blob": "bd432767f606d881a206584fddfc144b804732ba",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/d52847ad1cfcfab54fcdaec7061bffc93496d283/spec/rules.json",
+          "saved_path": "snapshots/d52847ad1cfcfab54fcdaec7061bffc93496d283/spec/rules.json"
+        },
+        "spec/CONTRACT.md": {
+          "source_path": "spec/CONTRACT.md",
+          "sha256": "53985ad528d7f3c710372619836b85569142cd250a8c66e2ccc33254f50a0e14",
+          "bytes": 6969,
+          "git_blob": "58396b8b20fc323461e50e01c6b8a7bb3eb3201c",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/d52847ad1cfcfab54fcdaec7061bffc93496d283/spec/CONTRACT.md",
+          "saved_path": "snapshots/d52847ad1cfcfab54fcdaec7061bffc93496d283/spec/CONTRACT.md"
+        },
+        "spec/QUESTIONNAIRE.md": {
+          "source_path": "spec/QUESTIONNAIRE.md",
+          "sha256": "555f2997ee9e23bd6572d4a8e761b5e7d36abef0a36707953132ea4d33c6744f",
+          "bytes": 9015,
+          "git_blob": "de348ec90ad0ae2e7a61d6e61765d315b6d8b678",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/d52847ad1cfcfab54fcdaec7061bffc93496d283/spec/QUESTIONNAIRE.md",
+          "saved_path": "snapshots/d52847ad1cfcfab54fcdaec7061bffc93496d283/spec/QUESTIONNAIRE.md"
+        },
+        "ml/README.md": {
+          "source_path": "ml/README.md",
+          "sha256": "bd5356701103fcd09f105c4327e65f86b85b691a79a7be40ad369886f93ea3d7",
+          "bytes": 3888,
+          "git_blob": "e9db4185f10c461ad241563516287a773b578d40",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/d52847ad1cfcfab54fcdaec7061bffc93496d283/ml/README.md",
+          "saved_path": "snapshots/d52847ad1cfcfab54fcdaec7061bffc93496d283/ml/README.md"
+        },
+        "app/README.md": {
+          "source_path": "app/README.md",
+          "sha256": "6ec27f7365225dee642089204a34fde0c858e3b9b05df32a17f7f893bcf0d1d3",
+          "bytes": 3705,
+          "git_blob": "eceeaec5926930824e353fd97e94ee1e564e57e4",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/d52847ad1cfcfab54fcdaec7061bffc93496d283/app/README.md",
+          "saved_path": "snapshots/d52847ad1cfcfab54fcdaec7061bffc93496d283/app/README.md"
+        },
+        "app/config/fields.py": {
+          "source_path": "app/config/fields.py",
+          "sha256": "9a6d1c79640cc36e4e24af178bd712a5cdfe04c2bca0858ae6534f1ba9c32f75",
+          "bytes": 10889,
+          "git_blob": "b5a8c0f71a0aa2a5391b092610a5e55479457a2e",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/d52847ad1cfcfab54fcdaec7061bffc93496d283/app/config/fields.py",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        },
+        "app/main.py": {
+          "source_path": "app/main.py",
+          "sha256": "a2ea5d98963d8a5fc86729cadd91ce1a229d6caa3bc0cbda4a34be9ac236978f",
+          "bytes": 546,
+          "git_blob": "f1d664a923b6ec3f3b6eaae9c55b2477e893032e",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/d52847ad1cfcfab54fcdaec7061bffc93496d283/app/main.py",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        },
+        "app/static/app.js": {
+          "source_path": "app/static/app.js",
+          "sha256": "8a97d618b865ce55c619112d8ced4078c4e00c26e9b7ff4f1fada9285fb5081a",
+          "bytes": 11893,
+          "git_blob": "7f3148bd56409a4eeaa2df8ceb92003dab99f2c5",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/d52847ad1cfcfab54fcdaec7061bffc93496d283/app/static/app.js",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        },
+        ".gitignore": {
+          "source_path": ".gitignore",
+          "sha256": "06b4e1d4d9b58470670799e3e339de6e511a47d5c8c4c11cd013064aa591ca29",
+          "bytes": 202,
+          "git_blob": "1820850feab7be0e2192ceb4d1af1f1771aaa722",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/d52847ad1cfcfab54fcdaec7061bffc93496d283/.gitignore",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        }
+      },
+      "missing": [
+        "app/recommendations.py",
+        "app/itinerary.py",
+        "ml/engine.py",
+        "ml/router.py"
+      ],
+      "questionnaire_count": 30,
+      "questionnaire_metadata": {
+        "path": "snapshots/d52847ad1cfcfab54fcdaec7061bffc93496d283/questionnaire_metadata.json",
+        "sha256": "d3cb81c5a4ee7939c12bb8399bb134ad436d05f429a5ef35ee70b8255b5aca22"
+      },
+      "main_routes": [
+        [
+          "get",
+          "/"
+        ],
+        [
+          "get",
+          "/health"
+        ],
+        [
+          "get",
+          "/fields"
+        ]
+      ],
+      "main_includes_ml_router": false
+    },
+    "engine": {
+      "sha": "c2f39680aee388365daa180329a58edfb0f4081c",
+      "tree": "7fa85159d3dfbc7a50ddf96e66a2078e893e7df2",
+      "files": {
+        "spec/rules.json": {
+          "source_path": "spec/rules.json",
+          "sha256": "6eff8853e7b275baf7afc270a7b00e6afe8aee11b7e0617aad5f59ff4a176924",
+          "bytes": 29039,
+          "git_blob": "bd432767f606d881a206584fddfc144b804732ba",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/c2f39680aee388365daa180329a58edfb0f4081c/spec/rules.json",
+          "saved_path": "snapshots/c2f39680aee388365daa180329a58edfb0f4081c/spec/rules.json"
+        },
+        "spec/CONTRACT.md": {
+          "source_path": "spec/CONTRACT.md",
+          "sha256": "53985ad528d7f3c710372619836b85569142cd250a8c66e2ccc33254f50a0e14",
+          "bytes": 6969,
+          "git_blob": "58396b8b20fc323461e50e01c6b8a7bb3eb3201c",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/c2f39680aee388365daa180329a58edfb0f4081c/spec/CONTRACT.md",
+          "saved_path": "snapshots/c2f39680aee388365daa180329a58edfb0f4081c/spec/CONTRACT.md"
+        },
+        "spec/QUESTIONNAIRE.md": {
+          "source_path": "spec/QUESTIONNAIRE.md",
+          "sha256": "555f2997ee9e23bd6572d4a8e761b5e7d36abef0a36707953132ea4d33c6744f",
+          "bytes": 9015,
+          "git_blob": "de348ec90ad0ae2e7a61d6e61765d315b6d8b678",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/c2f39680aee388365daa180329a58edfb0f4081c/spec/QUESTIONNAIRE.md",
+          "saved_path": "snapshots/c2f39680aee388365daa180329a58edfb0f4081c/spec/QUESTIONNAIRE.md"
+        },
+        "ml/README.md": {
+          "source_path": "ml/README.md",
+          "sha256": "bd5356701103fcd09f105c4327e65f86b85b691a79a7be40ad369886f93ea3d7",
+          "bytes": 3888,
+          "git_blob": "e9db4185f10c461ad241563516287a773b578d40",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/c2f39680aee388365daa180329a58edfb0f4081c/ml/README.md",
+          "saved_path": "snapshots/c2f39680aee388365daa180329a58edfb0f4081c/ml/README.md"
+        },
+        "app/README.md": {
+          "source_path": "app/README.md",
+          "sha256": "6ec27f7365225dee642089204a34fde0c858e3b9b05df32a17f7f893bcf0d1d3",
+          "bytes": 3705,
+          "git_blob": "eceeaec5926930824e353fd97e94ee1e564e57e4",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/c2f39680aee388365daa180329a58edfb0f4081c/app/README.md",
+          "saved_path": "snapshots/c2f39680aee388365daa180329a58edfb0f4081c/app/README.md"
+        },
+        "app/config/fields.py": {
+          "source_path": "app/config/fields.py",
+          "sha256": "9a6d1c79640cc36e4e24af178bd712a5cdfe04c2bca0858ae6534f1ba9c32f75",
+          "bytes": 10889,
+          "git_blob": "b5a8c0f71a0aa2a5391b092610a5e55479457a2e",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/c2f39680aee388365daa180329a58edfb0f4081c/app/config/fields.py",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        },
+        "app/main.py": {
+          "source_path": "app/main.py",
+          "sha256": "a2ea5d98963d8a5fc86729cadd91ce1a229d6caa3bc0cbda4a34be9ac236978f",
+          "bytes": 546,
+          "git_blob": "f1d664a923b6ec3f3b6eaae9c55b2477e893032e",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/c2f39680aee388365daa180329a58edfb0f4081c/app/main.py",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        },
+        "app/static/app.js": {
+          "source_path": "app/static/app.js",
+          "sha256": "8a97d618b865ce55c619112d8ced4078c4e00c26e9b7ff4f1fada9285fb5081a",
+          "bytes": 11893,
+          "git_blob": "7f3148bd56409a4eeaa2df8ceb92003dab99f2c5",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/c2f39680aee388365daa180329a58edfb0f4081c/app/static/app.js",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        },
+        "ml/engine.py": {
+          "source_path": "ml/engine.py",
+          "sha256": "7b3421154dad1f933d15d39cf36a780bcd3bf9e77387973c57a2fc8b4202cba9",
+          "bytes": 15147,
+          "git_blob": "3b5b209f5bfeb8e99955f456e17177c06d845077",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/c2f39680aee388365daa180329a58edfb0f4081c/ml/engine.py",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        },
+        "ml/router.py": {
+          "source_path": "ml/router.py",
+          "sha256": "6c90d48a77387e881eff095064961c606d5121436399628265e4398e4d7a0d27",
+          "bytes": 916,
+          "git_blob": "5d510762002f87d199614c8e55c37fce958923db",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/c2f39680aee388365daa180329a58edfb0f4081c/ml/router.py",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        },
+        ".gitignore": {
+          "source_path": ".gitignore",
+          "sha256": "06b4e1d4d9b58470670799e3e339de6e511a47d5c8c4c11cd013064aa591ca29",
+          "bytes": 202,
+          "git_blob": "1820850feab7be0e2192ceb4d1af1f1771aaa722",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/c2f39680aee388365daa180329a58edfb0f4081c/.gitignore",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        }
+      },
+      "missing": [
+        "app/recommendations.py",
+        "app/itinerary.py"
+      ],
+      "questionnaire_count": 30,
+      "questionnaire_metadata": {
+        "path": "snapshots/c2f39680aee388365daa180329a58edfb0f4081c/questionnaire_metadata.json",
+        "sha256": "0f864be484d52299e2aae9cb2e802e3f7f340f1408bdb9923254cc2d3ea42ec5"
+      },
+      "main_routes": [
+        [
+          "get",
+          "/"
+        ],
+        [
+          "get",
+          "/health"
+        ],
+        [
+          "get",
+          "/fields"
+        ]
+      ],
+      "main_includes_ml_router": false
+    },
+    "packages_logic": {
+      "sha": "7775fb5281533c7f5b1dbc0948d5092a41841959",
+      "tree": "b292e14b72ccc2edb630bad0216d3463dcc95095",
+      "files": {
+        "spec/rules.json": {
+          "source_path": "spec/rules.json",
+          "sha256": "6eff8853e7b275baf7afc270a7b00e6afe8aee11b7e0617aad5f59ff4a176924",
+          "bytes": 29039,
+          "git_blob": "bd432767f606d881a206584fddfc144b804732ba",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/7775fb5281533c7f5b1dbc0948d5092a41841959/spec/rules.json",
+          "saved_path": "snapshots/7775fb5281533c7f5b1dbc0948d5092a41841959/spec/rules.json"
+        },
+        "spec/CONTRACT.md": {
+          "source_path": "spec/CONTRACT.md",
+          "sha256": "53985ad528d7f3c710372619836b85569142cd250a8c66e2ccc33254f50a0e14",
+          "bytes": 6969,
+          "git_blob": "58396b8b20fc323461e50e01c6b8a7bb3eb3201c",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/7775fb5281533c7f5b1dbc0948d5092a41841959/spec/CONTRACT.md",
+          "saved_path": "snapshots/7775fb5281533c7f5b1dbc0948d5092a41841959/spec/CONTRACT.md"
+        },
+        "spec/QUESTIONNAIRE.md": {
+          "source_path": "spec/QUESTIONNAIRE.md",
+          "sha256": "555f2997ee9e23bd6572d4a8e761b5e7d36abef0a36707953132ea4d33c6744f",
+          "bytes": 9015,
+          "git_blob": "de348ec90ad0ae2e7a61d6e61765d315b6d8b678",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/7775fb5281533c7f5b1dbc0948d5092a41841959/spec/QUESTIONNAIRE.md",
+          "saved_path": "snapshots/7775fb5281533c7f5b1dbc0948d5092a41841959/spec/QUESTIONNAIRE.md"
+        },
+        "ml/README.md": {
+          "source_path": "ml/README.md",
+          "sha256": "bd5356701103fcd09f105c4327e65f86b85b691a79a7be40ad369886f93ea3d7",
+          "bytes": 3888,
+          "git_blob": "e9db4185f10c461ad241563516287a773b578d40",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/7775fb5281533c7f5b1dbc0948d5092a41841959/ml/README.md",
+          "saved_path": "snapshots/7775fb5281533c7f5b1dbc0948d5092a41841959/ml/README.md"
+        },
+        "app/README.md": {
+          "source_path": "app/README.md",
+          "sha256": "7e397c2fa3ef8864d806fd67b72dd405d5e5e34de7c7644ba62dd464b4cb6ca6",
+          "bytes": 6358,
+          "git_blob": "d7c59c7462ab6c26e336ba131b9121bde9ec843c",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/7775fb5281533c7f5b1dbc0948d5092a41841959/app/README.md",
+          "saved_path": "snapshots/7775fb5281533c7f5b1dbc0948d5092a41841959/app/README.md"
+        },
+        "app/config/fields.py": {
+          "source_path": "app/config/fields.py",
+          "sha256": "9a6d1c79640cc36e4e24af178bd712a5cdfe04c2bca0858ae6534f1ba9c32f75",
+          "bytes": 10889,
+          "git_blob": "b5a8c0f71a0aa2a5391b092610a5e55479457a2e",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/7775fb5281533c7f5b1dbc0948d5092a41841959/app/config/fields.py",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        },
+        "app/main.py": {
+          "source_path": "app/main.py",
+          "sha256": "fa8e34539082e43f5b4056a499ae65389806727b265b0ca26616214690381844",
+          "bytes": 1146,
+          "git_blob": "75e816f9d5f4b4a5d89a2c7cc826ad4035d29138",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/7775fb5281533c7f5b1dbc0948d5092a41841959/app/main.py",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        },
+        "app/recommendations.py": {
+          "source_path": "app/recommendations.py",
+          "sha256": "bd843393d1c49073697a209d875d96c58a82b8614c73bc7310c0e68a8b23bd12",
+          "bytes": 11622,
+          "git_blob": "f268082d6c3e092d8893789c8dbc77f23b6e72c4",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/7775fb5281533c7f5b1dbc0948d5092a41841959/app/recommendations.py",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        },
+        "app/itinerary.py": {
+          "source_path": "app/itinerary.py",
+          "sha256": "bc65a0fccca36bb2f28ae9e7802b6f8d90a9396fcc83d40ca71235dc64644fe8",
+          "bytes": 2718,
+          "git_blob": "137ca334ce995f4786c6b78a59467d9a6113aa20",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/7775fb5281533c7f5b1dbc0948d5092a41841959/app/itinerary.py",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        },
+        "app/static/app.js": {
+          "source_path": "app/static/app.js",
+          "sha256": "dc649e3cdcb563f2ed2a0b609da63e3f29740bd5823ca9515f37371b03aa7557",
+          "bytes": 23308,
+          "git_blob": "460ba16029226b511b0890fe0bb44b0067669495",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/7775fb5281533c7f5b1dbc0948d5092a41841959/app/static/app.js",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        },
+        "ml/engine.py": {
+          "source_path": "ml/engine.py",
+          "sha256": "7b3421154dad1f933d15d39cf36a780bcd3bf9e77387973c57a2fc8b4202cba9",
+          "bytes": 15147,
+          "git_blob": "3b5b209f5bfeb8e99955f456e17177c06d845077",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/7775fb5281533c7f5b1dbc0948d5092a41841959/ml/engine.py",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        },
+        "ml/router.py": {
+          "source_path": "ml/router.py",
+          "sha256": "6c90d48a77387e881eff095064961c606d5121436399628265e4398e4d7a0d27",
+          "bytes": 916,
+          "git_blob": "5d510762002f87d199614c8e55c37fce958923db",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/7775fb5281533c7f5b1dbc0948d5092a41841959/ml/router.py",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        },
+        ".gitignore": {
+          "source_path": ".gitignore",
+          "sha256": "06b4e1d4d9b58470670799e3e339de6e511a47d5c8c4c11cd013064aa591ca29",
+          "bytes": 202,
+          "git_blob": "1820850feab7be0e2192ceb4d1af1f1771aaa722",
+          "source_url": "https://github.com/Natalia912/MedHub-HAQathon/blob/7775fb5281533c7f5b1dbc0948d5092a41841959/.gitignore",
+          "saved_path": null,
+          "retention": "hash/link/static inspection only; no executable or UI source copied"
+        }
+      },
+      "missing": [],
+      "questionnaire_count": 30,
+      "questionnaire_metadata": {
+        "path": "snapshots/7775fb5281533c7f5b1dbc0948d5092a41841959/questionnaire_metadata.json",
+        "sha256": "8312984ed1ad6d80f369f33089ca42e5421cdaf2c7aeda6224bcb3b47a5da488"
+      },
+      "main_routes": [
+        [
+          "get",
+          "/"
+        ],
+        [
+          "get",
+          "/health"
+        ],
+        [
+          "get",
+          "/fields"
+        ],
+        [
+          "post",
+          "/recommendations"
+        ]
+      ],
+      "main_includes_ml_router": false
+    }
+  },
+  "structured_comparison": {
+    "catalog_source": {
+      "packages": {
+        "same_as_df733c4": true,
+        "count": 3,
+        "canonical_sha256": "980237f51b96932e3b6e8e694248918a7e41886593318cc115af37d231b5aa50"
+      },
+      "screening": {
+        "same_as_df733c4": true,
+        "count": 7,
+        "canonical_sha256": "f5d9174c9c5d31c5fc9382bc55765e9f7ffba3c3fc6bc48e1261ea34a946885e"
+      },
+      "day_route_order": {
+        "same_as_df733c4": true,
+        "count": 2,
+        "canonical_sha256": "0730acbc3749192439ccd6d3d88faa9c6967705b2e4ff4a91fa186e18b1fa337"
+      },
+      "prime_prep": {
+        "same_as_df733c4": true,
+        "count": 2,
+        "canonical_sha256": "3c5fe6cc5de3f8991713d2b5b2f6834d3e1fef0cc42c5247442c273007f86ad8"
+      },
+      "prime_catalog": {
+        "same_as_df733c4": true,
+        "count": null,
+        "canonical_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+      },
+      "anamnesis_rules": {
+        "same_as_df733c4": true,
+        "count": null,
+        "canonical_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+      },
+      "prep_catalog": {
+        "same_as_df733c4": true,
+        "count": null,
+        "canonical_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b"
+      }
+    },
+    "scenario_source": {
+      "packages": {
+        "same_as_df733c4": true,
+        "count": 3,
+        "canonical_sha256": "980237f51b96932e3b6e8e694248918a7e41886593318cc115af37d231b5aa50"
+      },
+      "screening": {
+        "same_as_df733c4": true,
+        "count": 7,
+        "canonical_sha256": "f5d9174c9c5d31c5fc9382bc55765e9f7ffba3c3fc6bc48e1261ea34a946885e"
+      },
+      "day_route_order": {
+        "same_as_df733c4": true,
+        "count": 2,
+        "canonical_sha256": "0730acbc3749192439ccd6d3d88faa9c6967705b2e4ff4a91fa186e18b1fa337"
+      },
+      "prime_prep": {
+        "same_as_df733c4": true,
+        "count": 2,
+        "canonical_sha256": "3c5fe6cc5de3f8991713d2b5b2f6834d3e1fef0cc42c5247442c273007f86ad8"
+      },
+      "prime_catalog": {
+        "same_as_df733c4": false,
+        "count": 17,
+        "canonical_sha256": "0faa68f52865082feebdf835e64edabfb506323919addd05994a5ceb690e3e7e"
+      },
+      "anamnesis_rules": {
+        "same_as_df733c4": false,
+        "count": 20,
+        "canonical_sha256": "2626f164d93d6264c2bc04f57bbd99fe7aeef20d409076e4c030d93ef0de6b45"
+      },
+      "prep_catalog": {
+        "same_as_df733c4": false,
+        "count": 5,
+        "canonical_sha256": "d44ed3b288d1691bffe3389fa5ea8d1b864a1d8e9dadd1879a7ab7b4cea5f934"
+      }
+    },
+    "main": {
+      "packages": {
+        "same_as_df733c4": true,
+        "count": 3,
+        "canonical_sha256": "980237f51b96932e3b6e8e694248918a7e41886593318cc115af37d231b5aa50"
+      },
+      "screening": {
+        "same_as_df733c4": true,
+        "count": 7,
+        "canonical_sha256": "f5d9174c9c5d31c5fc9382bc55765e9f7ffba3c3fc6bc48e1261ea34a946885e"
+      },
+      "day_route_order": {
+        "same_as_df733c4": true,
+        "count": 2,
+        "canonical_sha256": "0730acbc3749192439ccd6d3d88faa9c6967705b2e4ff4a91fa186e18b1fa337"
+      },
+      "prime_prep": {
+        "same_as_df733c4": true,
+        "count": 2,
+        "canonical_sha256": "3c5fe6cc5de3f8991713d2b5b2f6834d3e1fef0cc42c5247442c273007f86ad8"
+      },
+      "prime_catalog": {
+        "same_as_df733c4": false,
+        "count": 17,
+        "canonical_sha256": "0faa68f52865082feebdf835e64edabfb506323919addd05994a5ceb690e3e7e"
+      },
+      "anamnesis_rules": {
+        "same_as_df733c4": false,
+        "count": 20,
+        "canonical_sha256": "2626f164d93d6264c2bc04f57bbd99fe7aeef20d409076e4c030d93ef0de6b45"
+      },
+      "prep_catalog": {
+        "same_as_df733c4": false,
+        "count": 5,
+        "canonical_sha256": "d44ed3b288d1691bffe3389fa5ea8d1b864a1d8e9dadd1879a7ab7b4cea5f934"
+      }
+    },
+    "engine": {
+      "packages": {
+        "same_as_df733c4": true,
+        "count": 3,
+        "canonical_sha256": "980237f51b96932e3b6e8e694248918a7e41886593318cc115af37d231b5aa50"
+      },
+      "screening": {
+        "same_as_df733c4": true,
+        "count": 7,
+        "canonical_sha256": "f5d9174c9c5d31c5fc9382bc55765e9f7ffba3c3fc6bc48e1261ea34a946885e"
+      },
+      "day_route_order": {
+        "same_as_df733c4": true,
+        "count": 2,
+        "canonical_sha256": "0730acbc3749192439ccd6d3d88faa9c6967705b2e4ff4a91fa186e18b1fa337"
+      },
+      "prime_prep": {
+        "same_as_df733c4": true,
+        "count": 2,
+        "canonical_sha256": "3c5fe6cc5de3f8991713d2b5b2f6834d3e1fef0cc42c5247442c273007f86ad8"
+      },
+      "prime_catalog": {
+        "same_as_df733c4": false,
+        "count": 17,
+        "canonical_sha256": "0faa68f52865082feebdf835e64edabfb506323919addd05994a5ceb690e3e7e"
+      },
+      "anamnesis_rules": {
+        "same_as_df733c4": false,
+        "count": 20,
+        "canonical_sha256": "2626f164d93d6264c2bc04f57bbd99fe7aeef20d409076e4c030d93ef0de6b45"
+      },
+      "prep_catalog": {
+        "same_as_df733c4": false,
+        "count": 5,
+        "canonical_sha256": "d44ed3b288d1691bffe3389fa5ea8d1b864a1d8e9dadd1879a7ab7b4cea5f934"
+      }
+    },
+    "packages_logic": {
+      "packages": {
+        "same_as_df733c4": true,
+        "count": 3,
+        "canonical_sha256": "980237f51b96932e3b6e8e694248918a7e41886593318cc115af37d231b5aa50"
+      },
+      "screening": {
+        "same_as_df733c4": true,
+        "count": 7,
+        "canonical_sha256": "f5d9174c9c5d31c5fc9382bc55765e9f7ffba3c3fc6bc48e1261ea34a946885e"
+      },
+      "day_route_order": {
+        "same_as_df733c4": true,
+        "count": 2,
+        "canonical_sha256": "0730acbc3749192439ccd6d3d88faa9c6967705b2e4ff4a91fa186e18b1fa337"
+      },
+      "prime_prep": {
+        "same_as_df733c4": true,
+        "count": 2,
+        "canonical_sha256": "3c5fe6cc5de3f8991713d2b5b2f6834d3e1fef0cc42c5247442c273007f86ad8"
+      },
+      "prime_catalog": {
+        "same_as_df733c4": false,
+        "count": 17,
+        "canonical_sha256": "0faa68f52865082feebdf835e64edabfb506323919addd05994a5ceb690e3e7e"
+      },
+      "anamnesis_rules": {
+        "same_as_df733c4": false,
+        "count": 20,
+        "canonical_sha256": "2626f164d93d6264c2bc04f57bbd99fe7aeef20d409076e4c030d93ef0de6b45"
+      },
+      "prep_catalog": {
+        "same_as_df733c4": false,
+        "count": 5,
+        "canonical_sha256": "d44ed3b288d1691bffe3389fa5ea8d1b864a1d8e9dadd1879a7ab7b4cea5f934"
+      }
+    }
+  },
+  "main_equals_scenario_tree": true,
+  "target_git": {
+    "target_root": "C:\\Users\\user\\Desktop\\medhub-app\\medhub-app",
+    "is_checkout": false,
+    "stdout": "",
+    "stderr": "fatal: not a git repository (or any of the parent directories): .git\n",
+    "commit_performed": false,
+    "ignore_caveat": "Repository root .gitignore ignores ml/data/. Verify effective exceptions after integration into a real checkout; a ZIP directory cannot provide truthful git status/check-ignore readiness."
+  },
+  "source_preservation": {
+    "head_unchanged": true,
+    "porcelain_unchanged": true,
+    "file_count_before": 190,
+    "file_count_after": 190,
+    "changed_paths": []
+  }
+}

@@ -1,0 +1,322 @@
+{
+  "version": "demo-2",
+  "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+  "source_path": "reference/df733c4/spec/rules.json",
+  "medical_validated": false,
+  "screening": [
+    {
+      "id": "scr_cvd",
+      "name": "Скрининг АГ, ИБС, сахарного диабета, глаукомы",
+      "icd": "Z13.8",
+      "when": {
+        "sex": [
+          "M",
+          "F"
+        ],
+        "age_year": [
+          40,
+          42,
+          44,
+          46,
+          48,
+          50,
+          52,
+          54,
+          56,
+          58,
+          60,
+          62,
+          64,
+          66,
+          68,
+          70,
+          72,
+          74,
+          76
+        ],
+        "not_registered": [
+          "hypertension",
+          "ihd",
+          "diabetes",
+          "glaucoma"
+        ]
+      },
+      "stage1": [
+        "Приём медсестры/фельдшера",
+        "ЛПНП",
+        "Триглицериды",
+        "Гликированный гемоглобин (HbA1c)",
+        "Внутриглазное давление",
+        "Приём терапевта/ВОП"
+      ],
+      "payment": "free_gobmp",
+      "repeat_years": 2,
+      "deadline_days": 60,
+      "prime_overlap": [
+        "Расширенные анализы крови (40+ показателей: гормоны, витамины, печёночные и почечные пробы)",
+        "Липидный профиль и глюкоза",
+        "Гликированный гемоглобин",
+        "Осмотр офтальмолога с измерением давления в глазу"
+      ],
+      "source": "DSM174 прил. 1 п.1, прил. 2 п.1"
+    },
+    {
+      "id": "scr_cerebro",
+      "name": "Скрининг цереброваскулярных заболеваний",
+      "icd": "Z13.6",
+      "when": {
+        "sex": [
+          "M"
+        ],
+        "age_year": [
+          50,
+          52,
+          54,
+          56,
+          58,
+          60,
+          62,
+          64,
+          66,
+          68,
+          70,
+          72,
+          74,
+          76
+        ],
+        "not_registered": [
+          "cerebrovascular"
+        ]
+      },
+      "stage1": [
+        "Приём медсестры",
+        "УЗДГ брахиоцефального ствола",
+        "Приём терапевта/ВОП"
+      ],
+      "payment": "free_osms",
+      "repeat_years": 2,
+      "deadline_days": 60,
+      "prime_overlap": [
+        "УЗДГ сосудов шеи и ног"
+      ],
+      "source": "DSM174 прил. 1 п.2, прил. 2 п.4"
+    },
+    {
+      "id": "scr_breast",
+      "name": "Скрининг рака молочной железы",
+      "icd": "Z12.3",
+      "when": {
+        "sex": [
+          "F"
+        ],
+        "age_year": [
+          40,
+          42,
+          44,
+          46,
+          48,
+          50,
+          52,
+          54,
+          56,
+          58,
+          60,
+          62,
+          64,
+          66,
+          68,
+          70,
+          72,
+          74,
+          76
+        ],
+        "not_registered": [
+          "breast_cancer"
+        ]
+      },
+      "stage1": [
+        "Приём медсестры/фельдшера",
+        "Маммография (4 снимка)",
+        "Вторая читка рентгенолога",
+        "Приём терапевта/ВОП"
+      ],
+      "payment": "free_gobmp",
+      "repeat_years": 2,
+      "deadline_days": 60,
+      "prime_overlap": [
+        "Маммография (2D/3D)"
+      ],
+      "source": "DSM174 прил. 1 п.3, прил. 2 п.2"
+    },
+    {
+      "id": "scr_cervix",
+      "name": "Скрининг рака шейки матки",
+      "icd": "Z12.4",
+      "when": {
+        "sex": [
+          "F"
+        ],
+        "age_year": [
+          30,
+          34,
+          38,
+          42,
+          46,
+          50,
+          54,
+          58,
+          62,
+          66,
+          70,
+          74
+        ],
+        "not_registered": [
+          "cervical_cancer"
+        ]
+      },
+      "stage1": [
+        "Приём медсестры/акушерки",
+        "Мазок на онкоцитологию",
+        "ПАП-тест (жидкостная цитология)",
+        "Приём терапевта/ВОП"
+      ],
+      "payment": "free_gobmp",
+      "repeat_years": 4,
+      "deadline_days": 60,
+      "prime_overlap": [
+        "ПАП-тест"
+      ],
+      "source": "DSM174 прил. 1 п.4, прил. 2 п.3"
+    },
+    {
+      "id": "scr_colorectal",
+      "name": "Скрининг колоректального рака",
+      "icd": "Z12.1",
+      "when": {
+        "sex": [
+          "M",
+          "F"
+        ],
+        "age_year": [
+          50,
+          52,
+          54,
+          56,
+          58,
+          60,
+          62,
+          64,
+          66,
+          68,
+          70,
+          72,
+          74,
+          76
+        ],
+        "not_registered": [
+          "colorectal"
+        ]
+      },
+      "stage1": [
+        "Приём медсестры/фельдшера",
+        "Гемокульт-тест (скрытая кровь в кале)",
+        "Приём терапевта/ВОП"
+      ],
+      "stage2_note": "Колоноскопия — на 2-м этапе, по результату теста",
+      "payment": "free_gobmp",
+      "repeat_years": 2,
+      "deadline_days": 60,
+      "prime_overlap": [],
+      "source": "DSM174 прил. 1 п.5, прил. 2 п.5"
+    },
+    {
+      "id": "scr_hepatitis",
+      "name": "Скрининг гепатитов B и C",
+      "icd": "Z11.5",
+      "when": {
+        "sex": [
+          "M",
+          "F"
+        ],
+        "age_min": 18,
+        "not_registered": [
+          "chronic_hepatitis"
+        ],
+        "not_pregnant": true
+      },
+      "stage1": [
+        "Приём медсестры/фельдшера (кровь из пальца)",
+        "Экспресс-тест на антитела к гепатиту C (anti-HCV)",
+        "Экспресс-тест на HBsAg (гепатит B)"
+      ],
+      "payment": "free_gobmp",
+      "repeat_years": 3,
+      "deadline_days": 60,
+      "prime_overlap": [
+        "Анализ на гепатиты B и C"
+      ],
+      "source": "DSM174 прил. 1 п.6 и прил. 2 п.6 в ред. приказа № 75 от 10.07.2026"
+    },
+    {
+      "id": "scr_lung",
+      "name": "Скрининг рака лёгкого",
+      "icd": "Z12.2",
+      "when": {
+        "sex": [
+          "M",
+          "F"
+        ],
+        "age_year": [
+          50,
+          52,
+          54,
+          56,
+          58,
+          60,
+          62,
+          64,
+          66,
+          68,
+          70
+        ],
+        "not_registered": [
+          "lung_cancer"
+        ],
+        "any_of": [
+          {
+            "pack_years_min": 20,
+            "quit_years_max": 15
+          },
+          {
+            "hazardous_work_10y": true
+          }
+        ]
+      },
+      "stage1": [
+        "Приём медсестры/фельдшера",
+        "КТ органов грудной клетки и средостения",
+        "Описание КТ",
+        "Приём терапевта/ВОП"
+      ],
+      "payment": "free_gobmp",
+      "repeat_years": 2,
+      "deadline_days": 60,
+      "prime_overlap": [
+        "КТ лёгких",
+        "КТ грудной клетки"
+      ],
+      "note": "Курильщик: ≥20 пачка-лет (сигарет в день / 20 × лет курения), курит сейчас или бросил менее 15 лет назад; и/или 10 лет на работах с вредными условиями (перечень — приказ МТСЗН № 170 от 24.05.2023)",
+      "source": "DSM174 прил. 1 п.7 и прил. 2 п.7 (введены приказом № 75 от 10.07.2026)"
+    }
+  ],
+  "source_conflicts": [
+    {
+      "rule_id": "scr_lung",
+      "field": "when.any_of[0].quit_years_max",
+      "json_value": 15,
+      "text_operator": "<15",
+      "source_path": "clinical/normativ/DSM75_2026-07-10_screening_changes_rus.txt:84",
+      "resolution": "review at exactly 15 unless the independent hazardous-work branch is known true; no conflict for >=20 pack-years"
+    }
+  ]
+}

@@ -1,0 +1,2948 @@
+{
+  "audit_date": "2026-09-30",
+  "repository": "https://github.com/Natalia912/MedHub-HAQathon",
+  "method": "git fetch origin; git fetch origin refs/pull/4/head:refs/remotes/origin/pr-4; git show SHA:path; static AST/JSON/text inspection only",
+  "network": {
+    "fetch_succeeded": true,
+    "initial_sandbox_error": "SEC_E_NO_CREDENTIALS",
+    "retry": "Per-command safe.directory under approved network execution; no global git configuration changed"
+  },
+  "refs": {
+    "HEAD": "e690a15be33212e5901f2ab4f9f056c4065cb87a",
+    "origin/main": "d52847ad1cfcfab54fcdaec7061bffc93496d283",
+    "origin/engine": "c2f39680aee388365daa180329a58edfb0f4081c",
+    "origin/pr-4": "c2f39680aee388365daa180329a58edfb0f4081c"
+  },
+  "snapshots": {
+    "catalog_source": {
+      "sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+      "tree": "b1a7232050508c9d3e508442db70a3be57020961",
+      "files": {
+        "app/main.py": {
+          "path": "df733c43d5ab655ef08036366a44bae04e59182f/app/main.py",
+          "bytes": 1418,
+          "sha256": "cbea3d29ea0b176de100c65ee052a32902d192a614c95c65fe6b01cc98a12827",
+          "git_blob": "9ad3f0e36b075dfcba7fe389f617b182ab9dbdf4"
+        },
+        "app/config/fields.py": {
+          "path": "df733c43d5ab655ef08036366a44bae04e59182f/app/config/fields.py",
+          "bytes": 14417,
+          "sha256": "002df282aaa169edf86dc900aa03b6de38190fab2d29f7864fcf6bea319ca42c",
+          "git_blob": "2d747ba787d244bc16870a36e8937f943aa322d5"
+        },
+        "app/static/app.js": {
+          "path": "df733c43d5ab655ef08036366a44bae04e59182f/app/static/app.js",
+          "bytes": 29565,
+          "sha256": "1e2a06b9da12deb553382cf7b8b3605791ceb2b1b23d82ca7626f44f4582ee79",
+          "git_blob": "0d2652b9ef5ad1f8f42e125486ec491810f3dbb8"
+        },
+        "spec/CONTRACT.md": {
+          "path": "df733c43d5ab655ef08036366a44bae04e59182f/spec/CONTRACT.md",
+          "bytes": 6970,
+          "sha256": "b2bf20f8b1b769ba5c539f8d83e929f32c5ba63cffa322de3c1394625c0dbc71",
+          "git_blob": "99dd176dad6ea365b6e7a4513384dbeaaec784d0"
+        },
+        "spec/rules.json": {
+          "path": "df733c43d5ab655ef08036366a44bae04e59182f/spec/rules.json",
+          "bytes": 17145,
+          "sha256": "55127939715b266d61d72ca6df28738df2b457fbe5a49c83fadd6700045f5351",
+          "git_blob": "5b56ccf4b56e787431ad685f3b2e8aa850a3d277"
+        },
+        "spec/examples.json": {
+          "path": "df733c43d5ab655ef08036366a44bae04e59182f/spec/examples.json",
+          "bytes": 4551,
+          "sha256": "9fcfe7bb4de221f38490330cdd6524925fec1c86e7ebd03fc6f8eae25bd772ee",
+          "git_blob": "199fc35c3af22a3d47c1e05a551e87832c510516"
+        },
+        "spec/QUESTIONNAIRE.md": {
+          "path": "df733c43d5ab655ef08036366a44bae04e59182f/spec/QUESTIONNAIRE.md",
+          "bytes": 9015,
+          "sha256": "555f2997ee9e23bd6572d4a8e761b5e7d36abef0a36707953132ea4d33c6744f",
+          "git_blob": "de348ec90ad0ae2e7a61d6e61765d315b6d8b678"
+        },
+        "ml/README.md": {
+          "path": "df733c43d5ab655ef08036366a44bae04e59182f/ml/README.md",
+          "bytes": 3888,
+          "sha256": "bd5356701103fcd09f105c4327e65f86b85b691a79a7be40ad369886f93ea3d7",
+          "git_blob": "e9db4185f10c461ad241563516287a773b578d40"
+        },
+        "ml/sample_inputs.json": {
+          "path": "df733c43d5ab655ef08036366a44bae04e59182f/ml/sample_inputs.json",
+          "bytes": 9595,
+          "sha256": "4bd1f310d801ff3c6f77b7f671972b76cb32b85f0bbd2bb9bda4ff5bada90d03",
+          "git_blob": "4680e9bfd71d43f3fa312d245158a63f635a8406"
+        },
+        "clinical/prime_checkup_packages.md": {
+          "path": "df733c43d5ab655ef08036366a44bae04e59182f/clinical/prime_checkup_packages.md",
+          "bytes": 4761,
+          "sha256": "4a9c55185ce2c729cec3cf4d50d7fd48f1baca5733214e66970ee7caaad03f46",
+          "git_blob": "ce384c99c3c7bd22643208286a30b353f2906368"
+        },
+        "clinical/CONSTRUCTOR_GUIDE.md": {
+          "path": "df733c43d5ab655ef08036366a44bae04e59182f/clinical/CONSTRUCTOR_GUIDE.md",
+          "bytes": 5869,
+          "sha256": "f071847f1693172e924c146bee71e956efeaae67ccd463c272ee87d70d1c83e2",
+          "git_blob": "00bd750cb0426e05b5d9719f49fafd518c38626e"
+        },
+        "clinical/normativ/DSM75_2026-07-10_screening_changes_rus.txt": {
+          "path": "df733c43d5ab655ef08036366a44bae04e59182f/clinical/normativ/DSM75_2026-07-10_screening_changes_rus.txt",
+          "bytes": 40115,
+          "sha256": "392606f5b498a9f668a24eff85d9217435dcd95499f581c4917c8af6addb2939",
+          "git_blob": "aab2391b147422f8dcdef42ebc2e87d44d788555"
+        }
+      },
+      "missing": [
+        {
+          "path": "ml/engine.py",
+          "reason": "fatal: path 'ml/engine.py' does not exist in 'df733c43d5ab655ef08036366a44bae04e59182f'"
+        },
+        {
+          "path": "ml/router.py",
+          "reason": "fatal: path 'ml/router.py' does not exist in 'df733c43d5ab655ef08036366a44bae04e59182f'"
+        },
+        {
+          "path": "ml/test_examples.py",
+          "reason": "fatal: path 'ml/test_examples.py' does not exist in 'df733c43d5ab655ef08036366a44bae04e59182f'"
+        },
+        {
+          "path": "app/selection.py",
+          "reason": "fatal: path 'app/selection.py' exists on disk, but not in 'df733c43d5ab655ef08036366a44bae04e59182f'"
+        },
+        {
+          "path": "app/choice_route.py",
+          "reason": "fatal: path 'app/choice_route.py' exists on disk, but not in 'df733c43d5ab655ef08036366a44bae04e59182f'"
+        },
+        {
+          "path": "docs/TWO_STEP_API.md",
+          "reason": "fatal: path 'docs/TWO_STEP_API.md' exists on disk, but not in 'df733c43d5ab655ef08036366a44bae04e59182f'"
+        }
+      ],
+      "questionnaire": {
+        "count": 27,
+        "fields": [
+          {
+            "name": "for_child",
+            "label": "Для кого подбираем программу?",
+            "type": "boolean",
+            "step": 0,
+            "default": false,
+            "options": [
+              [
+                false,
+                "Для себя"
+              ],
+              [
+                true,
+                "Для ребёнка"
+              ]
+            ]
+          },
+          {
+            "name": "sex",
+            "label": "Пол",
+            "type": "select",
+            "step": 0,
+            "required": true,
+            "options": [
+              [
+                "F",
+                "Женский"
+              ],
+              [
+                "M",
+                "Мужской"
+              ]
+            ]
+          },
+          {
+            "name": "birth_date",
+            "label": "Дата рождения",
+            "type": "date",
+            "step": 0,
+            "required": true,
+            "hint": "Дата рождения человека, для которого заполняете анкету."
+          },
+          {
+            "name": "urgent",
+            "label": "Беспокоит ли что-то прямо сейчас?",
+            "type": "select",
+            "step": 1,
+            "required": true,
+            "layout": "stack",
+            "stop": true,
+            "hint": "Если да — это не чекап: нужна помощь врача сегодня.",
+            "options": [
+              [
+                "none",
+                "Нет, чувствую себя как обычно"
+              ],
+              [
+                "chest_pain",
+                "Боль или давление в груди"
+              ],
+              [
+                "dyspnea",
+                "Сильная одышка"
+              ],
+              [
+                "stroke_signs",
+                "Внезапная слабость в руке или ноге, трудно говорить"
+              ],
+              [
+                "other_now",
+                "Другое, что беспокоит сейчас"
+              ]
+            ]
+          },
+          {
+            "name": "last_period",
+            "label": "Дата начала последних месячных",
+            "type": "date",
+            "step": 2,
+            "show_if": {
+              "sex": "F",
+              "age_min": 12,
+              "age_max": 55,
+              "adult": true
+            },
+            "hint": "Если месячных уже нет — оставьте пустым."
+          },
+          {
+            "name": "pregnant",
+            "label": "Вы беременны или можете быть беременны?",
+            "type": "select",
+            "step": 2,
+            "show_if": {
+              "sex": "F",
+              "age_min": 15,
+              "age_max": 55,
+              "adult": true
+            },
+            "options": [
+              [
+                "no",
+                "Нет"
+              ],
+              [
+                "yes",
+                "Да"
+              ],
+              [
+                "unsure",
+                "Не уверена"
+              ]
+            ],
+            "hint": "При беременности КТ и маммографию не проводят — обсудите обследования с врачом."
+          },
+          {
+            "name": "pregnancies",
+            "label": "Сколько у вас было беременностей?",
+            "type": "number",
+            "step": 2,
+            "min": 0,
+            "max": 30,
+            "placeholder": "0",
+            "show_if": {
+              "static_python_expression": "ADULT_F"
+            },
+            "hint": "Если не было — поставьте 0."
+          },
+          {
+            "name": "births",
+            "label": "Сколько было родов?",
+            "type": "number",
+            "step": 2,
+            "min": 0,
+            "max": 30,
+            "placeholder": "0",
+            "show_if": {
+              "static_python_expression": "{**ADULT_F, 'when': [['pregnancies', 'gt', 0]]}"
+            }
+          },
+          {
+            "name": "contraception",
+            "label": "Чем предохраняетесь?",
+            "type": "select",
+            "step": 2,
+            "show_if": {
+              "sex": "F",
+              "age_min": 15,
+              "age_max": 55,
+              "adult": true
+            },
+            "options": [
+              [
+                "none",
+                "Ничем"
+              ],
+              [
+                "condom",
+                "Презерватив"
+              ],
+              [
+                "pills",
+                "Таблетки"
+              ],
+              [
+                "iud",
+                "Спираль"
+              ],
+              [
+                "other",
+                "Другое"
+              ],
+              [
+                "not_needed",
+                "Не нужно"
+              ]
+            ]
+          },
+          {
+            "name": "discharge",
+            "label": "Есть ли выделения из половых путей, неприятный запах?",
+            "type": "select",
+            "step": 2,
+            "show_if": {
+              "static_python_expression": "ADULT_F"
+            },
+            "options": [
+              [
+                "no",
+                "Нет"
+              ],
+              [
+                "yes",
+                "Да"
+              ]
+            ]
+          },
+          {
+            "name": "dysuria",
+            "label": "Есть ли боль или жжение при мочеиспускании, выделения?",
+            "type": "select",
+            "step": 2,
+            "show_if": {
+              "sex": "M",
+              "age_min": 15,
+              "adult": true
+            },
+            "options": [
+              [
+                "no",
+                "Нет"
+              ],
+              [
+                "yes",
+                "Да"
+              ]
+            ]
+          },
+          {
+            "name": "conditions",
+            "label": "Что из этого у вас есть или было?",
+            "type": "multiselect",
+            "step": 3,
+            "layout": "stack",
+            "exclusive": "none",
+            "hint": "Отметьте всё, что подходит.",
+            "options": {
+              "static_python_expression": "CONDITION_OPTIONS + [['none', 'Ничего из этого']]"
+            }
+          },
+          {
+            "name": "conditions_other",
+            "label": "Другое — впишите своё",
+            "type": "text",
+            "step": 3,
+            "hint": "Если чего-то нет в списке.",
+            "show_if": {
+              "when": [
+                [
+                  "conditions",
+                  "lacks",
+                  "none"
+                ]
+              ]
+            }
+          },
+          {
+            "name": "registered_on",
+            "label": "По чему из отмеченного вы стоите на учёте у врача?",
+            "type": "multiselect",
+            "step": 3,
+            "layout": "stack",
+            "options_from": "conditions",
+            "contract": "registered",
+            "maps_to": {
+              "static_python_expression": "REGISTERED_AS"
+            },
+            "hint": "Если стоите на учёте — это обследование ведёт ваш врач, отдельный бесплатный скрининг не нужен.",
+            "show_if": {
+              "static_python_expression": "{'when': [['conditions', 'has_any', REGISTRABLE]]}"
+            },
+            "options": {
+              "static_python_expression": "[o for o in CONDITION_OPTIONS if o[0] in REGISTRABLE]"
+            }
+          },
+          {
+            "name": "smoke_status",
+            "label": "Вы курите или курили?",
+            "type": "select",
+            "step": 3,
+            "show_if": {
+              "adult": true
+            },
+            "options": [
+              [
+                "never",
+                "Не курил(а)"
+              ],
+              [
+                "smokes",
+                "Курю"
+              ],
+              [
+                "quit",
+                "Бросил(а)"
+              ]
+            ]
+          },
+          {
+            "name": "quit_years_ago",
+            "label": "Сколько лет назад бросили?",
+            "type": "number",
+            "step": 3,
+            "min": 0,
+            "max": 80,
+            "placeholder": "Лет",
+            "show_if": {
+              "adult": true,
+              "when": [
+                [
+                  "smoke_status",
+                  "eq",
+                  "quit"
+                ]
+              ]
+            }
+          },
+          {
+            "name": "cigs_per_day",
+            "label": "Сколько сигарет в день?",
+            "type": "number",
+            "step": 3,
+            "min": 0,
+            "max": 100,
+            "placeholder": "Штук",
+            "show_if": {
+              "static_python_expression": "SMOKE_DETAILS"
+            }
+          },
+          {
+            "name": "smoke_years",
+            "label": "Сколько лет курите (курили)?",
+            "type": "number",
+            "step": 3,
+            "min": 0,
+            "max": 80,
+            "placeholder": "Лет",
+            "show_if": {
+              "static_python_expression": "SMOKE_DETAILS"
+            }
+          },
+          {
+            "name": "hazardous_work_10y",
+            "label": "Последние 10 лет работали на вредном производстве?",
+            "type": "select",
+            "step": 3,
+            "show_if": {
+              "age_min": 50,
+              "age_max": 70,
+              "adult": true
+            },
+            "hint": "Если не уверены — отметьте «Да», врач уточнит.",
+            "options": [
+              [
+                "no",
+                "Нет"
+              ],
+              [
+                "yes",
+                "Да"
+              ]
+            ]
+          },
+          {
+            "name": "last_screening",
+            "label": "Что проходили за последние 2 года?",
+            "type": "multiselect",
+            "step": 3,
+            "show_if": {
+              "adult": true
+            },
+            "hint": "Если не помните — оставьте без отметки.",
+            "options": [
+              [
+                "scr_breast",
+                "Маммография",
+                "F"
+              ],
+              [
+                "scr_cervix",
+                "Мазок на онкоцитологию или ВПЧ",
+                "F"
+              ],
+              [
+                "scr_colorectal",
+                "Анализ кала на скрытую кровь"
+              ],
+              [
+                "scr_cvd",
+                "Анализы на холестерин и сахар"
+              ]
+            ]
+          },
+          {
+            "name": "attached_to",
+            "label": "Вы прикреплены к поликлинике?",
+            "type": "select",
+            "step": 3,
+            "layout": "stack",
+            "options": [
+              [
+                "green_clinic",
+                "К Green Clinic"
+              ],
+              [
+                "other",
+                "К другой поликлинике"
+              ],
+              [
+                "unknown",
+                "Не знаю"
+              ]
+            ]
+          },
+          {
+            "name": "family_history",
+            "label": "Было ли у родителей, братьев, сестёр?",
+            "type": "multiselect",
+            "step": 4,
+            "layout": "stack",
+            "exclusive": "none",
+            "options": [
+              [
+                "colorectal_cancer",
+                "Рак кишечника"
+              ],
+              [
+                "breast_cancer",
+                "Рак молочной железы или яичников"
+              ],
+              [
+                "other_cancer",
+                "Другой рак"
+              ],
+              [
+                "early_cvd",
+                "Инфаркт или инсульт до 60 лет"
+              ],
+              [
+                "hypertension",
+                "Повышенное давление"
+              ],
+              [
+                "diabetes",
+                "Сахарный диабет"
+              ],
+              [
+                "tb",
+                "Туберкулёз"
+              ],
+              [
+                "none",
+                "Нет или не знаю"
+              ]
+            ]
+          },
+          {
+            "name": "anesthesia_reaction",
+            "label": "Были ли плохие реакции на наркоз?",
+            "type": "select",
+            "step": 5,
+            "show_if": {
+              "adult": true
+            },
+            "options": [
+              [
+                "no",
+                "Нет"
+              ],
+              [
+                "yes",
+                "Да"
+              ],
+              [
+                "never",
+                "Наркоза не было"
+              ]
+            ]
+          },
+          {
+            "name": "blood_thinners",
+            "label": "Принимаете препараты, разжижающие кровь?",
+            "type": "select",
+            "step": 5,
+            "show_if": {
+              "adult": true
+            },
+            "hint": "Например, аспирин, варфарин. Перед гастро- и колоноскопией врач скажет, как с ними быть.",
+            "options": [
+              [
+                "no",
+                "Нет"
+              ],
+              [
+                "yes",
+                "Да"
+              ],
+              [
+                "unknown",
+                "Не знаю"
+              ]
+            ]
+          },
+          {
+            "name": "allergy",
+            "label": "Была ли аллергия на лекарства или контраст?",
+            "type": "select",
+            "step": 5,
+            "options": [
+              [
+                "no",
+                "Нет"
+              ],
+              [
+                "yes",
+                "Да"
+              ],
+              [
+                "unknown",
+                "Не знаю"
+              ]
+            ]
+          },
+          {
+            "name": "medications",
+            "label": "Какие лекарства принимаете сейчас?",
+            "type": "textarea",
+            "step": 5,
+            "hint": "Названия и как принимаете, если помните. Если никаких — оставьте пустым."
+          },
+          {
+            "name": "companion",
+            "label": "Сможет ли кто-то проводить вас домой в день обследования?",
+            "type": "select",
+            "step": 5,
+            "show_if": {
+              "adult": true
+            },
+            "hint": "После наркоза в этот день нельзя садиться за руль.",
+            "options": [
+              [
+                "yes",
+                "Да"
+              ],
+              [
+                "no",
+                "Нет"
+              ]
+            ]
+          }
+        ]
+      },
+      "main_http_decorators": [
+        [
+          "get",
+          "/"
+        ],
+        [
+          "get",
+          "/health"
+        ],
+        [
+          "get",
+          "/fields"
+        ],
+        [
+          "get",
+          "/steps"
+        ],
+        [
+          "get",
+          "/rules"
+        ],
+        [
+          "post",
+          "/predict"
+        ]
+      ],
+      "main_includes_router": false
+    },
+    "scenario_source": {
+      "sha": "744d7f79e6872a31572dda9d75269a8a8b7bcd4a",
+      "tree": "60b9da2311d7453814217cd49fec53ec4b56b42d",
+      "files": {
+        "app/main.py": {
+          "path": "744d7f79e6872a31572dda9d75269a8a8b7bcd4a/app/main.py",
+          "bytes": 546,
+          "sha256": "a2ea5d98963d8a5fc86729cadd91ce1a229d6caa3bc0cbda4a34be9ac236978f",
+          "git_blob": "f1d664a923b6ec3f3b6eaae9c55b2477e893032e"
+        },
+        "app/config/fields.py": {
+          "path": "744d7f79e6872a31572dda9d75269a8a8b7bcd4a/app/config/fields.py",
+          "bytes": 10889,
+          "sha256": "9a6d1c79640cc36e4e24af178bd712a5cdfe04c2bca0858ae6534f1ba9c32f75",
+          "git_blob": "b5a8c0f71a0aa2a5391b092610a5e55479457a2e"
+        },
+        "app/static/app.js": {
+          "path": "744d7f79e6872a31572dda9d75269a8a8b7bcd4a/app/static/app.js",
+          "bytes": 11893,
+          "sha256": "8a97d618b865ce55c619112d8ced4078c4e00c26e9b7ff4f1fada9285fb5081a",
+          "git_blob": "7f3148bd56409a4eeaa2df8ceb92003dab99f2c5"
+        },
+        "spec/CONTRACT.md": {
+          "path": "744d7f79e6872a31572dda9d75269a8a8b7bcd4a/spec/CONTRACT.md",
+          "bytes": 6969,
+          "sha256": "53985ad528d7f3c710372619836b85569142cd250a8c66e2ccc33254f50a0e14",
+          "git_blob": "58396b8b20fc323461e50e01c6b8a7bb3eb3201c"
+        },
+        "spec/rules.json": {
+          "path": "744d7f79e6872a31572dda9d75269a8a8b7bcd4a/spec/rules.json",
+          "bytes": 29039,
+          "sha256": "6eff8853e7b275baf7afc270a7b00e6afe8aee11b7e0617aad5f59ff4a176924",
+          "git_blob": "bd432767f606d881a206584fddfc144b804732ba"
+        },
+        "spec/examples.json": {
+          "path": "744d7f79e6872a31572dda9d75269a8a8b7bcd4a/spec/examples.json",
+          "bytes": 4551,
+          "sha256": "9fcfe7bb4de221f38490330cdd6524925fec1c86e7ebd03fc6f8eae25bd772ee",
+          "git_blob": "199fc35c3af22a3d47c1e05a551e87832c510516"
+        },
+        "spec/QUESTIONNAIRE.md": {
+          "path": "744d7f79e6872a31572dda9d75269a8a8b7bcd4a/spec/QUESTIONNAIRE.md",
+          "bytes": 9015,
+          "sha256": "555f2997ee9e23bd6572d4a8e761b5e7d36abef0a36707953132ea4d33c6744f",
+          "git_blob": "de348ec90ad0ae2e7a61d6e61765d315b6d8b678"
+        },
+        "ml/README.md": {
+          "path": "744d7f79e6872a31572dda9d75269a8a8b7bcd4a/ml/README.md",
+          "bytes": 3888,
+          "sha256": "bd5356701103fcd09f105c4327e65f86b85b691a79a7be40ad369886f93ea3d7",
+          "git_blob": "e9db4185f10c461ad241563516287a773b578d40"
+        },
+        "ml/sample_inputs.json": {
+          "path": "744d7f79e6872a31572dda9d75269a8a8b7bcd4a/ml/sample_inputs.json",
+          "bytes": 9595,
+          "sha256": "4bd1f310d801ff3c6f77b7f671972b76cb32b85f0bbd2bb9bda4ff5bada90d03",
+          "git_blob": "4680e9bfd71d43f3fa312d245158a63f635a8406"
+        },
+        "clinical/prime_checkup_packages.md": {
+          "path": "744d7f79e6872a31572dda9d75269a8a8b7bcd4a/clinical/prime_checkup_packages.md",
+          "bytes": 4761,
+          "sha256": "4a9c55185ce2c729cec3cf4d50d7fd48f1baca5733214e66970ee7caaad03f46",
+          "git_blob": "ce384c99c3c7bd22643208286a30b353f2906368"
+        },
+        "clinical/CONSTRUCTOR_GUIDE.md": {
+          "path": "744d7f79e6872a31572dda9d75269a8a8b7bcd4a/clinical/CONSTRUCTOR_GUIDE.md",
+          "bytes": 5869,
+          "sha256": "f071847f1693172e924c146bee71e956efeaae67ccd463c272ee87d70d1c83e2",
+          "git_blob": "00bd750cb0426e05b5d9719f49fafd518c38626e"
+        },
+        "clinical/normativ/DSM75_2026-07-10_screening_changes_rus.txt": {
+          "path": "744d7f79e6872a31572dda9d75269a8a8b7bcd4a/clinical/normativ/DSM75_2026-07-10_screening_changes_rus.txt",
+          "bytes": 40115,
+          "sha256": "392606f5b498a9f668a24eff85d9217435dcd95499f581c4917c8af6addb2939",
+          "git_blob": "aab2391b147422f8dcdef42ebc2e87d44d788555"
+        }
+      },
+      "missing": [
+        {
+          "path": "ml/engine.py",
+          "reason": "fatal: path 'ml/engine.py' does not exist in '744d7f79e6872a31572dda9d75269a8a8b7bcd4a'"
+        },
+        {
+          "path": "ml/router.py",
+          "reason": "fatal: path 'ml/router.py' does not exist in '744d7f79e6872a31572dda9d75269a8a8b7bcd4a'"
+        },
+        {
+          "path": "ml/test_examples.py",
+          "reason": "fatal: path 'ml/test_examples.py' does not exist in '744d7f79e6872a31572dda9d75269a8a8b7bcd4a'"
+        },
+        {
+          "path": "app/selection.py",
+          "reason": "fatal: path 'app/selection.py' exists on disk, but not in '744d7f79e6872a31572dda9d75269a8a8b7bcd4a'"
+        },
+        {
+          "path": "app/choice_route.py",
+          "reason": "fatal: path 'app/choice_route.py' exists on disk, but not in '744d7f79e6872a31572dda9d75269a8a8b7bcd4a'"
+        },
+        {
+          "path": "docs/TWO_STEP_API.md",
+          "reason": "fatal: path 'docs/TWO_STEP_API.md' exists on disk, but not in '744d7f79e6872a31572dda9d75269a8a8b7bcd4a'"
+        }
+      ],
+      "questionnaire": {
+        "count": 30,
+        "fields": [
+          {
+            "name": "for_child",
+            "label": "Для кого подбираем программу?",
+            "type": "boolean",
+            "step": 0,
+            "default": false,
+            "options": [
+              [
+                false,
+                "Для себя"
+              ],
+              [
+                true,
+                "Для ребёнка"
+              ]
+            ]
+          },
+          {
+            "name": "sex",
+            "label": "Пол",
+            "type": "select",
+            "step": 0,
+            "required": true,
+            "options": [
+              [
+                "M",
+                "Мужской"
+              ],
+              [
+                "F",
+                "Женский"
+              ]
+            ]
+          },
+          {
+            "name": "birth_date",
+            "label": "Дата рождения",
+            "type": "date",
+            "step": 0,
+            "required": true,
+            "min": "1920-01-01",
+            "max": "2025-12-31",
+            "hint": "Дата рождения человека, для которого заполняете анкету. Год рождения определится автоматически."
+          },
+          {
+            "name": "checkup_year",
+            "label": "Год обследования",
+            "type": "number",
+            "step": 0,
+            "default": "current_year",
+            "min": 1920,
+            "max": 9999
+          },
+          {
+            "name": "urgent",
+            "label": "Что-то беспокоит прямо сейчас?",
+            "type": "select",
+            "step": 1,
+            "required": true,
+            "layout": "stack",
+            "options": [
+              [
+                "chest_pain",
+                "Боль или давление в груди"
+              ],
+              [
+                "dyspnea",
+                "Сильная одышка"
+              ],
+              [
+                "stroke_signs",
+                "Внезапная слабость в руке или ноге, нарушение речи"
+              ],
+              [
+                "none",
+                "Нет, ничего из перечисленного"
+              ]
+            ]
+          },
+          {
+            "name": "pregnant",
+            "label": "Беременны или можете быть беременны?",
+            "type": "select",
+            "step": 1,
+            "show_if": {
+              "sex": "F",
+              "age_min": 18,
+              "age_max": 55
+            },
+            "options": [
+              [
+                "yes",
+                "Да"
+              ],
+              [
+                "no",
+                "Нет"
+              ],
+              [
+                "unsure",
+                "Не уверена"
+              ]
+            ],
+            "hint": "Если да или не уверены, обсудите обследования с врачом."
+          },
+          {
+            "name": "conditions",
+            "label": "Что у вас есть или было раньше?",
+            "type": "multiselect",
+            "step": 2,
+            "hint": "Отметьте известные вам заболевания или состояния. Если нет или не знаете — оставьте без выбора.",
+            "options": [
+              [
+                "pressure",
+                "Повышенное давление"
+              ],
+              [
+                "heart",
+                "Заболевания сердца"
+              ],
+              [
+                "diabetes",
+                "Сахарный диабет"
+              ],
+              [
+                "glaucoma",
+                "Глаукома"
+              ],
+              [
+                "head_vessels",
+                "Заболевания сосудов головного мозга"
+              ],
+              [
+                "legs",
+                "Заболевания сосудов ног"
+              ],
+              [
+                "breast",
+                "Заболевания молочной железы"
+              ],
+              [
+                "hpv",
+                "ВПЧ"
+              ],
+              [
+                "bowel",
+                "Заболевания кишечника"
+              ],
+              [
+                "lungs",
+                "Заболевания лёгких"
+              ],
+              [
+                "tb",
+                "Туберкулёз"
+              ],
+              [
+                "hepatitis",
+                "Гепатит"
+              ],
+              [
+                "urine",
+                "Заболевания мочевыделительной системы"
+              ],
+              [
+                "bleeding",
+                "Кровотечения"
+              ]
+            ]
+          },
+          {
+            "name": "conditions_other",
+            "label": "Другие заболевания или состояния",
+            "type": "text",
+            "step": 2,
+            "hint": "Свой вариант, если его нет в списке."
+          },
+          {
+            "name": "registered",
+            "label": "По каким диагнозам состоите на учёте у врача?",
+            "type": "multiselect",
+            "step": 2,
+            "hint": "Выберите всё подходящее. Если нет — оставьте без выбора.",
+            "options": [
+              [
+                "hypertension",
+                "Гипертония"
+              ],
+              [
+                "ihd",
+                "Ишемическая болезнь сердца"
+              ],
+              [
+                "diabetes",
+                "Сахарный диабет"
+              ],
+              [
+                "glaucoma",
+                "Глаукома"
+              ],
+              [
+                "cerebrovascular",
+                "Инсульт / сосуды головного мозга"
+              ],
+              [
+                "breast_cancer",
+                "Онкология молочной железы"
+              ],
+              [
+                "cervical_cancer",
+                "Онкология шейки матки"
+              ],
+              [
+                "colorectal",
+                "Онкология / полипы кишечника"
+              ],
+              [
+                "lung_cancer",
+                "Рак лёгких"
+              ],
+              [
+                "chronic_hepatitis",
+                "Хронический гепатит"
+              ]
+            ]
+          },
+          {
+            "name": "last_screening.scr_breast",
+            "label": "Маммография",
+            "type": "number",
+            "step": 2,
+            "section": "screening",
+            "min": 1920,
+            "max": "checkup_year",
+            "show_if": {
+              "sex": "F",
+              "age_min": 40,
+              "age_max": 76
+            }
+          },
+          {
+            "name": "last_screening.scr_cervix",
+            "label": "Мазок / ПАП-тест",
+            "type": "number",
+            "step": 2,
+            "section": "screening",
+            "min": 1920,
+            "max": "checkup_year",
+            "show_if": {
+              "sex": "F",
+              "age_min": 30,
+              "age_max": 74
+            }
+          },
+          {
+            "name": "last_screening.scr_colorectal",
+            "label": "Тест на скрытую кровь",
+            "type": "number",
+            "step": 2,
+            "section": "screening",
+            "min": 1920,
+            "max": "checkup_year",
+            "show_if": {
+              "age_min": 50,
+              "age_max": 76
+            }
+          },
+          {
+            "name": "last_screening.scr_cvd",
+            "label": "Анализы на холестерин и сахар",
+            "type": "number",
+            "step": 2,
+            "section": "screening",
+            "min": 1920,
+            "max": "checkup_year",
+            "show_if": {
+              "age_min": 40,
+              "age_max": 76
+            }
+          },
+          {
+            "name": "attached_to",
+            "label": "Вы прикреплены к поликлинике?",
+            "type": "select",
+            "step": 2,
+            "layout": "stack",
+            "options": [
+              [
+                "green_clinic",
+                "К Green Clinic"
+              ],
+              [
+                "other",
+                "К другой поликлинике"
+              ],
+              [
+                "unknown",
+                "Не знаю"
+              ]
+            ]
+          },
+          {
+            "name": "family_history",
+            "label": "Какие заболевания были у родителей, братьев или сестёр?",
+            "type": "multiselect",
+            "step": 3,
+            "options": [
+              [
+                "colorectal_cancer",
+                "Рак кишечника"
+              ],
+              [
+                "breast_cancer",
+                "Рак молочной железы"
+              ],
+              [
+                "other_cancer",
+                "Другие онкологические заболевания"
+              ],
+              [
+                "early_cvd",
+                "Инфаркт / инсульт до 60 лет"
+              ],
+              [
+                "hypertension",
+                "Гипертония"
+              ],
+              [
+                "diabetes",
+                "Сахарный диабет"
+              ],
+              [
+                "tb",
+                "Туберкулёз"
+              ]
+            ],
+            "hint": "Если нет или не знаете — оставьте без выбора."
+          },
+          {
+            "name": "smoking.pack_years",
+            "label": "Стаж курения в пачка-летах",
+            "type": "number",
+            "step": 3,
+            "min": 0,
+            "increment": "any",
+            "placeholder": "Например, 25",
+            "hint": "Число пачек в день × число лет курения. Например, 1 пачка в день в течение 25 лет = 25 пачка-лет. Если никогда не курили — 0; если не знаете — оставьте пустым."
+          },
+          {
+            "name": "smoking.quit_years_ago",
+            "label": "Сколько лет назад бросили курить?",
+            "type": "number",
+            "step": 3,
+            "min": 0,
+            "increment": "any",
+            "placeholder": "Например, 5",
+            "hint": "Если курите сейчас — 0. Если никогда не курили или не знаете — оставьте пустым."
+          },
+          {
+            "name": "hazardous_work_10y",
+            "label": "Работали 10 лет на вредном производстве?",
+            "type": "boolean",
+            "step": 3,
+            "options": [
+              [
+                true,
+                "Да"
+              ],
+              [
+                false,
+                "Нет"
+              ]
+            ],
+            "hint": "Если не знаете — оставьте без ответа."
+          },
+          {
+            "name": "risk_group",
+            "label": "Относитесь ли вы к группе риска по гепатитам?",
+            "type": "multiselect",
+            "step": 3,
+            "hint": "Необязательно. Отметьте только то, что вам известно.",
+            "layout": "stack",
+            "options": [
+              [
+                "medical_worker_invasive",
+                "Медработник, выполняющий инвазивные процедуры"
+              ],
+              [
+                "planned_surgery",
+                "Плановая операция"
+              ],
+              [
+                "hemodialysis_oncology_hematology",
+                "Гемодиализ / лечение в онкологии или гематологии"
+              ],
+              [
+                "transfusion_transplant",
+                "Переливание крови / трансплантация"
+              ],
+              [
+                "pregnancy",
+                "Беременность"
+              ],
+              [
+                "hiv_key_population",
+                "ВИЧ / ключевые группы риска"
+              ]
+            ]
+          },
+          {
+            "name": "last_period",
+            "label": "Начало последних месячных",
+            "type": "date",
+            "step": 4,
+            "min": "birth_date",
+            "max": "today",
+            "show_if": {
+              "sex": "F"
+            }
+          },
+          {
+            "name": "pregnancies",
+            "label": "Сколько было беременностей?",
+            "type": "number",
+            "step": 4,
+            "min": 0,
+            "show_if": {
+              "sex": "F"
+            },
+            "placeholder": "Количество"
+          },
+          {
+            "name": "births",
+            "label": "Сколько было родов?",
+            "type": "number",
+            "step": 4,
+            "min": 0,
+            "show_if": {
+              "sex": "F"
+            },
+            "placeholder": "Количество"
+          },
+          {
+            "name": "contraception",
+            "label": "Какой метод контрацепции используете?",
+            "type": "select",
+            "step": 4,
+            "show_if": {
+              "sex": "F"
+            },
+            "options": [
+              [
+                "none",
+                "Не использую"
+              ],
+              [
+                "condom",
+                "Презерватив"
+              ],
+              [
+                "pills",
+                "Таблетки"
+              ],
+              [
+                "iud",
+                "Внутриматочная спираль"
+              ],
+              [
+                "other",
+                "Другой"
+              ],
+              [
+                "not_needed",
+                "Не требуется"
+              ]
+            ]
+          },
+          {
+            "name": "discharge",
+            "label": "Есть необычные выделения или запах?",
+            "type": "select",
+            "step": 4,
+            "show_if": {
+              "sex": "F"
+            },
+            "options": {
+              "static_python_expression": "YES_NO_UNSURE"
+            }
+          },
+          {
+            "name": "dysuria",
+            "label": "Есть боль, жжение при мочеиспускании или выделения?",
+            "type": "select",
+            "step": 4,
+            "show_if": {
+              "sex": "M"
+            },
+            "options": {
+              "static_python_expression": "YES_NO_UNSURE"
+            }
+          },
+          {
+            "name": "anesthesia_reaction",
+            "label": "Были нежелательные реакции на наркоз?",
+            "type": "select",
+            "step": 5,
+            "options": {
+              "static_python_expression": "YES_NO_UNSURE"
+            }
+          },
+          {
+            "name": "blood_thinners",
+            "label": "Принимаете препараты, разжижающие кровь?",
+            "type": "select",
+            "step": 5,
+            "options": {
+              "static_python_expression": "YES_NO_UNSURE"
+            }
+          },
+          {
+            "name": "allergy",
+            "label": "Есть ли у вас аллергия?",
+            "type": "select",
+            "step": 5,
+            "options": {
+              "static_python_expression": "YES_NO_UNSURE"
+            }
+          },
+          {
+            "name": "companion",
+            "label": "Есть ли человек, который сможет вас сопровождать?",
+            "type": "select",
+            "step": 5,
+            "hint": "После наркоза нельзя садиться за руль.",
+            "options": {
+              "static_python_expression": "YES_NO_UNSURE"
+            }
+          },
+          {
+            "name": "medications",
+            "label": "Какие лекарства принимаете сейчас?",
+            "type": "text",
+            "step": 5,
+            "hint": "Укажите названия, если помните. Вопрос можно пропустить."
+          }
+        ]
+      },
+      "main_http_decorators": [
+        [
+          "get",
+          "/"
+        ],
+        [
+          "get",
+          "/health"
+        ],
+        [
+          "get",
+          "/fields"
+        ]
+      ],
+      "main_includes_router": false
+    },
+    "checked_main": {
+      "sha": "d52847ad1cfcfab54fcdaec7061bffc93496d283",
+      "tree": "60b9da2311d7453814217cd49fec53ec4b56b42d",
+      "files": {
+        "app/main.py": {
+          "path": "d52847ad1cfcfab54fcdaec7061bffc93496d283/app/main.py",
+          "bytes": 546,
+          "sha256": "a2ea5d98963d8a5fc86729cadd91ce1a229d6caa3bc0cbda4a34be9ac236978f",
+          "git_blob": "f1d664a923b6ec3f3b6eaae9c55b2477e893032e"
+        },
+        "app/config/fields.py": {
+          "path": "d52847ad1cfcfab54fcdaec7061bffc93496d283/app/config/fields.py",
+          "bytes": 10889,
+          "sha256": "9a6d1c79640cc36e4e24af178bd712a5cdfe04c2bca0858ae6534f1ba9c32f75",
+          "git_blob": "b5a8c0f71a0aa2a5391b092610a5e55479457a2e"
+        },
+        "app/static/app.js": {
+          "path": "d52847ad1cfcfab54fcdaec7061bffc93496d283/app/static/app.js",
+          "bytes": 11893,
+          "sha256": "8a97d618b865ce55c619112d8ced4078c4e00c26e9b7ff4f1fada9285fb5081a",
+          "git_blob": "7f3148bd56409a4eeaa2df8ceb92003dab99f2c5"
+        },
+        "spec/CONTRACT.md": {
+          "path": "d52847ad1cfcfab54fcdaec7061bffc93496d283/spec/CONTRACT.md",
+          "bytes": 6969,
+          "sha256": "53985ad528d7f3c710372619836b85569142cd250a8c66e2ccc33254f50a0e14",
+          "git_blob": "58396b8b20fc323461e50e01c6b8a7bb3eb3201c"
+        },
+        "spec/rules.json": {
+          "path": "d52847ad1cfcfab54fcdaec7061bffc93496d283/spec/rules.json",
+          "bytes": 29039,
+          "sha256": "6eff8853e7b275baf7afc270a7b00e6afe8aee11b7e0617aad5f59ff4a176924",
+          "git_blob": "bd432767f606d881a206584fddfc144b804732ba"
+        },
+        "spec/examples.json": {
+          "path": "d52847ad1cfcfab54fcdaec7061bffc93496d283/spec/examples.json",
+          "bytes": 4551,
+          "sha256": "9fcfe7bb4de221f38490330cdd6524925fec1c86e7ebd03fc6f8eae25bd772ee",
+          "git_blob": "199fc35c3af22a3d47c1e05a551e87832c510516"
+        },
+        "spec/QUESTIONNAIRE.md": {
+          "path": "d52847ad1cfcfab54fcdaec7061bffc93496d283/spec/QUESTIONNAIRE.md",
+          "bytes": 9015,
+          "sha256": "555f2997ee9e23bd6572d4a8e761b5e7d36abef0a36707953132ea4d33c6744f",
+          "git_blob": "de348ec90ad0ae2e7a61d6e61765d315b6d8b678"
+        },
+        "ml/README.md": {
+          "path": "d52847ad1cfcfab54fcdaec7061bffc93496d283/ml/README.md",
+          "bytes": 3888,
+          "sha256": "bd5356701103fcd09f105c4327e65f86b85b691a79a7be40ad369886f93ea3d7",
+          "git_blob": "e9db4185f10c461ad241563516287a773b578d40"
+        },
+        "ml/sample_inputs.json": {
+          "path": "d52847ad1cfcfab54fcdaec7061bffc93496d283/ml/sample_inputs.json",
+          "bytes": 9595,
+          "sha256": "4bd1f310d801ff3c6f77b7f671972b76cb32b85f0bbd2bb9bda4ff5bada90d03",
+          "git_blob": "4680e9bfd71d43f3fa312d245158a63f635a8406"
+        },
+        "clinical/prime_checkup_packages.md": {
+          "path": "d52847ad1cfcfab54fcdaec7061bffc93496d283/clinical/prime_checkup_packages.md",
+          "bytes": 4761,
+          "sha256": "4a9c55185ce2c729cec3cf4d50d7fd48f1baca5733214e66970ee7caaad03f46",
+          "git_blob": "ce384c99c3c7bd22643208286a30b353f2906368"
+        },
+        "clinical/CONSTRUCTOR_GUIDE.md": {
+          "path": "d52847ad1cfcfab54fcdaec7061bffc93496d283/clinical/CONSTRUCTOR_GUIDE.md",
+          "bytes": 5869,
+          "sha256": "f071847f1693172e924c146bee71e956efeaae67ccd463c272ee87d70d1c83e2",
+          "git_blob": "00bd750cb0426e05b5d9719f49fafd518c38626e"
+        },
+        "clinical/normativ/DSM75_2026-07-10_screening_changes_rus.txt": {
+          "path": "d52847ad1cfcfab54fcdaec7061bffc93496d283/clinical/normativ/DSM75_2026-07-10_screening_changes_rus.txt",
+          "bytes": 40115,
+          "sha256": "392606f5b498a9f668a24eff85d9217435dcd95499f581c4917c8af6addb2939",
+          "git_blob": "aab2391b147422f8dcdef42ebc2e87d44d788555"
+        }
+      },
+      "missing": [
+        {
+          "path": "ml/engine.py",
+          "reason": "fatal: path 'ml/engine.py' does not exist in 'd52847ad1cfcfab54fcdaec7061bffc93496d283'"
+        },
+        {
+          "path": "ml/router.py",
+          "reason": "fatal: path 'ml/router.py' does not exist in 'd52847ad1cfcfab54fcdaec7061bffc93496d283'"
+        },
+        {
+          "path": "ml/test_examples.py",
+          "reason": "fatal: path 'ml/test_examples.py' does not exist in 'd52847ad1cfcfab54fcdaec7061bffc93496d283'"
+        },
+        {
+          "path": "app/selection.py",
+          "reason": "fatal: path 'app/selection.py' exists on disk, but not in 'd52847ad1cfcfab54fcdaec7061bffc93496d283'"
+        },
+        {
+          "path": "app/choice_route.py",
+          "reason": "fatal: path 'app/choice_route.py' exists on disk, but not in 'd52847ad1cfcfab54fcdaec7061bffc93496d283'"
+        },
+        {
+          "path": "docs/TWO_STEP_API.md",
+          "reason": "fatal: path 'docs/TWO_STEP_API.md' exists on disk, but not in 'd52847ad1cfcfab54fcdaec7061bffc93496d283'"
+        }
+      ],
+      "questionnaire": {
+        "count": 30,
+        "fields": [
+          {
+            "name": "for_child",
+            "label": "Для кого подбираем программу?",
+            "type": "boolean",
+            "step": 0,
+            "default": false,
+            "options": [
+              [
+                false,
+                "Для себя"
+              ],
+              [
+                true,
+                "Для ребёнка"
+              ]
+            ]
+          },
+          {
+            "name": "sex",
+            "label": "Пол",
+            "type": "select",
+            "step": 0,
+            "required": true,
+            "options": [
+              [
+                "M",
+                "Мужской"
+              ],
+              [
+                "F",
+                "Женский"
+              ]
+            ]
+          },
+          {
+            "name": "birth_date",
+            "label": "Дата рождения",
+            "type": "date",
+            "step": 0,
+            "required": true,
+            "min": "1920-01-01",
+            "max": "2025-12-31",
+            "hint": "Дата рождения человека, для которого заполняете анкету. Год рождения определится автоматически."
+          },
+          {
+            "name": "checkup_year",
+            "label": "Год обследования",
+            "type": "number",
+            "step": 0,
+            "default": "current_year",
+            "min": 1920,
+            "max": 9999
+          },
+          {
+            "name": "urgent",
+            "label": "Что-то беспокоит прямо сейчас?",
+            "type": "select",
+            "step": 1,
+            "required": true,
+            "layout": "stack",
+            "options": [
+              [
+                "chest_pain",
+                "Боль или давление в груди"
+              ],
+              [
+                "dyspnea",
+                "Сильная одышка"
+              ],
+              [
+                "stroke_signs",
+                "Внезапная слабость в руке или ноге, нарушение речи"
+              ],
+              [
+                "none",
+                "Нет, ничего из перечисленного"
+              ]
+            ]
+          },
+          {
+            "name": "pregnant",
+            "label": "Беременны или можете быть беременны?",
+            "type": "select",
+            "step": 1,
+            "show_if": {
+              "sex": "F",
+              "age_min": 18,
+              "age_max": 55
+            },
+            "options": [
+              [
+                "yes",
+                "Да"
+              ],
+              [
+                "no",
+                "Нет"
+              ],
+              [
+                "unsure",
+                "Не уверена"
+              ]
+            ],
+            "hint": "Если да или не уверены, обсудите обследования с врачом."
+          },
+          {
+            "name": "conditions",
+            "label": "Что у вас есть или было раньше?",
+            "type": "multiselect",
+            "step": 2,
+            "hint": "Отметьте известные вам заболевания или состояния. Если нет или не знаете — оставьте без выбора.",
+            "options": [
+              [
+                "pressure",
+                "Повышенное давление"
+              ],
+              [
+                "heart",
+                "Заболевания сердца"
+              ],
+              [
+                "diabetes",
+                "Сахарный диабет"
+              ],
+              [
+                "glaucoma",
+                "Глаукома"
+              ],
+              [
+                "head_vessels",
+                "Заболевания сосудов головного мозга"
+              ],
+              [
+                "legs",
+                "Заболевания сосудов ног"
+              ],
+              [
+                "breast",
+                "Заболевания молочной железы"
+              ],
+              [
+                "hpv",
+                "ВПЧ"
+              ],
+              [
+                "bowel",
+                "Заболевания кишечника"
+              ],
+              [
+                "lungs",
+                "Заболевания лёгких"
+              ],
+              [
+                "tb",
+                "Туберкулёз"
+              ],
+              [
+                "hepatitis",
+                "Гепатит"
+              ],
+              [
+                "urine",
+                "Заболевания мочевыделительной системы"
+              ],
+              [
+                "bleeding",
+                "Кровотечения"
+              ]
+            ]
+          },
+          {
+            "name": "conditions_other",
+            "label": "Другие заболевания или состояния",
+            "type": "text",
+            "step": 2,
+            "hint": "Свой вариант, если его нет в списке."
+          },
+          {
+            "name": "registered",
+            "label": "По каким диагнозам состоите на учёте у врача?",
+            "type": "multiselect",
+            "step": 2,
+            "hint": "Выберите всё подходящее. Если нет — оставьте без выбора.",
+            "options": [
+              [
+                "hypertension",
+                "Гипертония"
+              ],
+              [
+                "ihd",
+                "Ишемическая болезнь сердца"
+              ],
+              [
+                "diabetes",
+                "Сахарный диабет"
+              ],
+              [
+                "glaucoma",
+                "Глаукома"
+              ],
+              [
+                "cerebrovascular",
+                "Инсульт / сосуды головного мозга"
+              ],
+              [
+                "breast_cancer",
+                "Онкология молочной железы"
+              ],
+              [
+                "cervical_cancer",
+                "Онкология шейки матки"
+              ],
+              [
+                "colorectal",
+                "Онкология / полипы кишечника"
+              ],
+              [
+                "lung_cancer",
+                "Рак лёгких"
+              ],
+              [
+                "chronic_hepatitis",
+                "Хронический гепатит"
+              ]
+            ]
+          },
+          {
+            "name": "last_screening.scr_breast",
+            "label": "Маммография",
+            "type": "number",
+            "step": 2,
+            "section": "screening",
+            "min": 1920,
+            "max": "checkup_year",
+            "show_if": {
+              "sex": "F",
+              "age_min": 40,
+              "age_max": 76
+            }
+          },
+          {
+            "name": "last_screening.scr_cervix",
+            "label": "Мазок / ПАП-тест",
+            "type": "number",
+            "step": 2,
+            "section": "screening",
+            "min": 1920,
+            "max": "checkup_year",
+            "show_if": {
+              "sex": "F",
+              "age_min": 30,
+              "age_max": 74
+            }
+          },
+          {
+            "name": "last_screening.scr_colorectal",
+            "label": "Тест на скрытую кровь",
+            "type": "number",
+            "step": 2,
+            "section": "screening",
+            "min": 1920,
+            "max": "checkup_year",
+            "show_if": {
+              "age_min": 50,
+              "age_max": 76
+            }
+          },
+          {
+            "name": "last_screening.scr_cvd",
+            "label": "Анализы на холестерин и сахар",
+            "type": "number",
+            "step": 2,
+            "section": "screening",
+            "min": 1920,
+            "max": "checkup_year",
+            "show_if": {
+              "age_min": 40,
+              "age_max": 76
+            }
+          },
+          {
+            "name": "attached_to",
+            "label": "Вы прикреплены к поликлинике?",
+            "type": "select",
+            "step": 2,
+            "layout": "stack",
+            "options": [
+              [
+                "green_clinic",
+                "К Green Clinic"
+              ],
+              [
+                "other",
+                "К другой поликлинике"
+              ],
+              [
+                "unknown",
+                "Не знаю"
+              ]
+            ]
+          },
+          {
+            "name": "family_history",
+            "label": "Какие заболевания были у родителей, братьев или сестёр?",
+            "type": "multiselect",
+            "step": 3,
+            "options": [
+              [
+                "colorectal_cancer",
+                "Рак кишечника"
+              ],
+              [
+                "breast_cancer",
+                "Рак молочной железы"
+              ],
+              [
+                "other_cancer",
+                "Другие онкологические заболевания"
+              ],
+              [
+                "early_cvd",
+                "Инфаркт / инсульт до 60 лет"
+              ],
+              [
+                "hypertension",
+                "Гипертония"
+              ],
+              [
+                "diabetes",
+                "Сахарный диабет"
+              ],
+              [
+                "tb",
+                "Туберкулёз"
+              ]
+            ],
+            "hint": "Если нет или не знаете — оставьте без выбора."
+          },
+          {
+            "name": "smoking.pack_years",
+            "label": "Стаж курения в пачка-летах",
+            "type": "number",
+            "step": 3,
+            "min": 0,
+            "increment": "any",
+            "placeholder": "Например, 25",
+            "hint": "Число пачек в день × число лет курения. Например, 1 пачка в день в течение 25 лет = 25 пачка-лет. Если никогда не курили — 0; если не знаете — оставьте пустым."
+          },
+          {
+            "name": "smoking.quit_years_ago",
+            "label": "Сколько лет назад бросили курить?",
+            "type": "number",
+            "step": 3,
+            "min": 0,
+            "increment": "any",
+            "placeholder": "Например, 5",
+            "hint": "Если курите сейчас — 0. Если никогда не курили или не знаете — оставьте пустым."
+          },
+          {
+            "name": "hazardous_work_10y",
+            "label": "Работали 10 лет на вредном производстве?",
+            "type": "boolean",
+            "step": 3,
+            "options": [
+              [
+                true,
+                "Да"
+              ],
+              [
+                false,
+                "Нет"
+              ]
+            ],
+            "hint": "Если не знаете — оставьте без ответа."
+          },
+          {
+            "name": "risk_group",
+            "label": "Относитесь ли вы к группе риска по гепатитам?",
+            "type": "multiselect",
+            "step": 3,
+            "hint": "Необязательно. Отметьте только то, что вам известно.",
+            "layout": "stack",
+            "options": [
+              [
+                "medical_worker_invasive",
+                "Медработник, выполняющий инвазивные процедуры"
+              ],
+              [
+                "planned_surgery",
+                "Плановая операция"
+              ],
+              [
+                "hemodialysis_oncology_hematology",
+                "Гемодиализ / лечение в онкологии или гематологии"
+              ],
+              [
+                "transfusion_transplant",
+                "Переливание крови / трансплантация"
+              ],
+              [
+                "pregnancy",
+                "Беременность"
+              ],
+              [
+                "hiv_key_population",
+                "ВИЧ / ключевые группы риска"
+              ]
+            ]
+          },
+          {
+            "name": "last_period",
+            "label": "Начало последних месячных",
+            "type": "date",
+            "step": 4,
+            "min": "birth_date",
+            "max": "today",
+            "show_if": {
+              "sex": "F"
+            }
+          },
+          {
+            "name": "pregnancies",
+            "label": "Сколько было беременностей?",
+            "type": "number",
+            "step": 4,
+            "min": 0,
+            "show_if": {
+              "sex": "F"
+            },
+            "placeholder": "Количество"
+          },
+          {
+            "name": "births",
+            "label": "Сколько было родов?",
+            "type": "number",
+            "step": 4,
+            "min": 0,
+            "show_if": {
+              "sex": "F"
+            },
+            "placeholder": "Количество"
+          },
+          {
+            "name": "contraception",
+            "label": "Какой метод контрацепции используете?",
+            "type": "select",
+            "step": 4,
+            "show_if": {
+              "sex": "F"
+            },
+            "options": [
+              [
+                "none",
+                "Не использую"
+              ],
+              [
+                "condom",
+                "Презерватив"
+              ],
+              [
+                "pills",
+                "Таблетки"
+              ],
+              [
+                "iud",
+                "Внутриматочная спираль"
+              ],
+              [
+                "other",
+                "Другой"
+              ],
+              [
+                "not_needed",
+                "Не требуется"
+              ]
+            ]
+          },
+          {
+            "name": "discharge",
+            "label": "Есть необычные выделения или запах?",
+            "type": "select",
+            "step": 4,
+            "show_if": {
+              "sex": "F"
+            },
+            "options": {
+              "static_python_expression": "YES_NO_UNSURE"
+            }
+          },
+          {
+            "name": "dysuria",
+            "label": "Есть боль, жжение при мочеиспускании или выделения?",
+            "type": "select",
+            "step": 4,
+            "show_if": {
+              "sex": "M"
+            },
+            "options": {
+              "static_python_expression": "YES_NO_UNSURE"
+            }
+          },
+          {
+            "name": "anesthesia_reaction",
+            "label": "Были нежелательные реакции на наркоз?",
+            "type": "select",
+            "step": 5,
+            "options": {
+              "static_python_expression": "YES_NO_UNSURE"
+            }
+          },
+          {
+            "name": "blood_thinners",
+            "label": "Принимаете препараты, разжижающие кровь?",
+            "type": "select",
+            "step": 5,
+            "options": {
+              "static_python_expression": "YES_NO_UNSURE"
+            }
+          },
+          {
+            "name": "allergy",
+            "label": "Есть ли у вас аллергия?",
+            "type": "select",
+            "step": 5,
+            "options": {
+              "static_python_expression": "YES_NO_UNSURE"
+            }
+          },
+          {
+            "name": "companion",
+            "label": "Есть ли человек, который сможет вас сопровождать?",
+            "type": "select",
+            "step": 5,
+            "hint": "После наркоза нельзя садиться за руль.",
+            "options": {
+              "static_python_expression": "YES_NO_UNSURE"
+            }
+          },
+          {
+            "name": "medications",
+            "label": "Какие лекарства принимаете сейчас?",
+            "type": "text",
+            "step": 5,
+            "hint": "Укажите названия, если помните. Вопрос можно пропустить."
+          }
+        ]
+      },
+      "main_http_decorators": [
+        [
+          "get",
+          "/"
+        ],
+        [
+          "get",
+          "/health"
+        ],
+        [
+          "get",
+          "/fields"
+        ]
+      ],
+      "main_includes_router": false
+    },
+    "checked_engine": {
+      "sha": "c2f39680aee388365daa180329a58edfb0f4081c",
+      "tree": "7fa85159d3dfbc7a50ddf96e66a2078e893e7df2",
+      "files": {
+        "app/main.py": {
+          "path": "c2f39680aee388365daa180329a58edfb0f4081c/app/main.py",
+          "bytes": 546,
+          "sha256": "a2ea5d98963d8a5fc86729cadd91ce1a229d6caa3bc0cbda4a34be9ac236978f",
+          "git_blob": "f1d664a923b6ec3f3b6eaae9c55b2477e893032e"
+        },
+        "app/config/fields.py": {
+          "path": "c2f39680aee388365daa180329a58edfb0f4081c/app/config/fields.py",
+          "bytes": 10889,
+          "sha256": "9a6d1c79640cc36e4e24af178bd712a5cdfe04c2bca0858ae6534f1ba9c32f75",
+          "git_blob": "b5a8c0f71a0aa2a5391b092610a5e55479457a2e"
+        },
+        "app/static/app.js": {
+          "path": "c2f39680aee388365daa180329a58edfb0f4081c/app/static/app.js",
+          "bytes": 11893,
+          "sha256": "8a97d618b865ce55c619112d8ced4078c4e00c26e9b7ff4f1fada9285fb5081a",
+          "git_blob": "7f3148bd56409a4eeaa2df8ceb92003dab99f2c5"
+        },
+        "spec/CONTRACT.md": {
+          "path": "c2f39680aee388365daa180329a58edfb0f4081c/spec/CONTRACT.md",
+          "bytes": 6969,
+          "sha256": "53985ad528d7f3c710372619836b85569142cd250a8c66e2ccc33254f50a0e14",
+          "git_blob": "58396b8b20fc323461e50e01c6b8a7bb3eb3201c"
+        },
+        "spec/rules.json": {
+          "path": "c2f39680aee388365daa180329a58edfb0f4081c/spec/rules.json",
+          "bytes": 29039,
+          "sha256": "6eff8853e7b275baf7afc270a7b00e6afe8aee11b7e0617aad5f59ff4a176924",
+          "git_blob": "bd432767f606d881a206584fddfc144b804732ba"
+        },
+        "spec/examples.json": {
+          "path": "c2f39680aee388365daa180329a58edfb0f4081c/spec/examples.json",
+          "bytes": 4551,
+          "sha256": "9fcfe7bb4de221f38490330cdd6524925fec1c86e7ebd03fc6f8eae25bd772ee",
+          "git_blob": "199fc35c3af22a3d47c1e05a551e87832c510516"
+        },
+        "spec/QUESTIONNAIRE.md": {
+          "path": "c2f39680aee388365daa180329a58edfb0f4081c/spec/QUESTIONNAIRE.md",
+          "bytes": 9015,
+          "sha256": "555f2997ee9e23bd6572d4a8e761b5e7d36abef0a36707953132ea4d33c6744f",
+          "git_blob": "de348ec90ad0ae2e7a61d6e61765d315b6d8b678"
+        },
+        "ml/README.md": {
+          "path": "c2f39680aee388365daa180329a58edfb0f4081c/ml/README.md",
+          "bytes": 3888,
+          "sha256": "bd5356701103fcd09f105c4327e65f86b85b691a79a7be40ad369886f93ea3d7",
+          "git_blob": "e9db4185f10c461ad241563516287a773b578d40"
+        },
+        "ml/sample_inputs.json": {
+          "path": "c2f39680aee388365daa180329a58edfb0f4081c/ml/sample_inputs.json",
+          "bytes": 9595,
+          "sha256": "4bd1f310d801ff3c6f77b7f671972b76cb32b85f0bbd2bb9bda4ff5bada90d03",
+          "git_blob": "4680e9bfd71d43f3fa312d245158a63f635a8406"
+        },
+        "ml/engine.py": {
+          "path": "c2f39680aee388365daa180329a58edfb0f4081c/ml/engine.py",
+          "bytes": 15147,
+          "sha256": "7b3421154dad1f933d15d39cf36a780bcd3bf9e77387973c57a2fc8b4202cba9",
+          "git_blob": "3b5b209f5bfeb8e99955f456e17177c06d845077"
+        },
+        "ml/router.py": {
+          "path": "c2f39680aee388365daa180329a58edfb0f4081c/ml/router.py",
+          "bytes": 916,
+          "sha256": "6c90d48a77387e881eff095064961c606d5121436399628265e4398e4d7a0d27",
+          "git_blob": "5d510762002f87d199614c8e55c37fce958923db"
+        },
+        "ml/test_examples.py": {
+          "path": "c2f39680aee388365daa180329a58edfb0f4081c/ml/test_examples.py",
+          "bytes": 1898,
+          "sha256": "0f7aa3eb92151f8e36903133cb85ac9e8aadb1926fb6ca61377431cf3ec28aaa",
+          "git_blob": "61edc3151549d227d3089d78ea1bc52154e211c6"
+        },
+        "clinical/prime_checkup_packages.md": {
+          "path": "c2f39680aee388365daa180329a58edfb0f4081c/clinical/prime_checkup_packages.md",
+          "bytes": 4761,
+          "sha256": "4a9c55185ce2c729cec3cf4d50d7fd48f1baca5733214e66970ee7caaad03f46",
+          "git_blob": "ce384c99c3c7bd22643208286a30b353f2906368"
+        },
+        "clinical/CONSTRUCTOR_GUIDE.md": {
+          "path": "c2f39680aee388365daa180329a58edfb0f4081c/clinical/CONSTRUCTOR_GUIDE.md",
+          "bytes": 5869,
+          "sha256": "f071847f1693172e924c146bee71e956efeaae67ccd463c272ee87d70d1c83e2",
+          "git_blob": "00bd750cb0426e05b5d9719f49fafd518c38626e"
+        },
+        "clinical/normativ/DSM75_2026-07-10_screening_changes_rus.txt": {
+          "path": "c2f39680aee388365daa180329a58edfb0f4081c/clinical/normativ/DSM75_2026-07-10_screening_changes_rus.txt",
+          "bytes": 40115,
+          "sha256": "392606f5b498a9f668a24eff85d9217435dcd95499f581c4917c8af6addb2939",
+          "git_blob": "aab2391b147422f8dcdef42ebc2e87d44d788555"
+        }
+      },
+      "missing": [
+        {
+          "path": "app/selection.py",
+          "reason": "fatal: path 'app/selection.py' exists on disk, but not in 'c2f39680aee388365daa180329a58edfb0f4081c'"
+        },
+        {
+          "path": "app/choice_route.py",
+          "reason": "fatal: path 'app/choice_route.py' exists on disk, but not in 'c2f39680aee388365daa180329a58edfb0f4081c'"
+        },
+        {
+          "path": "docs/TWO_STEP_API.md",
+          "reason": "fatal: path 'docs/TWO_STEP_API.md' exists on disk, but not in 'c2f39680aee388365daa180329a58edfb0f4081c'"
+        }
+      ],
+      "questionnaire": {
+        "count": 30,
+        "fields": [
+          {
+            "name": "for_child",
+            "label": "Для кого подбираем программу?",
+            "type": "boolean",
+            "step": 0,
+            "default": false,
+            "options": [
+              [
+                false,
+                "Для себя"
+              ],
+              [
+                true,
+                "Для ребёнка"
+              ]
+            ]
+          },
+          {
+            "name": "sex",
+            "label": "Пол",
+            "type": "select",
+            "step": 0,
+            "required": true,
+            "options": [
+              [
+                "M",
+                "Мужской"
+              ],
+              [
+                "F",
+                "Женский"
+              ]
+            ]
+          },
+          {
+            "name": "birth_date",
+            "label": "Дата рождения",
+            "type": "date",
+            "step": 0,
+            "required": true,
+            "min": "1920-01-01",
+            "max": "2025-12-31",
+            "hint": "Дата рождения человека, для которого заполняете анкету. Год рождения определится автоматически."
+          },
+          {
+            "name": "checkup_year",
+            "label": "Год обследования",
+            "type": "number",
+            "step": 0,
+            "default": "current_year",
+            "min": 1920,
+            "max": 9999
+          },
+          {
+            "name": "urgent",
+            "label": "Что-то беспокоит прямо сейчас?",
+            "type": "select",
+            "step": 1,
+            "required": true,
+            "layout": "stack",
+            "options": [
+              [
+                "chest_pain",
+                "Боль или давление в груди"
+              ],
+              [
+                "dyspnea",
+                "Сильная одышка"
+              ],
+              [
+                "stroke_signs",
+                "Внезапная слабость в руке или ноге, нарушение речи"
+              ],
+              [
+                "none",
+                "Нет, ничего из перечисленного"
+              ]
+            ]
+          },
+          {
+            "name": "pregnant",
+            "label": "Беременны или можете быть беременны?",
+            "type": "select",
+            "step": 1,
+            "show_if": {
+              "sex": "F",
+              "age_min": 18,
+              "age_max": 55
+            },
+            "options": [
+              [
+                "yes",
+                "Да"
+              ],
+              [
+                "no",
+                "Нет"
+              ],
+              [
+                "unsure",
+                "Не уверена"
+              ]
+            ],
+            "hint": "Если да или не уверены, обсудите обследования с врачом."
+          },
+          {
+            "name": "conditions",
+            "label": "Что у вас есть или было раньше?",
+            "type": "multiselect",
+            "step": 2,
+            "hint": "Отметьте известные вам заболевания или состояния. Если нет или не знаете — оставьте без выбора.",
+            "options": [
+              [
+                "pressure",
+                "Повышенное давление"
+              ],
+              [
+                "heart",
+                "Заболевания сердца"
+              ],
+              [
+                "diabetes",
+                "Сахарный диабет"
+              ],
+              [
+                "glaucoma",
+                "Глаукома"
+              ],
+              [
+                "head_vessels",
+                "Заболевания сосудов головного мозга"
+              ],
+              [
+                "legs",
+                "Заболевания сосудов ног"
+              ],
+              [
+                "breast",
+                "Заболевания молочной железы"
+              ],
+              [
+                "hpv",
+                "ВПЧ"
+              ],
+              [
+                "bowel",
+                "Заболевания кишечника"
+              ],
+              [
+                "lungs",
+                "Заболевания лёгких"
+              ],
+              [
+                "tb",
+                "Туберкулёз"
+              ],
+              [
+                "hepatitis",
+                "Гепатит"
+              ],
+              [
+                "urine",
+                "Заболевания мочевыделительной системы"
+              ],
+              [
+                "bleeding",
+                "Кровотечения"
+              ]
+            ]
+          },
+          {
+            "name": "conditions_other",
+            "label": "Другие заболевания или состояния",
+            "type": "text",
+            "step": 2,
+            "hint": "Свой вариант, если его нет в списке."
+          },
+          {
+            "name": "registered",
+            "label": "По каким диагнозам состоите на учёте у врача?",
+            "type": "multiselect",
+            "step": 2,
+            "hint": "Выберите всё подходящее. Если нет — оставьте без выбора.",
+            "options": [
+              [
+                "hypertension",
+                "Гипертония"
+              ],
+              [
+                "ihd",
+                "Ишемическая болезнь сердца"
+              ],
+              [
+                "diabetes",
+                "Сахарный диабет"
+              ],
+              [
+                "glaucoma",
+                "Глаукома"
+              ],
+              [
+                "cerebrovascular",
+                "Инсульт / сосуды головного мозга"
+              ],
+              [
+                "breast_cancer",
+                "Онкология молочной железы"
+              ],
+              [
+                "cervical_cancer",
+                "Онкология шейки матки"
+              ],
+              [
+                "colorectal",
+                "Онкология / полипы кишечника"
+              ],
+              [
+                "lung_cancer",
+                "Рак лёгких"
+              ],
+              [
+                "chronic_hepatitis",
+                "Хронический гепатит"
+              ]
+            ]
+          },
+          {
+            "name": "last_screening.scr_breast",
+            "label": "Маммография",
+            "type": "number",
+            "step": 2,
+            "section": "screening",
+            "min": 1920,
+            "max": "checkup_year",
+            "show_if": {
+              "sex": "F",
+              "age_min": 40,
+              "age_max": 76
+            }
+          },
+          {
+            "name": "last_screening.scr_cervix",
+            "label": "Мазок / ПАП-тест",
+            "type": "number",
+            "step": 2,
+            "section": "screening",
+            "min": 1920,
+            "max": "checkup_year",
+            "show_if": {
+              "sex": "F",
+              "age_min": 30,
+              "age_max": 74
+            }
+          },
+          {
+            "name": "last_screening.scr_colorectal",
+            "label": "Тест на скрытую кровь",
+            "type": "number",
+            "step": 2,
+            "section": "screening",
+            "min": 1920,
+            "max": "checkup_year",
+            "show_if": {
+              "age_min": 50,
+              "age_max": 76
+            }
+          },
+          {
+            "name": "last_screening.scr_cvd",
+            "label": "Анализы на холестерин и сахар",
+            "type": "number",
+            "step": 2,
+            "section": "screening",
+            "min": 1920,
+            "max": "checkup_year",
+            "show_if": {
+              "age_min": 40,
+              "age_max": 76
+            }
+          },
+          {
+            "name": "attached_to",
+            "label": "Вы прикреплены к поликлинике?",
+            "type": "select",
+            "step": 2,
+            "layout": "stack",
+            "options": [
+              [
+                "green_clinic",
+                "К Green Clinic"
+              ],
+              [
+                "other",
+                "К другой поликлинике"
+              ],
+              [
+                "unknown",
+                "Не знаю"
+              ]
+            ]
+          },
+          {
+            "name": "family_history",
+            "label": "Какие заболевания были у родителей, братьев или сестёр?",
+            "type": "multiselect",
+            "step": 3,
+            "options": [
+              [
+                "colorectal_cancer",
+                "Рак кишечника"
+              ],
+              [
+                "breast_cancer",
+                "Рак молочной железы"
+              ],
+              [
+                "other_cancer",
+                "Другие онкологические заболевания"
+              ],
+              [
+                "early_cvd",
+                "Инфаркт / инсульт до 60 лет"
+              ],
+              [
+                "hypertension",
+                "Гипертония"
+              ],
+              [
+                "diabetes",
+                "Сахарный диабет"
+              ],
+              [
+                "tb",
+                "Туберкулёз"
+              ]
+            ],
+            "hint": "Если нет или не знаете — оставьте без выбора."
+          },
+          {
+            "name": "smoking.pack_years",
+            "label": "Стаж курения в пачка-летах",
+            "type": "number",
+            "step": 3,
+            "min": 0,
+            "increment": "any",
+            "placeholder": "Например, 25",
+            "hint": "Число пачек в день × число лет курения. Например, 1 пачка в день в течение 25 лет = 25 пачка-лет. Если никогда не курили — 0; если не знаете — оставьте пустым."
+          },
+          {
+            "name": "smoking.quit_years_ago",
+            "label": "Сколько лет назад бросили курить?",
+            "type": "number",
+            "step": 3,
+            "min": 0,
+            "increment": "any",
+            "placeholder": "Например, 5",
+            "hint": "Если курите сейчас — 0. Если никогда не курили или не знаете — оставьте пустым."
+          },
+          {
+            "name": "hazardous_work_10y",
+            "label": "Работали 10 лет на вредном производстве?",
+            "type": "boolean",
+            "step": 3,
+            "options": [
+              [
+                true,
+                "Да"
+              ],
+              [
+                false,
+                "Нет"
+              ]
+            ],
+            "hint": "Если не знаете — оставьте без ответа."
+          },
+          {
+            "name": "risk_group",
+            "label": "Относитесь ли вы к группе риска по гепатитам?",
+            "type": "multiselect",
+            "step": 3,
+            "hint": "Необязательно. Отметьте только то, что вам известно.",
+            "layout": "stack",
+            "options": [
+              [
+                "medical_worker_invasive",
+                "Медработник, выполняющий инвазивные процедуры"
+              ],
+              [
+                "planned_surgery",
+                "Плановая операция"
+              ],
+              [
+                "hemodialysis_oncology_hematology",
+                "Гемодиализ / лечение в онкологии или гематологии"
+              ],
+              [
+                "transfusion_transplant",
+                "Переливание крови / трансплантация"
+              ],
+              [
+                "pregnancy",
+                "Беременность"
+              ],
+              [
+                "hiv_key_population",
+                "ВИЧ / ключевые группы риска"
+              ]
+            ]
+          },
+          {
+            "name": "last_period",
+            "label": "Начало последних месячных",
+            "type": "date",
+            "step": 4,
+            "min": "birth_date",
+            "max": "today",
+            "show_if": {
+              "sex": "F"
+            }
+          },
+          {
+            "name": "pregnancies",
+            "label": "Сколько было беременностей?",
+            "type": "number",
+            "step": 4,
+            "min": 0,
+            "show_if": {
+              "sex": "F"
+            },
+            "placeholder": "Количество"
+          },
+          {
+            "name": "births",
+            "label": "Сколько было родов?",
+            "type": "number",
+            "step": 4,
+            "min": 0,
+            "show_if": {
+              "sex": "F"
+            },
+            "placeholder": "Количество"
+          },
+          {
+            "name": "contraception",
+            "label": "Какой метод контрацепции используете?",
+            "type": "select",
+            "step": 4,
+            "show_if": {
+              "sex": "F"
+            },
+            "options": [
+              [
+                "none",
+                "Не использую"
+              ],
+              [
+                "condom",
+                "Презерватив"
+              ],
+              [
+                "pills",
+                "Таблетки"
+              ],
+              [
+                "iud",
+                "Внутриматочная спираль"
+              ],
+              [
+                "other",
+                "Другой"
+              ],
+              [
+                "not_needed",
+                "Не требуется"
+              ]
+            ]
+          },
+          {
+            "name": "discharge",
+            "label": "Есть необычные выделения или запах?",
+            "type": "select",
+            "step": 4,
+            "show_if": {
+              "sex": "F"
+            },
+            "options": {
+              "static_python_expression": "YES_NO_UNSURE"
+            }
+          },
+          {
+            "name": "dysuria",
+            "label": "Есть боль, жжение при мочеиспускании или выделения?",
+            "type": "select",
+            "step": 4,
+            "show_if": {
+              "sex": "M"
+            },
+            "options": {
+              "static_python_expression": "YES_NO_UNSURE"
+            }
+          },
+          {
+            "name": "anesthesia_reaction",
+            "label": "Были нежелательные реакции на наркоз?",
+            "type": "select",
+            "step": 5,
+            "options": {
+              "static_python_expression": "YES_NO_UNSURE"
+            }
+          },
+          {
+            "name": "blood_thinners",
+            "label": "Принимаете препараты, разжижающие кровь?",
+            "type": "select",
+            "step": 5,
+            "options": {
+              "static_python_expression": "YES_NO_UNSURE"
+            }
+          },
+          {
+            "name": "allergy",
+            "label": "Есть ли у вас аллергия?",
+            "type": "select",
+            "step": 5,
+            "options": {
+              "static_python_expression": "YES_NO_UNSURE"
+            }
+          },
+          {
+            "name": "companion",
+            "label": "Есть ли человек, который сможет вас сопровождать?",
+            "type": "select",
+            "step": 5,
+            "hint": "После наркоза нельзя садиться за руль.",
+            "options": {
+              "static_python_expression": "YES_NO_UNSURE"
+            }
+          },
+          {
+            "name": "medications",
+            "label": "Какие лекарства принимаете сейчас?",
+            "type": "text",
+            "step": 5,
+            "hint": "Укажите названия, если помните. Вопрос можно пропустить."
+          }
+        ]
+      },
+      "main_http_decorators": [
+        [
+          "get",
+          "/"
+        ],
+        [
+          "get",
+          "/health"
+        ],
+        [
+          "get",
+          "/fields"
+        ]
+      ],
+      "main_includes_router": false
+    }
+  },
+  "structural_comparison": {
+    "packages": {
+      "catalog_to_checked_main_equal": true,
+      "scenario_to_checked_main_equal": true,
+      "counts": {
+        "catalog_source": 3,
+        "scenario_source": 3,
+        "checked_main": 3,
+        "checked_engine": 3
+      },
+      "canonical_sha256": {
+        "catalog_source": "980237f51b96932e3b6e8e694248918a7e41886593318cc115af37d231b5aa50",
+        "scenario_source": "980237f51b96932e3b6e8e694248918a7e41886593318cc115af37d231b5aa50",
+        "checked_main": "980237f51b96932e3b6e8e694248918a7e41886593318cc115af37d231b5aa50",
+        "checked_engine": "980237f51b96932e3b6e8e694248918a7e41886593318cc115af37d231b5aa50"
+      }
+    },
+    "screening": {
+      "catalog_to_checked_main_equal": true,
+      "scenario_to_checked_main_equal": true,
+      "counts": {
+        "catalog_source": 7,
+        "scenario_source": 7,
+        "checked_main": 7,
+        "checked_engine": 7
+      },
+      "canonical_sha256": {
+        "catalog_source": "f5d9174c9c5d31c5fc9382bc55765e9f7ffba3c3fc6bc48e1261ea34a946885e",
+        "scenario_source": "f5d9174c9c5d31c5fc9382bc55765e9f7ffba3c3fc6bc48e1261ea34a946885e",
+        "checked_main": "f5d9174c9c5d31c5fc9382bc55765e9f7ffba3c3fc6bc48e1261ea34a946885e",
+        "checked_engine": "f5d9174c9c5d31c5fc9382bc55765e9f7ffba3c3fc6bc48e1261ea34a946885e"
+      }
+    },
+    "day_route_order": {
+      "catalog_to_checked_main_equal": true,
+      "scenario_to_checked_main_equal": true,
+      "counts": {
+        "catalog_source": 2,
+        "scenario_source": 2,
+        "checked_main": 2,
+        "checked_engine": 2
+      },
+      "canonical_sha256": {
+        "catalog_source": "0730acbc3749192439ccd6d3d88faa9c6967705b2e4ff4a91fa186e18b1fa337",
+        "scenario_source": "0730acbc3749192439ccd6d3d88faa9c6967705b2e4ff4a91fa186e18b1fa337",
+        "checked_main": "0730acbc3749192439ccd6d3d88faa9c6967705b2e4ff4a91fa186e18b1fa337",
+        "checked_engine": "0730acbc3749192439ccd6d3d88faa9c6967705b2e4ff4a91fa186e18b1fa337"
+      }
+    },
+    "prime_prep": {
+      "catalog_to_checked_main_equal": true,
+      "scenario_to_checked_main_equal": true,
+      "counts": {
+        "catalog_source": 2,
+        "scenario_source": 2,
+        "checked_main": 2,
+        "checked_engine": 2
+      },
+      "canonical_sha256": {
+        "catalog_source": "3c5fe6cc5de3f8991713d2b5b2f6834d3e1fef0cc42c5247442c273007f86ad8",
+        "scenario_source": "3c5fe6cc5de3f8991713d2b5b2f6834d3e1fef0cc42c5247442c273007f86ad8",
+        "checked_main": "3c5fe6cc5de3f8991713d2b5b2f6834d3e1fef0cc42c5247442c273007f86ad8",
+        "checked_engine": "3c5fe6cc5de3f8991713d2b5b2f6834d3e1fef0cc42c5247442c273007f86ad8"
+      }
+    },
+    "prime_catalog": {
+      "catalog_to_checked_main_equal": false,
+      "scenario_to_checked_main_equal": true,
+      "counts": {
+        "catalog_source": null,
+        "scenario_source": 17,
+        "checked_main": 17,
+        "checked_engine": 17
+      },
+      "canonical_sha256": {
+        "catalog_source": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "scenario_source": "0faa68f52865082feebdf835e64edabfb506323919addd05994a5ceb690e3e7e",
+        "checked_main": "0faa68f52865082feebdf835e64edabfb506323919addd05994a5ceb690e3e7e",
+        "checked_engine": "0faa68f52865082feebdf835e64edabfb506323919addd05994a5ceb690e3e7e"
+      }
+    },
+    "anamnesis_rules": {
+      "catalog_to_checked_main_equal": false,
+      "scenario_to_checked_main_equal": true,
+      "counts": {
+        "catalog_source": null,
+        "scenario_source": 20,
+        "checked_main": 20,
+        "checked_engine": 20
+      },
+      "canonical_sha256": {
+        "catalog_source": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "scenario_source": "2626f164d93d6264c2bc04f57bbd99fe7aeef20d409076e4c030d93ef0de6b45",
+        "checked_main": "2626f164d93d6264c2bc04f57bbd99fe7aeef20d409076e4c030d93ef0de6b45",
+        "checked_engine": "2626f164d93d6264c2bc04f57bbd99fe7aeef20d409076e4c030d93ef0de6b45"
+      }
+    },
+    "prep_catalog": {
+      "catalog_to_checked_main_equal": false,
+      "scenario_to_checked_main_equal": true,
+      "counts": {
+        "catalog_source": null,
+        "scenario_source": 5,
+        "checked_main": 5,
+        "checked_engine": 5
+      },
+      "canonical_sha256": {
+        "catalog_source": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "scenario_source": "d44ed3b288d1691bffe3389fa5ea8d1b864a1d8e9dadd1879a7ab7b4cea5f934",
+        "checked_main": "d44ed3b288d1691bffe3389fa5ea8d1b864a1d8e9dadd1879a7ab7b4cea5f934",
+        "checked_engine": "d44ed3b288d1691bffe3389fa5ea8d1b864a1d8e9dadd1879a7ab7b4cea5f934"
+      }
+    }
+  },
+  "remote_code_executed": false,
+  "working_tree_replaced": false,
+  "working_tree_dirty": true,
+  "status_observation": "git-status-source-audit.txt; recorded during parallel audit, not the pre-edit baseline",
+  "scenario_and_main_same_tree": true,
+  "questionnaire_delta": {
+    "added": [
+      "checkup_year",
+      "last_screening.scr_breast",
+      "last_screening.scr_cervix",
+      "last_screening.scr_colorectal",
+      "last_screening.scr_cvd",
+      "registered",
+      "risk_group",
+      "smoking.pack_years",
+      "smoking.quit_years_ago"
+    ],
+    "removed": [
+      "cigs_per_day",
+      "last_screening",
+      "quit_years_ago",
+      "registered_on",
+      "smoke_status",
+      "smoke_years"
+    ]
+  },
+  "static_findings": {
+    "inspection_kind": "static_source_audit_not_scenario_execution",
+    "scenario_source_sha": "744d7f79e6872a31572dda9d75269a8a8b7bcd4a",
+    "catalog_source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+    "findings": [
+      {
+        "id": "SRC-01",
+        "kind": "SOURCE_COMPARISON",
+        "result": "Main и снимок сценариев имеют одинаковый git tree; packages, screening, day_route_order и prime_prep структурно совпадают с источником локального каталога df733c4."
+      },
+      {
+        "id": "SRC-02",
+        "kind": "IMPLEMENTATION_CONFLICT",
+        "result": "В main app/main.py определены только GET /, /health, /fields. Локальные selection.py, choice_route.py и TWO_STEP_API.md отсутствуют. Альтернативный ml.router из engine/PR4 к приложению не подключён.",
+        "evidence": [
+          "d52847ad1cfcfab54fcdaec7061bffc93496d283/app/main.py:15",
+          "c2f39680aee388365daa180329a58edfb0f4081c/app/main.py",
+          "c2f39680aee388365daa180329a58edfb0f4081c/ml/router.py:19"
+        ]
+      },
+      {
+        "id": "SRC-03",
+        "kind": "IMPLEMENTATION_CONFLICT",
+        "result": "Альтернативный plan принимает input и selected-названия и строит маршрут без проверки red_flags, полученных от predict. Он не является эквивалентом demo-3.",
+        "evidence": [
+          "c2f39680aee388365daa180329a58edfb0f4081c/ml/router.py:19",
+          "c2f39680aee388365daa180329a58edfb0f4081c/ml/engine.py:284"
+        ]
+      },
+      {
+        "id": "SRC-04",
+        "kind": "IMPLEMENTATION_CONFLICT",
+        "result": "Альтернативный пакет выбирается по age_year; пропуски курения подменяются нулём; hazardous_work_10y проходит через bool(); даты будущих повторов строятся от checkup_year; draft-правила добавляют услуги в items. Поведение не переносилось и альтернативные тесты не запускались.",
+        "evidence": [
+          "c2f39680aee388365daa180329a58edfb0f4081c/ml/engine.py:73",
+          "c2f39680aee388365daa180329a58edfb0f4081c/ml/engine.py:144",
+          "c2f39680aee388365daa180329a58edfb0f4081c/ml/engine.py:149",
+          "c2f39680aee388365daa180329a58edfb0f4081c/ml/engine.py:218",
+          "c2f39680aee388365daa180329a58edfb0f4081c/ml/engine.py:264"
+        ]
+      },
+      {
+        "id": "SRC-05",
+        "kind": "SOURCE_CONFLICT",
+        "result": "Скрининг лёгких содержит quit_years_max=15, тогда как note и сохранённый текст приказа №75 говорят «менее 15 лет». Оператор на границе не выбирался медицинской догадкой.",
+        "evidence": [
+          "d52847ad1cfcfab54fcdaec7061bffc93496d283/spec/rules.json:screening.scr_lung",
+          "d52847ad1cfcfab54fcdaec7061bffc93496d283/clinical/normativ/DSM75_2026-07-10_screening_changes_rus.txt:84"
+        ]
+      },
+      {
+        "id": "SRC-06",
+        "kind": "SCOPE",
+        "result": "17 prime_catalog, 20 anamnesis_rules и 5 prep_catalog появились после df733c4. Они не заменяют union пакетов. ANAMNESIS_DRAFT не получает клинического одобрения вследствие присутствия в источнике."
+      },
+      {
+        "id": "SRC-07",
+        "kind": "CONTRACT_PRIORITY",
+        "result": "Удалённый predict-контракт и README не отменяют согласованный двухэтапный локальный API, отдельные скрининги, происхождение ответов и отсутствие персональных дат без основания."
+      }
+    ],
+    "baseline_adapter_gaps_to_check": [
+      {
+        "field": "registered",
+        "observation": "В current это самостоятельный список диагнозов. Исходный локальный адаптер мог считать conditions=[none] отрицанием учёта. Для current это не следует из фактов; старые derived registered остаются неоднозначными."
+      },
+      {
+        "field": "smoking",
+        "observation": "В current pack_years и quit_years_ago вводятся напрямую; old df733c4 рассчитывал их из исходных ответов. Исходный локальный адаптер воспринимал любой smoking как производный экспорт и мог терять прямые current числа."
+      },
+      {
+        "field": "last_screening",
+        "observation": "Current экспортирует вложенный словарь реальных годов. Old YEAR-1 хранится как диапазон без provenance known_year. По ключу, который отсутствует, нельзя восстановить «никогда». Нужна явная техническая форма H0."
+      },
+      {
+        "field": "discharge/dysuria/anesthesia_reaction/blood_thinners/allergy/companion",
+        "observation": "В current шесть select используют yes/no/unsure. Исходная ClinicInput не принимала unsure для этих полей."
+      },
+      {
+        "field": "hazardous_work_10y",
+        "observation": "Current boolean false сериализуется как false, question не имеет возрастного show_if. Исходный локальный адаптер использовал старую видимость 50–70. Строку no нельзя превращать в true через bool()."
+      },
+      {
+        "field": "risk_group",
+        "observation": "Поле присутствует среди текущих 30. Исходная ClinicInput его не принимала. Предоставленный новый scr_hepatitis больше не использует risk_group; это не основание возобновить отменённую ветку."
+      },
+      {
+        "field": "urgent",
+        "observation": "Current enum none/chest_pain/dyspnea/stroke_signs. other_now есть только в df733c4; совместимость не означает, что current-профиль содержит этот вариант."
+      },
+      {
+        "field": "applicability",
+        "observation": "Current visible() считает возраст как checkup_year−birth_year. Это видимость удалённой формы, а не возраст в полных годах и не подтверждённая клиническая применимость."
+      }
+    ],
+    "limitations": [
+      "Это сверка предоставленных файлов проекта; действующее медицинское/правовое регулирование независимо не подтверждалось.",
+      "Разрывы исходного адаптера отмечены до исправлений: их итоговый статус находится в сценарном отчёте, а не определяется этим статическим аудитом.",
+      "Файл DOCX и его утверждения разбираются отдельным runner; эта проверка не заявляет 25/48 сценариев выполненными."
+    ]
+  },
+  "findings_file_sha256": "330e241457b9191c649d83010aeed003e3211aac2926af14dafcef404665e1ca"
+}

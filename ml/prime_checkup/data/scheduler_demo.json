@@ -1,0 +1,44 @@
+{
+  "id": "scheduler-demo-1",
+  "patient_window": [540, 660],
+  "transition_minutes": 0,
+  "resources": ["DEMO_R1", "DEMO_R2"],
+  "package": {
+    "id": "DEMO_PACKAGE",
+    "required_ids": ["DEMO_A", "DEMO_B", "DEMO_C", "DEMO_D"]
+  },
+  "procedures": [
+    {
+      "id": "DEMO_A",
+      "name": "Тестовое действие A",
+      "duration_minutes": 20,
+      "resources": ["DEMO_R1"],
+      "slots": [[540, 560], [600, 620]],
+      "predecessors": []
+    },
+    {
+      "id": "DEMO_B",
+      "name": "Тестовое действие B",
+      "duration_minutes": 20,
+      "resources": ["DEMO_R1"],
+      "slots": [[540, 560]],
+      "predecessors": []
+    },
+    {
+      "id": "DEMO_C",
+      "name": "Тестовое действие C",
+      "duration_minutes": 20,
+      "resources": ["DEMO_R2"],
+      "slots": [[560, 580], [620, 640]],
+      "predecessors": ["DEMO_A"]
+    },
+    {
+      "id": "DEMO_D",
+      "name": "Тестовое действие D",
+      "duration_minutes": 20,
+      "resources": ["DEMO_R2"],
+      "slots": [[640, 660]],
+      "predecessors": ["DEMO_C"]
+    }
+  ]
+}

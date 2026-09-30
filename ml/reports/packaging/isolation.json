@@ -1,0 +1,369 @@
+{
+  "source": "C:\\Users\\user\\Desktop\\medhub-app\\medhub-app\\ml",
+  "temporary_parent": "C:\\Users\\user\\AppData\\Local\\Temp\\prime-checkup-isolated-v4cikcb3",
+  "copy": "C:\\Users\\user\\AppData\\Local\\Temp\\prime-checkup-isolated-v4cikcb3\\ml",
+  "copied_only_ml": true,
+  "excluded": [
+    ".git",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    "__pycache__"
+  ],
+  "commands": [
+    {
+      "name": "venv",
+      "command": [
+        "C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "venv",
+        "C:\\Users\\user\\AppData\\Local\\Temp\\prime-checkup-isolated-v4cikcb3\\ml\\.venv"
+      ],
+      "cwd": "C:\\Users\\user\\AppData\\Local\\Temp\\prime-checkup-isolated-v4cikcb3\\ml",
+      "returncode": 0,
+      "log": "reports/packaging/isolation_venv.log"
+    },
+    {
+      "name": "install",
+      "command": [
+        "C:\\Users\\user\\AppData\\Local\\Temp\\prime-checkup-isolated-v4cikcb3\\ml\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "install",
+        "--disable-pip-version-check",
+        "--timeout",
+        "20",
+        "--retries",
+        "1",
+        "-r",
+        "requirements-dev.txt"
+      ],
+      "cwd": "C:\\Users\\user\\AppData\\Local\\Temp\\prime-checkup-isolated-v4cikcb3\\ml",
+      "returncode": 0,
+      "log": "reports/packaging/isolation_install.log"
+    },
+    {
+      "name": "verify",
+      "command": [
+        "C:\\Users\\user\\AppData\\Local\\Temp\\prime-checkup-isolated-v4cikcb3\\ml\\.venv\\Scripts\\python.exe",
+        "-s",
+        "-X",
+        "utf8",
+        "-m",
+        "tools.verify_package",
+        "--label",
+        "isolated"
+      ],
+      "cwd": "C:\\Users\\user\\AppData\\Local\\Temp\\prime-checkup-isolated-v4cikcb3\\ml",
+      "returncode": 0,
+      "log": "reports/packaging/isolation_verify.log"
+    }
+  ],
+  "source_environment_copied": false,
+  "pythonpath_removed": true,
+  "copy_hashes": {
+    "docs/CONTRACT.md": {
+      "source": "c8346cb86388fde6578736708b32eb2499b3c3d7f929ca9c88388a8abb3dc6a8",
+      "copy": "c8346cb86388fde6578736708b32eb2499b3c3d7f929ca9c88388a8abb3dc6a8"
+    },
+    "docs/empty-request.json": {
+      "source": "c16b37360e9280f0e44cc643e4e1c6ffcb25d98a1e66ad30b316f7b75631c6f3",
+      "copy": "c16b37360e9280f0e44cc643e4e1c6ffcb25d98a1e66ad30b316f7b75631c6f3"
+    },
+    "docs/empty-response.json": {
+      "source": "f10671edc9d761cf9d7ac6d9da8169d4c2f6d8081aa283ae03ada43c29f9341c",
+      "copy": "f10671edc9d761cf9d7ac6d9da8169d4c2f6d8081aa283ae03ada43c29f9341c"
+    },
+    "docs/INPUT_CONTRACT.md": {
+      "source": "79588d2ca33fa5e84fcb1d3c59602e4192e130ca4b6096358bc268b32d23a26c",
+      "copy": "79588d2ca33fa5e84fcb1d3c59602e4192e130ca4b6096358bc268b32d23a26c"
+    },
+    "docs/INTEGRATION.md": {
+      "source": "3bcade622f4bebad149d24d49ed221c681c64a3af59a6c42cad715f165e7a790",
+      "copy": "3bcade622f4bebad149d24d49ed221c681c64a3af59a6c42cad715f165e7a790"
+    },
+    "docs/plan-request.json": {
+      "source": "0f8c9e321157852e31a8d3939753ee3c6ff65a929b7b89029a82bf298d087b38",
+      "copy": "0f8c9e321157852e31a8d3939753ee3c6ff65a929b7b89029a82bf298d087b38"
+    },
+    "docs/plan-response.json": {
+      "source": "2380ebc6bc9e5b909a8598be201405db34bce6d0481619922e810d84a4975936",
+      "copy": "2380ebc6bc9e5b909a8598be201405db34bce6d0481619922e810d84a4975936"
+    },
+    "docs/preset-request.json": {
+      "source": "bfecac11d3248ffc5603527b6b1b146424061129432a90a3ec5e00409d799758",
+      "copy": "bfecac11d3248ffc5603527b6b1b146424061129432a90a3ec5e00409d799758"
+    },
+    "docs/preset-response.json": {
+      "source": "551ab078be71d99ed064a5a17c4b99401d6ba2a8e19c859e40edbcbc7b56755f",
+      "copy": "551ab078be71d99ed064a5a17c4b99401d6ba2a8e19c859e40edbcbc7b56755f"
+    },
+    "docs/recommend-request.json": {
+      "source": "3654d72bcb8ba9a4ee83b025ae7bec92152e12f56f25e17cb0af370b1174b683",
+      "copy": "3654d72bcb8ba9a4ee83b025ae7bec92152e12f56f25e17cb0af370b1174b683"
+    },
+    "docs/recommend-response.json": {
+      "source": "a12baeb1f58addedae65124865880aae0136a6ec2886810eae119d35c9a72553",
+      "copy": "a12baeb1f58addedae65124865880aae0136a6ec2886810eae119d35c9a72553"
+    },
+    "docs/sample_comparison.json": {
+      "source": "9b04af9a1cdb2ed27df1e0cf902d314a86d2f3ad6b855548e35b43a042c693b4",
+      "copy": "9b04af9a1cdb2ed27df1e0cf902d314a86d2f3ad6b855548e35b43a042c693b4"
+    },
+    "docs/sample_comparison.md": {
+      "source": "8ac36c9c9da6c391336ab86e775cd8a6e65b1c6e51e5231c79fcf499532e23de",
+      "copy": "8ac36c9c9da6c391336ab86e775cd8a6e65b1c6e51e5231c79fcf499532e23de"
+    },
+    "prime_checkup/__init__.py": {
+      "source": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "copy": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "prime_checkup/cards.py": {
+      "source": "1d5b1d149a7a27ae5dc330b81c7623dbf3a05d0f50ffb263412e73def2a321af",
+      "copy": "1d5b1d149a7a27ae5dc330b81c7623dbf3a05d0f50ffb263412e73def2a321af"
+    },
+    "prime_checkup/choice_catalog.py": {
+      "source": "dab56e78104d46cba4a67133141b05d6b04d3136db34b5c94894b012ce740312",
+      "copy": "dab56e78104d46cba4a67133141b05d6b04d3136db34b5c94894b012ce740312"
+    },
+    "prime_checkup/choice_route.py": {
+      "source": "55d9d90b4d35799b5064c341f56033daf4e6b705468368db0b51278530ce349b",
+      "copy": "55d9d90b4d35799b5064c341f56033daf4e6b705468368db0b51278530ce349b"
+    },
+    "prime_checkup/compat.py": {
+      "source": "ddfa0eeef5af534cca053a935c259f1078dda5ef326f43da1f815ec11bd2162a",
+      "copy": "ddfa0eeef5af534cca053a935c259f1078dda5ef326f43da1f815ec11bd2162a"
+    },
+    "prime_checkup/config/__init__.py": {
+      "source": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "copy": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "prime_checkup/config/clinic_fields.py": {
+      "source": "1642be8a97f47c3b4395f258859a3b4854385bef1cb965a377004697f5270c24",
+      "copy": "1642be8a97f47c3b4395f258859a3b4854385bef1cb965a377004697f5270c24"
+    },
+    "prime_checkup/data/catalog_migration.json": {
+      "source": "7ebd53f555788303f5a9c28314306041fcf57208f2e581abc45fb40c45b903bf",
+      "copy": "7ebd53f555788303f5a9c28314306041fcf57208f2e581abc45fb40c45b903bf"
+    },
+    "prime_checkup/data/completed.json": {
+      "source": "432dd09f55a85744bc2be8d24f1d1b9382fd776364f859bf722ff9c40e0264c8",
+      "copy": "432dd09f55a85744bc2be8d24f1d1b9382fd776364f859bf722ff9c40e0264c8"
+    },
+    "prime_checkup/data/demo_catalog.json": {
+      "source": "0688315b0e849457119667b3258cf77236c6a1d1ed49c71c5169390f3fe7df9b",
+      "copy": "0688315b0e849457119667b3258cf77236c6a1d1ed49c71c5169390f3fe7df9b"
+    },
+    "prime_checkup/data/demo_rules.json": {
+      "source": "b6106d0bdfbae550c2758ac2f2a7fceba732c4c37e1297a821bf8e370fd1eec7",
+      "copy": "b6106d0bdfbae550c2758ac2f2a7fceba732c4c37e1297a821bf8e370fd1eec7"
+    },
+    "prime_checkup/data/examples.json": {
+      "source": "562a7c0242e2b7002a693316fa1079e60d8e82292a1e948be313acc8afb561ed",
+      "copy": "562a7c0242e2b7002a693316fa1079e60d8e82292a1e948be313acc8afb561ed"
+    },
+    "prime_checkup/data/prime_slots.json": {
+      "source": "b88ed7fa666dba5823552c9400b8f5b6f207bc660330c4297d5a39f5405c5cf7",
+      "copy": "b88ed7fa666dba5823552c9400b8f5b6f207bc660330c4297d5a39f5405c5cf7"
+    },
+    "prime_checkup/data/scheduler_demo.json": {
+      "source": "3f36bb59cae0a397284957ef07de678f11a43b85ecf7778ce2353fcc7599a6e1",
+      "copy": "3f36bb59cae0a397284957ef07de678f11a43b85ecf7778ce2353fcc7599a6e1"
+    },
+    "prime_checkup/data/screening_links.json": {
+      "source": "a6a209acd6218fd2f5c3e9383bb7562353a3b59afefe1c63505ca0c66c4159e8",
+      "copy": "a6a209acd6218fd2f5c3e9383bb7562353a3b59afefe1c63505ca0c66c4159e8"
+    },
+    "prime_checkup/data/screening_rules.json": {
+      "source": "f28e29fff957f2b27e61fa349f1ed71ac57352c4cc835f51aee1967e4b775474",
+      "copy": "f28e29fff957f2b27e61fa349f1ed71ac57352c4cc835f51aee1967e4b775474"
+    },
+    "prime_checkup/engine.py": {
+      "source": "4aca57a0caa8c4de5b6f222f172d55b4670f5f09a275c9617e480fe45765ac1e",
+      "copy": "4aca57a0caa8c4de5b6f222f172d55b4670f5f09a275c9617e480fe45765ac1e"
+    },
+    "prime_checkup/intake.py": {
+      "source": "7610cb310fa91ac721d7886e6787c778a9a379dcf307abb240a1ba1ca034e515",
+      "copy": "7610cb310fa91ac721d7886e6787c778a9a379dcf307abb240a1ba1ca034e515"
+    },
+    "prime_checkup/main.py": {
+      "source": "6a02dae1c760e7bea35beec24aad2bedde8d66a6125b73c3b5c1c147d52d1ec5",
+      "copy": "6a02dae1c760e7bea35beec24aad2bedde8d66a6125b73c3b5c1c147d52d1ec5"
+    },
+    "prime_checkup/router.py": {
+      "source": "176d35f5d950d0b4c6e6e33094458dba6c4a7b2855914cdb6daa6d81fca0bc59",
+      "copy": "176d35f5d950d0b4c6e6e33094458dba6c4a7b2855914cdb6daa6d81fca0bc59"
+    },
+    "prime_checkup/scheduler.py": {
+      "source": "ebc5192e5a3a2b770b194c8f9c25728e5420fb833a27b3266b0465710b6986fb",
+      "copy": "ebc5192e5a3a2b770b194c8f9c25728e5420fb833a27b3266b0465710b6986fb"
+    },
+    "prime_checkup/schemas.py": {
+      "source": "4dfadb8d8e7e87e9463204110aac383d2e74adafc32976050310ae50697833c4",
+      "copy": "4dfadb8d8e7e87e9463204110aac383d2e74adafc32976050310ae50697833c4"
+    },
+    "prime_checkup/screening.py": {
+      "source": "1738a3e5885cc20cac5d8bd99a61f0a0146703575eb4273315495898fe4f546d",
+      "copy": "1738a3e5885cc20cac5d8bd99a61f0a0146703575eb4273315495898fe4f546d"
+    },
+    "prime_checkup/selection.py": {
+      "source": "e61cfe889d203a4dee33ccf74329deb0ad4a0aede1aa2ccacd5813a70295d653",
+      "copy": "e61cfe889d203a4dee33ccf74329deb0ad4a0aede1aa2ccacd5813a70295d653"
+    },
+    "reference/df733c4/app/config/fields.py": {
+      "source": "002df282aaa169edf86dc900aa03b6de38190fab2d29f7864fcf6bea319ca42c",
+      "copy": "002df282aaa169edf86dc900aa03b6de38190fab2d29f7864fcf6bea319ca42c"
+    },
+    "reference/df733c4/clinical/CONSTRUCTOR_GUIDE.md": {
+      "source": "f071847f1693172e924c146bee71e956efeaae67ccd463c272ee87d70d1c83e2",
+      "copy": "f071847f1693172e924c146bee71e956efeaae67ccd463c272ee87d70d1c83e2"
+    },
+    "reference/df733c4/clinical/prime_checkup_packages.md": {
+      "source": "4a9c55185ce2c729cec3cf4d50d7fd48f1baca5733214e66970ee7caaad03f46",
+      "copy": "4a9c55185ce2c729cec3cf4d50d7fd48f1baca5733214e66970ee7caaad03f46"
+    },
+    "reference/df733c4/ml/README.md": {
+      "source": "bd5356701103fcd09f105c4327e65f86b85b691a79a7be40ad369886f93ea3d7",
+      "copy": "bd5356701103fcd09f105c4327e65f86b85b691a79a7be40ad369886f93ea3d7"
+    },
+    "reference/df733c4/ml/sample_inputs.json": {
+      "source": "4bd1f310d801ff3c6f77b7f671972b76cb32b85f0bbd2bb9bda4ff5bada90d03",
+      "copy": "4bd1f310d801ff3c6f77b7f671972b76cb32b85f0bbd2bb9bda4ff5bada90d03"
+    },
+    "reference/df733c4/spec/CONTRACT.md": {
+      "source": "b2bf20f8b1b769ba5c539f8d83e929f32c5ba63cffa322de3c1394625c0dbc71",
+      "copy": "b2bf20f8b1b769ba5c539f8d83e929f32c5ba63cffa322de3c1394625c0dbc71"
+    },
+    "reference/df733c4/spec/examples.json": {
+      "source": "9fcfe7bb4de221f38490330cdd6524925fec1c86e7ebd03fc6f8eae25bd772ee",
+      "copy": "9fcfe7bb4de221f38490330cdd6524925fec1c86e7ebd03fc6f8eae25bd772ee"
+    },
+    "reference/df733c4/spec/rules.json": {
+      "source": "55127939715b266d61d72ca6df28738df2b457fbe5a49c83fadd6700045f5351",
+      "copy": "55127939715b266d61d72ca6df28738df2b457fbe5a49c83fadd6700045f5351"
+    },
+    "reference/README.md": {
+      "source": "9d32fff2f43fa9bc474fcdad5a348bc6f536fe45a2e3fec5eea0a41a50dfae76",
+      "copy": "9d32fff2f43fa9bc474fcdad5a348bc6f536fe45a2e3fec5eea0a41a50dfae76"
+    },
+    "tests/__init__.py": {
+      "source": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "copy": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tests/fixtures/prime_scenarios.json": {
+      "source": "5d60c6004fdf86645f0d678291e850601008d5288c66a46367c1a7bb6dae1693",
+      "copy": "5d60c6004fdf86645f0d678291e850601008d5288c66a46367c1a7bb6dae1693"
+    },
+    "tests/fixtures/Scenarios.docx": {
+      "source": "837a0d3d446575b3b3d37574344be7293783f5e40813e64d4e5688829af01879",
+      "copy": "837a0d3d446575b3b3d37574344be7293783f5e40813e64d4e5688829af01879"
+    },
+    "tests/helpers.py": {
+      "source": "fa5e8038faa2d618451661aa936eeafeef836c201d6eb4b6c98a1daf16a35968",
+      "copy": "fa5e8038faa2d618451661aa936eeafeef836c201d6eb4b6c98a1daf16a35968"
+    },
+    "tests/test_catalog.py": {
+      "source": "079c5288c4a1f49d1b72d860f17bfef999f4edcad74ebd6502605d3aff2204ab",
+      "copy": "079c5288c4a1f49d1b72d860f17bfef999f4edcad74ebd6502605d3aff2204ab"
+    },
+    "tests/test_choice_catalog.py": {
+      "source": "bfc25c857ccae55c5244db3666ed8330cb60314b2ad4bbb91dc13c8a170b1d1a",
+      "copy": "bfc25c857ccae55c5244db3666ed8330cb60314b2ad4bbb91dc13c8a170b1d1a"
+    },
+    "tests/test_choice_route.py": {
+      "source": "3104e20376cdb2864da9402ff5b865da995309927088666e36a41c0ad91a25ae",
+      "copy": "3104e20376cdb2864da9402ff5b865da995309927088666e36a41c0ad91a25ae"
+    },
+    "tests/test_clinic_integration.py": {
+      "source": "be0c5430310d2e68d48cc3d00ac111a00aaae38cd3ee36318a6bc7cee52e988a",
+      "copy": "be0c5430310d2e68d48cc3d00ac111a00aaae38cd3ee36318a6bc7cee52e988a"
+    },
+    "tests/test_completed.py": {
+      "source": "3a6ae25c51d98788c95753a9ddd3ba708c3179ea6721e5d0e5454d1fb868838e",
+      "copy": "3a6ae25c51d98788c95753a9ddd3ba708c3179ea6721e5d0e5454d1fb868838e"
+    },
+    "tests/test_current_intake.py": {
+      "source": "b9a6c532913ed1b57c7090e9133727ea3b0647e981bf7640617c30f3d2b7b7b8",
+      "copy": "b9a6c532913ed1b57c7090e9133727ea3b0647e981bf7640617c30f3d2b7b7b8"
+    },
+    "tests/test_engine.py": {
+      "source": "e51c8593743be250ebaa21ea4c16859a84d21ebe2d0ea6ed97ff88d49dc68ff5",
+      "copy": "e51c8593743be250ebaa21ea4c16859a84d21ebe2d0ea6ed97ff88d49dc68ff5"
+    },
+    "tests/test_http.py": {
+      "source": "a813137d889cdfc928441225ab9ae01402f95c013a602b3b4b859639421ece17",
+      "copy": "a813137d889cdfc928441225ab9ae01402f95c013a602b3b4b859639421ece17"
+    },
+    "tests/test_intake.py": {
+      "source": "4dcbd395f2dbd59c4edc74ea34a4e23d9c86a59669cd37fcdde0b104f0ad2d50",
+      "copy": "4dcbd395f2dbd59c4edc74ea34a4e23d9c86a59669cd37fcdde0b104f0ad2d50"
+    },
+    "tests/test_preparation_review.py": {
+      "source": "60d555dd7aaf037eb39018abc03c042eb0c454a583fc72d60318e879fb89d909",
+      "copy": "60d555dd7aaf037eb39018abc03c042eb0c454a583fc72d60318e879fb89d909"
+    },
+    "tests/test_router_mount.py": {
+      "source": "4ba8376fcca174a6f6ba8065158fa3201d0db708e3eca3eb1eea9dc2309cb590",
+      "copy": "4ba8376fcca174a6f6ba8065158fa3201d0db708e3eca3eb1eea9dc2309cb590"
+    },
+    "tests/test_scheduler.py": {
+      "source": "92f72fbfdcb38ab68c81130e4e1d8a9ce6ccd4fbcf7f6110a26fdaba74d91142",
+      "copy": "92f72fbfdcb38ab68c81130e4e1d8a9ce6ccd4fbcf7f6110a26fdaba74d91142"
+    },
+    "tests/test_screening.py": {
+      "source": "e0f00fb687f43f89863bd1fe8bfb9e982eb66dfd6729153315e7fbab814c37f0",
+      "copy": "e0f00fb687f43f89863bd1fe8bfb9e982eb66dfd6729153315e7fbab814c37f0"
+    },
+    "tests/test_selection.py": {
+      "source": "640a48a86f6df79729f66ee43f93fb28e8db80b7762b6a556eb980d611cd5638",
+      "copy": "640a48a86f6df79729f66ee43f93fb28e8db80b7762b6a556eb980d611cd5638"
+    },
+    "tests/test_two_step_http.py": {
+      "source": "8da080ce6a0ef286a242a71906d38ea62b6b79bc4d75f6d84b328127d39fb722",
+      "copy": "8da080ce6a0ef286a242a71906d38ea62b6b79bc4d75f6d84b328127d39fb722"
+    },
+    "tools/__init__.py": {
+      "source": "374f335e5ef294dcf4a913885d141f265b99feb3db3904e323cc383dcf1d20ea",
+      "copy": "374f335e5ef294dcf4a913885d141f265b99feb3db3904e323cc383dcf1d20ea"
+    },
+    "tools/isolate_package.py": {
+      "source": "9ad105ccb0d3fb8f912aa2fb922b729dbe147fb386131a22d92ebd88d8d75f5d",
+      "copy": "9ad105ccb0d3fb8f912aa2fb922b729dbe147fb386131a22d92ebd88d8d75f5d"
+    },
+    "tools/run_scenarios.py": {
+      "source": "e2fd9bf76cdeae89648ce86d05169abec5b455a9a156da99f3d949e9ecd73e88",
+      "copy": "e2fd9bf76cdeae89648ce86d05169abec5b455a9a156da99f3d949e9ecd73e88"
+    },
+    "tools/scenario_assertions.py": {
+      "source": "e6e04be753c28e0a1335ef5b3950c1969c2f88ee617abfb108078f08c88b520b",
+      "copy": "e6e04be753c28e0a1335ef5b3950c1969c2f88ee617abfb108078f08c88b520b"
+    },
+    "tools/smoke_api.py": {
+      "source": "68070630e1b32f7592ed1c26c44a91c80c568448807650c8f9d9f4dc3e0ec116",
+      "copy": "68070630e1b32f7592ed1c26c44a91c80c568448807650c8f9d9f4dc3e0ec116"
+    },
+    "tools/verify_package.py": {
+      "source": "db943af8b8e1ba15c9e21232744bac0a0f2cc264d5d975cb253d63ecb4d5d299",
+      "copy": "db943af8b8e1ba15c9e21232744bac0a0f2cc264d5d975cb253d63ecb4d5d299"
+    }
+  },
+  "pyvenv_config": "home = C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\ninclude-system-site-packages = false\nversion = 3.12.1\nexecutable = C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\python.exe\ncommand = C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m venv C:\\Users\\user\\AppData\\Local\\Temp\\prime-checkup-isolated-v4cikcb3\\ml\\.venv\n",
+  "copied_reports": [
+    "compat_isolated.log",
+    "http_isolated.json",
+    "http_isolated.log",
+    "http_isolated_server.log",
+    "regression_isolated.log",
+    "scenario_isolated_results.json",
+    "scenarios_isolated.log",
+    "verification_isolated.json"
+  ],
+  "verification": {
+    "commands": 4,
+    "failed": 0,
+    "all_module_files_inside_package": true,
+    "editable_installs": []
+  },
+  "verdict": "PASS"
+}

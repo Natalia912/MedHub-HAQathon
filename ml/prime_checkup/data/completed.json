@@ -1,0 +1,91 @@
+{
+  "history": [
+    {
+      "record_id": "history-demo-1",
+      "screening_id": "scr_breast",
+      "procedure_id": null,
+      "label": "Маммография",
+      "performed_on": null,
+      "performed_year": 2025,
+      "date_precision": "year",
+      "result_status": "unknown",
+      "review_status": "unknown",
+      "source": "synthetic_spec_example",
+      "medical_validated": false
+    }
+  ],
+  "cases": {
+    "waiting": {
+      "case_id": "waiting",
+      "demo": true,
+      "medical_validated": false,
+      "item": {
+        "record_id": "result-demo-1",
+        "procedure_id": "DEMO_A",
+        "label": "Тестовое обследование A",
+        "performed_on": "2026-10-01",
+        "result_status": "pending",
+        "result_received_on": null,
+        "result_text": null,
+        "review_status": "not_ready",
+        "reviewed_on": null,
+        "next_action": null,
+        "source": "synthetic_fixture"
+      },
+      "reminder_draft": {
+        "status": "requires_clinician",
+        "due_date": null,
+        "basis": null,
+        "sent": false
+      }
+    },
+    "received": {
+      "case_id": "received",
+      "demo": true,
+      "medical_validated": false,
+      "item": {
+        "record_id": "result-demo-1",
+        "procedure_id": "DEMO_A",
+        "label": "Тестовое обследование A",
+        "performed_on": "2026-10-01",
+        "result_status": "available",
+        "result_received_on": "2026-10-02",
+        "result_text": "Вымышленный результат получен; медицинской интерпретации нет",
+        "review_status": "pending",
+        "reviewed_on": null,
+        "next_action": null,
+        "source": "synthetic_fixture"
+      },
+      "reminder_draft": {
+        "status": "requires_clinician",
+        "due_date": null,
+        "basis": null,
+        "sent": false
+      }
+    },
+    "reviewed": {
+      "case_id": "reviewed",
+      "demo": true,
+      "medical_validated": false,
+      "item": {
+        "record_id": "result-demo-1",
+        "procedure_id": "DEMO_A",
+        "label": "Тестовое обследование A",
+        "performed_on": "2026-10-01",
+        "result_status": "available",
+        "result_received_on": "2026-10-02",
+        "result_text": "Вымышленный результат получен; медицинской интерпретации нет",
+        "review_status": "reviewed",
+        "reviewed_on": "2026-10-03",
+        "next_action": "Обсудить результаты на демонстрационном приёме",
+        "source": "synthetic_fixture"
+      },
+      "reminder_draft": {
+        "status": "draft",
+        "due_date": "2026-10-15",
+        "basis": "Заранее заданное действие в вымышленном сценарии",
+        "sent": false
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+ app/README.md           |  65 ++++---
+ app/config/fields.py    | 225 ++++++++++--------------
+ app/main.py             |  40 +----
+ app/offline/__init__.py |   0
+ app/offline/cache.py    |  60 -------
+ app/preview-desktop.png | Bin 295310 -> 461151 bytes
+ app/preview-mobile.png  | Bin 104159 -> 106834 bytes
+ app/static/app.js       | 407 +++++++++++--------------------------------
+ app/static/index.html   |  14 +-
+ app/static/style.css    | 108 ------------
+ spec/CONTRACT.md        |   2 +-
+ spec/rules.json         | 453 +++++++++++++++++++++++++++++++++++++++++++++++-
+ 12 files changed, 699 insertions(+), 675 deletions(-)

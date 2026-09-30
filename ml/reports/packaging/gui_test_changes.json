@@ -1,0 +1,321 @@
+{
+  "scope": "Packaging regression migration from the local demo-3 tester to the standalone JSON module",
+  "source_test_count": 156,
+  "target_test_count": 154,
+  "expected_policy": "Medical/business expected outcomes are preserved. Only the removed HTML/form/static transport is excluded or replaced with JSON, shared-engine or fixed-card-provider checks. Source files and historical fixtures are not edited.",
+  "excluded_gui_only": [
+    {
+      "source": "test_http.HTTPTests.test_html_escapes_input_catalog_and_result_json",
+      "reason": "The packaged module has no HTML renderer. JSON type validation and inert free-text round trips remain covered by HTTPTests.test_field_errors_match_engine_without_mutating_input and ClinicIntegrationTests.test_json_preserves_free_text_and_reports_field_errors."
+    },
+    {
+      "source": "test_clinic_integration.ClinicIntegrationTests.test_form_has_six_sections_profiles_and_css_without_javascript",
+      "reason": "Six form sections, profile links and CSS belong only to the removed local GUI; no medical or scheduling assertion is removed. Nine sample inputs remain covered through /predict and /recommend."
+    },
+    {
+      "source": "test_completed.CompletedTests.test_result_text_and_serialized_fixture_are_html_escaped",
+      "reason": "The card provider returns copied data, not rendered HTML. Exact fictional states, unchanged text, dates, independent copies and whitelist checks remain in CompletedTests. Escaping is the responsibility of the consuming interface."
+    }
+  ],
+  "transport_replacements": [
+    [
+      "test_http.HTTPTests.test_normal_rejection_and_json_html_parity",
+      "test_http.HTTPTests.test_normal_rejection_and_json_engine_parity",
+      "Legacy profiles, review stop and busy infeasibility use /predict versus the shared engine; no route or composition expectation changes."
+    ],
+    [
+      "test_http.HTTPTests.test_form_error_keeps_values_and_matches_api",
+      "test_http.HTTPTests.test_field_errors_match_engine_without_mutating_input",
+      "Structured 422 field errors and unchanged caller input replace form field retention."
+    ],
+    [
+      "test_http.HTTPTests.test_profiles_health_and_whitelisted_debug_pages",
+      "test_http.HTTPTests.test_profiles_health_and_native_scheduler_whitelist",
+      "All six profiles and /health remain HTTP checks; five isolated fixtures and unsafe-case rejection use the native scheduler whitelist."
+    ],
+    [
+      "test_http.HTTPTests.test_completed_is_a_fixed_synthetic_fixture",
+      "test_http.HTTPTests.test_completed_provider_is_a_fixed_synthetic_fixture",
+      "Fixed-card provider data stay unchanged after a new plan; medical_validated=false, demo=true and unsent undated reminder are checked."
+    ],
+    [
+      "test_completed.CompletedTests.test_three_states_have_only_their_fixed_events_and_reminders",
+      "test_completed.CompletedTests.test_three_states_have_only_their_fixed_events_and_reminders",
+      "Provider preserves all original exact waiting/received/reviewed event, text, timestamp and reminder assertions; presentation wording is removed."
+    ],
+    [
+      "test_completed.CompletedTests.test_history_preserves_only_known_year_and_unknown_outcomes",
+      "test_completed.CompletedTests.test_history_preserves_only_known_year_and_unknown_outcomes",
+      "Exact history object with 2025 year precision, unknown outcomes and null full date is preserved without HTML checks."
+    ],
+    [
+      "test_completed.CompletedTests.test_default_and_switching_do_not_mutate_shared_fixture",
+      "test_completed.CompletedTests.test_default_and_switching_do_not_mutate_shared_fixture",
+      "Provider calls replace page requests; returned nested objects are additionally mutated to prove independent copies."
+    ],
+    [
+      "test_completed.CompletedTests.test_unknown_case_is_rejected_before_loading_a_file",
+      "test_completed.CompletedTests.test_unknown_case_is_rejected_before_loading_a_file",
+      "Provider ValueError replaces removed page HTTP 404; loader is still asserted not to run for unknown/path-like cases."
+    ],
+    [
+      "test_completed.CompletedTests.test_history_and_result_states_never_change_the_new_plan",
+      "test_completed.CompletedTests.test_history_and_result_states_never_change_the_new_plan",
+      "Python card states are opened between actual /predict requests; composition, results and reminders must remain identical."
+    ],
+    [
+      "test_clinic_integration.ClinicIntegrationTests.test_pregnant_mammography_html_row_keeps_both_independent_annotations",
+      "test_clinic_integration.ClinicIntegrationTests.test_pregnant_mammography_json_keeps_both_independent_annotations",
+      "JSON item retains both clinical flags and explicit screening matches while status remains review/not_run."
+    ],
+    [
+      "test_clinic_integration.ClinicIntegrationTests.test_html_and_json_share_normalized_business_result",
+      "test_clinic_integration.ClinicIntegrationTests.test_engine_and_json_share_normalized_business_result",
+      "Shared engine and /predict must return the identical result for the same input."
+    ],
+    [
+      "test_clinic_integration.ClinicIntegrationTests.test_nine_rendered_imported_forms_submit_their_actual_successful_controls",
+      "test_clinic_integration.ClinicIntegrationTests.test_nine_imported_recommendations_match_the_shared_engine",
+      "Nine untouched imported JSON inputs use /recommend and recommend_request; df733c4 provenance and source nonmutation are checked."
+    ],
+    [
+      "test_clinic_integration.ClinicIntegrationTests.test_form_errors_preserve_values_and_free_text_is_escaped",
+      "test_clinic_integration.ClinicIntegrationTests.test_json_preserves_free_text_and_reports_field_errors",
+      "Free text remains an uninterpreted JSON value; impossible date gets field 422, matching engine, without changing caller values."
+    ],
+    [
+      "test_clinic_integration.ClinicIntegrationTests.test_new_answers_never_generate_results_or_mutate_fixed_cards",
+      "test_clinic_integration.ClinicIntegrationTests.test_new_answers_never_generate_results_or_mutate_fixed_cards",
+      "All three card-provider snapshots remain fixed across actual plan requests; no invented results or reminder dates."
+    ],
+    [
+      "test_clinic_integration.ClinicIntegrationTests.test_unknown_checkbox_value_is_preserved_and_escaped_on_error",
+      "test_clinic_integration.ClinicIntegrationTests.test_unknown_answer_code_is_rejected_by_json",
+      "Unknown condition code remains a structured 422 and caller value is not silently deleted."
+    ],
+    [
+      "test_two_step_http.TwoStepHTTPTests.test_recommendation_does_not_search_and_preserves_json_html_parity",
+      "test_two_step_http.TwoStepHTTPTests.test_recommendation_does_not_search_and_preserves_json_engine_parity",
+      "Slot-search spies plus JSON/shared-function equality replace form rendering; catalog and preset options remain available."
+    ],
+    [
+      "test_two_step_http.TwoStepHTTPTests.test_actual_preset_and_custom_forms_submit_validated_hidden_patient",
+      "test_two_step_http.TwoStepHTTPTests.test_preset_and_custom_json_revalidate_patient_and_reconstruct_composition",
+      "Both selection modes reconstruct the exact preset and revalidate submitted patient values through JSON."
+    ],
+    [
+      "test_two_step_http.TwoStepHTTPTests.test_custom_removal_and_addition_have_html_json_parity",
+      "test_two_step_http.TwoStepHTTPTests.test_custom_removal_and_addition_have_json_engine_parity",
+      "Exact selected IDs, deterministic deduplication, additions/removals, individual name and null price remain checked."
+    ],
+    [
+      "test_two_step_http.TwoStepHTTPTests.test_empty_unknown_and_stale_selection_preserve_checkboxes_and_errors",
+      "test_two_step_http.TwoStepHTTPTests.test_empty_unknown_and_stale_selection_preserve_input_and_errors",
+      "200 needs_input for empty selection, 422 unknown IDs and 409 stale catalog preserve the request and match the common engine."
+    ],
+    [
+      "test_two_step_http.TwoStepHTTPTests.test_service_review_is_editable_but_global_urgent_has_no_editor",
+      "test_two_step_http.TwoStepHTTPTests.test_service_review_can_be_removed_but_global_urgent_still_stops",
+      "Deleting a locally restricted service clears that restriction; global urgent still yields null package and no route."
+    ],
+    [
+      "test_two_step_http.TwoStepHTTPTests.test_hidden_metadata_is_not_trusted_and_html_stays_escaped",
+      "test_two_step_http.TwoStepHTTPTests.test_client_metadata_is_not_trusted_and_free_text_stays_data",
+      "Forged ready status is rejected; accepted text is preserved in JSON as data rather than interpreted or rendered."
+    ],
+    [
+      "test_two_step_http.TwoStepHTTPTests.test_wrong_hidden_context_and_patient_types_are_errors_not_template_failures",
+      "test_two_step_http.TwoStepHTTPTests.test_wrong_context_and_patient_types_are_structured_errors",
+      "Wrong patient/context types remain consistent 422 error/errors responses on /plan."
+    ]
+  ],
+  "added_tests": [
+    {
+      "target": "test_router_mount.RouterMountTests.test_prefixed_mount_matches_standalone_without_changing_host_routes",
+      "purpose": "Mount APIRouter under /prime, preserve a host endpoint, compare recommendation/plan with standalone API and verify mounted malformed-JSON 422 on all three endpoints."
+    }
+  ],
+  "actual_run": {
+    "cwd": "C:\\Users\\user\\Desktop\\medhub-app\\medhub-app\\ml",
+    "command": "C:\\Users\\user\\Desktop\\medhub-app\\MedHub-HAQathon\\.venv\\Scripts\\python.exe -B -m unittest discover -s tests -v",
+    "tests": 154,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "transport": "FastAPI TestClient and native Python calls; not a running Uvicorn or browser check",
+    "evidence": "Observed execution output; this record does not claim a separately saved full transcript. The clean packaged-environment run is recorded separately by the parent."
+  },
+  "retained_business_test_count": 131,
+  "transport_replacement_count": 22,
+  "retained_test_ids": [
+    "test_catalog.CatalogMigrationTests.test_availability_covers_each_catalog_variant_with_independent_validation",
+    "test_catalog.CatalogMigrationTests.test_changed_scopes_have_explicit_migration_and_legacy_refs_are_retired",
+    "test_catalog.CatalogMigrationTests.test_curator_is_one_source_service_with_two_distinct_actions",
+    "test_catalog.CatalogMigrationTests.test_every_action_has_consistent_technical_data_and_busy_changes_only_slots",
+    "test_catalog.CatalogMigrationTests.test_every_source_row_and_package_metadata_are_preserved",
+    "test_catalog.CatalogMigrationTests.test_group_conditional_and_pregnancy_properties_are_explicit",
+    "test_choice_catalog.ChoiceCatalogTests.test_child_extended_mixed_age_groups_need_review_without_splitting",
+    "test_choice_catalog.ChoiceCatalogTests.test_dangling_and_action_package_references_are_data_errors",
+    "test_choice_catalog.ChoiceCatalogTests.test_gender_variant_is_review_not_a_claimed_diagnosis",
+    "test_choice_catalog.ChoiceCatalogTests.test_presets_are_exact_alternatives_with_boundaries",
+    "test_choice_catalog.ChoiceCatalogTests.test_screening_is_separate_explicit_and_has_no_guaranteed_payment",
+    "test_choice_catalog.ChoiceCatalogTests.test_service_age_is_not_derived_from_40_plus_package_boundary",
+    "test_choice_catalog.ChoiceCatalogTests.test_union_preserves_gender_and_child_extended_without_actions",
+    "test_choice_route.ChoiceRouteTests.test_actual_chronology_replaces_id_tiebreak_and_is_independently_valid",
+    "test_choice_route.ChoiceRouteTests.test_after_results_dependencies_are_checked_even_without_same_day_slots",
+    "test_choice_route.ChoiceRouteTests.test_bad_data_is_not_reported_as_busy",
+    "test_choice_route.ChoiceRouteTests.test_clinical_review_displays_draft_without_search",
+    "test_choice_route.ChoiceRouteTests.test_curator_service_expands_to_two_stable_actions_with_common_service_id",
+    "test_choice_route.ChoiceRouteTests.test_infeasible_preserves_every_selected_action_in_draft",
+    "test_choice_route.ChoiceRouteTests.test_missing_known_explicit_prerequisite_preserves_review_without_addition",
+    "test_choice_route.ChoiceRouteTests.test_missing_order_data_never_claims_complete_order",
+    "test_choice_route.ChoiceRouteTests.test_missing_time_data_keeps_complete_order_without_hours",
+    "test_choice_route.ChoiceRouteTests.test_removed_category_is_not_an_implicit_mandatory_prerequisite",
+    "test_clinic_integration.ClinicIntegrationTests.test_action_conflicts_and_broken_clinical_metadata_are_data_errors",
+    "test_clinic_integration.ClinicIntegrationTests.test_age_full_selects_basic_while_screening_uses_age_year",
+    "test_clinic_integration.ClinicIntegrationTests.test_all_nine_unchanged_imported_inputs_reach_shared_engine_through_http",
+    "test_clinic_integration.ClinicIntegrationTests.test_applicable_missing_pregnancy_requests_clarification_after_preliminary_package",
+    "test_clinic_integration.ClinicIntegrationTests.test_conditional_extended_female_item_is_preserved_without_route",
+    "test_clinic_integration.ClinicIntegrationTests.test_extras_are_discussion_only_and_consultations_are_not_duplicated",
+    "test_clinic_integration.ClinicIntegrationTests.test_known_urgent_stops_before_optional_or_missing_answers",
+    "test_clinic_integration.ClinicIntegrationTests.test_new_questionnaire_does_not_apply_legacy_fatigue",
+    "test_clinic_integration.ClinicIntegrationTests.test_pregnancy_flags_are_explicit_ids_and_independent_of_screening_links",
+    "test_clinic_integration.ClinicIntegrationTests.test_ready_male_plan_has_every_action_and_independently_validated_schedule",
+    "test_clinic_integration.ClinicIntegrationTests.test_unknown_and_missing_urgent_are_not_negative_answers",
+    "test_clinic_integration.ClinicIntegrationTests.test_unknown_screening_does_not_block_or_change_prime_composition",
+    "test_clinic_integration.ClinicIntegrationTests.test_zero_age_and_adult_child_flag_cannot_bypass_package_bounds",
+    "test_current_intake.CurrentIntakeTests.test_adult_age_boundary_is_a_local_screening_question",
+    "test_current_intake.CurrentIntakeTests.test_child_preparation_facts_survive_but_adult_questions_do_not",
+    "test_current_intake.CurrentIntakeTests.test_current_last_period_cannot_precede_birth_date",
+    "test_current_intake.CurrentIntakeTests.test_current_missing_unknown_and_never_history_have_explicit_meaning",
+    "test_current_intake.CurrentIntakeTests.test_current_nested_smoking_keeps_missing_and_zero_distinct",
+    "test_current_intake.CurrentIntakeTests.test_current_validation_and_known_source_through_public_api",
+    "test_current_intake.CurrentIntakeTests.test_hazardous_false_string_no_and_unknown_are_not_truthy",
+    "test_current_intake.CurrentIntakeTests.test_independent_registration_requires_explicit_answer",
+    "test_current_intake.CurrentIntakeTests.test_known_year_unknown_and_imported_range_do_not_become_never",
+    "test_current_intake.CurrentIntakeTests.test_legacy_broad_registration_and_separate_negative_codes",
+    "test_current_intake.CurrentIntakeTests.test_never_history_preserves_all_seven_programs_without_dates",
+    "test_current_intake.CurrentIntakeTests.test_other_context_is_preserved_without_a_listed_condition",
+    "test_current_intake.CurrentIntakeTests.test_raw_current_and_derived_legacy_smoking_are_different",
+    "test_current_intake.CurrentIntakeTests.test_six_unsure_answers_and_risk_context_are_preserved",
+    "test_engine.EngineTests.test_age_boundaries_use_full_age_from_demo_catalog",
+    "test_engine.EngineTests.test_blocker_precedes_unrelated_unknown_answers",
+    "test_engine.EngineTests.test_busy_preserves_mandatory_composition_and_hides_partial_route",
+    "test_engine.EngineTests.test_complaints_require_consistent_explicit_state",
+    "test_engine.EngineTests.test_conflicting_mandatory_actions_are_never_silently_removed",
+    "test_engine.EngineTests.test_cycle_unknown_predecessor_and_bad_interval_are_not_infeasible",
+    "test_engine.EngineTests.test_family_history_is_note_and_never_adds_colonoscopy",
+    "test_engine.EngineTests.test_fatigue_only_highlights_existing_catalog_items",
+    "test_engine.EngineTests.test_format_errors_precede_blocker",
+    "test_engine.EngineTests.test_health_card_and_reminder_do_not_invent_results_or_due_date",
+    "test_engine.EngineTests.test_invalid_input_never_coerces_age_or_codes",
+    "test_engine.EngineTests.test_missing_highlight_targets_remain_only_in_trace",
+    "test_engine.EngineTests.test_missing_or_ambiguous_package_requires_review",
+    "test_engine.EngineTests.test_missing_schedule_fields_do_not_invent_values",
+    "test_engine.EngineTests.test_normal_profiles_have_full_independently_validated_routes",
+    "test_engine.EngineTests.test_packages_and_sex_supplements_have_exact_composition",
+    "test_engine.EngineTests.test_regression_malformed_metadata_and_rule_ids",
+    "test_engine.EngineTests.test_regression_shared_base_and_supplement_id_keeps_both_reasons",
+    "test_engine.EngineTests.test_repeated_and_new_inputs_are_calculated_without_mutation",
+    "test_engine.EngineTests.test_synthetic_add_deduplicates_by_id_and_keeps_both_reasons",
+    "test_engine.EngineTests.test_trace_sources_and_collections_preserve_demo_contract",
+    "test_engine.EngineTests.test_unknown_answers_are_questions_not_negative_answers",
+    "test_engine.EngineTests.test_unknown_catalog_and_rule_references_are_data_errors",
+    "test_http.HTTPTests.test_fresh_calculation_even_in_old_offline_mode",
+    "test_http.HTTPTests.test_malformed_json_and_non_object_share_error_contract",
+    "test_intake.IntakeTests.test_all_nine_original_exports_and_no_mutation",
+    "test_intake.IntakeTests.test_applicability_parent_changes_do_not_leak_values",
+    "test_intake.IntakeTests.test_bad_types_dates_conflicting_formats_and_extra_fields",
+    "test_intake.IntakeTests.test_contradictions_need_question_without_inventing_answer",
+    "test_intake.IntakeTests.test_history_preserves_year_or_range_without_precise_date",
+    "test_intake.IntakeTests.test_legacy_keeps_original_contract_and_no_new_answers",
+    "test_intake.IntakeTests.test_missing_negative_unknown_and_not_applicable_are_different",
+    "test_intake.IntakeTests.test_registration_broad_codes_are_not_diagnoses",
+    "test_intake.IntakeTests.test_semantically_stale_values_do_not_create_global_questions",
+    "test_intake.IntakeTests.test_smoking_missing_quit_is_not_zero_and_derived_values_not_trusted",
+    "test_intake.IntakeTests.test_smoking_uncertainty_does_not_block_prime",
+    "test_intake.IntakeTests.test_two_ages_context_and_birth_year_only",
+    "test_intake.IntakeTests.test_urgent_is_parseable_without_optional_answers",
+    "test_preparation_review.PreparationReviewTests.test_each_known_preparation_fact_is_separate",
+    "test_preparation_review.PreparationReviewTests.test_removal_clears_only_selected_service_preparation_review",
+    "test_preparation_review.PreparationReviewTests.test_reported_preparation_issues_stop_slots_and_preserve_group",
+    "test_scheduler.SchedulerTests.test_actual_backtracking_recovers_after_first_choice_fails",
+    "test_scheduler.SchedulerTests.test_bad_data_is_detected_before_search",
+    "test_scheduler.SchedulerTests.test_five_fixture_outcomes_and_complete_routes",
+    "test_scheduler.SchedulerTests.test_fixtures_are_independent_and_whitelisted",
+    "test_scheduler.SchedulerTests.test_limited_search_does_not_claim_impossibility",
+    "test_scheduler.SchedulerTests.test_resource_busy_is_checked_without_other_patient_procedures",
+    "test_scheduler.SchedulerTests.test_short_slot_and_patient_window_do_not_change_duration",
+    "test_scheduler.SchedulerTests.test_touching_intervals_allowed_and_slot_cannot_slide",
+    "test_scheduler.SchedulerTests.test_validator_detects_tampered_routes",
+    "test_screening.ScreeningTests.test_absent_history_limits_claim_but_does_not_invent_interval_or_reminder",
+    "test_screening.ScreeningTests.test_all_seven_source_rules_are_preserved_without_medical_approval",
+    "test_screening.ScreeningTests.test_broad_conditions_and_imported_codes_do_not_establish_cancer",
+    "test_screening.ScreeningTests.test_calendar_age_is_used_and_irrelevant_registration_is_not_requested",
+    "test_screening.ScreeningTests.test_contradictory_smoking_metadata_is_local_unknown_until_independent_branch_is_true",
+    "test_screening.ScreeningTests.test_history_range_and_real_year_are_not_replaced_by_invented_dates",
+    "test_screening.ScreeningTests.test_knowledge_of_pregnancy_has_its_own_effect_for_hepatitis",
+    "test_screening.ScreeningTests.test_links_do_not_remove_items_hide_pregnancy_or_claim_payment",
+    "test_screening.ScreeningTests.test_missing_quit_duration_is_not_zero_and_other_missing_smoking_data_are_not_zero",
+    "test_screening.ScreeningTests.test_missing_registration_is_unknown_not_negative",
+    "test_screening.ScreeningTests.test_smoking_or_work_has_three_valued_logic",
+    "test_screening.ScreeningTests.test_source_operator_conflict_is_local_to_disputed_boundary",
+    "test_screening.ScreeningTests.test_unavailable_work_question_at_two_age_boundary_requests_rule_review",
+    "test_screening.ScreeningTests.test_undisclosed_group_overlap_stays_unknown",
+    "test_selection.SelectionTests.test_added_restricted_item_is_kept_with_review_and_unrelated_service_is_clear",
+    "test_selection.SelectionTests.test_busy_day_never_changes_selection_and_next_visit_is_not_invented",
+    "test_selection.SelectionTests.test_catalog_has_all_package_sections_but_not_actions_or_screenings",
+    "test_selection.SelectionTests.test_child_extended_preserves_exact_variant_and_compares_against_recommended_mini",
+    "test_selection.SelectionTests.test_custom_removal_is_final_and_warning_keeps_original_reason",
+    "test_selection.SelectionTests.test_direct_plan_cannot_bypass_global_stop_or_missing_urgent",
+    "test_selection.SelectionTests.test_discussion_specialist_is_not_duplicated_after_manual_selection",
+    "test_selection.SelectionTests.test_empty_custom_missing_list_unknown_ids_and_stale_catalog",
+    "test_selection.SelectionTests.test_forged_client_result_fields_are_rejected_not_trusted",
+    "test_selection.SelectionTests.test_ineligible_preset_is_not_automatically_assigned",
+    "test_selection.SelectionTests.test_known_prerequisite_and_category_order_have_different_outcomes",
+    "test_selection.SelectionTests.test_manual_other_package_group_is_not_an_age_contraindication_or_duplicate",
+    "test_selection.SelectionTests.test_preset_reconstructs_exact_source_and_rejects_conflicting_list",
+    "test_selection.SelectionTests.test_recommendation_does_not_search_or_construct_schedule",
+    "test_selection.SelectionTests.test_removing_locally_restricted_items_clears_only_their_review",
+    "test_selection.SelectionTests.test_screenings_are_separate_and_paid_match_needs_explicit_selection",
+    "test_two_step_http.TwoStepHTTPTests.test_json_paths_are_unique_and_do_not_accept_old_html_payload"
+  ],
+  "retained_method_ast_check": "Equal after namespace and runtime-data-path relocation only; no business assertion changes",
+  "source_test_sha256": {
+    "test_catalog.py": "1954cbc57f78f81a4c6de0fe4487db92a12688022d40ca2f5ed8395414c1696f",
+    "test_choice_catalog.py": "124ca7688958f1065b5806041cc0165d45ee4559e7defa49ba53ab5df25f88f6",
+    "test_choice_route.py": "39bf2715c3368f7295a940f7370e82eb4d0fb72a7d7f4188a1fa91fc3a8d2eee",
+    "test_clinic_integration.py": "67a32e75ccd7c35091b42e0bb30360c1bb7cd91a7b11c7f0c3f6bb8ac25993cb",
+    "test_completed.py": "635ba1ef71a5d7221d16cb883a029adca6ae15af2e78fefae14e85ee54268820",
+    "test_current_intake.py": "264acd95979909be1b944e68ecc39f2b38ebe8ce510a7ed0a748faaa00348ab1",
+    "test_engine.py": "b0c66a137013e84e5392f13a81c2ff6ee782e86ad05a2a4ff379820911139a8a",
+    "test_http.py": "a69842d2115d1a19f13b48c325221ea1f4f7688e2024b655158eb0470ce4caeb",
+    "test_intake.py": "2da5ba1a9f49c02cfaff32d6014ab62349a6ded6393990bef6fd5b4d785908d4",
+    "test_preparation_review.py": "23ef177d37dcaf1d04fb3d8410ecfec23f7e14ce37691068349aadb41e0084d7",
+    "test_scheduler.py": "ad85bb32d51f30a201554ead9ac6138327f508e3733ab9cf0e1daf72832422ff",
+    "test_screening.py": "8b69333ad87fda698faf6b36b5af4e846de35eec6d43cacbe7e7618f81aedb16",
+    "test_selection.py": "2eedd32e77d8e141b240a5f1567787de1485551da73386fe3ea69569fa612c87",
+    "test_two_step_http.py": "c576d28bc23a8417fbd9e77816084055ee05800ee225465fab3dbb29c3576433"
+  },
+  "packaged_test_sha256": {
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "helpers.py": "fa5e8038faa2d618451661aa936eeafeef836c201d6eb4b6c98a1daf16a35968",
+    "test_catalog.py": "079c5288c4a1f49d1b72d860f17bfef999f4edcad74ebd6502605d3aff2204ab",
+    "test_choice_catalog.py": "bfc25c857ccae55c5244db3666ed8330cb60314b2ad4bbb91dc13c8a170b1d1a",
+    "test_choice_route.py": "3104e20376cdb2864da9402ff5b865da995309927088666e36a41c0ad91a25ae",
+    "test_clinic_integration.py": "be0c5430310d2e68d48cc3d00ac111a00aaae38cd3ee36318a6bc7cee52e988a",
+    "test_completed.py": "3a6ae25c51d98788c95753a9ddd3ba708c3179ea6721e5d0e5454d1fb868838e",
+    "test_current_intake.py": "b9a6c532913ed1b57c7090e9133727ea3b0647e981bf7640617c30f3d2b7b7b8",
+    "test_engine.py": "e51c8593743be250ebaa21ea4c16859a84d21ebe2d0ea6ed97ff88d49dc68ff5",
+    "test_http.py": "a813137d889cdfc928441225ab9ae01402f95c013a602b3b4b859639421ece17",
+    "test_intake.py": "4dcbd395f2dbd59c4edc74ea34a4e23d9c86a59669cd37fcdde0b104f0ad2d50",
+    "test_preparation_review.py": "60d555dd7aaf037eb39018abc03c042eb0c454a583fc72d60318e879fb89d909",
+    "test_router_mount.py": "4ba8376fcca174a6f6ba8065158fa3201d0db708e3eca3eb1eea9dc2309cb590",
+    "test_scheduler.py": "92f72fbfdcb38ab68c81130e4e1d8a9ce6ccd4fbcf7f6110a26fdaba74d91142",
+    "test_screening.py": "e0f00fb687f43f89863bd1fe8bfb9e982eb66dfd6729153315e7fbab814c37f0",
+    "test_selection.py": "640a48a86f6df79729f66ee43f93fb28e8db80b7762b6a556eb980d611cd5638",
+    "test_two_step_http.py": "8da080ce6a0ef286a242a71906d38ea62b6b79bc4d75f6d84b328127d39fb722"
+  },
+  "historical_scenario_fixture_sha256": "5d60c6004fdf86645f0d678291e850601008d5288c66a46367c1a7bb6dae1693"
+}

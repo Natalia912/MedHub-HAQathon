@@ -1,0 +1,68 @@
+{
+  "version": "demo-2",
+  "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+  "medical_validated": false,
+  "basis": "Явные технические сопоставления prime_overlap со стабильными ID каталога. Степень касается только описанного компонента, не полного скрининга, оплаты или клинической эквивалентности. Не применяется сопоставление по похожести строк.",
+  "links": [
+    {
+      "screening_id": "scr_cvd",
+      "procedure_id": "prime_blood_panel_40plus_group",
+      "match_degree": "unknown",
+      "explanation": "prime_overlap упоминает группу 40+ показателей, но её состав не раскрыт; совпадение отдельных анализов не подтверждено."
+    },
+    {
+      "screening_id": "scr_cvd",
+      "procedure_id": "prime_lipids_glucose_group",
+      "match_degree": "partial",
+      "explanation": "В исходной подсказке есть липидный профиль; состав группы не приравнивается ко всем компонентам скрининга."
+    },
+    {
+      "screening_id": "scr_cvd",
+      "procedure_id": "prime_hba1c",
+      "match_degree": "exact",
+      "explanation": "Явное соответствие на уровне компонента «гликированный гемоглобин»; это не весь скрининг и не подтверждение оплаты."
+    },
+    {
+      "screening_id": "scr_cvd",
+      "procedure_id": "prime_ophthalmology_pressure_exam",
+      "match_degree": "partial",
+      "explanation": "Измерение внутриглазного давления входит в описанный осмотр; полный осмотр не равен компоненту скрининга."
+    },
+    {
+      "screening_id": "scr_cerebro",
+      "procedure_id": "prime_neck_leg_vessels_doppler",
+      "match_degree": "partial",
+      "explanation": "Исходная подсказка связывает исследование сосудов шеи и ног с УЗДГ брахиоцефального ствола; объёмы различаются, требуется уточнение."
+    },
+    {
+      "screening_id": "scr_breast",
+      "procedure_id": "prime_mammography_2d3d",
+      "match_degree": "partial",
+      "explanation": "Каталог указывает 2D/3D, правило — четыре снимка и вторую читку; равенство объёма не установлено. Клиническая пометка позиции сохраняется отдельно."
+    },
+    {
+      "screening_id": "scr_cervix",
+      "procedure_id": "prime_pap_test",
+      "match_degree": "partial",
+      "explanation": "ПАП-тест указан в обоих источниках; метод жидкостной цитологии не раскрыт в каталоге, полный скрининг не подтверждён."
+    },
+    {
+      "screening_id": "scr_hepatitis",
+      "procedure_id": "prime_hepatitis_bc_group",
+      "match_degree": "partial",
+      "explanation": "Общая группа анализов B/C сопоставлена с экспресс-тестами anti-HCV и HBsAg только по исходной подсказке; метод и состав требуется уточнить."
+    },
+    {
+      "screening_id": "scr_lung",
+      "procedure_id": "prime_lung_ct",
+      "match_degree": "partial",
+      "explanation": "КТ лёгких сопоставлено исходной подсказкой с КТ грудной клетки и средостения; совпадение протокола и полного объёма не подтверждено."
+    },
+    {
+      "screening_id": "scr_lung",
+      "procedure_id": "prime_chest_ct",
+      "match_degree": "partial",
+      "explanation": "КТ грудной клетки сопоставлено исходной подсказкой с КТ грудной клетки и средостения; совпадение протокола и полного объёма не подтверждено."
+    }
+  ]
+}

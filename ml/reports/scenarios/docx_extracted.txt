@@ -1,0 +1,616 @@
+[word/document.xml:1] Сценарии проверки конструктора чекапов PRIME
+[word/document.xml:2] 25 синтетических сценариев для разработчика и врача
+[word/document.xml:3] Статус Черновик ожидаемого поведения. Не запускалось. Для логической и врачебной проверки.
+[word/document.xml:4] Независимые ожидания для двух этапов: анкета → рекомендация → выбор → план. Врач и разработчик сначала согласуют логику и передачу данных, затем проведут отдельный прогон. Все профили вымышлены; диагнозы и результаты не создаются.
+[word/document.xml:5] Паспорт документа
+[word/document.xml:6] Параметр
+[word/document.xml:7] Значение
+[word/document.xml:8] Версия документа
+[word/document.xml:9] 1.1 · 30 сентября 2026 года
+[word/document.xml:10] Объём
+[word/document.xml:11] 25 карточек S01–S25; 48 шагов. Шаг — отдельно описанное состояние входа или выбора, а не число HTTP-запросов.
+[word/document.xml:12] Основной снимок
+[word/document.xml:13] 744d7f79e6872a31572dda9d75269a8a8b7bcd4a
+[word/document.xml:14] Импорт прежних данных
+[word/document.xml:15] df733c43d5ab655ef08036366a44bae04e59182f
+[word/document.xml:16] Основа
+[word/document.xml:17] Приложенное задание и приведённые в нём выдержки источников. Более свежие документы не приложены; независимая проверка репозитория и медицинских норм не проводилась.
+[word/document.xml:18] Приоритет
+[word/document.xml:19] Согласованное поведение задания → структурированные данные снимка → пояснения источников.
+[word/document.xml:20] Граница реализации
+[word/document.xml:21] CONTRACT.md описывает predict(input); /recommend → /plan и ручной выбор заданы договорённостью команды. Подключение новых модулей к локальной реализации не установлено.
+[word/document.xml:23] Общие даты и предмет проверки
+[word/document.xml:24] as_of_date=2026-09-30; checkup_year=2026; visit_date=2026-10-01. Только S04/S05 меняют дату оценки на 2026-10-01. age_full — полные годы на дату оценки; age_year=2026−год рождения. Пакеты: 1–17 → prime_child; 18–39 → prime_basic; 40–120 → prime_extended. Возраст младше года не входит в prime_child. Половые дополнения прибавляются к общему составу; детские mini и extended — альтернативные варианты.
+[word/document.xml:25] Сервис использует правила и планировщик, без моделей, диагностики и лечения. PRIME и госскрининги раздельны; бесплатной копии пакета нет. Прежние screen/compute и sample_inputs не являются эталонами.
+[word/document.xml:26] Типы основания
+[word/document.xml:27] PROJECT Согласованное функциональное требование или арифметика.
+[word/document.xml:28] RULE_SNAPSHOT Срабатывание конкретного правила снимка; не клиническое или юридическое одобрение.
+[word/document.xml:29] CLINICIAN_REVIEW Неопределённость, требующая врача; сохранить вопрос, не выдать догадку за назначение.
+[word/document.xml:30] CONTRACT_GAP Смысловой факт известен, но формат передачи или ID ещё не согласован.
+[word/document.xml:31] SYNTHETIC_FIXTURE Явно заданные тестовые слоты и ресурсы, не расписание клиники.
+[word/document.xml:32] Базовые профили и история
+[word/document.xml:33] M0/F0/C0 вместе с изменениями карточки задают смысловой профиль. Это синтетические факты, не значения по умолчанию для пропусков. Указанные в карточке замены и намеренные пропуски имеют приоритет.
+[word/document.xml:34] Взрослый мужчина M0: sex=M; for_child=false; urgent=none; attached_to=green_clinic. Явно отрицает все перечисленные в форме состояния, диагнозы на учёте, семейные факторы и группы риска. Никогда не курил: pack_years=0; quit_years_ago неприменим; hazardous_work_10y=false. discharge — неприменим, не передаётся; dysuria=no; anesthesia_reaction=no; blood_thinners=no; allergy=no; companion=yes; лекарств не принимает; conditions_other пусто, иных жалоб не сообщает. Женские репродуктивные вопросы неприменимы, pregnant не подставляется как no.
+[word/document.xml:35] Взрослая женщина F0: те же применимые отрицания и сведения, что M0; sex=F; for_child=false; discharge=no; dysuria — неприменим, не передаётся; pregnant=no; pregnancies=0; births=0; contraception=condom; last_period=2026-09-10. Эти ответы не являются доказательством беременности или её отсутствия вместо pregnant. В изменённых профилях сохраняется согласованность репродуктивного анамнеза.
+[word/document.xml:36] Ребёнок C0: sex=M; for_child=true; urgent=none; attached_to=green_clinic. Со слов законного представителя известно отсутствие перечисленных состояний, диагнозов на учёте и семейных факторов; аллергии и нежелательной реакции на анестезию не было, лекарств не принимает, разжижающие кровь препараты не принимает; сопровождающий есть. Взрослые вопросы о курении, профессиональном риске и репродукции неприменимы; они не превращаются в медицинские отрицания.
+[word/document.xml:37] Под «перечисленными» понимаются точные множества: conditions — pressure, heart, diabetes, glaucoma, head_vessels, legs, breast, hpv, bowel, lungs, tb, hepatitis, urine, bleeding; registered — hypertension, ihd, diabetes, glaucoma, cerebrovascular, breast_cancer, cervical_cancer, colorectal, lung_cancer, chronic_hepatitis; family_history — colorectal_cancer, breast_cancer, other_cancer, early_cvd, hypertension, diabetes, tb. Для взрослых risk_group — medical_worker_invasive, planned_surgery, hemodialysis_oncology_hematology, transfusion_transplant, pregnancy, hiv_key_population; перечисленные семь screening.when это поле не используют.
+[word/document.xml:38] История H0: пациент или представитель явно сообщил «никогда не проходил» отдельно для scr_cvd, scr_cerebro, scr_breast, scr_cervix, scr_colorectal, scr_hepatitis, scr_lung. Это сведения о факте прохождения, без результатов и просмотра врачом. В S14–S16 история изменяется явно. Неизвестная или пропущенная дата не эквивалентна H0.
+[word/document.xml:39] CONTRACT_GAP G1: current collectInput опускает пустые conditions/family_history; подписи допускают и «нет», и «не знаю». Утвердить передачу явных отрицаний и «никогда». Current содержит даты только для scr_breast/scr_cervix/scr_colorectal/scr_cvd; история других программ требует отдельного способа передачи. Положительные ожидаемые кандидаты в карточках условны на сохранении этих явно заданных смысловых фактов, а не на молчаливом прочтении пустого массива.
+[word/document.xml:40] Общие инварианты
+[word/document.xml:41] I1 Любой известный urgent кроме none блокирует чекап в обоих этапах. Пропуск обязательного urgent: needs_input, вопрос, package=null, schedule.status=not_run. Current: none/chest_pain/dyspnea/stroke_signs.
+[word/document.xml:42] I2 pregnant=yes/unsure или неизвестный применимый ответ не даёт автоматического одобрения зависимым услугам. До решения по зависимым услугам status=review, schedule.status=not_run. КТ/маммография — проектное ограничение; «Тест на хеликобактер» не является КТ.
+[word/document.xml:43] I3 Возрастной кандидат, согласованный состав и найденное расписание — разные состояния. Предварительный пакет может иметь review.
+[word/document.xml:44] I4 Госскрининги отдельны от PRIME. Потенциальное покрытие не удаляет платную услугу. attached_to меняет пояснение места, а не критерии пригодности.
+[word/document.xml:45] I5 В custom окончателен выбор пациента; отказ даёт warning. removed_recommended считается от исходной рекомендации; base_package_id указывает выбранный пресет.
+[word/document.xml:46] I6 Ручное добавление имеет основание «выбрана пользователем». Один ID — один элемент; сходные названия разных групп не дают права их объединять.
+[word/document.xml:47] I7 Порядок категорий пересчитывается по выбранным действиям. Явную обязательную предпосылку проверяют отдельно, не добавляют молча. У одной услуги допустимо несколько action_id.
+[word/document.xml:48] I8 /recommend не ищет слоты. /plan различает предварительный порядок и точное расписание; при feasible отображаемый порядок совпадает с хронологией.
+[word/document.xml:49] I9 Выбор и длительности не меняются ради расписания. Нет пересечений пациента/ресурсов; зависимости соблюдены. Полный перебор без решения → infeasible; лимит → unknown; нехватка технических данных → needs_data.
+[word/document.xml:50] I10 Итоговая консультация при неготовых результатах относится к after_results. Нельзя выдумывать дату готовности или запись в тот же день.
+[word/document.xml:51] I11 Стоимость custom — у администратора; сумма null. Нет выдуманной скидки за удаление или государственное покрытие.
+[word/document.xml:52] I12 next_visit — массив. Без явного правила/назначения у записи date=null и причина уточнения; интервал скрининга не является назначенной датой будущего визита.
+[word/document.xml:53] I13 Новая плановая карта содержит выбранные услуги со статусом «не пройдено», без результатов. Изменение плана не меняет существующую историю и не создаёт напоминание с выдуманной датой.
+[word/document.xml:54] I14 Все сценарии вымышлены и не запускались. Checkbox, draft и рекомендация не означают диагноз, медицинское одобрение или подтверждённую запись.
+[word/document.xml:55] В S01–S24 проверяются состав, ограничения и порядок действий. Слоты и длительности в карточках не заданы; серверную конфигурацию фиксируют перед прогоном. Отсутствие данных в документе не означает schedule.status=needs_data. Без отдельного fixture точные часы не оцениваются; при разрешённом запуске статус определяется поиском по I9. needs_data ожидается только при фактической нехватке технических данных. При клиническом review выбранных услуг schedule.status=not_run; допустим предварительный порядок с пометками. При stop или блокирующем needs_input всего запроса маршрут не создаётся. Вопрос только об отдельном скрининге не блокирует PRIME. Для S25 задан отдельный fixture.
+[word/document.xml:56] Порядок категорий из проекта: анализы натощак → УЗИ и функциональная диагностика → КТ/маммография → консультации → эндоскопия под анестезией последней → итог после результатов. Это логистический черновик для согласования клиникой; удалённые категории не оставляют пустые шаги, а обязательные prerequisites нельзя выводить из одного этого порядка.
+[word/document.xml:57] Справка для чтения составов
+[word/document.xml:58] Обозначение «basic M/F» означает packages.prime_basic.exams плюс male_exams/female_exams; «extended M/F» — аналогично для prime_extended. Child mini — только packages.prime_child.exams; child extended — только extended_exams. Это точные множества исходных строк, а не число атомарных процедур. «По показаниям» остаётся условием, группы не раскрываются по догадке.
+[word/document.xml:59] Для контроля сопоставления: basic — 11 общих строк + 3 мужских либо 5 женских; extended — 9 общих + 6 мужских либо 6 женских; child mini — 8 строк, extended — 5 групп. «Консультация врача-куратора (первичная и итоговая)» выбирается один раз и даёт два действия, итоговое — after_results. В mini «Заключение педиатра с рекомендациями» также после результатов.
+[word/document.xml:60] Current 744d7f7: 30 полей; точечные smoking.* и last_screening.* сериализуются вложенными объектами. Legacy df733c4: 27 полей, registered_on и курительные компоненты преобразовывались; диапазон «за последние два года» мог стать искусственным YEAR−1. urgent=other_now рассматривается только как legacy-совместимость и требует явного сопоставления; в current его нет. Известные прежние ошибки не объявляются автоматически дефектами нынешнего кода.
+[word/document.xml:61] Сопоставление перед прогоном G2: для всех выбираемых строк установить procedure_id, для действий action_id и связи с услугой, variant_id, catalog_version и формат служебного контекста. Пока используются точные названия и пути, не готовый исполняемый JSON. Сервер проверяет ID, состав, причины и готовность самостоятельно; клиентские подписи и status=ready не заменяют проверку.
+[word/document.xml:62] Обзор сценариев
+[word/document.xml:63] ID
+[word/document.xml:64] Основная проверка
+[word/document.xml:65] Версия входа
+[word/document.xml:66] Согласование
+[word/document.xml:67] S01
+[word/document.xml:68] Женский базовый пресет, 35 лет
+[word/document.xml:69] current
+[word/document.xml:70] G1/G2 История и ID
+[word/document.xml:71] S02
+[word/document.xml:72] Мужской расширенный пресет, 42 года
+[word/document.xml:73] current
+[word/document.xml:74] G1/G2 История и ID
+[word/document.xml:75] S03
+[word/document.xml:76] Детский mini без смешения с extended
+[word/document.xml:77] current
+[word/document.xml:78] G2 Детский вариант
+[word/document.xml:79] S04
+[word/document.xml:80] День рождения: 17 → 18 лет
+[word/document.xml:81] current
+[word/document.xml:82] G3 Совершеннолетие и for_child
+[word/document.xml:83] S05
+[word/document.xml:84] День рождения: 39 → 40 лет
+[word/document.xml:85] current
+[word/document.xml:86] G1/G2 Даты и состав
+[word/document.xml:87] S06
+[word/document.xml:88] 39 полных лет, скрининговый возраст 40
+[word/document.xml:89] current
+[word/document.xml:90] G1/G2 Два возраста
+[word/document.xml:91] S07
+[word/document.xml:92] Три стоп-ветви urgent
+[word/document.xml:93] current
+[word/document.xml:94] G2 Текст и статус остановки
+[word/document.xml:95] S08
+[word/document.xml:96] Пропуск обязательного urgent
+[word/document.xml:97] current
+[word/document.xml:98] G2 Пропущенный urgent
+[word/document.xml:99] S09
+[word/document.xml:100] Беременность: ограничения не скрываются оплатой
+[word/document.xml:101] current
+[word/document.xml:102] G4 Зависимые услуги
+[word/document.xml:103] S10
+[word/document.xml:104] Неуверенность и пропуск ответа о беременности
+[word/document.xml:105] current
+[word/document.xml:106] G4 Вопрос беременности
+[word/document.xml:107] S11
+[word/document.xml:108] Широкий ответ, legacy-код и отдельный диагноз
+[word/document.xml:109] current / legacy-import
+[word/document.xml:110] G5 Происхождение диагноза
+[word/document.xml:111] S12
+[word/document.xml:112] Неизвестный срок отказа от курения
+[word/document.xml:113] current / legacy-import
+[word/document.xml:114] G1 Неизвестность курения
+[word/document.xml:115] S13
+[word/document.xml:116] Граница 15 лет после отказа
+[word/document.xml:117] current
+[word/document.xml:118] G6 Граница 15 лет
+[word/document.xml:119] S14
+[word/document.xml:120] Legacy-диапазон вместо выдуманного 2025
+[word/document.xml:121] legacy-import
+[word/document.xml:122] G5 Происхождение года
+[word/document.xml:123] S15
+[word/document.xml:124] Реальный год 2025 сохраняет точность year
+[word/document.xml:125] current
+[word/document.xml:126] G1 Точность year
+[word/document.xml:127] S16
+[word/document.xml:128] Кандидаты, учёт по АГ и место прохождения
+[word/document.xml:129] current
+[word/document.xml:130] G1/G7 История и место
+[word/document.xml:131] S17
+[word/document.xml:132] Пересечения HbA1c и группы УЗДГ
+[word/document.xml:133] current
+[word/document.xml:134] G7 Exact и partial
+[word/document.xml:135] S18
+[word/document.xml:136] Диабет: черновое предложение эндокринолога
+[word/document.xml:137] current / extension-draft
+[word/document.xml:138] G8 Scope и черновик
+[word/document.xml:139] S19
+[word/document.xml:140] Анестезия: препарат и отсутствие сопровождающего
+[word/document.xml:141] current
+[word/document.xml:142] G8 Подготовка у врача
+[word/document.xml:143] S20
+[word/document.xml:144] Детский extended вместо рекомендованного mini
+[word/document.xml:145] current
+[word/document.xml:146] G2/G4 Варианты и группы
+[word/document.xml:147] S21
+[word/document.xml:148] Удаление рекомендованной КТ в custom
+[word/document.xml:149] current
+[word/document.xml:150] G2 Связи услуги и действий
+[word/document.xml:151] S22
+[word/document.xml:152] Добавление уролога и повтор того же ID
+[word/document.xml:153] current
+[word/document.xml:154] G2/G4 Дубликат и применимость
+[word/document.xml:155] S23
+[word/document.xml:156] Preset → custom → preset без переноса старого выбора
+[word/document.xml:157] current
+[word/document.xml:158] G2 Конфликт preset
+[word/document.xml:159] S24
+[word/document.xml:160] Пустой custom и отсутствие поля выбора
+[word/document.xml:161] current
+[word/document.xml:162] G2 Пустое и отсутствующее
+[word/document.xml:163] S25
+[word/document.xml:164] Два действия: допустимые и конфликтующие слоты
+[word/document.xml:165] technical-fixture
+[word/document.xml:166] G9 Адаптер fixture
+[word/document.xml:168] G1 — передача неизвестности и истории; G2 — итоговые ID и контракт этапов. Специальные вопросы раскрыты в карточках и сводном списке. Набор не заявляет исчерпывающее покрытие всех комбинаций.
+[word/document.xml:169] S01 Женский базовый пресет 35 лет
+[word/document.xml:170] Область: current. Шагов: 1. Проверить женскую часть basic, отдельный scr_hepatitis и перенос неизменённого выбора в план.
+[word/document.xml:171] Профиль F0 + H0; DOB 1991-05-12, F, for_child=false. as_of_date=2026-09-30, checkup_year=2026, visit_date=2026-10-01; age_full=35, age_year=35. pregnant=no задано явно. Изменений и намеренных пропусков относительно F0/H0 нет; история — явное «никогда», без придуманной даты.
+[word/document.xml:172] Действия А. Получить /recommend. Выбрать предложенный женский preset; передать /plan mode=preset, base_package_id=prime_basic, соответствующий вариант, полный согласованный список selected_procedure_ids и catalog_version. Пользователь ничего не добавляет и не удаляет.
+[word/document.xml:173] /recommend [RULE_SNAPSHOT] package.id=prime_basic; состав packages.prime_basic.exams + female_exams, без male_exams. Включены «Консультация гинеколога», «ЭКГ», «Ферритин, железо, фолиевая кислота», «УЗИ малого таза (трансвагинально)», «УЗИ молочных желёз». scr_hepatitis — candidate при передаче явных фактов H0 и отсутствия chronic_hepatitis. scr_cvd, scr_breast, scr_cervix, scr_colorectal, scr_lung — not_eligible по возрасту; scr_cerebro — по полу/возрасту. [PROJECT: I4, I8] Госпрограмма показана отдельно с источником, free_gobmp и пояснением места по attached_to; поиск слотов не выполняется.
+[word/document.xml:174] /plan [PROJECT: I3, I7–I10, I13] Выбранный состав равен женскому пресету; удалений/добавлений нет. route строится по его действиям; расписание — по I9 и общим условиям прогона. Первичное действие услуги «Консультация врача-куратора (первичная и итоговая)» отделено от итогового after_results; оба связаны одной выбранной услугой. Все позиции новой карты — «не пройдено», результатов нет. [PROJECT: I12] next_visit — массив; у требующей уточнения записи date=null, без выдуманного повтора.
+[word/document.xml:175] Проверяемые утверждения
+[word/document.xml:176] 1. [RULE_SNAPSHOT] prime_basic: age_min=18, age_max=39; возраст 35 даёт basic с female_exams, не extended.
+[word/document.xml:177] 2. [RULE_SNAPSHOT] scr_hepatitis: age_min=18, not_registered=chronic_hepatitis, not_pregnant=true; явный отрицательный анамнез и H0 позволяют candidate, а отсутствие онкоскринингов этого не отменяет.
+[word/document.xml:178] 3. [PROJECT] I4, I7, I10: государственный блок не добавляет процедуры в PRIME; итоговое действие куратора вынесено в after_results.
+[word/document.xml:179] 4. [CONTRACT_GAP] I3: перед прогоном подтвердить передачу H0 и явных отрицаний; пустая дата или опущенный массив их не заменяют.
+[word/document.xml:180] Согласование Контракт: способ передачи «никогда» и явного отсутствия диагнозов. Найденный пакет не означает врачебное согласование (I3, I14).
+[word/document.xml:181] Сопоставление перед прогоном
+[word/document.xml:182] Сопоставить packages.prime_basic.exams/female_exams с итоговым каталогом, procedure_id, action_id куратора, variant_id, catalog_version и форматом H0. ID не заданы.
+[word/document.xml:184] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:185] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:186] S02 Мужской расширенный пресет 42 года
+[word/document.xml:187] Область: current. Шагов: 1. Проверить полный extended с мужскими дополнениями и происхождение выбранных услуг и действий.
+[word/document.xml:188] Профиль M0 + H0; DOB 1984-05-12, M, for_child=false. as_of_date=2026-09-30, checkup_year=2026, visit_date=2026-10-01; age_full=42, age_year=42. Изменений/намеренных пропусков нет. Женские репродуктивные поля неприменимы; это не неизвестный применимый ответ. История — явное «никогда» по H0.
+[word/document.xml:189] Действия А. Получить /recommend, выбрать рекомендованный мужской preset. Запросить /plan с mode=preset, base_package_id=prime_extended, мужским вариантом, соответствующими selected_procedure_ids и catalog_version. Состав пользователь не редактирует.
+[word/document.xml:190] /recommend [RULE_SNAPSHOT] package.id=prime_extended; packages.prime_extended.exams + male_exams, без female_exams. Мужские позиции: «Консультация уролога», «Консультация офтальмолога», «Гликированный гемоглобин», «ПСА общий и свободный», «УЗИ предстательной железы (ТРУЗИ) и мошонки», «УЗИ брюшной полости и щитовидной железы». scr_cvd и scr_hepatitis — candidate при достоверной передаче M0/H0; scr_cerebro, scr_colorectal, scr_lung — not_eligible по возрасту; scr_breast и scr_cervix — по полу. [PROJECT: I3, I4] Услуги объяснены принадлежностью пресету, без выдуманных диагнозов; госпрограммы отдельны.
+[word/document.xml:191] /plan [PROJECT: I6–I10] Выбранный состав совпадает с мужским extended. Групповые позиции не раскрываются и не объединяются по догадке; каждое действие связано с выбранной услугой. route — по выбранным действиям; расписание — по I9 и общим условиям прогона. Итоговое действие куратора — after_results без даты готовности. [PROJECT: I12, I13] В новой карте всё «не пройдено», результатов нет; next_visit — массив, дата не выдумывается.
+[word/document.xml:192] Проверяемые утверждения
+[word/document.xml:193] 1. [RULE_SNAPSHOT] prime_extended: 40–120 полных лет; в 42 года кандидат extended, состав exams + male_exams.
+[word/document.xml:194] 2. [PROJECT] I3, I14: наличие возрастного пакета не порождает status медицинского одобрения или подтверждённую запись.
+[word/document.xml:195] 3. [RULE_SNAPSHOT] scr_cvd: age_year=42 и нет четырёх исключающих кодов; scr_hepatitis: взрослый M, нет chronic_hepatitis и H0. Оба candidate по снимку, не подтверждение фактического финансирования.
+[word/document.xml:196] 4. [PROJECT] I6, I7, I10: у каждого выбранного элемента есть происхождение; действия куратора не превращаются в две независимо выбранные услуги.
+[word/document.xml:197] 5. [CONTRACT_GAP] I3, I8: неизвестные ID и сериализация H0 требуют сопоставления; без слотов нельзя ожидать feasible.
+[word/document.xml:198] Согласование Нет отдельного медицинского вопроса в рамках проверки состава; клиническое согласование всего пакета этим сценарием не удостоверяется. Контракт H0 остаётся открытым.
+[word/document.xml:199] Сопоставление перед прогоном
+[word/document.xml:200] Сопоставить exams/male_exams prime_extended, мужской variant_id, procedure_id/action_id, catalog_version и представление неприменимых полей/H0 с итоговым API.
+[word/document.xml:202] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:203] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:204] S03 Детский mini без смешения с extended
+[word/document.xml:205] Область: current. Шагов: 1. Проверить отдельность детских вариантов и вынесение заключения педиатра после результатов.
+[word/document.xml:206] Профиль C0 + H0; DOB 2016-05-12, M, for_child=true. as_of_date=2026-09-30, checkup_year=2026, visit_date=2026-10-01; age_full=10, age_year=10. Изменений и намеренных пропусков нет. Взрослые/репродуктивные сведения неприменимы, а не заменены ответами «нет». История H0 известна отдельно от скрытых полей формы.
+[word/document.xml:207] Действия А. Получить /recommend с mini по умолчанию. Убедиться, что extended показан как отдельный доступный вариант; его не выбирать. Запросить /plan mode=preset, base_package_id=prime_child, вариант mini и список его услуг из итогового каталога.
+[word/document.xml:208] /recommend [RULE_SNAPSHOT] package.id=prime_child, мини-вариант. Состав: «Консультация педиатра с полным осмотром»; «Консультация офтальмолога»; «Общий анализ крови»; «Общий анализ мочи»; «Глюкоза крови, основные биохимические показатели»; «УЗИ брюшной полости»; «ЭКГ»; «Заключение педиатра с рекомендациями». extended_exams не прибавляются. scr_cvd, scr_cerebro, scr_breast, scr_cervix, scr_colorectal, scr_hepatitis, scr_lung — not_eligible уже по возрасту, без запроса неприменимого взрослого анамнеза для положительного решения. [PROJECT: I8] Слоты не ищутся.
+[word/document.xml:209] /plan [PROJECT: I3, I7–I10] Выбран ровно mini; route только по его действиям; расписание — по I9 и общим условиям прогона. «Заключение педиатра с рекомендациями» относится к after_results: дата готовности и консультация в тот же день не придуманы. Упомянутые в extended младенческие компоненты не переносятся десятилетнему. [PROJECT: I12, I13] Новая карта содержит выбранные услуги со статусом «не пройдено», без результатов; next_visit — массив, без выдуманного срока.
+[word/document.xml:210] Проверяемые утверждения
+[word/document.xml:211] 1. [RULE_SNAPSHOT] prime_child: age_min=1, age_max=17; 10 лет соответствует mini из exams, а не сумме exams + extended_exams.
+[word/document.xml:212] 2. [PROJECT] I3, I14: значение for_child=true не является клиническим одобрением детского состава.
+[word/document.xml:213] 3. [PROJECT] I7, I10: заключение педиатра сохранено среди выбранных услуг, но его выполнение ожидается после результатов.
+[word/document.xml:214] 4. [RULE_SNAPSHOT] Возрастные условия scr_cvd/scr_cerebro/scr_breast/scr_cervix/scr_colorectal/scr_hepatitis/scr_lung не выполняются для age_year=10.
+[word/document.xml:215] 5. [CONTRACT_GAP] I7: различение mini/extended требует variant_id либо согласованного эквивалента; один prime_child не задаёт вариант.
+[word/document.xml:216] Согласование Контракт: идентификатор мини-варианта и представление неприменимых полей. Порядок осмотра/сбора материалов — предварительная логистика, требует подтверждения клиники.
+[word/document.xml:217] Сопоставление перед прогоном
+[word/document.xml:218] Сопоставить packages.prime_child.exams с procedure_id; mini/extended — с variant_id. Проверить отдельное действие заключения педиатра, catalog_version и передачу H0.
+[word/document.xml:220] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:221] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:222] S04 День рождения 17 затем 18 лет
+[word/document.xml:223] Область: current. Шагов: 3. Проверить переход child → basic и отсутствие обхода возраста оставшимся for_child=true.
+[word/document.xml:224] Профиль DOB 2008-10-01, M; checkup_year=2026 и visit_date=2026-10-01 во всех состояниях. А: as_of_date=2026-09-30, age_full=17, age_year=18, for_child=true, C0 + H0. Б: as_of_date=2026-10-01, age_full=18, age_year=18, for_child=false; M0 + H0, взрослые ответы теперь явно собраны. В: как Б, изменён только for_child=true. Женские поля неприменимы во всех шагах.
+[word/document.xml:225] Действия А/Б. Для каждого состояния получить отдельную /recommend, затем выбрать соответствующий возрастной preset и вызвать /plan. В. Контроль: повторить /recommend и прямой /plan с устаревшим for_child=true и попыткой выбрать детский пресет; проверить запрет обхода возрастной границы.
+[word/document.xml:226] /recommend [RULE_SNAPSHOT] А: prime_child, mini; Б: prime_basic с male_exams. [PROJECT: I3] В: взрослый возраст не меняется; prime_child недопустим, несогласованный флаг требует исправления либо явно обозначенной нормализации. [CLINICIAN_REVIEW] А: scr_hepatitis имеет формальное age_year=18 при age_full=17; до согласования применения age_min к году совершеннолетия не фиксировать положительный/отрицательный итог наугад. Б: candidate по scr_hepatitis при M0/H0. scr_cvd, scr_cerebro, scr_breast, scr_cervix, scr_colorectal, scr_lung не дают возрастного/полового кандидата ни в одном шаге.
+[word/document.xml:227] /plan [PROJECT: I3, I7–I10] А: mini; Б: basic с мужскими дополнениями. В не создаётся детский маршрут; способ ответа на противоречивый флаг фиксируется контрактом. Для допустимого выбора А/Б route — по выбранным действиям; расписание — по I9 и общим условиям прогона; заключение педиатра А и итоговое действие куратора Б — after_results. [PROJECT: I12, I13] Новая карта каждого шага отражает его выбор как «не пройдено», без результатов/придуманного срока следующего визита.
+[word/document.xml:228] Проверяемые утверждения
+[word/document.xml:229] 1. [PROJECT] DOB и as_of_date дают 17 → 18 полных лет; age_year=2026−2008=18 остаётся постоянным.
+[word/document.xml:230] 2. [RULE_SNAPSHOT] prime_child 1–17 → prime_basic 18–39; флаг for_child не расширяет диапазон prime_child.
+[word/document.xml:231] 3. [PROJECT] I3, I7: в В прямой /plan не сохраняет детский состав и не превращает его в подтверждённый маршрут.
+[word/document.xml:232] 4. [CLINICIAN_REVIEW] scr_hepatitis.age_min=18: шаг А требует решения о применении по году достижения 18, без выдуманного права/запрета.
+[word/document.xml:233] 5. [CONTRACT_GAP] I3: согласовать ответ на противоречие возраста и for_child, формат H0 и двух этапов API.
+[word/document.xml:234] Согласование Два открытых решения: скрининг по году совершеннолетия до дня рождения; обработка устаревшего for_child. Они не меняют однозначные границы пакетов.
+[word/document.xml:235] Сопоставление перед прогоном
+[word/document.xml:236] Сопоставить mini prime_child и мужской prime_basic с variant_id/procedure_id; дату оценки передавать техническим контекстом. Не использовать плавающую дату.
+[word/document.xml:238] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:239] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:240] S05 День рождения 39 затем 40 лет
+[word/document.xml:241] Область: current. Шагов: 2. Разделить смену пакета по полному возрасту и неизменность основания скрининга по году.
+[word/document.xml:242] Профиль M0 + H0; DOB 1986-10-01, M, for_child=false. checkup_year=2026, visit_date=2026-10-01. А: as_of_date=2026-09-30, age_full=39, age_year=40. Б: as_of_date=2026-10-01, age_full=40, age_year=40. Кроме даты оценки/полного возраста изменений нет; анамнез и история H0 одинаковы.
+[word/document.xml:243] Действия А. Получить /recommend и выбрать мужской basic, затем /plan mode=preset. Б. Изменить дату оценки на день рождения, повторно получить /recommend, выбрать мужской extended и вызвать /plan с новым составом. Для обоих этапов зафиксировать base_package_id, вариант, selected_procedure_ids и версию каталога.
+[word/document.xml:244] /recommend [RULE_SNAPSHOT] А: prime_basic.exams + male_exams; Б: prime_extended.exams + male_exams. scr_cvd и scr_hepatitis — candidate в обоих состояниях при M0/H0: age_year=40 не изменился. scr_cerebro, scr_colorectal и scr_lung — not_eligible по возрасту; scr_breast и scr_cervix — по полу. [PROJECT: I3, I4] Увеличение возраста не превращает кандидата в клиническое одобрение; госскрининги остаются отдельным блоком.
+[word/document.xml:245] /plan [PROJECT: I5–I10] А сохраняет выбранный basic, Б — выбранный extended; состав Б не равен объединению обоих пакетов. Например, «Консультация уролога» принадлежит Б; «КТ лёгких» в А и «КТ грудной клетки» в Б сопоставляются с каталогом отдельно. route каждого шага — по его выбору; расписание — по I9 и общим условиям прогона; итоговое действие куратора — after_results. [PROJECT: I12, I13] В обоих планах всё «не пройдено»; нет результатов или точной даты повторного чекапа.
+[word/document.xml:246] Проверяемые утверждения
+[word/document.xml:247] 1. [PROJECT] 1986-10-01 → 2026-09-30: 39 полных лет; на 2026-10-01: 40; в обоих шагах age_year=40.
+[word/document.xml:248] 2. [RULE_SNAPSHOT] prime_basic.age_max=39 и prime_extended.age_min=40 дают смену пакета строго в Б.
+[word/document.xml:249] 3. [RULE_SNAPSHOT] scr_cvd.age_year содержит 40; scr_hepatitis.age_min=18 выполнен в А/Б. При неизменных M0/H0 основания кандидатов не меняются.
+[word/document.xml:250] 4. [PROJECT] I4, I6: кандидат скрининга не удаляет платную позицию; похожие названия услуг разных пакетов не дают права молча объединять их.
+[word/document.xml:251] 5. [CONTRACT_GAP] I3, I8: перед прогоном передать фиксированную as_of_date, H0 и согласованные ID; без технических слотов feasible не ожидается.
+[word/document.xml:252] Согласование Нет отдельного вопроса по арифметике возраста. Требуется контракт для дат, истории и полного состава каждого пресета; медицинское согласование пакетов проверкой не заменяется.
+[word/document.xml:253] Сопоставление перед прогоном
+[word/document.xml:254] Сопоставить мужские варианты prime_basic/prime_extended и их списки с каталогом. Отдельно проверить названия/ID КТ, catalog_version и представление H0.
+[word/document.xml:256] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:257] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:258] S06 39 полных лет скрининговый возраст 40
+[word/document.xml:259] Область: current. Шагов: 1. Проверить basic одновременно с возрастными кандидатами scr_cvd и scr_breast.
+[word/document.xml:260] Профиль F0 + H0; DOB 1986-12-01, F, for_child=false, pregnant=no явно. as_of_date=2026-09-30, checkup_year=2026, visit_date=2026-10-01. age_full=39, age_year=40. Изменений/намеренных пропусков нет; H0 — известное отсутствие прежнего прохождения, не пустые даты.
+[word/document.xml:261] Действия А. Получить /recommend, проверить одновременно два возраста. Выбрать рекомендованный женский basic; вызвать /plan mode=preset, base_package_id=prime_basic с соответствующим вариантом и полным списком выбранных услуг. Не добавлять маммографию вручную.
+[word/document.xml:262] /recommend [RULE_SNAPSHOT] package.id=prime_basic, exams + female_exams; extended не выбирается до 40 полных лет. scr_cvd, scr_breast, scr_hepatitis — candidate по снимку при F0/H0. scr_cervix не подходит: 40 отсутствует в перечне его возрастов; scr_colorectal и scr_lung — not_eligible по возрасту, scr_cerebro — по полу/возрасту. [PROJECT: I4] Для кандидатов показаны отдельные источники/метаданные оплаты и место прохождения. scr_breast не делает «Маммография (2D/3D)» частью basic.
+[word/document.xml:263] /plan [PROJECT: I4, I7–I10] Выбран только женский basic; «УЗИ молочных желёз» остаётся его услугой. «Маммография (2D/3D)» и «ПАП-тест» не возникают в выбранном составе/маршруте из extended из-за age_year=40. route — по выбранным действиям; расписание — по I9 и общим условиям прогона; итоговое действие куратора — after_results. [PROJECT: I12, I13] Новая плановая карта не содержит результатов; все выбранные позиции «не пройдено», next_visit — массив без выдуманных дат.
+[word/document.xml:264] Проверяемые утверждения
+[word/document.xml:265] 1. [PROJECT] age_full=39 до 2026-12-01, age_year=2026−1986=40; эти значения не взаимозаменяемы.
+[word/document.xml:266] 2. [RULE_SNAPSHOT] prime_basic 18–39 по полным годам; scr_cvd и scr_breast включают age_year=40 при отсутствии соответствующих исключающих кодов и H0.
+[word/document.xml:267] 3. [RULE_SNAPSHOT] scr_cervix: 38/42 — соседние предусмотренные возраста; значение 40 не даёт candidate.
+[word/document.xml:268] 4. [PROJECT] I4, I6: скрининговая маммография и платные услуги PRIME разделены; УЗИ не заменяется маммографией автоматически.
+[word/document.xml:269] 5. [CONTRACT_GAP] I3: положительные ожидания скрининга требуют передать H0/явные отрицания без превращения пустого списка в достоверное «нет».
+[word/document.xml:270] Согласование Нет отдельного вопроса по разделению возрастов. Нужны контракт истории, идентификаторы услуг и пояснение места прохождения; кандидат госпрограммы не подтверждает запись.
+[word/document.xml:271] Сопоставление перед прогоном
+[word/document.xml:272] Сопоставить женский prime_basic с каталогом; отдельно идентифицировать скрининговую запись scr_breast и услугу «Маммография (2D/3D)», которая не выбрана. Проверить H0/catalog_version.
+[word/document.xml:274] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:275] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:276] S07 Три стоп ветви urgent
+[word/document.xml:277] Область: current. Шагов: 3. Проверить раннюю остановку при известном стоп-сигнале и невозможность обойти её прямым /plan.
+[word/document.xml:278] Профиль M, DOB 1991-05-12, for_child=false; age_full=35, age_year=35. as_of_date=2026-09-30, checkup_year=2026, visit_date=2026-10-01. Основа M0 + H0, но conditions/registered/family_history/risk_group, smoking, hazardous_work_10y и blood_thinners/allergy/anesthesia_reaction/companion/medications намеренно не заполнены, их отрицания не передаются. А: urgent=chest_pain. Б: изменить только urgent=dyspnea. В: изменить только urgent=stroke_signs. H0 не влияет на раннюю остановку.
+[word/document.xml:279] Действия А/Б/В. Для каждого значения вызвать /recommend. Обычный переход к выбору пресета не выполняется из-за стоп-сигнала. Отдельно в том же состоянии отправить прямой /plan с mode=preset и попыткой выбрать prime_basic, передав сопоставленный состав. Это проверка обхода, не разрешение строить чекап.
+[word/document.xml:280] /recommend [PROJECT: I1, I14] Во всех трёх состояниях — остановка предложения чекапа, сообщение о выявленном стоп-ответе и необходимости обращения за медицинской помощью; без придуманного диагноза. Нет доступного к выбору пакета и положительного предложения госскринингов. Недостающий необязательный анамнез не задерживает остановку. [CONTRACT_GAP] Точный статус/код ответа и согласованный текст стоп-сообщения требуют фиксации; скрининги не объявляются not_eligible только из-за urgent: их оценка прекращена.
+[word/document.xml:281] /plan [PROJECT: I1, I3, I8, I13] Прямой /plan также прекращает построение чекапа; обход по ID пакета/переданному составу невозможен. route и schedule не строятся, after_results и новая плановая карта не создаются. Нельзя вернуть schedule=feasible или обычное needs_data вместо стоп-решения; техническая нехватка слотов здесь не первичная причина. Нет дат записи/повтора.
+[word/document.xml:282] Проверяемые утверждения
+[word/document.xml:283] 1. [PROJECT] I1: chest_pain, dyspnea, stroke_signs отдельно приводят к одной функциональной остановке /recommend и прямого /plan.
+[word/document.xml:284] 2. [PROJECT] I1, I3: незаполненные необязательные сведения не превращают известное urgent в none и не открывают выбор basic.
+[word/document.xml:285] 3. [PROJECT] I14: сообщение сохраняет название стоп-ответа; chest_pain не превращается в диагноз, stroke_signs — в установленное заболевание.
+[word/document.xml:286] 4. [PROJECT] I8, I13: ни один шаг не создаёт маршрут, запись или карту выполненных обследований.
+[word/document.xml:287] 5. [CONTRACT_GAP] I1: согласовать код блокировки, представление невычисленных скринингов и текст срочного сообщения; предметный запрет обхода уже однозначен.
+[word/document.xml:288] Согласование Нужно утвердить формулировку срочного сообщения и контракт стоп-ответа. urgent=other_now не используется в current; совместимость с legacy рассматривается отдельно.
+[word/document.xml:289] Сопоставление перед прогоном
+[word/document.xml:290] Сопоставить current enum urgent и формат блокирующего ответа обоих эндпоинтов; для попытки обхода — мужской prime_basic, procedure_id и catalog_version. Не подставлять отсутствующий анамнез.
+[word/document.xml:292] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:293] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:294] S08 Пропуск обязательного urgent
+[word/document.xml:295] Область: current. Шагов: 2. Отличить отсутствующий ответ от явного none и проверить снятие только соответствующего запроса уточнения.
+[word/document.xml:296] Профиль M0 + H0; DOB 1991-05-12, M, for_child=false. as_of_date=2026-09-30, checkup_year=2026, visit_date=2026-10-01; age_full=35, age_year=35. А: единственное изменение — ключ urgent намеренно отсутствует, это не none. Б: явно ответить urgent=none; остальные данные и H0 не изменять.
+[word/document.xml:297] Действия А. Получить /recommend с пропущенным urgent; обычный /plan не вызывать, пока вопрос не закрыт. Отдельно проверить прямую попытку /plan с тем же пропуском и basic. Б. Добавить явное none, повторить /recommend, выбрать мужской basic и запросить /plan mode=preset с его составом.
+[word/document.xml:298] /recommend [PROJECT: I1, I3] А: needs_input и конкретный вопрос, есть ли chest_pain, dyspnea или stroke_signs сейчас, с вариантом none. package=null, schedule.status=not_run; до явного ответа urgent пакет не предлагается. Пропуск не является ни положительным стоп-сигналом, ни отрицанием. Б: [RULE_SNAPSHOT] prime_basic.exams + male_exams; scr_hepatitis — candidate при M0/H0, scr_cvd/scr_cerebro/scr_colorectal/scr_lung — not_eligible по возрасту, scr_breast/scr_cervix — по полу. [PROJECT: I8] Слоты на этом этапе не ищутся.
+[word/document.xml:299] /plan [PROJECT: I1, I3] А: прямой /plan возвращает needs_input и вопрос urgent; package=null, schedule.status=not_run; нет маршрута и новой плановой карты. Б: выбранный мужской basic сохранён; устранён только запрос urgent. [PROJECT: I7–I10] route — по выбранным действиям; расписание — по I9 и общим условиям прогона; итоговое действие куратора — after_results. [PROJECT: I12, I13] Все новые позиции «не пройдено», результатов нет; нет выдуманной даты следующего визита.
+[word/document.xml:300] Проверяемые утверждения
+[word/document.xml:301] 1. [PROJECT] I1: отсутствие ключа urgent не преобразуется в none; без явного ответа /plan не обходит уточнение.
+[word/document.xml:302] 2. [PROJECT] I1, I3: в А задан предметный вопрос, а не сообщение «всё заполнено»; package=null, schedule.status=not_run; basic до ответа не предлагается.
+[word/document.xml:303] 3. [RULE_SNAPSHOT] В Б age_full=35 соответствует prime_basic; scr_hepatitis соответствует взрослому M без chronic_hepatitis с H0.
+[word/document.xml:304] 4. [PROJECT] I3, I8, I9: ответ none не создаёт медицинское одобрение или слоты; расписание Б оценивается по I9 и общим условиям прогона.
+[word/document.xml:305] 5. [CONTRACT_GAP] I1: согласовать сериализацию отсутствующего обязательного поля, формат needs_input и передачу H0; старый urgent=other_now не является current-ответом.
+[word/document.xml:306] Согласование Контракт уточнения: отсутствие urgent должно пережить импорт/экспорт без default=none. Отдельного медицинского вывода этот сценарий не требует.
+[word/document.xml:307] Сопоставление перед прогоном
+[word/document.xml:308] Проверить current urgent, формат списка недостающих полей и прямой /plan. Сопоставить male_exams/exams prime_basic с procedure_id, variant_id и catalog_version; H0 передавать явно.
+[word/document.xml:310] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:311] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:312] S09 Беременность ограничения не скрываются оплатой
+[word/document.xml:313] Область: current. Шагов: 2. Проверить независимые пометки КТ и маммографии и точечное действие удаления услуги.
+[word/document.xml:314] Профиль F0 + H0; F, DOB 1982-05-12; for_child=false; as_of_date=2026-09-30, checkup_year=2026, visit_date=2026-10-01; age_full=44, age_year=44. Изменения: pregnant=yes; pregnancies=1, births=0, last_period=2026-07-01, contraception=none, risk_group=[pregnancy]. Беременность явно сообщена, срок не вычисляется. Остальные отрицания F0 и история H0 сохраняются.
+[word/document.xml:315] Действия А: /recommend → выбрать рекомендованный женский preset prime_extended → /plan. Б: mode=custom с тем же base_package_id; удалить только «КТ грудной клетки», сохранить все остальные выбранные услуги, включая «Маммография (2D/3D)»; снова /plan с тем же контекстом.
+[word/document.xml:316] /recommend Возрастной кандидат prime_extended, общая + женская части, с review. По возрасту/учёту/истории scr_cvd соответствует snapshot; scr_breast соответствует формальным условиям, но беременность оставляет клиническое review для маммографии. scr_hepatitis не соответствует not_pregnant. Возрастные условия scr_cervix/scr_colorectal/scr_lung и пол scr_cerebro не выполнены. Пометка потенциального покрытия и клиническая пометка видимы одновременно.
+[word/document.xml:317] /plan А: выбранный preset сохранён; КТ и маммография не получают автоматически одобренных действий. Б: КТ отсутствует в составе, route и новой карте; warning об отказе от исходной рекомендации, маммография остаётся выбранной с review. В А и Б status=review, schedule.status=not_run до решения по зависимым услугам; допустим предварительный порядок с пометками без часов. Итог куратора — after_results. Удаление КТ не согласовывает остальные услуги; цены custom — null/у администратора.
+[word/document.xml:318] Проверяемые утверждения
+[word/document.xml:319] 1. [RULE_SNAPSHOT] packages.prime_extended применим по 44 полным годам; scr_hepatitis исключён по not_pregnant, а risk_group=pregnancy не заменяет условие screening.when.
+[word/document.xml:320] 2. [PROJECT] По I2/I3 ни preset, ни /plan не превращают ограничения КТ/маммографии в одобрение; «Тест на хеликобактер» не получает тег КТ из-за подстроки.
+[word/document.xml:321] 3. [PROJECT] По I4/I5 на Б удаляется только КТ, removed_recommended содержит её; покрытие scr_breast не скрывает review маммографии и не удаляет её.
+[word/document.xml:322] 4. [CLINICIAN_REVIEW] По I2/I14 ограничения беременности относятся к зависимым услугам; их разрешение требует врача, а не наличия пакета.
+[word/document.xml:323] 5. [CONTRACT_GAP] По I8/I9 и I14 перед прогоном согласовать передачу явных отрицаний/H0; клиническое review сохраняет schedule.status=not_run независимо от наличия слотов.
+[word/document.xml:324] Согласование Врач: какие действия выбранного состава допустимы и что отложить при беременности; контракт: раздельное хранение выбора, review и статуса оплаты.
+[word/document.xml:325] Сопоставление перед прогоном
+[word/document.xml:326] Сопоставить с итоговым каталогом packages.prime_extended.exams[6], exams[8], female_exams[4], прочие позиции пресета, action_id и catalog_version; реальные ID не заданы.
+[word/document.xml:328] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:329] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:330] S10 Неуверенность и пропуск ответа о беременности
+[word/document.xml:331] Область: current. Шагов: 2. Различить pregnant=unsure и отсутствие применимого ответа без автоматического no.
+[word/document.xml:332] Профиль F0 + H0; F, DOB 1991-05-12; for_child=false; age_full=35, age_year=35. Даты: as_of_date=2026-09-30, checkup_year=2026, visit_date=2026-10-01. А: pregnant=unsure; Б: ключ pregnant отсутствует. pregnancies=0 означает отсутствие ранее известных беременностей, births=0, last_period=2026-09-10, contraception=condom; эти сведения не устанавливают текущий статус. risk_group: статус pregnancy неизвестен и не кодируется отрицанием; остальные группы явно отрицаются. Другие факты F0/H0 без изменений.
+[word/document.xml:333] Действия А: /recommend при unsure; выбрать женский preset prime_basic и отправить /plan для проверки сохранения review. Б: повторить оба этапа с отсутствующим pregnant и тем же выбором; ответ no не вводить и не подставлять.
+[word/document.xml:334] /recommend В обоих состояниях prime_basic — предварительный кандидат с общей и женской частями. А сохраняет явную неуверенность и вопрос об уточнении статуса; Б сообщает, что применимый ответ не получен. scr_hepatitis: needs_input/review по not_pregnant, без candidate или исключения наугад. scr_cvd/scr_breast/scr_cervix/scr_colorectal/scr_lung не подходят по возрасту; scr_cerebro — также по полу.
+[word/document.xml:335] /plan Одинаковый выбранный состав сохраняется, включая «КТ лёгких», но зависимые действия не получают автоматического одобрения. Прямой /plan не восполняет pregnant=no. В обоих шагах status=review, schedule.status=not_run до уточнения и решения по зависимым услугам. Route может содержать предварительный порядок с пометками без часов. Итоговая часть «Консультация врача-куратора (первичная и итоговая)» — after_results. Плановая карта без результатов и утверждения выполнения.
+[word/document.xml:336] Проверяемые утверждения
+[word/document.xml:337] 1. [PROJECT] По I2/I3 оба состояния сохраняют review, однако unsure остаётся явным ответом, а отсутствие ключа — недостающими данными.
+[word/document.xml:338] 2. [RULE_SNAPSHOT] packages.prime_basic выбирается по age_full=35; scr_hepatitis.not_pregnant нельзя считать выполненным ни на А, ни на Б.
+[word/document.xml:339] 3. [PROJECT] По I2/I14 pregnancies, births, last_period и contraception не превращаются в доказательство pregnant=no и не создают диагноз.
+[word/document.xml:340] 4. [PROJECT] По I8–I10 результат /plan сохраняет status=review, schedule.status=not_run независимо от слотов; допустим предварительный порядок с пометками и after_results без выдуманной даты.
+[word/document.xml:341] 5. [CONTRACT_GAP] По I2/I14 согласовать представление неизвестности и обязательность применимого pregnant: отсутствие, null и unsure не должны терять различие; отдельно сохранить H0 и явные отрицания.
+[word/document.xml:342] Согласование Как формулировать вопрос при unsure и обязательный вопрос при пропуске; какие зависимые действия допускаются после решения врача. Текущий статус беременности остаётся неизвестным.
+[word/document.xml:343] Сопоставление перед прогоном
+[word/document.xml:344] Сопоставить с итоговым каталогом packages.prime_basic.exams + female_exams, особенно exams[8] и два действия exams[0]; согласовать перенос вопросов между /recommend и /plan, catalog_version.
+[word/document.xml:346] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:347] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:348] S11 Широкий ответ legacy код и отдельный диагноз
+[word/document.xml:349] Область: current / legacy-import. Шагов: 3. Не превращать conditions=breast в подтверждённый breast_cancer; проверить происхождение кода.
+[word/document.xml:350] Профиль F0 + H0; F, DOB 1984-05-12; for_child=false; age_full=42, age_year=42; as_of_date=2026-09-30, checkup_year=2026, visit_date=2026-10-01. А: conditions=[breast], отдельный диагноз рака не сообщён, отсутствие учёта явно известно. Б: отдельная legacy-запись df733c4: conditions=[breast], registered_on=[breast] — учёт по широкому состоянию, рак не подтверждён. Это заменяет отсутствие учёта из А; REGISTERED_AS создал registered=[breast_cancer], остальные коды учёта явно отрицаются. В: новый самостоятельный факт — явно сообщён подтверждённый диагноз и registered=[breast_cancer]; другие коды учёта явно отрицаются.
+[word/document.xml:351] Действия На А, Б и В отдельно /recommend → выбрать женский preset prime_extended → /plan. Для Б сохранить сырой legacy-код вместе с происхождением; не маркировать его как current-ответ пациента. На В явно передать новый диагноз, а не подтвердить автоматическое преобразование задним числом.
+[word/document.xml:352] /recommend Во всех шагах возрастной кандидат prime_extended. А: не создавать registered=breast_cancer; scr_breast формально candidate при известных отрицаниях/H0, широкий ответ — вопрос врачу. Б: scr_breast review/needs_input до выяснения диагноза, без категоричного исключения по производному коду. В: scr_breast not_eligible по not_registered. scr_cvd/scr_cervix/scr_hepatitis сохраняют формальные условия; scr_cerebro/scr_colorectal/scr_lung не подходят по возрасту/полу/риску.
+[word/document.xml:353] /plan Выбранный preset сохраняется; неопределённость/диагноз не удаляют молча «Маммография (2D/3D)» и не одобряют её. Врач оценивает состав отдельно. Расписание — по I9 и общим условиям прогона; при нерешённом ограничении состава — review/not_run и лишь предварительный порядок с пометками. Итог куратора after_results. Изменение вывода о госскрининге не становится результатом исследования или назначением лечения; карта выбранных услуг — «не пройдено».
+[word/document.xml:354] Проверяемые утверждения
+[word/document.xml:355] 1. [PROJECT] По I14 на А conditions=breast и registered=breast_cancer — разные факты; автоматическая подмена запрещена.
+[word/document.xml:356] 2. [CONTRACT_GAP] По I14 на Б необходимы версия df733c4 и происхождение REGISTERED_AS; код без подтверждения требует уточнения и не равен явно сообщённому диагнозу.
+[word/document.xml:357] 3. [RULE_SNAPSHOT] scr_breast.not_registered: А не исключён по раку; Б неопределённость сохраняется; В исключён по отдельно заданному breast_cancer.
+[word/document.xml:358] 4. [PROJECT] По I4/I13 изменение scr_breast не меняет автоматически платный выбор, историю выполнения, результаты или просмотр врачом.
+[word/document.xml:359] 5. [CLINICIAN_REVIEW] По I3/I14 широкий ответ и новый диагноз требуют раздельного рассмотрения состава; техническое совпадение условий не является медицинским одобрением.
+[word/document.xml:360] Согласование Как хранить исходный ответ, производный legacy-код и последующее подтверждение; врачебная оценка широкого breast и состава при сообщённом диагнозе.
+[word/document.xml:361] Сопоставление перед прогоном
+[word/document.xml:362] Сопоставить current conditions/registered и импорт registered_on с provenance; packages.prime_extended.exams + female_exams, соответствующие procedure_id, catalog_version и передачу H0.
+[word/document.xml:364] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:365] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:366] S12 Неизвестный срок отказа от курения
+[word/document.xml:367] Область: current / legacy-import. Шагов: 3. Не подставлять ноль вместо пропуска и не вычислять нулевой стаж из неполного legacy-ввода.
+[word/document.xml:368] Профиль M0 + H0; M, DOB 1974-05-12; for_child=false; age_full=52, age_year=52; as_of_date=2026-09-30, checkup_year=2026, visit_date=2026-10-01. Курительный блок M0 полностью заменён. А: smoking.pack_years=25, smoking.quit_years_ago отсутствует; hazardous_work_10y=false. Б: добавить только quit_years_ago=0 — явно курит сейчас. В: контроль старой записи того же профиля df733c4: cigs_per_day=20, smoke_years отсутствует, факт «курит сейчас» и quit_years_ago=0 известны; готового pack_years в записи нет.
+[word/document.xml:369] Действия А и Б: /recommend → выбрать мужской preset prime_extended → /plan. В: импортировать описанную неполную запись, не переносить 25 из предыдущего запроса; повторить оба этапа с тем же выбором. Это отдельный контроль сериализации внутри карточки.
+[word/document.xml:370] /recommend А: prime_extended; scr_lung needs_input по сроку отказа, так как альтернативная ветка вредной работы ложна. Б: scr_lung candidate по 25≥20 и 0≤15 при H0/отсутствии lung_cancer. В: scr_lung needs_input по неизвестному стажу, а не not_eligible по выдуманному нулю. На всех шагах scr_cvd/scr_cerebro/scr_colorectal/scr_hepatitis формально candidate; scr_breast/scr_cervix не подходят по полу.
+[word/document.xml:371] /plan Выбранный extended + мужская часть одинаков; «КТ грудной клетки» остаётся платной выбранной услугой независимо от исхода scr_lung. Вопросы риска сохраняются, государственная программа не попадает автоматически в маршрут PRIME. Route — по выбранным действиям; расписание — по I9 и общим условиям прогона; итог куратора — after_results. Поиск слотов в /recommend не проводится.
+[word/document.xml:372] Проверяемые утверждения
+[word/document.xml:373] 1. [RULE_SNAPSHOT] scr_lung.any_of: на А одного pack_years=25 недостаточно при неизвестном quit_years_ago и hazardous_work_10y=false; на Б известная курительная ветка истинна.
+[word/document.xml:374] 2. [PROJECT] По I14 пропущенный срок отказа не становится 0; в legacy отсутствие smoke_years не становится нулём в формуле cigs_per_day/20×smoke_years.
+[word/document.xml:375] 3. [RULE_SNAPSHOT] packages.prime_extended и исходы scr_cvd/scr_cerebro/scr_colorectal/scr_hepatitis не меняются из-за уточнения только курительной ветки.
+[word/document.xml:376] 4. [PROJECT] По I4/I8–I10 платная КТ не исчезает и не превращается в бесплатную запись; расписание — по I9 и общим условиям прогона, после результатов отдельное действие.
+[word/document.xml:377] 5. [CONTRACT_GAP] По I14 согласовать импорт smoke_status/cigs_per_day/smoke_years, явный 0 и отсутствие, а также H0 для scr_lung, отсутствующий среди четырёх полей last_screening current.
+[word/document.xml:378] Согласование Представление неприменимого, неизвестного и нулевого срока; статус needs_input должен сохраняться после импорта неполных исходных величин.
+[word/document.xml:379] Сопоставление перед прогоном
+[word/document.xml:380] Сопоставить legacy-импорт и current smoking; packages.prime_extended.exams[6] и мужской preset, procedure_id/catalog_version; формат истории scr_lung и остальных целевых программ.
+[word/document.xml:382] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:383] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:384] S13 Граница 15 лет после отказа
+[word/document.xml:385] Область: current. Шагов: 3. Развести значения 14/15/16 и сохранить противоречие структурированного правила и примечания.
+[word/document.xml:386] Профиль M0 + H0; M, DOB 1974-05-12, for_child=false; age_full=52, age_year=52; as_of_date=2026-09-30, checkup_year=2026, visit_date=2026-10-01. smoking.pack_years=20, hazardous_work_10y=false; бывший курильщик. А: quit_years_ago=14; Б: 15; В: 16. Меняется только срок отказа; lung_cancer и другие коды учёта явно отсутствуют.
+[word/document.xml:387] Действия Для каждого из трёх значений выполнить /recommend → выбрать один и тот же мужской preset prime_extended → /plan. Сохранить три независимых снимка ответа для сравнения; результаты конструктора сейчас не получать.
+[word/document.xml:388] /recommend А: scr_lung candidate по правилу и note. Б: scr_lung review с явным конфликтом «quit_years_max=15» против «менее 15 лет»; не фиксировать окончательную положительную/отрицательную пригодность. В: scr_lung not_eligible по обеим версиям границы при ложной вредной ветке. На всех шагах prime_extended; scr_cvd/scr_cerebro/scr_colorectal/scr_hepatitis формально candidate; scr_breast/scr_cervix не подходят по полу.
+[word/document.xml:389] /plan Состав выбранного мужского extended неизменен, включая «КТ грудной клетки»; разные исходы госпрограммы не меняют его автоматически и не дают скидку. На Б вопрос источника остаётся видимым. Route — по выбранным действиям; расписание — по I9 и общим условиям прогона. Итоговая консультация куратора — after_results без даты готовности. Нет персонально назначенного повтора через два года после ещё не выполненного скрининга.
+[word/document.xml:390] Проверяемые утверждения
+[word/document.xml:391] 1. [RULE_SNAPSHOT] scr_lung: pack_years_min=20 выполнен на границе; 14 удовлетворяет quit_years_max=15 и note, 16 не удовлетворяет ни одному.
+[word/document.xml:392] 2. [CLINICIAN_REVIEW] Ровно 15 требует согласования источника scr_lung: числовая граница включает значение, note исключает; review нельзя заменить произвольным эталоном.
+[word/document.xml:393] 3. [PROJECT] По I4/I5 изменение пригодности scr_lung не удаляет выбранную КТ и не переносит госскрининг в route PRIME.
+[word/document.xml:394] 4. [PROJECT] По I8–I10/I12 расписание — по общим условиям прогона; нет обещанной готовности результатов или выдуманной даты next_visit; его формат — массив.
+[word/document.xml:395] 5. [CONTRACT_GAP] По I14 согласовать передачу H0 и явного отсутствия lung_cancer, формальный статус конфликта и сохранение обеих формулировок источника.
+[word/document.xml:396] Согласование Как разрешить конфликт ≤15 против <15 в scr_lung; карточка не подтверждает актуальность медицинской нормы. До решения ожидается только review на границе.
+[word/document.xml:397] Сопоставление перед прогоном
+[word/document.xml:398] Сопоставить с итоговым каталогом packages.prime_extended.exams + male_exams, особенно exams[6]; уточнить procedure_id, catalog_version, формат review и истории scr_lung.
+[word/document.xml:400] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:401] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:402] S14 Legacy диапазон вместо выдуманного 2025
+[word/document.xml:403] Область: legacy-import. Шагов: 1. Сохранить неопределённость истории, если год был технически создан старым экспортом.
+[word/document.xml:404] Профиль F0 + H0, кроме истории scr_breast; F, DOB 1984-05-12, for_child=false; age_full=42, age_year=42; as_of_date=2026-09-30, checkup_year=2026, visit_date=2026-10-01. Исходный ответ df733c4 на дату анкеты 2026-09-30: «маммография за последние два года». Экспорт записал YEAR−1=2025. Реальный год, день/месяц и результаты неизвестны; 2025 имеет только происхождение вычисленного значения. Остальные программы — H0.
+[word/document.xml:405] Действия А: импортировать исходный ответ вместе с экспортом и provenance → /recommend → выбрать женский preset prime_extended → /plan. Не переписывать импорт в current-запись «пациент сообщил 2025»; не запрашивать текущую форму для имитации старого дефекта.
+[word/document.xml:406] /recommend prime_extended; scr_breast review/needs_input по истории. Сохранить относительный диапазон «за последние два года» и запросить фактический год/дату; не делать категоричный вывод о повторе в 2026. scr_cvd/scr_cervix/scr_hepatitis формально candidate по отдельной истории H0; scr_cerebro/scr_colorectal/scr_lung не подходят по полу/возрасту/риску. Производный 2025 допустим лишь как сырой след импорта, не подтверждённый год.
+[word/document.xml:407] /plan Выбранная «Маммография (2D/3D)» сохраняется в составе PRIME: неопределённость госскрининга не удаляет её. Route — по выбранным действиям; расписание — по I9 и общим условиям прогона; итог куратора — after_results. Текущая плановая карта — «не пройдено», результатов нет. История сохраняется отдельно с исходной точностью; дата следующего визита не вычисляется как 2025+2 либо 2026+2.
+[word/document.xml:408] Проверяемые утверждения
+[word/document.xml:409] 1. [PROJECT] По I13/I14 искусственный 2025 не становится фактом обследования с точностью year; исходный диапазон и версия df733c4 остаются различимыми.
+[word/document.xml:410] 2. [RULE_SNAPSHOT] scr_breast.repeat_years=2 недостаточно для категоричного вывода о повторе при неизвестном реальном времени; ожидается вопрос по истории.
+[word/document.xml:411] 3. [PROJECT] По I4/I13 ни неопределённая история, ни покрытие не меняют выбор маммографии и не создают нормальный результат или отметку просмотра врачом.
+[word/document.xml:412] 4. [PROJECT] По I10/I12 next_visit — массив; если запись требуется, date=null с причиной уточнения, без персонального срока по искусственному году.
+[word/document.xml:413] 5. [CONTRACT_GAP] По I13/I14 согласовать поля исходного диапазона, даты его сообщения и provenance производного 2025; четыре current-поля года не описывают этот импорт полностью.
+[word/document.xml:414] Согласование Контракт импорта должен различать исходное сообщение и вычисленный экспортный год; критерии повторного обследования нельзя уточнить без фактической истории.
+[word/document.xml:415] Сопоставление перед прогоном
+[word/document.xml:416] Сопоставить импорт last_screening.scr_breast, формат диапазона/provenance, packages.prime_extended.female_exams[4], общий женский preset и catalog_version; не выдумывать ID или календарные границы диапазона.
+[word/document.xml:418] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:419] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:420] S15 Реальный год 2025 сохраняет точность year
+[word/document.xml:421] Область: current. Шагов: 1. Отличить известный год обследования от legacy-подстановки и не создавать лишние даты.
+[word/document.xml:422] Профиль F0 + H0, кроме scr_breast; F, DOB 1984-05-12, for_child=false; age_full=42, age_year=42; as_of_date=2026-09-30, checkup_year=2026, visit_date=2026-10-01. Пациент явно сообщил реальный год маммографии 2025 в current; точность year, день и месяц неизвестны. Результат и просмотр врачом неизвестны. Остальные целевые программы — явно H0, а не пустые даты.
+[word/document.xml:423] Действия А: передать известный год last_screening.scr_breast=2025 с его происхождением → /recommend → выбрать женский preset prime_extended с маммографией → /plan. Не заменять точность года фиктивной датой 1 января и не редактировать факты истории при создании новой карты.
+[word/document.xml:424] /recommend prime_extended; возрастные и диагностические условия scr_breast выполнены, но по двухлетнему интервалу повтор в 2026 не становится candidate: 2026−2025=1. Это причина по интервалу, а не раку/полу. scr_cvd/scr_cervix/scr_hepatitis формально candidate по H0; scr_cerebro/scr_colorectal/scr_lung не подходят по полу/возрасту/риску. Отличие от S14 — подтверждённое происхождение года.
+[word/document.xml:425] /plan «Маммография (2D/3D)» остаётся выбранной платной услугой: пользователь её не удалял. Прошлый год не превращается в выполнение текущего плана или заключение «норма». Route — по выбранным действиям; расписание — по I9 и общим условиям прогона; итог куратора — after_results без даты. Не создавать персональное напоминание на 2027 и не назначать повтор автоматически.
+[word/document.xml:426] Проверяемые утверждения
+[word/document.xml:427] 1. [PROJECT] По I13/I14 хранится year=2025 с точностью year и источником «сообщён пациентом»; отсутствуют придуманные день, месяц, результат и просмотр врачом.
+[word/document.xml:428] 2. [RULE_SNAPSHOT] scr_breast.repeat_years=2: в 2026 разница составляет один год, поэтому повтор по этому проектному интервалу не становится автоматически доступным.
+[word/document.xml:429] 3. [PROJECT] По I4/I5 выбранная маммография не удаляется из PRIME из-за интервала или истории и не получает автоматическую скидку.
+[word/document.xml:430] 4. [PROJECT] По I10/I12/I13 текущая карта — «не пройдено»; история 2025 неизменна; next_visit — массив, дата без назначения null с причиной уточнения.
+[word/document.xml:431] 5. [CONTRACT_GAP] По I13/I14 согласовать сохранение точности year/provenance и явной истории H0 для остальных программ; значение поля года само по себе не содержит результаты.
+[word/document.xml:432] Согласование Как отразить недоступность повтора именно по интервалу, сохранив историю отдельно от новой карты; дополнительные клинические показания этой карточкой не устанавливаются.
+[word/document.xml:433] Сопоставление перед прогоном
+[word/document.xml:434] Сопоставить last_screening.scr_breast и метаданные точности/происхождения; packages.prime_extended.female_exams[4] и прочие позиции женского пресета, procedure_id и catalog_version.
+[word/document.xml:436] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:437] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:438] S16 Кандидаты учёт по АГ и место прохождения
+[word/document.xml:439] Область: current. Шагов: 3. Изолировать исключение scr_cvd и влияние attached_to на пояснение «где».
+[word/document.xml:440] Профиль F0; F, DOB 1984-05-12, for_child=false; age_full=42, age_year=42; as_of_date=2026-09-30, checkup_year=2026, visit_date=2026-10-01. conditions=[pressure]: ранее сообщала повышенное давление без установленного диагноза. А: учёт по всем перечисленным кодам явно отрицается. История с точностью year: scr_breast=2022, scr_cervix=2020, scr_colorectal=2022, scr_cvd=2022, scr_hepatitis=2021; scr_cerebro/scr_lung — никогда. Это факты истории, без вывода о прежнем праве на программу. Б: новый факт registered=[hypertension], иные коды отсутствуют. В: только attached_to=other вместо green_clinic.
+[word/document.xml:441] Действия На каждом шаге /recommend → выбрать женский preset prime_extended → /plan. Сравнить А/Б при одинаковом прикреплении, затем Б/В при одинаковом учёте. Точные прошлые даты, результаты и слоты не вводить.
+[word/document.xml:442] /recommend А: отдельно от PRIME кандидаты scr_cvd, scr_breast, scr_cervix, scr_hepatitis; годы достаточно давние для их интервалов 2/2/4/3. scr_cerebro не подходит по полу, scr_colorectal/scr_lung — по возрасту (лёгочный риск также отсутствует). Б: scr_cvd not_eligible по hypertension; остальные три кандидата сохраняются. В: те же исходы, меняется пояснение о месте прохождения/уточнении по другому прикреплению; доступность реальной записи не подтверждается.
+[word/document.xml:443] /plan Во всех шагах выбранный женский extended сохраняется. Госпрограммы отдельным блоком с источниками и местом, без бесплатной копии PRIME, автоматического удаления пересечений и скидки. Route — по выбранным действиям; расписание — по I9 и общим условиям прогона; итог куратора after_results. Учёт и прежняя история не создают результат текущих исследований или дату next_visit.
+[word/document.xml:444] Проверяемые утверждения
+[word/document.xml:445] 1. [RULE_SNAPSHOT] scr_cvd/scr_breast/scr_cervix/scr_hepatitis на А удовлетворяют перечисленным возрасту/полу/исключениям/истории; pregnant=no явно известен.
+[word/document.xml:446] 2. [RULE_SNAPSHOT] scr_cvd.not_registered включает hypertension: на Б/В исключается только этот кандидат; код отсутствует в исключениях остальных трёх правил.
+[word/document.xml:447] 3. [PROJECT] По I4 attached_to меняет «где», а не причину пригодности; payment и deadline_days=60 не обещают фактическую бесплатную запись.
+[word/document.xml:448] 4. [PROJECT] По I4/I8–I13 выбранный PRIME и история сохраняются; нет скидки и выдуманного персонального повтора.
+[word/document.xml:449] 5. [CONTRACT_GAP] По I13/I14 current содержит годы только четырёх программ: год scr_hepatitis=2021 и явные отрицания требуют согласованного представления до прогона.
+[word/document.xml:450] Согласование Формат истории scr_hepatitis и отрицаний; точное пояснение места при other; широкий pressure требует отдельной оценки врача, не преобразования в учёт на А.
+[word/document.xml:451] Сопоставление перед прогоном
+[word/document.xml:452] Сопоставить четыре поля last_screening, дополнительную историю и registered; procedure_id женского prime_extended, catalog_version и справочник мест прохождения.
+[word/document.xml:454] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:455] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:456] S17 Пересечения HbA1c и группы УЗДГ
+[word/document.xml:457] Область: current. Шагов: 1. Показать PRIME и госпрограммы отдельно, сохранив выбор и границы сопоставления услуг.
+[word/document.xml:458] Профиль M0 + H0; M, DOB 1974-05-12; for_child=false; age_full=52, age_year=52; as_of_date=2026-09-30, checkup_year=2026, visit_date=2026-10-01. Явно отсутствует учёт по hypertension/ihd/diabetes/glaucoma/cerebrovascular и остальным кодам; никогда не проходил scr_cvd/scr_cerebro и другие программы H0. Прикрепление green_clinic; никогда не курил, hazardous_work_10y=false.
+[word/document.xml:459] Действия А: /recommend; посмотреть отдельно scr_cvd/scr_cerebro и заявленные prime_overlap → выбрать полный мужской preset prime_extended → /plan без удаления «Гликированный гемоглобин» или «УЗДГ сосудов шеи и ног». Сведения о бесплатном покрытии не являются пользовательским изменением выбора.
+[word/document.xml:460] /recommend prime_extended с мужской частью. scr_cvd/scr_cerebro формально candidate; отдельно scr_colorectal/scr_hepatitis candidate по достаточным фактам, scr_lung не подходит по риску, scr_breast/scr_cervix — по полу. Показать заявленные связи: HbA1c в scr_cvd ↔ «Гликированный гемоглобин»; «УЗДГ брахиоцефального ствола» в scr_cerebro ↔ группа «УЗДГ сосудов шеи и ног». Не заявлять полное покрытие группы шеи и ног.
+[word/document.xml:461] /plan Обе позиции остаются выбранными и отражаются в route/карте PRIME с учётом общих условий прогона. Госэтапы не добавляются как выбранные платные процедуры и не заменяют их. Группа УЗДГ не раскладывается по догадке. Расписание — по I9 и общим условиям прогона; итог куратора after_results. Цена неизвестна, скидка не вычисляется. Текущие исследования — «не пройдено», next_visit без выдуманного срока.
+[word/document.xml:462] Проверяемые утверждения
+[word/document.xml:463] 1. [RULE_SNAPSHOT] scr_cvd.prime_overlap явно содержит «Гликированный гемоглобин»; scr_cerebro.prime_overlap — «УЗДГ сосудов шеи и ног», при этапе «УЗДГ брахиоцефального ствола».
+[word/document.xml:464] 2. [CONTRACT_GAP] По I4/I6 метки exact для HbA1c и partial для группы УЗДГ допустимы только после явного сопоставления состава; без него сохранить заявленное prime_overlap и вопрос данных, не угадывать по названиям.
+[word/document.xml:465] 3. [PROJECT] По I4/I5 после просмотра покрытия выбранные позиции не удаляются, removed_recommended пуст, госпрограммы не переносятся в route PRIME.
+[word/document.xml:466] 4. [PROJECT] По I6/I7 широкая группа не дедуплицируется с отдельным действием и не раскрывается автоматически; один выбранный ID сохраняется один раз.
+[word/document.xml:467] 5. [PROJECT] По I8–I13 нет обещанной записи, скидки и статуса выполнения; расписание — по I9 и общим условиям прогона, итог после результатов отдельно.
+[word/document.xml:468] Согласование Утвердить предметное сопоставление exact/partial и предел покрытия групповой УЗДГ; отдельно уточнить фактическую доступность госпрограммы по прикреплению.
+[word/document.xml:469] Сопоставление перед прогоном
+[word/document.xml:470] Сопоставить packages.prime_extended.male_exams[2] и exams[5] с финальными procedure_id; связать их с этапами scr_cvd/scr_cerebro через явный mapping, сохранить H0 и catalog_version.
+[word/document.xml:472] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:473] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:474] S18 Диабет черновое предложение эндокринолога
+[word/document.xml:475] Область: current / extension-draft. Шагов: 1. Отделить ответ анамнеза, диагноз на учёте и предложение ANAMNESIS_DRAFT; проверить условное подключение нового модуля.
+[word/document.xml:476] Профиль M0 + H0; M, DOB=1991-05-12, for_child=false; as_of_date=2026-09-30, checkup_year=2026, visit_date=2026-10-01; age_full=35, age_year=35. Изменение: conditions содержит diabetes; отсутствие остальных состояний задано явно. Пациент явно не состоит на учёте по перечисленным диагнозам, включая diabetes. medications: препаратов не принимает. История H0 — явное «никогда», не пропущенные даты.
+[word/document.xml:477] Действия А. Получить /recommend, затем выбрать рекомендованный мужской prime_basic как preset и передать его состав в /plan. Предложение c_endo отдельно не выбирать. До прогона зафиксировать, входит ли обработка anamnesis_rules в проверяемую версию; это условие области проверки, не дополнительный пациент.
+[word/document.xml:478] /recommend Кандидат prime_basic: exams + male_exams. При подключённом модуле an_diabetes предлагает c_endo «Консультация эндокринолога» с причиной conditions=diabetes, source=ANAMNESIS_DRAFT и needs_doctor_validation=true. Это не обязательное назначение. При неподключённом модуле не требовать этого предложения; сохранить сообщённый контекст для рассмотрения врачом. registered=diabetes не возникает из conditions. scr_hepatitis — отдельный кандидат по снимку при передаче фактов M0/H0; прочие скрининги не являются целью этой проверки.
+[word/document.xml:479] /plan Выбран состав мужского prime_basic; c_endo не становится обязательной выбранной услугой из-за чернового правила. Причина/статус предложения сохраняются отдельно, если оно поддерживается. route — по выбранным действиям; расписание — по I9 и общим условиям прогона. Итоговое действие куратора — after_results, без даты готовности; найденный пакет не означает врачебное одобрение. Карта выбранных услуг — «не пройдено», без результатов; next_visit — массив без выдуманных дат.
+[word/document.xml:480] Проверяемые утверждения
+[word/document.xml:481] 1. [RULE_SNAPSHOT] packages.prime_basic: 35 полных лет соответствует basic; an_diabetes связывает conditions=diabetes с c_endo, сохраняя обе черновые метки. scr_hepatitis — отдельный кандидат по M0/H0.
+[word/document.xml:482] 2. [PROJECT] I3/I14: conditions и registered не сливаются; ни диагноз на учёте, ни обязательная услуга не выводятся из чернового предложения.
+[word/document.xml:483] 3. [CLINICIAN_REVIEW] an_diabetes/I14: необходимость консультации не утверждена; пометка рассмотрения врачом остаётся видимой.
+[word/document.xml:484] 4. [PROJECT] I8–I10/I13: без слотов нет готового расписания, итог куратора отделён от маршрута дня, факт выполнения не создан.
+[word/document.xml:485] 5. [CONTRACT_GAP] an_diabetes/scr_hepatitis: до прогона установить scope модуля, передачу контекста врачу и сериализацию явных отрицаний/H0; отсутствие неподключённого расширения не считать багом.
+[word/document.xml:486] Согласование Врач: применимость чернового предложения. Разработчик: подключён ли an_diabetes и где сохраняются его метки/контекст.
+[word/document.xml:487] Сопоставление перед прогоном
+[word/document.xml:488] Сопоставить позиции prime_basic и c_endo с итоговым каталогом: c_endo — код исходника, не подтверждённый procedure_id API. Уточнить catalog_version и сериализацию H0.
+[word/document.xml:490] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:491] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:492] S19 Анестезия препарат и отсутствие сопровождающего
+[word/document.xml:493] Область: current. Шагов: 1. Сохранить сведения о подготовке и направить вопросы врачу без автоматической отмены лекарства или подтверждения готовности.
+[word/document.xml:494] Профиль M0 + H0; M, DOB=1991-05-12, for_child=false; as_of_date=2026-09-30, checkup_year=2026, visit_date=2026-10-01; age_full=35, age_year=35. Изменения: blood_thinners=yes; companion=no. medications: пациент сообщил приём разжижающего кровь препарата, название, доза и режим неизвестны; это заменяет базовое «препаратов нет». allergy=no, anesthesia_reaction=no — явные ответы. История H0 известна отдельно от подготовки.
+[word/document.xml:495] Действия А. Получить /recommend; выбрать preset мужского prime_basic, включая «Гастроскопия и колоноскопия под анестезией», и передать окончательный состав в /plan. Не вводить выдуманное название препарата и не изменять ответы подготовки ради готовности плана.
+[word/document.xml:496] /recommend Кандидат prime_basic с мужской частью; пакет не означает допуск к анестезии. Видимы оба факта: blood_thinners=yes и companion=no. Запросить уточнение препарата и решение о подготовке/сопровождении. Если справочные блоки prep_catalog подключены, сохраняется их происхождение; pr_thinners, pr_colon, pr_gastro, pr_anesthesia не становятся схемой лечения. scr_hepatitis оценивается отдельно по M0/H0; его кандидатный статус не подтверждает готовность эндоскопии.
+[word/document.xml:497] /plan Групповая услуга остаётся в выбранном составе с вопросами врачу; её нельзя молча удалить ради готового плана. Предварительный порядок может отразить эндоскопию последней среди дневных категорий, но без допуска и времени проведения. До решения по ограничению выбранной услуги status=review, schedule.status=not_run независимо от слотов. Итог куратора — after_results; готовность результатов и дата повторного визита неизвестны. Подсказка не содержит отмены препарата, дозировки, срока перерыва или обещания успеть к visit_date.
+[word/document.xml:498] Проверяемые утверждения
+[word/document.xml:499] 1. [RULE_SNAPSHOT] packages.prime_basic.exams[9]: выбрана ровно исходная групповая гастро-/колоноскопия; prep_catalog — справочный источник, а не медицинский эталон. scr_hepatitis — кандидат по M0/H0.
+[word/document.xml:500] 2. [CLINICIAN_REVIEW] pr_thinners/pr_anesthesia/I14: оба существенных ответа и неизвестные сведения о препарате доходят до врача; готовность не объявляется.
+[word/document.xml:501] 3. [PROJECT] I3/I5/I7: вопрос подготовки не меняет выбор молча; категоризация не является допуском и не добавляет новых обязательных услуг.
+[word/document.xml:502] 4. [PROJECT] I8–I10/I12: при нерешённом ограничении состава schedule.status=not_run; итог после результатов отделён; next_visit — массив, у неподтверждённой даты null с причиной уточнения.
+[word/document.xml:503] 5. [CONTRACT_GAP] I3/I14: согласовать поля для вопросов подготовки и статус review; клиническое решение нельзя подменить клиентским status=ready.
+[word/document.xml:504] Согласование Врач: уточнить препарат, подготовку и условия сопровождения. Точный запрет/допуск и срок подготовки этим сценарием не устанавливаются.
+[word/document.xml:505] Сопоставление перед прогоном
+[word/document.xml:506] Сопоставить группу prime_basic.exams[9] и её действия с каталогом без придуманного разбиения; проверить поддержку prep_catalog и передачи medications; catalog_version/H0 — по итоговому контракту.
+[word/document.xml:508] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:509] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:510] S20 Детский extended вместо рекомендованного mini
+[word/document.xml:511] Область: current. Шагов: 2. Проверить выбор другого варианта пресета и видимость ограничений возрастно неоднородных групп.
+[word/document.xml:512] Профиль C0 + H0; M, DOB=2016-05-12, for_child=true; as_of_date=2026-09-30, checkup_year=2026, visit_date=2026-10-01; age_full=10, age_year=10. Изменений базового профиля нет. Взрослый, курительный и репродуктивный анамнез неприменим и не заполнен отрицаниями. H0 — явная известная история, не доказательство пригодности взрослых программ.
+[word/document.xml:513] Действия А. /recommend предлагает mini; выбрать его и запросить /plan, сохранив тестером снимок ответа. Б. При той же анкете выбрать доступный extended в mode=preset, base_package_id=prime_child и согласованное различение варианта; отправить именно состав extended в /plan. Исходную автоматическую рекомендацию mini сохранить отдельно.
+[word/document.xml:514] /recommend package.id=prime_child; по умолчанию mini с packages.prime_child.exams. Extended показан отдельно через extended_exams, а не добавлен к mini. Детскому профилю не предлагать scr_hepatitis: age_year=10 меньше age_min=18; остальные взрослые программы не являются предметом точечной проверки. Исходная рекомендация не переписывается задним числом из-за выбора другого пресета.
+[word/document.xml:515] /plan А: выбран mini. Б: выбран только extended, без автоматического объединения с exams. Отличия описываются относительно исходной рекомендации; base_package_id обозначает источник пресета, вариант различим. Упоминания тазобедренных суставов младенцам и нейросонографии до года не превращаются в назначения десятилетнему. Неоднозначные групповые строки сохраняют пометку применимости. Расписание — по I9 и общим условиям прогона; при нерешённой применимости групп — review/not_run и предварительный порядок с пометками; заключение выбранного варианта — after_results после результатов, а не обещанная запись в тот же день.
+[word/document.xml:516] Проверяемые утверждения
+[word/document.xml:517] 1. [RULE_SNAPSHOT] packages.prime_child.exams/extended_exams: А содержит mini, Б — extended; это разные варианты, не сумма двух списков. scr_hepatitis: 10 < age_min=18, not_eligible.
+[word/document.xml:518] 2. [PROJECT] I5/I6: исходная рекомендация mini остаётся основанием сравнения; совпадение слов в группах не разрешает произвольное слияние или раскрытие.
+[word/document.xml:519] 3. [CLINICIAN_REVIEW] prime_child.extended_exams[2–3]/I14: компоненты для младенцев не назначаются ребёнку 10 лет; применимость остальных компонентов требует согласования.
+[word/document.xml:520] 4. [PROJECT] I8–I10/I13: расписание — по общим условиям прогона; при нерешённой применимости групп точное расписание не строится; заключение отделено до получения результатов, карта отражает только выбранный вариант как «не пройдено».
+[word/document.xml:521] 5. [CONTRACT_GAP] I5/I7: согласовать variant_id или эквивалент и сопоставление групп с действиями без выдуманных атомарных процедур.
+[word/document.xml:522] Согласование Клиника/врач: доступность и применимость групп extended для 10 лет. Контракт: как обозначаются mini/extended и предварительность состава.
+[word/document.xml:523] Сопоставление перед прогоном
+[word/document.xml:524] Сопоставить оба варианта prime_child, их групповые позиции и заключительные действия с итоговым каталогом; имена variant_id не выдумывать. Уточнить catalog_version и H0.
+[word/document.xml:526] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:527] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:528] S21 Удаление рекомендованной КТ в custom
+[word/document.xml:529] Область: current. Шагов: 1. Проверить сохранение отказа пользователя без восстановления услуги или блокировки по одному факту отказа.
+[word/document.xml:530] Профиль M0 + H0; M, DOB=1991-05-12, for_child=false; as_of_date=2026-09-30, checkup_year=2026, visit_date=2026-10-01; age_full=35, age_year=35. Изменений анкеты нет; urgent=none известен. История H0 известна отдельно; пропуск даты не используется как замена «никогда». Конфигурацию расписания фиксируют перед прогоном по общим условиям.
+[word/document.xml:531] Действия А. Получить /recommend и сохранить исходный состав мужского prime_basic. Выбрать mode=custom, base_package_id=prime_basic; удалить только «КТ лёгких», сохранив остальные выбранные позиции. Передать окончательные selected_procedure_ids и catalog_version в /plan; проверить также новую плановую карту.
+[word/document.xml:532] /recommend package.id=prime_basic, общая и мужская части; «КТ лёгких» имеет исходную причину включения из возрастного пакета. scr_lung не подходит по age_year=35; удаление платной КТ не связано с госфинансированием. scr_hepatitis — отдельный кандидат по фактам M0/H0; он не заменяет услугу PRIME. /recommend не ищет слоты.
+[word/document.xml:533] /plan Выбран состав рекомендации минус только «КТ лёгких». removed_recommended ссылается на исходную рекомендацию; warning поясняет исключённую рекомендацию, но услуга не восстанавливается. Ни выбранный состав, ни route, ни новая карта не содержат удалённую КТ или её действия. Порядок перестроен по оставшимся действиям; отказ сам по себе не создаёт блокировку. route — по оставшимся действиям; расписание — по I9 и общим условиям прогона; итог куратора — after_results. Сумма custom=null, текст «Стоимость — у администратора»; next_visit без выдуманной даты.
+[word/document.xml:534] Проверяемые утверждения
+[word/document.xml:535] 1. [RULE_SNAPSHOT] prime_basic.exams[8]/scr_lung: рекомендация содержит «КТ лёгких» как позицию пакета; возраст 35 не соответствует возрастной сетке scr_lung. scr_hepatitis — кандидат по M0/H0.
+[word/document.xml:536] 2. [PROJECT] I5: removed_recommended содержит исключённую КТ; warning сохраняет исходную причину, окончательный выбор имеет приоритет.
+[word/document.xml:537] 3. [PROJECT] I7/I13: все действия удалённой услуги отсутствуют в route и новой карте; оставшиеся услуги отмечены «не пройдено», результаты не созданы.
+[word/document.xml:538] 4. [PROJECT] I8–I12: нет поиска слотов в /recommend, нет часов без слотов, итог — after_results; нет скидки за удаление и даты повтора наугад.
+[word/document.xml:539] 5. [CONTRACT_GAP] I5/I7: до прогона сопоставить ID КТ и связанные action_id; совпадение названия с другим исследованием не заменяет это сопоставление.
+[word/document.xml:540] Согласование Нет отдельного медицинского вопроса для механики удаления. Это не утверждение о клинической пользе или безопасности отказа.
+[word/document.xml:541] Сопоставление перед прогоном
+[word/document.xml:542] «КТ лёгких» — packages.prime_basic.exams[8], procedure_id сопоставить с итоговым каталогом; проверить связные action_id, catalog_version и передачу исходной рекомендации для diff.
+[word/document.xml:544] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:545] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:546] S22 Добавление уролога и повтор того же ID
+[word/document.xml:547] Область: current. Шагов: 2. Сохранить выбранную услугу другого пакета один раз, с честным основанием и без подмены другой позицией каталога.
+[word/document.xml:548] Профиль M0 + H0; M, DOB=1991-05-12, for_child=false; as_of_date=2026-09-30, checkup_year=2026, visit_date=2026-10-01; age_full=35, age_year=35. Изменений анкеты нет: conditions, registered и family_history явно отрицательны по базе; жалобы на мочеиспускание не добавляются ради обоснования выбора. История H0 известна; конфигурацию расписания фиксируют перед прогоном.
+[word/document.xml:549] Действия А. Получить /recommend; в custom к мужскому prime_basic добавить «Консультация уролога» из packages.prime_extended.male_exams[0] и запросить /plan. Б. При неизменных данных повторить её тот же сопоставленный procedure_id в selected_procedure_ids и снова запросить /plan. Это повтор одного ID, а не второй врачебный приём.
+[word/document.xml:550] /recommend Рекомендован prime_basic с мужской частью; добавляемый уролог не переименовывается в рекомендацию по заболеванию. Каталог позволяет выбрать указанную позицию extended. scr_hepatitis оценивается отдельно по M0/H0; другие скрининги не являются целью кейса. /recommend не получает обязанности подбирать слоты для ручного добавления.
+[word/document.xml:551] /plan В А и Б выбран исходный basic плюс одна «Консультация уролога». Источник добавления — prime_extended.male_exams[0], основание — «выбрана пользователем»; не c_uro_f. Дубликат ID не создаёт вторую услугу, действие или строку новой карты. Медицинская применимость может остаться вопросом, но услуга не исчезает ради одобрения или расписания. route — по выбранным действиям; расписание — по I9 и общим условиям прогона; итог куратора — after_results. Цена custom=null, «Стоимость — у администратора»; карта без результатов.
+[word/document.xml:552] Проверяемые утверждения
+[word/document.xml:553] 1. [RULE_SNAPSHOT] packages.prime_extended.male_exams[0]: добавлено точное название «Консультация уролога»; позиция c_uro_f не является её заменой.
+[word/document.xml:554] 2. [PROJECT] I5/I6: в А и Б выбранный ID встречается один раз, источник пакета и ручная причина не подменяются вымышленным показанием.
+[word/document.xml:555] 3. [PROJECT] I7–I10: маршрут учитывает один приём уролога; нехватка слотов не удаляет его и не превращает предварительный порядок в готовое расписание.
+[word/document.xml:556] 4. [CLINICIAN_REVIEW] I3/I14: вопрос полезности/применимости ручного добавления остаётся видимым, без автоматического диагноза и врачебного одобрения.
+[word/document.xml:557] 5. [PROJECT] I11–I13: нет суммы или скидки наугад; в новой карте один уролог со статусом «не пройдено»; результатов и выдуманного повтора нет.
+[word/document.xml:558] Согласование Врач: применимость добавления при отсутствии жалоб. Контракт: форма сообщения о повторном ID; итоговое представление выбора не должно дублировать услугу.
+[word/document.xml:559] Сопоставление перед прогоном
+[word/document.xml:560] Сопоставить точную позицию prime_extended.male_exams[0] и её действия с итоговым каталогом; повторить именно тот же ID. Уточнить catalog_version; код c_uro_f не использовать как procedure_id нужной позиции.
+[word/document.xml:562] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:563] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:564] S23 Preset затем custom затем preset без переноса старого выбора
+[word/document.xml:565] Область: current. Шагов: 4. Проверить последовательное редактирование и неизменность сохранённых тестером снимков.
+[word/document.xml:566] Профиль M0 + H0; M, DOB=1991-05-12, for_child=false; as_of_date=2026-09-30, checkup_year=2026, visit_date=2026-10-01; age_full=35, age_year=35. Анкета и catalog_version неизменны во всех шагах, история H0 не редактируется. Конфигурацию расписания фиксируют перед прогоном; медицинские результаты ни на одном шаге не вводятся.
+[word/document.xml:567] Действия А. /recommend → /plan с preset мужского prime_basic. Б. /plan с custom: удалить «КТ лёгких», добавить «Консультация уролога» из extended. В. Вернуться к preset basic, передав точный состав пресета. После А/Б/В тестер сохраняет отдельные копии ответов и карт. Г. Контроль: mode=preset basic, но selected_procedure_ids оставлен от Б; проверить явную обработку противоречия. Г не задаёт новый согласованный выбор.
+[word/document.xml:568] /recommend Исходная рекомендация — prime_basic, exams + male_exams; её сохраняют как основание diff. [RULE_SNAPSHOT: scr_hepatitis] — отдельный кандидат по M0/H0; скрининговые условия не меняются при переключении режима. Повторный показ рекомендаций не превращает уролога из шага Б в исходную автоматическую рекомендацию.
+[word/document.xml:569] /plan А: точный basic. Б: basic без «КТ лёгких» плюс один уролог, warning об отказе, ручное основание добавления. В: точный basic; КТ вновь выбрана, уролога нет, старые added/removed не переносятся. Снимки А и Б остаются прежними. Г: конкретное сообщение о несогласованном составе и необходимости согласовать выбор; нельзя молча игнорировать список. Точный формат отказа — вопрос контракта. В А–В route — по текущему выбору; расписание — по I9 и общим условиям прогона; итог куратора — after_results; новые карты отражают свой состав без результатов.
+[word/document.xml:570] Проверяемые утверждения
+[word/document.xml:571] 1. [PROJECT] I5/I6: А/Б/В равны соответствующим окончательным выборам; removed_recommended сравнивается с исходной рекомендацией, а не с прошлым custom.
+[word/document.xml:572] 2. [PROJECT] I7/I13: действия и новые карты синхронны текущему выбору; сохранённые тестером снимки А/Б не меняются после В.
+[word/document.xml:573] 3. [PROJECT] I13/I14: проверка копий не требует хранения истории самим приложением; переключение не создаёт фактов выполнения или результатов.
+[word/document.xml:574] 4. [CONTRACT_GAP] I5: для Г закрепить явный ответ на конфликт mode=preset и списка от Б; приоритет одной стороны нельзя выбрать молча.
+[word/document.xml:575] 5. [PROJECT] I8–I12: ни один переход не создаёт слоты, готовность результатов, цену custom или назначенную дату повтора.
+[word/document.xml:576] Согласование Нет отдельного медицинского вопроса для переключения режима. Согласовать форму отклонения/уточнения конфликтного запроса Г; до этого не фиксировать HTTP-код.
+[word/document.xml:577] Сопоставление перед прогоном
+[word/document.xml:578] Сопоставить basic, «КТ лёгких» и уролога из prime_extended.male_exams[0] с каталогом; зафиксировать catalog_version, способ сравнения с /recommend и структуру копий карты.
+[word/document.xml:580] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:581] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:582] S24 Пустой custom и отсутствие поля выбора
+[word/document.xml:583] Область: current. Шагов: 2. Различить сознательно пустой набор и запрос неверного формата, исключив молчаливый возврат к пресету.
+[word/document.xml:584] Профиль M0 + H0; M, DOB=1991-05-12, for_child=false; as_of_date=2026-09-30, checkup_year=2026, visit_date=2026-10-01; age_full=35, age_year=35. Изменений анкеты нет. История H0 известна; отсутствие выбора не означает отсутствие анамнеза или отрицание рекомендаций. Слоты не предоставлены и для пустого состава не ищутся.
+[word/document.xml:585] Действия Получить /recommend для мужского prime_basic. А. Пользователь удаляет каждую выбранную услугу и отправляет /plan: mode=custom, base_package_id=prime_basic, selected_procedure_ids=[] и catalog_version. Б. Контроль формата при той же анкете и режиме: полностью опустить обязательное поле selected_procedure_ids; это не действие выбора пустого списка.
+[word/document.xml:586] /recommend Рекомендация prime_basic остаётся доступной для выбора, но не является согласованным составом. scr_hepatitis оценивается отдельно по M0/H0; кандидат госпрограммы не заполняет пустой набор PRIME. Исходная рекомендация не удаляется из объяснений и не исполняется автоматически вместо ответа пользователя.
+[word/document.xml:587] /plan А: needs_input с понятным предложением выбрать хотя бы одну услугу; окончательный список пуст, route и расписание не строятся, автоматического отката к basic нет. Нельзя вставить консультацию, анализ или after_results для невыбранных действий. Б: явная ошибка формата/уточнение обязательного поля выбора, без трактовки пропуска как [] или preset. Точная структура ответа согласуется до прогона. В обоих шагах не появляются выполненные услуги, результаты, подтверждённая запись или выдуманная дата next_visit.
+[word/document.xml:588] Проверяемые утверждения
+[word/document.xml:589] 1. [PROJECT] I5/I7 и матрица S24: при явном [] статус состава needs_input, выбранных действий ноль; ни один ID пресета не восстанавливается.
+[word/document.xml:590] 2. [PROJECT] I4/I5: отдельный кандидат scr_hepatitis не становится выбранной услугой PRIME и не позволяет обойти пустой состав.
+[word/document.xml:591] 3. [PROJECT] I8–I10: пустой состав не запускает поиск слотов и не создаёт route, точное расписание или итоговую консультацию после невыбранных исследований.
+[word/document.xml:592] 4. [CONTRACT_GAP] S24/I5: отсутствие selected_procedure_ids — отдельная ошибка обязательного поля; зафиксировать её представление без выдуманного HTTP-кода.
+[word/document.xml:593] 5. [PROJECT] I11–I14: если возвращаются цена/next_visit, цена не вычисляется, next_visit остаётся массивом; никаких новых фактов выполнения или персональных дат.
+[word/document.xml:594] Согласование Нет отдельного медицинского вопроса в этой технической проверке. Контракт: формат needs_input при [] и ошибки при отсутствующем поле, наличие выходных полей в этих ответах.
+[word/document.xml:595] Сопоставление перед прогоном
+[word/document.xml:596] Сопоставить исходный basic и catalog_version; проверить, что клиент действительно отправляет [] в А и не отправляет ключ в Б. Не подменять отсутствие поля null, строкой или пустым пресетом.
+[word/document.xml:598] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:599] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:600] S25 Два действия допустимые и конфликтующие слоты
+[word/document.xml:601] Область: technical-fixture. Шагов: 2. Изолированно проверить планировщик при неизменном выборе и длительностях: feasible против infeasible после полного поиска.
+[word/document.xml:602] Профиль M0 + H0; M, DOB=1991-05-12, for_child=false; as_of_date=2026-09-30, checkup_year=2026, visit_date=2026-10-01; age_full=35, age_year=35. Один custom-набор: «Липидный профиль и глюкоза» + «ЭхоКГ». Пациент доступен 09:00–12:00; buffer=0; длительность каждого действия 20 минут. Ресурсы LAB_TEST и ECHO_TEST — исключительно синтетические. Иной занятости, других действий и дополнительных prerequisites нет. Единственная зависимость: лаборатория → ЭхоКГ.
+[word/document.xml:603] Действия До теста сопоставить две услуги и два действия fixture. А, normal: LAB_TEST доступен [09:00,09:20), ECHO_TEST — [09:30,09:50). Б, busy: каждому ресурсу доступен только [09:00,09:20). Вызвать тестовый адаптер планировщика с одинаковыми ID, составом и длительностями; меняются только слоты. Медицинский этап согласования в этом изолированном fixture отсутствует.
+[word/document.xml:604] /recommend Вызов /recommend не входит в два состояния технического fixture; его эталон и госскрининги здесь не проверяются. Если адаптер требует исходную рекомендацию, она служит только входным контекстом и не добавляет действий. I8: /recommend сам не ищет слоты. Имена normal/busy в существующем приложении не доказывают наличие указанных интервалов.
+[word/document.xml:605] /plan А: feasible; лаборатория 09:00–09:20, ЭхоКГ 09:30–09:50; route соответствует этой хронологии. Б: после полного перебора infeasible: оба 20-минутных действия не помещаются последовательно в единственное общее 20-минутное окно. Полного расписания нет; нельзя показывать одновременно выполняемые действия как успех. Выбранные услуги, ID, длительности и зависимость неизменны. after_results не добавляет консультацию: такого действия нет в fixture. Расписание — синтетическое размещение, не реальная запись.
+[word/document.xml:606] Проверяемые утверждения
+[word/document.xml:607] 1. [SYNTHETIC_FIXTURE] I8/I9: normal размещает ровно два действия в заданных окнах, соблюдая порядок и доступность пациента без пересечений.
+[word/document.xml:608] 2. [SYNTHETIC_FIXTURE] I9: busy не имеет полного решения; после полного поиска ожидается infeasible, а не успешный укороченный или неполный план.
+[word/document.xml:609] 3. [PROJECT] I5/I7/I9: обе услуги, их ID и длительности 20 минут сохранены в А/Б; не добавлены консультации, подготовка или клинические prerequisites.
+[word/document.xml:610] 4. [PROJECT] I9/I14: правило unknown относится к остановке по лимиту; лимит здесь не задан, поэтому отдельный результат его достижения не выдумывается.
+[word/document.xml:611] 5. [CONTRACT_GAP] I8/I9: до прогона подтвердить загрузку именно этих слотов в адаптер, представление полуоткрытых интервалов и доступность полного поиска.
+[word/document.xml:612] Согласование Медицинского согласования внутри fixture нет. Технически закрепить адаптер и доказательство завершённого поиска для busy.
+[word/document.xml:613] Сопоставление перед прогоном
+[word/document.xml:614] Услуги: prime_basic.exams[3] и exams[6]; сопоставить procedure_id/action_id, сохранив один набор в А/Б. LAB_TEST/ECHO_TEST не выдавать за реальные ресурсы; normal/busy — названия состояний fixture, не подтверждённые enum API.
+[word/document.xml:616] Фактический результат: не запускалось. Вердикт после прогона: не выставлен.
+[word/document.xml:617] Решение/замечание врача: __________    Замечание разработчика: __________
+[word/document.xml:618] Открытые вопросы до прогона
+[word/document.xml:619] G1  Смысл ответов Как передавать «нет», «не знаю», отсутствие ключа и «никогда не проходил»; как передавать историю scr_hepatitis/scr_cerebro/scr_lung? Пока семантическая пригодность не гарантирует корректный current-запрос.
+[word/document.xml:620] G2  Контракт и каталог Зафиксировать /recommend и /plan, обязательность selected_procedure_ids, variant_id, catalog_version, происхождение рекомендации, procedure_id/action_id, статусы и служебные даты. При preset несогласованный состав не должен игнорироваться молча; точную форму ошибки согласовать.
+[word/document.xml:621] G3  Возрастная граница S04: как применять scr_hepatitis.age_min=18 до 18-летия в календарном году? Полный возраст пакета определён, этот скрининговый вопрос остаётся открытым.
+[word/document.xml:622] G4  Беременность и группы S09/S10: уточнить перечень зависимых услуг и условия решения врача. S20: нормализовать детские группы и применимость упомянутых младенческих компонентов. Черновой порядок дня не заменяет клинические prerequisites.
+[word/document.xml:623] G5  Происхождение legacy S11: отличать широкий ответ, автоматически сгенерированный диагноз и отдельно подтверждённый код. S14: сохранять диапазон и источник искусственного 2025, не превращать его в реальный год.
+[word/document.xml:624] G6  Ровно 15 лет S13: scr_lung.quit_years_max=15 конфликтует с note «менее 15». До согласования ожидается review, а не произвольный положительный или отрицательный эталон.
+[word/document.xml:625] G7  Покрытие и пересечения S16/S17: подтвердить exact/partial сопоставления процедур и сведения о месте/финансировании. payment=free_osms у scr_cerebro не доказывает право конкретного пациента на оплату; attached_to этого не устанавливает.
+[word/document.xml:626] G8  Черновики и подготовка S18: определить, входит ли модуль an_diabetes в локальный scope. Все 20 anamnesis_rules остаются ANAMNESIS_DRAFT с needs_doctor_validation=true. S19: врач уточняет подготовку без автоматических схем отмены препаратов.
+[word/document.xml:627] G9  Планировщик Перед прогоном зафиксировать серверные длительности, ресурсы, слоты и предпосылки. Для needs_data нужен fixture с фактической нехваткой технических данных; известное отсутствие свободных окон при полных данных проверяется как infeasible после полного поиска. S25 передаётся как отдельный fixture; существующие названия availability=normal/busy не доказывают равенства этим данным.
+[word/document.xml:628] Уточнения при подготовке
+[word/document.xml:629] Все 25 карточек и их цели сохранены. В S04 взрослые ответы собираются при возрастном переходе. В S09/S19 новые сведения заменяют базовые факты беременности и приёма препаратов. В S10 неизвестность беременности заменяет и базовое отрицание risk_group=pregnancy. Блокирующее уточнение запроса отделено от вопроса об отдельном скрининге.
+[word/document.xml:630] candidate — совпадение с условиями снимка при достаточных данных. Источник, финансирование, запись, прохождение, результат и просмотр врачом — отдельные факты. Актуальность законодательства не проверялась.
+[word/document.xml:631] Остались за пределами 25 карточек: младенец и верхняя возрастная граница; неизвестные ID/версия каталога и остальные enum; истинная hazardous_work_10y при неизвестном курении; подробные клинические prerequisites; отдельные переходы получения результата и его просмотра врачом. Ограничение UI birth_date=1920-01-01…2025-12-31 требует отдельного решения для младенцев 2026 года.
+[word/document.xml:632] Источники
+[word/document.xml:633] Основа: «Pasted markdown(20260930-074842).md». Проверка снимка 30.09.2026 заявлена в задании. Ссылки закрепляют версии; отдельная актуализация не проводилась.
+[word/document.xml:634] 1  Составы пакетов и правила скрининга · снимок 744d7f7 · spec/rules.json
+[word/document.xml:635] 2  Current анкета · снимок 744d7f7 · app/config/fields.py
+[word/document.xml:636] 3  Исходный контракт predict · снимок 744d7f7 · spec/CONTRACT.md
+[word/document.xml:637] 4  Пояснения проекта · снимок 744d7f7 · ml/README.md
+[word/document.xml:638] 5  Legacy экранные примеры · df733c4 · ml/sample_inputs.json
+[word/document.xml:639] Нормативное происхождение в снимке: scr_cvd — DSM174 прил. 1 п.1, прил. 2 п.1; scr_cerebro — прил. 1 п.2, прил. 2 п.4; scr_breast — прил. 1 п.3, прил. 2 п.2; scr_cervix — прил. 1 п.4, прил. 2 п.3; scr_colorectal — прил. 1 п.5, прил. 2 п.5; scr_hepatitis — прил. 1 п.6 и прил. 2 п.6 в ред. приказа № 75 от 10.07.2026; scr_lung — прил. 1 п.7 и прил. 2 п.7, введены приказом № 75 от 10.07.2026.
+[word/document.xml:640] DSM174: приказ и.о. МЗ РК от 30.10.2020 № ҚР ДСМ-174/2020 в ред. № 71 от 29.07.2025, № 109 от 21.10.2025 и № 75 от 10.07.2026, рег. МЮ 13.07.2026 № 39291; путь источника clinical/normativ/. DSM75: clinical/normativ/DSM75_2026-07-10_*. Для scr_lung note ссылается на перечень работ приказа МТСЗН № 170 от 24.05.2023; этот перечень здесь не проверялся.
+[word/document.xml:641] PRIME · каталог программ
+[word/document.xml:642] CLINIC_RULE — правило клиники без нормативной опоры; ANAMNESIS_DRAFT — черновик Qorgan от 30.09.2026. Оба требуют утверждения врача. Объём сообщённой проверки анкеты акушером неизвестен; валидация этих сценариев не подтверждена.
+[word/footer1.xml:1] PRIME · сценарии проверки  |  

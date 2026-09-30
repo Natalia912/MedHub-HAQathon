@@ -1,0 +1,3305 @@
+{
+  "execution": {
+    "purpose": "compatibility_regression_automatic_predict",
+    "api": "POST /predict",
+    "function": "app.engine.build_plan",
+    "not_recommend_response": true,
+    "engine_versions": [
+      "demo-3"
+    ],
+    "evaluation_context": {
+      "as_of_date": "2026-09-30",
+      "checkup_year": 2026,
+      "visit_date": "2026-10-01",
+      "availability": "normal"
+    }
+  },
+  "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+  "source_path": "reference/df733c4/ml/sample_inputs.json",
+  "source_file_sha256": "4bd1f310d801ff3c6f77b7f671972b76cb32b85f0bbd2bb9bda4ff5bada90d03",
+  "demo": true,
+  "medical_validated": false,
+  "samples": [
+    {
+      "sample_number": 1,
+      "name": "Ж 42, демо: без болезней, диабет у мамы, 2 родов, спираль",
+      "source_screen": {
+        "red_flag": false,
+        "free_rules": [
+          "scr_cvd",
+          "scr_breast",
+          "scr_cervix",
+          "scr_hepatitis"
+        ],
+        "not_eligible": [],
+        "package": "prime_extended",
+        "package_name": "Check-up «Женский расширенный после 40 лет»",
+        "free_in_package": [
+          "ПАП-тест",
+          "Маммография (2D/3D)"
+        ],
+        "partly_free_in_package": [
+          "Расширенные анализы крови (40+ показателей: гормоны, витамины, печёночные и почечные пробы)",
+          "Липидный профиль и глюкоза",
+          "Анализ на гепатиты B и C"
+        ],
+        "not_for_pregnancy": [],
+        "extra": [],
+        "for_doctor": [
+          "В семье: Сахарный диабет",
+          "Беременностей: 2, родов: 2",
+          "Предохранение: Спираль"
+        ]
+      },
+      "actual": {
+        "status": "review",
+        "demo": true,
+        "medical_validated": false,
+        "input_context": {
+          "input_format": "df733c4",
+          "as_of_date": "2026-09-30",
+          "visit_date": "2026-10-01",
+          "checkup_year": 2026,
+          "availability": "normal",
+          "age_full": 42,
+          "age_year": 42,
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+          "defaulted": [
+            "as_of_date",
+            "visit_date",
+            "availability"
+          ]
+        },
+        "package": {
+          "id": "prime_extended",
+          "name": "Check-up «Женский расширенный после 40 лет»",
+          "price": null,
+          "source": "PRIME",
+          "title": "Кандидат по каталогу PRIME",
+          "reason": "Полный возраст 42: диапазон 40–120 лет; дата визита 2026-10-01; пол F.",
+          "url": "https://primegc.kz/services/check-up-zhenskiy-rasshirennyy-paket-posle-40-let/",
+          "preliminary": true
+        },
+        "item_count": 15,
+        "items": [
+          {
+            "procedure_id": "prime_curator_consultation_group",
+            "name": "Консультация врача-куратора (первичная и итоговая)",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_blood_panel_40plus_group",
+            "name": "Расширенные анализы крови (40+ показателей: гормоны, витамины, печёночные и почечные пробы)",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cvd",
+                "match_degree": "unknown",
+                "outcome": "needs_input",
+                "explanation": "prime_overlap упоминает группу 40+ показателей, но её состав не раскрыт; совпадение отдельных анализов не подтверждено."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_lipids_glucose_group",
+            "name": "Липидный профиль и глюкоза",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cvd",
+                "match_degree": "partial",
+                "outcome": "needs_input",
+                "explanation": "В исходной подсказке есть липидный профиль; состав группы не приравнивается ко всем компонентам скрининга."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_hepatitis_bc_group",
+            "name": "Анализ на гепатиты B и C",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_hepatitis",
+                "match_degree": "partial",
+                "outcome": "needs_input",
+                "explanation": "Общая группа анализов B/C сопоставлена с экспресс-тестами anti-HCV и HBsAg только по исходной подсказке; метод и состав требуется уточнить."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_echo_ecg_group",
+            "name": "ЭхоКГ, ЭКГ",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_neck_leg_vessels_doppler",
+            "name": "УЗДГ сосудов шеи и ног",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cerebro",
+                "match_degree": "partial",
+                "outcome": "not_eligible",
+                "explanation": "Исходная подсказка связывает исследование сосудов шеи и ног с УЗДГ брахиоцефального ствола; объёмы различаются, требуется уточнение."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_chest_ct",
+            "name": "КТ грудной клетки",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_lung",
+                "match_degree": "partial",
+                "outcome": "not_eligible",
+                "explanation": "КТ грудной клетки сопоставлено исходной подсказкой с КТ грудной клетки и средостения; совпадение протокола и полного объёма не подтверждено."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_endoscopy_group",
+            "name": "Гастроскопия и колоноскопия под анестезией",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_helicobacter_test",
+            "name": "Тест на хеликобактер",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_gynecology_consult",
+            "name": "Консультация гинеколога",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_ophthalmology_if_indicated",
+            "name": "Консультация офтальмолога (по показаниям)",
+            "required": false,
+            "conditional": true,
+            "clinical_flags": [
+              {
+                "code": "INDICATION_REQUIRED",
+                "message": "В источнике: по показаниям. Необходимость включения определяет врач; автоматически не запланировано.",
+                "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/"
+              }
+            ],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_tumor_markers_expanded_group",
+            "name": "Онкомаркеры: CA 15-3, CA 125, CA 72-4, CA 19-9, РЭА, АФП, S100, CYFRA",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_pap_test",
+            "name": "ПАП-тест",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cervix",
+                "match_degree": "partial",
+                "outcome": "needs_input",
+                "explanation": "ПАП-тест указан в обоих источниках; метод жидкостной цитологии не раскрыт в каталоге, полный скрининг не подтверждён."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_mammography_2d3d",
+            "name": "Маммография (2D/3D)",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_breast",
+                "match_degree": "partial",
+                "outcome": "needs_input",
+                "explanation": "Каталог указывает 2D/3D, правило — четыре снимка и вторую читку; равенство объёма не установлено. Клиническая пометка позиции сохраняется отдельно."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_female_extended_ultrasound_group",
+            "name": "УЗИ малого таза (трансвагинально), молочных желёз, брюшной полости, почек, щитовидной железы",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          }
+        ],
+        "questions": [],
+        "warnings": [
+          {
+            "code": "lossy_form_export",
+            "message": "Импорт df733c4 теряет отрицательные и пустые ответы. Пропуски не восстановлены как «нет»; преобразованные диагнозы не подтверждены."
+          },
+          {
+            "code": "smoking_export_recomputed",
+            "message": "Экспорт smoking не является исходным ответом: стаж рассчитан только по исходным полям, пропуски сохранены."
+          },
+          {
+            "code": "UNVALIDATED",
+            "message": "Медицинские правила не подтверждены врачом. Это демонстрация механики каталога."
+          },
+          {
+            "code": "AGE_40",
+            "message": "Граница 40 лет импортирована из spec/rules.json и требует проверки."
+          },
+          {
+            "code": "TEST_SCHEDULE",
+            "message": "Длительности, ресурсы, слоты и нулевой буфер переходов — тестовые. Порядок категорий требует проверки клиникой."
+          },
+          {
+            "code": "OPAQUE_GROUPS",
+            "message": "Состав каталожных групп не раскрыт. Пересечение с отдельными анализами неизвестно."
+          },
+          {
+            "code": "PRELIMINARY",
+            "message": "Предварительный состав требует решения врача или уточнения отмеченных позиций; расписание не запускалось."
+          }
+        ],
+        "proposed_extras": [],
+        "screening": [
+          {
+            "rule_id": "scr_cvd",
+            "name": "Скрининг АГ, ИБС, сахарного диабета, глаукомы",
+            "outcome": "needs_input",
+            "reason": "Не указано, есть ли динамическое наблюдение по исключениям этого правила; пропуск не означает отрицательный ответ.",
+            "missing_fields": [
+              "registered_on"
+            ],
+            "source": "DSM174 прил. 1 п.1, прил. 2 п.1",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_cerebro",
+            "name": "Скрининг цереброваскулярных заболеваний",
+            "outcome": "not_eligible",
+            "reason": "Пол не соответствует указанным критериям демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.2, прил. 2 п.4",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_breast",
+            "name": "Скрининг рака молочной железы",
+            "outcome": "needs_input",
+            "reason": "Не указано, есть ли динамическое наблюдение по исключениям этого правила; пропуск не означает отрицательный ответ.",
+            "missing_fields": [
+              "registered_on"
+            ],
+            "source": "DSM174 прил. 1 п.3, прил. 2 п.2",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_cervix",
+            "name": "Скрининг рака шейки матки",
+            "outcome": "needs_input",
+            "reason": "Не указано, есть ли динамическое наблюдение по исключениям этого правила; пропуск не означает отрицательный ответ.",
+            "missing_fields": [
+              "registered_on"
+            ],
+            "source": "DSM174 прил. 1 п.4, прил. 2 п.3",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_colorectal",
+            "name": "Скрининг колоректального рака",
+            "outcome": "not_eligible",
+            "reason": "Возраст по году достижения не входит в перечень демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.5, прил. 2 п.5",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_hepatitis",
+            "name": "Скрининг гепатитов B и C",
+            "outcome": "needs_input",
+            "reason": "Не указано, есть ли динамическое наблюдение по исключениям этого правила; пропуск не означает отрицательный ответ.",
+            "missing_fields": [
+              "registered_on"
+            ],
+            "source": "DSM174 прил. 1 п.6 и прил. 2 п.6 в ред. приказа № 75 от 10.07.2026",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_lung",
+            "name": "Скрининг рака лёгкого",
+            "outcome": "not_eligible",
+            "reason": "Возраст по году достижения не входит в перечень демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.7 и прил. 2 п.7 (введены приказом № 75 от 10.07.2026)",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена.",
+              "Соответствие профессии перечню вредных работ по приказу № 170 проверяется отдельно."
+            ]
+          }
+        ],
+        "schedule": {
+          "status": "not_run",
+          "reason": "Предварительный состав требует решения врача или уточнения отмеченных позиций; расписание не запускалось.",
+          "route_action_ids": [],
+          "after_results_action_ids": [
+            "prime_curator_final"
+          ]
+        },
+        "reminder_draft": {
+          "status": "requires_clinician",
+          "due_date": null,
+          "basis": "требует назначения врача",
+          "sent": false
+        },
+        "versions": {
+          "engine": "demo-3",
+          "catalog": "demo-2",
+          "rules": "demo-2",
+          "slots": "demo-2",
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+          "screening": "demo-2"
+        },
+        "errors": []
+      },
+      "difference_reason": "Пакет совпадает, но офтальмолог «по показаниям» требует решения врача: состав предварительный, маршрут не запускается. Отсутствующие conditions/registered не восстановлены как отрицательные ответы; четыре заявленных экраном скрининга требуют уточнения наблюдения. Совпадения услуг не подтверждают оплату."
+    },
+    {
+      "sample_number": 2,
+      "name": "Ж 42, на учёте по давлению, выделения, рак кишечника у отца",
+      "source_screen": {
+        "red_flag": false,
+        "free_rules": [
+          "scr_breast",
+          "scr_cervix",
+          "scr_hepatitis"
+        ],
+        "not_eligible": [
+          "scr_cvd"
+        ],
+        "package": "prime_extended",
+        "package_name": "Check-up «Женский расширенный после 40 лет»",
+        "free_in_package": [
+          "ПАП-тест",
+          "Маммография (2D/3D)"
+        ],
+        "partly_free_in_package": [
+          "Анализ на гепатиты B и C"
+        ],
+        "not_for_pregnancy": [],
+        "extra": [
+          "Обследование на половые инфекции"
+        ],
+        "for_doctor": [
+          "Есть или было: Повышенное давление; Запоры, полипы или опухоль кишечника",
+          "На учёте: Повышенное давление",
+          "В семье: Рак кишечника",
+          "Рак кишечника в семье — обсудить колоноскопию раньше обычного возраста",
+          "Беременностей: 1, родов: 1"
+        ]
+      },
+      "actual": {
+        "status": "review",
+        "demo": true,
+        "medical_validated": false,
+        "input_context": {
+          "input_format": "df733c4",
+          "as_of_date": "2026-09-30",
+          "visit_date": "2026-10-01",
+          "checkup_year": 2026,
+          "availability": "normal",
+          "age_full": 42,
+          "age_year": 42,
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+          "defaulted": [
+            "as_of_date",
+            "visit_date",
+            "availability"
+          ]
+        },
+        "package": {
+          "id": "prime_extended",
+          "name": "Check-up «Женский расширенный после 40 лет»",
+          "price": null,
+          "source": "PRIME",
+          "title": "Кандидат по каталогу PRIME",
+          "reason": "Полный возраст 42: диапазон 40–120 лет; дата визита 2026-10-01; пол F.",
+          "url": "https://primegc.kz/services/check-up-zhenskiy-rasshirennyy-paket-posle-40-let/",
+          "preliminary": true
+        },
+        "item_count": 15,
+        "items": [
+          {
+            "procedure_id": "prime_curator_consultation_group",
+            "name": "Консультация врача-куратора (первичная и итоговая)",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_blood_panel_40plus_group",
+            "name": "Расширенные анализы крови (40+ показателей: гормоны, витамины, печёночные и почечные пробы)",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cvd",
+                "match_degree": "unknown",
+                "outcome": "needs_input",
+                "explanation": "prime_overlap упоминает группу 40+ показателей, но её состав не раскрыт; совпадение отдельных анализов не подтверждено."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_lipids_glucose_group",
+            "name": "Липидный профиль и глюкоза",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cvd",
+                "match_degree": "partial",
+                "outcome": "needs_input",
+                "explanation": "В исходной подсказке есть липидный профиль; состав группы не приравнивается ко всем компонентам скрининга."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_hepatitis_bc_group",
+            "name": "Анализ на гепатиты B и C",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_hepatitis",
+                "match_degree": "partial",
+                "outcome": "needs_input",
+                "explanation": "Общая группа анализов B/C сопоставлена с экспресс-тестами anti-HCV и HBsAg только по исходной подсказке; метод и состав требуется уточнить."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_echo_ecg_group",
+            "name": "ЭхоКГ, ЭКГ",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_neck_leg_vessels_doppler",
+            "name": "УЗДГ сосудов шеи и ног",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cerebro",
+                "match_degree": "partial",
+                "outcome": "not_eligible",
+                "explanation": "Исходная подсказка связывает исследование сосудов шеи и ног с УЗДГ брахиоцефального ствола; объёмы различаются, требуется уточнение."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_chest_ct",
+            "name": "КТ грудной клетки",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_lung",
+                "match_degree": "partial",
+                "outcome": "not_eligible",
+                "explanation": "КТ грудной клетки сопоставлено исходной подсказкой с КТ грудной клетки и средостения; совпадение протокола и полного объёма не подтверждено."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_endoscopy_group",
+            "name": "Гастроскопия и колоноскопия под анестезией",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_helicobacter_test",
+            "name": "Тест на хеликобактер",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_gynecology_consult",
+            "name": "Консультация гинеколога",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_ophthalmology_if_indicated",
+            "name": "Консультация офтальмолога (по показаниям)",
+            "required": false,
+            "conditional": true,
+            "clinical_flags": [
+              {
+                "code": "INDICATION_REQUIRED",
+                "message": "В источнике: по показаниям. Необходимость включения определяет врач; автоматически не запланировано.",
+                "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/"
+              }
+            ],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_tumor_markers_expanded_group",
+            "name": "Онкомаркеры: CA 15-3, CA 125, CA 72-4, CA 19-9, РЭА, АФП, S100, CYFRA",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_pap_test",
+            "name": "ПАП-тест",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cervix",
+                "match_degree": "partial",
+                "outcome": "needs_input",
+                "explanation": "ПАП-тест указан в обоих источниках; метод жидкостной цитологии не раскрыт в каталоге, полный скрининг не подтверждён."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_mammography_2d3d",
+            "name": "Маммография (2D/3D)",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_breast",
+                "match_degree": "partial",
+                "outcome": "needs_input",
+                "explanation": "Каталог указывает 2D/3D, правило — четыре снимка и вторую читку; равенство объёма не установлено. Клиническая пометка позиции сохраняется отдельно."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_female_extended_ultrasound_group",
+            "name": "УЗИ малого таза (трансвагинально), молочных желёз, брюшной полости, почек, щитовидной железы",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          }
+        ],
+        "questions": [],
+        "warnings": [
+          {
+            "code": "lossy_form_export",
+            "message": "Импорт df733c4 теряет отрицательные и пустые ответы. Пропуски не восстановлены как «нет»; преобразованные диагнозы не подтверждены."
+          },
+          {
+            "code": "smoking_export_recomputed",
+            "message": "Экспорт smoking не является исходным ответом: стаж рассчитан только по исходным полям, пропуски сохранены."
+          },
+          {
+            "code": "cmp_family_crc",
+            "message": "В демо сработало правило семейного анамнеза; изменение программы требует обсуждения с врачом",
+            "rule_id": "cmp_family_crc",
+            "source_rule_id": "cmp_family_crc",
+            "explanation": "В демо сработало правило семейного анамнеза; изменение программы требует обсуждения с врачом",
+            "source": "CLINIC_RULE — spec/rules.json:complaints.cmp_family_crc",
+            "validation_status": "demo_unvalidated",
+            "needs_doctor_validation": true,
+            "medical_validated": false
+          },
+          {
+            "code": "UNVALIDATED",
+            "message": "Медицинские правила не подтверждены врачом. Это демонстрация механики каталога."
+          },
+          {
+            "code": "AGE_40",
+            "message": "Граница 40 лет импортирована из spec/rules.json и требует проверки."
+          },
+          {
+            "code": "TEST_SCHEDULE",
+            "message": "Длительности, ресурсы, слоты и нулевой буфер переходов — тестовые. Порядок категорий требует проверки клиникой."
+          },
+          {
+            "code": "OPAQUE_GROUPS",
+            "message": "Состав каталожных групп не раскрыт. Пересечение с отдельными анализами неизвестно."
+          },
+          {
+            "code": "PRELIMINARY",
+            "message": "Предварительный состав требует решения врача или уточнения отмеченных позиций; расписание не запускалось."
+          }
+        ],
+        "proposed_extras": [
+          {
+            "procedure_id": null,
+            "name": "Обследование на половые инфекции",
+            "reason": "Ответ «Да» на вопрос анкеты; обсудите обследование с врачом. Это предложение, не обязательная процедура пакета.",
+            "note": "Точный состав назначает врач",
+            "source": "reference/df733c4/ml/README.md:discharge",
+            "validation_status": "demo_unvalidated",
+            "scheduled": false
+          }
+        ],
+        "screening": [
+          {
+            "rule_id": "scr_cvd",
+            "name": "Скрининг АГ, ИБС, сахарного диабета, глаукомы",
+            "outcome": "needs_input",
+            "reason": "Экспорт анкеты преобразовал широкий ответ в код hypertension. Он не подтверждает диагноз или основание динамического наблюдения; уточните у врача.",
+            "missing_fields": [
+              "registered"
+            ],
+            "source": "DSM174 прил. 1 п.1, прил. 2 п.1",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_cerebro",
+            "name": "Скрининг цереброваскулярных заболеваний",
+            "outcome": "not_eligible",
+            "reason": "Пол не соответствует указанным критериям демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.2, прил. 2 п.4",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_breast",
+            "name": "Скрининг рака молочной железы",
+            "outcome": "needs_input",
+            "reason": "Не указано, есть ли динамическое наблюдение по исключениям этого правила; пропуск не означает отрицательный ответ.",
+            "missing_fields": [
+              "registered_on"
+            ],
+            "source": "DSM174 прил. 1 п.3, прил. 2 п.2",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_cervix",
+            "name": "Скрининг рака шейки матки",
+            "outcome": "needs_input",
+            "reason": "Не указано, есть ли динамическое наблюдение по исключениям этого правила; пропуск не означает отрицательный ответ.",
+            "missing_fields": [
+              "registered_on"
+            ],
+            "source": "DSM174 прил. 1 п.4, прил. 2 п.3",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_colorectal",
+            "name": "Скрининг колоректального рака",
+            "outcome": "not_eligible",
+            "reason": "Возраст по году достижения не входит в перечень демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.5, прил. 2 п.5",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_hepatitis",
+            "name": "Скрининг гепатитов B и C",
+            "outcome": "needs_input",
+            "reason": "Не указано, есть ли динамическое наблюдение по исключениям этого правила; пропуск не означает отрицательный ответ.",
+            "missing_fields": [
+              "registered_on"
+            ],
+            "source": "DSM174 прил. 1 п.6 и прил. 2 п.6 в ред. приказа № 75 от 10.07.2026",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_lung",
+            "name": "Скрининг рака лёгкого",
+            "outcome": "not_eligible",
+            "reason": "Возраст по году достижения не входит в перечень демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.7 и прил. 2 п.7 (введены приказом № 75 от 10.07.2026)",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена.",
+              "Соответствие профессии перечню вредных работ по приказу № 170 проверяется отдельно."
+            ]
+          }
+        ],
+        "schedule": {
+          "status": "not_run",
+          "reason": "Предварительный состав требует решения врача или уточнения отмеченных позиций; расписание не запускалось.",
+          "route_action_ids": [],
+          "after_results_action_ids": [
+            "prime_curator_final"
+          ]
+        },
+        "reminder_draft": {
+          "status": "requires_clinician",
+          "due_date": null,
+          "basis": "требует назначения врача",
+          "sent": false
+        },
+        "versions": {
+          "engine": "demo-3",
+          "catalog": "demo-2",
+          "rules": "demo-2",
+          "slots": "demo-2",
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+          "screening": "demo-2"
+        },
+        "errors": []
+      },
+      "difference_reason": "Пакет предварительный из-за офтальмолога «по показаниям». Импорт hypertension получен преобразованием широкого ответа; подтверждения диагноза нет, поэтому scr_cvd требует уточнения вместо категоричного исключения. Предложение обсудить обследование на половые инфекции сохранено; гинеколог уже включён, вторично не добавлен. Семейный анамнез даёт заметку, а не назначение."
+    },
+    {
+      "sample_number": 3,
+      "name": "Ж 39 (40 исполнится в декабре): пакет базовый, скрининг по году — как 40",
+      "source_screen": {
+        "red_flag": false,
+        "free_rules": [
+          "scr_cvd",
+          "scr_breast",
+          "scr_hepatitis"
+        ],
+        "not_eligible": [],
+        "package": "prime_basic",
+        "package_name": "Check-up «Женский базовый до 40 лет»",
+        "free_in_package": [],
+        "partly_free_in_package": [
+          "Осмотр офтальмолога с измерением давления в глазу",
+          "Липидный профиль и глюкоза"
+        ],
+        "not_for_pregnancy": [],
+        "extra": [],
+        "for_doctor": []
+      },
+      "actual": {
+        "status": "review",
+        "demo": true,
+        "medical_validated": false,
+        "input_context": {
+          "input_format": "df733c4",
+          "as_of_date": "2026-09-30",
+          "visit_date": "2026-10-01",
+          "checkup_year": 2026,
+          "availability": "normal",
+          "age_full": 39,
+          "age_year": 40,
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+          "defaulted": [
+            "as_of_date",
+            "visit_date",
+            "availability"
+          ]
+        },
+        "package": {
+          "id": "prime_basic",
+          "name": "Check-up «Женский базовый до 40 лет»",
+          "price": null,
+          "source": "PRIME",
+          "title": "Кандидат по каталогу PRIME",
+          "reason": "Полный возраст 39: диапазон 18–39 лет; дата визита 2026-10-01; пол F.",
+          "url": "https://primegc.kz/services/zhenskiy-bazovyy-chekap-do-40-let/",
+          "preliminary": true
+        },
+        "item_count": 16,
+        "items": [
+          {
+            "procedure_id": "prime_curator_consultation_group",
+            "name": "Консультация врача-куратора (первичная и итоговая)",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_ophthalmology_pressure_exam",
+            "name": "Осмотр офтальмолога с измерением давления в глазу",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cvd",
+                "match_degree": "partial",
+                "outcome": "needs_input",
+                "explanation": "Измерение внутриглазного давления входит в описанный осмотр; полный осмотр не равен компоненту скрининга."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_basic_blood_group",
+            "name": "Общий анализ крови (34 показателя), С-реактивный белок, коагулограмма",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_lipids_glucose_group",
+            "name": "Липидный профиль и глюкоза",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cvd",
+                "match_degree": "partial",
+                "outcome": "needs_input",
+                "explanation": "В исходной подсказке есть липидный профиль; состав группы не приравнивается ко всем компонентам скрининга."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_thyroid_vitamins_group",
+            "name": "Гормоны щитовидной железы, витамины D и B12",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_liver_kidney_urine_group",
+            "name": "Печёночные и почечные пробы, общий анализ мочи",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_echocardiography",
+            "name": "ЭхоКГ",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_neck_leg_vessels_doppler",
+            "name": "УЗДГ сосудов шеи и ног",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cerebro",
+                "match_degree": "partial",
+                "outcome": "not_eligible",
+                "explanation": "Исходная подсказка связывает исследование сосудов шеи и ног с УЗДГ брахиоцефального ствола; объёмы различаются, требуется уточнение."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_lung_ct",
+            "name": "КТ лёгких",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [
+              {
+                "code": "PREGNANCY_UNKNOWN",
+                "message": "Уточните ответ о беременности до согласования этой позиции.",
+                "source": "reference/df733c4/app/config/fields.py:pregnant"
+              }
+            ],
+            "screening_matches": [
+              {
+                "screening_id": "scr_lung",
+                "match_degree": "partial",
+                "outcome": "not_eligible",
+                "explanation": "КТ лёгких сопоставлено исходной подсказкой с КТ грудной клетки и средостения; совпадение протокола и полного объёма не подтверждено."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_endoscopy_group",
+            "name": "Гастроскопия и колоноскопия под анестезией",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_helicobacter_test",
+            "name": "Тест на хеликобактер",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_gynecology_consult",
+            "name": "Консультация гинеколога",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_ecg",
+            "name": "ЭКГ",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_ferritin_iron_folate_group",
+            "name": "Ферритин, железо, фолиевая кислота",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_transvaginal_ultrasound",
+            "name": "УЗИ малого таза (трансвагинально)",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_breast_ultrasound",
+            "name": "УЗИ молочных желёз",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          }
+        ],
+        "questions": [
+          {
+            "field": "pregnant",
+            "message": "В пакете есть услуги, зависящие от ответа о беременности. Уточните ответ."
+          }
+        ],
+        "warnings": [
+          {
+            "code": "lossy_form_export",
+            "message": "Импорт df733c4 теряет отрицательные и пустые ответы. Пропуски не восстановлены как «нет»; преобразованные диагнозы не подтверждены."
+          },
+          {
+            "code": "smoking_export_recomputed",
+            "message": "Экспорт smoking не является исходным ответом: стаж рассчитан только по исходным полям, пропуски сохранены."
+          },
+          {
+            "code": "UNVALIDATED",
+            "message": "Медицинские правила не подтверждены врачом. Это демонстрация механики каталога."
+          },
+          {
+            "code": "AGE_40",
+            "message": "Граница 40 лет импортирована из spec/rules.json и требует проверки."
+          },
+          {
+            "code": "TEST_SCHEDULE",
+            "message": "Длительности, ресурсы, слоты и нулевой буфер переходов — тестовые. Порядок категорий требует проверки клиникой."
+          },
+          {
+            "code": "OPAQUE_GROUPS",
+            "message": "Состав каталожных групп не раскрыт. Пересечение с отдельными анализами неизвестно."
+          },
+          {
+            "code": "PRELIMINARY",
+            "message": "Предварительный состав требует решения врача или уточнения отмеченных позиций; расписание не запускалось."
+          }
+        ],
+        "proposed_extras": [],
+        "screening": [
+          {
+            "rule_id": "scr_cvd",
+            "name": "Скрининг АГ, ИБС, сахарного диабета, глаукомы",
+            "outcome": "needs_input",
+            "reason": "Не указано, есть ли динамическое наблюдение по исключениям этого правила; пропуск не означает отрицательный ответ.",
+            "missing_fields": [
+              "registered_on"
+            ],
+            "source": "DSM174 прил. 1 п.1, прил. 2 п.1",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_cerebro",
+            "name": "Скрининг цереброваскулярных заболеваний",
+            "outcome": "not_eligible",
+            "reason": "Пол не соответствует указанным критериям демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.2, прил. 2 п.4",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_breast",
+            "name": "Скрининг рака молочной железы",
+            "outcome": "needs_input",
+            "reason": "Не указано, есть ли динамическое наблюдение по исключениям этого правила; пропуск не означает отрицательный ответ.",
+            "missing_fields": [
+              "registered_on"
+            ],
+            "source": "DSM174 прил. 1 п.3, прил. 2 п.2",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_cervix",
+            "name": "Скрининг рака шейки матки",
+            "outcome": "not_eligible",
+            "reason": "Возраст по году достижения не входит в перечень демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.4, прил. 2 п.3",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_colorectal",
+            "name": "Скрининг колоректального рака",
+            "outcome": "not_eligible",
+            "reason": "Возраст по году достижения не входит в перечень демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.5, прил. 2 п.5",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_hepatitis",
+            "name": "Скрининг гепатитов B и C",
+            "outcome": "needs_input",
+            "reason": "Не указано, есть ли динамическое наблюдение по исключениям этого правила; пропуск не означает отрицательный ответ. Для этого правила нужен ответ о беременности, если вопрос применим.",
+            "missing_fields": [
+              "registered_on",
+              "pregnant"
+            ],
+            "source": "DSM174 прил. 1 п.6 и прил. 2 п.6 в ред. приказа № 75 от 10.07.2026",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_lung",
+            "name": "Скрининг рака лёгкого",
+            "outcome": "not_eligible",
+            "reason": "Возраст по году достижения не входит в перечень демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.7 и прил. 2 п.7 (введены приказом № 75 от 10.07.2026)",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена.",
+              "Соответствие профессии перечню вредных работ по приказу № 170 проверяется отдельно."
+            ]
+          }
+        ],
+        "schedule": {
+          "status": "not_run",
+          "reason": "Предварительный состав требует решения врача или уточнения отмеченных позиций; расписание не запускалось.",
+          "route_action_ids": [],
+          "after_results_action_ids": [
+            "prime_curator_final"
+          ]
+        },
+        "reminder_draft": {
+          "status": "requires_clinician",
+          "due_date": null,
+          "basis": "требует назначения врача",
+          "sent": false
+        },
+        "versions": {
+          "engine": "demo-3",
+          "catalog": "demo-2",
+          "rules": "demo-2",
+          "slots": "demo-2",
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+          "screening": "demo-2"
+        },
+        "errors": []
+      },
+      "difference_reason": "Полный возраст 39, возраст по году 40: возрастной пакет basic совпадает. Ответ pregnant отсутствует; его нельзя заменить на «нет», а КТ зависит от этого уточнения. Поэтому review без расписания. Неизвестное наблюдение и ответ о беременности отдельно отражены в скринингах."
+    },
+    {
+      "sample_number": 4,
+      "name": "Ж 44, беременна",
+      "source_screen": {
+        "red_flag": false,
+        "free_rules": [
+          "scr_cvd",
+          "scr_breast"
+        ],
+        "not_eligible": [
+          "scr_hepatitis"
+        ],
+        "package": "prime_extended",
+        "package_name": "Check-up «Женский расширенный после 40 лет»",
+        "free_in_package": [
+          "Маммография (2D/3D)"
+        ],
+        "partly_free_in_package": [
+          "Расширенные анализы крови (40+ показателей: гормоны, витамины, печёночные и почечные пробы)",
+          "Липидный профиль и глюкоза"
+        ],
+        "not_for_pregnancy": [
+          "КТ грудной клетки",
+          "Тест на хеликобактер",
+          "Маммография (2D/3D)"
+        ],
+        "extra": [],
+        "for_doctor": [
+          "Беременность: Да",
+          "Беременностей: 1"
+        ]
+      },
+      "actual": {
+        "status": "review",
+        "demo": true,
+        "medical_validated": false,
+        "input_context": {
+          "input_format": "df733c4",
+          "as_of_date": "2026-09-30",
+          "visit_date": "2026-10-01",
+          "checkup_year": 2026,
+          "availability": "normal",
+          "age_full": 44,
+          "age_year": 44,
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+          "defaulted": [
+            "as_of_date",
+            "visit_date",
+            "availability"
+          ]
+        },
+        "package": {
+          "id": "prime_extended",
+          "name": "Check-up «Женский расширенный после 40 лет»",
+          "price": null,
+          "source": "PRIME",
+          "title": "Кандидат по каталогу PRIME",
+          "reason": "Полный возраст 44: диапазон 40–120 лет; дата визита 2026-10-01; пол F.",
+          "url": "https://primegc.kz/services/check-up-zhenskiy-rasshirennyy-paket-posle-40-let/",
+          "preliminary": true
+        },
+        "item_count": 15,
+        "items": [
+          {
+            "procedure_id": "prime_curator_consultation_group",
+            "name": "Консультация врача-куратора (первичная и итоговая)",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_blood_panel_40plus_group",
+            "name": "Расширенные анализы крови (40+ показателей: гормоны, витамины, печёночные и почечные пробы)",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cvd",
+                "match_degree": "unknown",
+                "outcome": "needs_input",
+                "explanation": "prime_overlap упоминает группу 40+ показателей, но её состав не раскрыт; совпадение отдельных анализов не подтверждено."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_lipids_glucose_group",
+            "name": "Липидный профиль и глюкоза",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cvd",
+                "match_degree": "partial",
+                "outcome": "needs_input",
+                "explanation": "В исходной подсказке есть липидный профиль; состав группы не приравнивается ко всем компонентам скрининга."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_hepatitis_bc_group",
+            "name": "Анализ на гепатиты B и C",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_hepatitis",
+                "match_degree": "partial",
+                "outcome": "not_eligible",
+                "explanation": "Общая группа анализов B/C сопоставлена с экспресс-тестами anti-HCV и HBsAg только по исходной подсказке; метод и состав требуется уточнить."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_echo_ecg_group",
+            "name": "ЭхоКГ, ЭКГ",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_neck_leg_vessels_doppler",
+            "name": "УЗДГ сосудов шеи и ног",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cerebro",
+                "match_degree": "partial",
+                "outcome": "not_eligible",
+                "explanation": "Исходная подсказка связывает исследование сосудов шеи и ног с УЗДГ брахиоцефального ствола; объёмы различаются, требуется уточнение."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_chest_ct",
+            "name": "КТ грудной клетки",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [
+              {
+                "code": "PREGNANCY_REVIEW",
+                "message": "По демонстрационному правилу анкеты требуется решение врача; КТ/маммография не включаются в автоматически согласованный маршрут.",
+                "source": "reference/df733c4/app/config/fields.py:pregnant"
+              }
+            ],
+            "screening_matches": [
+              {
+                "screening_id": "scr_lung",
+                "match_degree": "partial",
+                "outcome": "not_eligible",
+                "explanation": "КТ грудной клетки сопоставлено исходной подсказкой с КТ грудной клетки и средостения; совпадение протокола и полного объёма не подтверждено."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_endoscopy_group",
+            "name": "Гастроскопия и колоноскопия под анестезией",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_helicobacter_test",
+            "name": "Тест на хеликобактер",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_gynecology_consult",
+            "name": "Консультация гинеколога",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_ophthalmology_if_indicated",
+            "name": "Консультация офтальмолога (по показаниям)",
+            "required": false,
+            "conditional": true,
+            "clinical_flags": [
+              {
+                "code": "INDICATION_REQUIRED",
+                "message": "В источнике: по показаниям. Необходимость включения определяет врач; автоматически не запланировано.",
+                "source": "PRIME — spec/rules.json:packages @df733c43d5ab655ef08036366a44bae04e59182f; https://primegc.kz/check-up/"
+              }
+            ],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_tumor_markers_expanded_group",
+            "name": "Онкомаркеры: CA 15-3, CA 125, CA 72-4, CA 19-9, РЭА, АФП, S100, CYFRA",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_pap_test",
+            "name": "ПАП-тест",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cervix",
+                "match_degree": "partial",
+                "outcome": "not_eligible",
+                "explanation": "ПАП-тест указан в обоих источниках; метод жидкостной цитологии не раскрыт в каталоге, полный скрининг не подтверждён."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_mammography_2d3d",
+            "name": "Маммография (2D/3D)",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [
+              {
+                "code": "PREGNANCY_REVIEW",
+                "message": "По демонстрационному правилу анкеты требуется решение врача; КТ/маммография не включаются в автоматически согласованный маршрут.",
+                "source": "reference/df733c4/app/config/fields.py:pregnant"
+              }
+            ],
+            "screening_matches": [
+              {
+                "screening_id": "scr_breast",
+                "match_degree": "partial",
+                "outcome": "needs_input",
+                "explanation": "Каталог указывает 2D/3D, правило — четыре снимка и вторую читку; равенство объёма не установлено. Клиническая пометка позиции сохраняется отдельно."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_female_extended_ultrasound_group",
+            "name": "УЗИ малого таза (трансвагинально), молочных желёз, брюшной полости, почек, щитовидной железы",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          }
+        ],
+        "questions": [],
+        "warnings": [
+          {
+            "code": "lossy_form_export",
+            "message": "Импорт df733c4 теряет отрицательные и пустые ответы. Пропуски не восстановлены как «нет»; преобразованные диагнозы не подтверждены."
+          },
+          {
+            "code": "UNVALIDATED",
+            "message": "Медицинские правила не подтверждены врачом. Это демонстрация механики каталога."
+          },
+          {
+            "code": "AGE_40",
+            "message": "Граница 40 лет импортирована из spec/rules.json и требует проверки."
+          },
+          {
+            "code": "TEST_SCHEDULE",
+            "message": "Длительности, ресурсы, слоты и нулевой буфер переходов — тестовые. Порядок категорий требует проверки клиникой."
+          },
+          {
+            "code": "OPAQUE_GROUPS",
+            "message": "Состав каталожных групп не раскрыт. Пересечение с отдельными анализами неизвестно."
+          },
+          {
+            "code": "PRELIMINARY",
+            "message": "Предварительный состав требует решения врача или уточнения отмеченных позиций; расписание не запускалось."
+          }
+        ],
+        "proposed_extras": [],
+        "screening": [
+          {
+            "rule_id": "scr_cvd",
+            "name": "Скрининг АГ, ИБС, сахарного диабета, глаукомы",
+            "outcome": "needs_input",
+            "reason": "Не указано, есть ли динамическое наблюдение по исключениям этого правила; пропуск не означает отрицательный ответ.",
+            "missing_fields": [
+              "registered_on"
+            ],
+            "source": "DSM174 прил. 1 п.1, прил. 2 п.1",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_cerebro",
+            "name": "Скрининг цереброваскулярных заболеваний",
+            "outcome": "not_eligible",
+            "reason": "Пол не соответствует указанным критериям демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.2, прил. 2 п.4",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_breast",
+            "name": "Скрининг рака молочной железы",
+            "outcome": "needs_input",
+            "reason": "Не указано, есть ли динамическое наблюдение по исключениям этого правила; пропуск не означает отрицательный ответ.",
+            "missing_fields": [
+              "registered_on"
+            ],
+            "source": "DSM174 прил. 1 п.3, прил. 2 п.2",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_cervix",
+            "name": "Скрининг рака шейки матки",
+            "outcome": "not_eligible",
+            "reason": "Возраст по году достижения не входит в перечень демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.4, прил. 2 п.3",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_colorectal",
+            "name": "Скрининг колоректального рака",
+            "outcome": "not_eligible",
+            "reason": "Возраст по году достижения не входит в перечень демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.5, прил. 2 п.5",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_hepatitis",
+            "name": "Скрининг гепатитов B и C",
+            "outcome": "not_eligible",
+            "reason": "В предоставленном JSON у этого правила задано not_pregnant. Ответ «да» не соответствует этому критерию; дальнейшие действия определяет врач.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.6 и прил. 2 п.6 в ред. приказа № 75 от 10.07.2026",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_lung",
+            "name": "Скрининг рака лёгкого",
+            "outcome": "not_eligible",
+            "reason": "Возраст по году достижения не входит в перечень демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.7 и прил. 2 п.7 (введены приказом № 75 от 10.07.2026)",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена.",
+              "Соответствие профессии перечню вредных работ по приказу № 170 проверяется отдельно."
+            ]
+          }
+        ],
+        "schedule": {
+          "status": "not_run",
+          "reason": "Предварительный состав требует решения врача или уточнения отмеченных позиций; расписание не запускалось.",
+          "route_action_ids": [],
+          "after_results_action_ids": [
+            "prime_curator_final"
+          ]
+        },
+        "reminder_draft": {
+          "status": "requires_clinician",
+          "due_date": null,
+          "basis": "требует назначения врача",
+          "sent": false
+        },
+        "versions": {
+          "engine": "demo-3",
+          "catalog": "demo-2",
+          "rules": "demo-2",
+          "slots": "demo-2",
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+          "screening": "demo-2"
+        },
+        "errors": []
+      },
+      "difference_reason": "КТ грудной клетки и маммография требуют решения врача при pregnant=yes; исходная ошибочная пометка хеликобактера устранена явными ID/тегами. Совпадение со скринингом не скрывает клиническое ограничение. Дополнительно остаётся условная офтальмология; полного согласованного маршрута нет."
+    },
+    {
+      "sample_number": 5,
+      "name": "М 38, боль при мочеиспускании",
+      "source_screen": {
+        "red_flag": false,
+        "free_rules": [
+          "scr_hepatitis"
+        ],
+        "not_eligible": [],
+        "package": "prime_basic",
+        "package_name": "Check-up «Мужской базовый до 40 лет»",
+        "free_in_package": [],
+        "partly_free_in_package": [],
+        "not_for_pregnancy": [],
+        "extra": [
+          "Обследование на половые инфекции",
+          "Консультация уролога"
+        ],
+        "for_doctor": []
+      },
+      "actual": {
+        "status": "ready",
+        "demo": true,
+        "medical_validated": false,
+        "input_context": {
+          "input_format": "df733c4",
+          "as_of_date": "2026-09-30",
+          "visit_date": "2026-10-01",
+          "checkup_year": 2026,
+          "availability": "normal",
+          "age_full": 38,
+          "age_year": 38,
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+          "defaulted": [
+            "as_of_date",
+            "visit_date",
+            "availability"
+          ]
+        },
+        "package": {
+          "id": "prime_basic",
+          "name": "Check-up «Мужской базовый до 40 лет»",
+          "price": null,
+          "source": "PRIME",
+          "title": "Кандидат по каталогу PRIME",
+          "reason": "Полный возраст 38: диапазон 18–39 лет; дата визита 2026-10-01; пол M.",
+          "url": "https://primegc.kz/services/muzhskoy-bazovyy-check-up-do-40-let/",
+          "preliminary": false
+        },
+        "item_count": 14,
+        "items": [
+          {
+            "procedure_id": "prime_curator_consultation_group",
+            "name": "Консультация врача-куратора (первичная и итоговая)",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_ophthalmology_pressure_exam",
+            "name": "Осмотр офтальмолога с измерением давления в глазу",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cvd",
+                "match_degree": "partial",
+                "outcome": "not_eligible",
+                "explanation": "Измерение внутриглазного давления входит в описанный осмотр; полный осмотр не равен компоненту скрининга."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_basic_blood_group",
+            "name": "Общий анализ крови (34 показателя), С-реактивный белок, коагулограмма",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_lipids_glucose_group",
+            "name": "Липидный профиль и глюкоза",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cvd",
+                "match_degree": "partial",
+                "outcome": "not_eligible",
+                "explanation": "В исходной подсказке есть липидный профиль; состав группы не приравнивается ко всем компонентам скрининга."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_thyroid_vitamins_group",
+            "name": "Гормоны щитовидной железы, витамины D и B12",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_liver_kidney_urine_group",
+            "name": "Печёночные и почечные пробы, общий анализ мочи",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_echocardiography",
+            "name": "ЭхоКГ",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_neck_leg_vessels_doppler",
+            "name": "УЗДГ сосудов шеи и ног",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cerebro",
+                "match_degree": "partial",
+                "outcome": "not_eligible",
+                "explanation": "Исходная подсказка связывает исследование сосудов шеи и ног с УЗДГ брахиоцефального ствола; объёмы различаются, требуется уточнение."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_lung_ct",
+            "name": "КТ лёгких",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_lung",
+                "match_degree": "partial",
+                "outcome": "not_eligible",
+                "explanation": "КТ лёгких сопоставлено исходной подсказкой с КТ грудной клетки и средостения; совпадение протокола и полного объёма не подтверждено."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_endoscopy_group",
+            "name": "Гастроскопия и колоноскопия под анестезией",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_helicobacter_test",
+            "name": "Тест на хеликобактер",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_hba1c",
+            "name": "Гликированный гемоглобин",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cvd",
+                "match_degree": "exact",
+                "outcome": "not_eligible",
+                "explanation": "Явное соответствие на уровне компонента «гликированный гемоглобин»; это не весь скрининг и не подтверждение оплаты."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_psa_total_free_group",
+            "name": "ПСА общий и свободный",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_prostate_bladder_scrotum_ultrasound_group",
+            "name": "УЗИ предстательной железы (ТРУЗИ), мочевого пузыря и мошонки",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          }
+        ],
+        "questions": [],
+        "warnings": [
+          {
+            "code": "lossy_form_export",
+            "message": "Импорт df733c4 теряет отрицательные и пустые ответы. Пропуски не восстановлены как «нет»; преобразованные диагнозы не подтверждены."
+          },
+          {
+            "code": "smoking_export_recomputed",
+            "message": "Экспорт smoking не является исходным ответом: стаж рассчитан только по исходным полям, пропуски сохранены."
+          },
+          {
+            "code": "UNVALIDATED",
+            "message": "Медицинские правила не подтверждены врачом. Это демонстрация механики каталога."
+          },
+          {
+            "code": "AGE_40",
+            "message": "Граница 40 лет импортирована из spec/rules.json и требует проверки."
+          },
+          {
+            "code": "TEST_SCHEDULE",
+            "message": "Длительности, ресурсы, слоты и нулевой буфер переходов — тестовые. Порядок категорий требует проверки клиникой."
+          },
+          {
+            "code": "OPAQUE_GROUPS",
+            "message": "Состав каталожных групп не раскрыт. Пересечение с отдельными анализами неизвестно."
+          }
+        ],
+        "proposed_extras": [
+          {
+            "procedure_id": null,
+            "name": "Обследование на половые инфекции",
+            "reason": "Ответ «Да» на вопрос анкеты; обсудите обследование с врачом. Это предложение, не обязательная процедура пакета.",
+            "note": "Точный состав назначает врач",
+            "source": "reference/df733c4/ml/README.md:dysuria",
+            "validation_status": "demo_unvalidated",
+            "scheduled": false
+          },
+          {
+            "procedure_id": "prime_urology_consult",
+            "name": "Консультация уролога",
+            "reason": "Ответ «Да» на вопрос анкеты; обсудите обследование с врачом. Это предложение, не обязательная процедура пакета.",
+            "source": "reference/df733c4/ml/README.md:dysuria",
+            "validation_status": "demo_unvalidated",
+            "scheduled": false
+          }
+        ],
+        "screening": [
+          {
+            "rule_id": "scr_cvd",
+            "name": "Скрининг АГ, ИБС, сахарного диабета, глаукомы",
+            "outcome": "not_eligible",
+            "reason": "Возраст по году достижения не входит в перечень демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.1, прил. 2 п.1",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_cerebro",
+            "name": "Скрининг цереброваскулярных заболеваний",
+            "outcome": "not_eligible",
+            "reason": "Возраст по году достижения не входит в перечень демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.2, прил. 2 п.4",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_breast",
+            "name": "Скрининг рака молочной железы",
+            "outcome": "not_eligible",
+            "reason": "Пол не соответствует указанным критериям демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.3, прил. 2 п.2",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_cervix",
+            "name": "Скрининг рака шейки матки",
+            "outcome": "not_eligible",
+            "reason": "Пол не соответствует указанным критериям демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.4, прил. 2 п.3",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_colorectal",
+            "name": "Скрининг колоректального рака",
+            "outcome": "not_eligible",
+            "reason": "Возраст по году достижения не входит в перечень демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.5, прил. 2 п.5",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_hepatitis",
+            "name": "Скрининг гепатитов B и C",
+            "outcome": "needs_input",
+            "reason": "Не указано, есть ли динамическое наблюдение по исключениям этого правила; пропуск не означает отрицательный ответ.",
+            "missing_fields": [
+              "registered_on"
+            ],
+            "source": "DSM174 прил. 1 п.6 и прил. 2 п.6 в ред. приказа № 75 от 10.07.2026",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_lung",
+            "name": "Скрининг рака лёгкого",
+            "outcome": "not_eligible",
+            "reason": "Возраст по году достижения не входит в перечень демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.7 и прил. 2 п.7 (введены приказом № 75 от 10.07.2026)",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена.",
+              "Соответствие профессии перечню вредных работ по приказу № 170 проверяется отдельно."
+            ]
+          }
+        ],
+        "schedule": {
+          "status": "feasible",
+          "reason": null,
+          "route_action_ids": [
+            "prime_curator_initial",
+            "prime_basic_blood_group",
+            "prime_hba1c",
+            "prime_helicobacter_test",
+            "prime_liver_kidney_urine_group",
+            "prime_lipids_glucose_group",
+            "prime_psa_total_free_group",
+            "prime_thyroid_vitamins_group",
+            "prime_prostate_bladder_scrotum_ultrasound_group",
+            "prime_echocardiography",
+            "prime_neck_leg_vessels_doppler",
+            "prime_lung_ct",
+            "prime_ophthalmology_pressure_exam",
+            "prime_endoscopy_group"
+          ],
+          "after_results_action_ids": [
+            "prime_curator_final"
+          ]
+        },
+        "reminder_draft": {
+          "status": "requires_clinician",
+          "due_date": null,
+          "basis": "требует назначения врача",
+          "sent": false
+        },
+        "versions": {
+          "engine": "demo-3",
+          "catalog": "demo-2",
+          "rules": "demo-2",
+          "slots": "demo-2",
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+          "screening": "demo-2"
+        },
+        "errors": []
+      },
+      "difference_reason": "Пакет basic и два предложения для обсуждения совпадают с экраном. Обследование на половые инфекции и отсутствующий в этом пакете уролог остаются предложениями, не оплаченной или запланированной частью пакета. Отсутствующее наблюдение не превращается в «нет»: scr_hepatitis требует уточнения, PRIME может быть собран."
+    },
+    {
+      "sample_number": 6,
+      "name": "М 52, курит 25 лет по пачке",
+      "source_screen": {
+        "red_flag": false,
+        "free_rules": [
+          "scr_cvd",
+          "scr_cerebro",
+          "scr_colorectal",
+          "scr_hepatitis",
+          "scr_lung"
+        ],
+        "not_eligible": [],
+        "package": "prime_extended",
+        "package_name": "Check-up «Мужской расширенный после 40 лет»",
+        "free_in_package": [
+          "Гликированный гемоглобин"
+        ],
+        "partly_free_in_package": [
+          "Расширенные анализы крови (40+ показателей: гормоны, витамины, печёночные и почечные пробы)",
+          "Липидный профиль и глюкоза",
+          "Анализ на гепатиты B и C",
+          "УЗДГ сосудов шеи и ног",
+          "КТ грудной клетки"
+        ],
+        "not_for_pregnancy": [],
+        "extra": [],
+        "for_doctor": [
+          "Курение: Курю, ≈ 25 пачка-лет"
+        ]
+      },
+      "actual": {
+        "status": "ready",
+        "demo": true,
+        "medical_validated": false,
+        "input_context": {
+          "input_format": "df733c4",
+          "as_of_date": "2026-09-30",
+          "visit_date": "2026-10-01",
+          "checkup_year": 2026,
+          "availability": "normal",
+          "age_full": 52,
+          "age_year": 52,
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+          "defaulted": [
+            "as_of_date",
+            "visit_date",
+            "availability"
+          ]
+        },
+        "package": {
+          "id": "prime_extended",
+          "name": "Check-up «Мужской расширенный после 40 лет»",
+          "price": null,
+          "source": "PRIME",
+          "title": "Кандидат по каталогу PRIME",
+          "reason": "Полный возраст 52: диапазон 40–120 лет; дата визита 2026-10-01; пол M.",
+          "url": "https://primegc.kz/services/check-up-muzhskoy-rasshirennyy-posle-40-let/",
+          "preliminary": false
+        },
+        "item_count": 15,
+        "items": [
+          {
+            "procedure_id": "prime_curator_consultation_group",
+            "name": "Консультация врача-куратора (первичная и итоговая)",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_blood_panel_40plus_group",
+            "name": "Расширенные анализы крови (40+ показателей: гормоны, витамины, печёночные и почечные пробы)",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cvd",
+                "match_degree": "unknown",
+                "outcome": "needs_input",
+                "explanation": "prime_overlap упоминает группу 40+ показателей, но её состав не раскрыт; совпадение отдельных анализов не подтверждено."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_lipids_glucose_group",
+            "name": "Липидный профиль и глюкоза",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cvd",
+                "match_degree": "partial",
+                "outcome": "needs_input",
+                "explanation": "В исходной подсказке есть липидный профиль; состав группы не приравнивается ко всем компонентам скрининга."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_hepatitis_bc_group",
+            "name": "Анализ на гепатиты B и C",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_hepatitis",
+                "match_degree": "partial",
+                "outcome": "needs_input",
+                "explanation": "Общая группа анализов B/C сопоставлена с экспресс-тестами anti-HCV и HBsAg только по исходной подсказке; метод и состав требуется уточнить."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_echo_ecg_group",
+            "name": "ЭхоКГ, ЭКГ",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_neck_leg_vessels_doppler",
+            "name": "УЗДГ сосудов шеи и ног",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cerebro",
+                "match_degree": "partial",
+                "outcome": "needs_input",
+                "explanation": "Исходная подсказка связывает исследование сосудов шеи и ног с УЗДГ брахиоцефального ствола; объёмы различаются, требуется уточнение."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_chest_ct",
+            "name": "КТ грудной клетки",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_lung",
+                "match_degree": "partial",
+                "outcome": "needs_input",
+                "explanation": "КТ грудной клетки сопоставлено исходной подсказкой с КТ грудной клетки и средостения; совпадение протокола и полного объёма не подтверждено."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_endoscopy_group",
+            "name": "Гастроскопия и колоноскопия под анестезией",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_helicobacter_test",
+            "name": "Тест на хеликобактер",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_urology_consult",
+            "name": "Консультация уролога",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_ophthalmology_consult",
+            "name": "Консультация офтальмолога",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_hba1c",
+            "name": "Гликированный гемоглобин",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cvd",
+                "match_degree": "exact",
+                "outcome": "needs_input",
+                "explanation": "Явное соответствие на уровне компонента «гликированный гемоглобин»; это не весь скрининг и не подтверждение оплаты."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_psa_total_free_group",
+            "name": "ПСА общий и свободный",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_prostate_scrotum_ultrasound_group",
+            "name": "УЗИ предстательной железы (ТРУЗИ) и мошонки",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_abdomen_thyroid_ultrasound_group",
+            "name": "УЗИ брюшной полости и щитовидной железы",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          }
+        ],
+        "questions": [],
+        "warnings": [
+          {
+            "code": "lossy_form_export",
+            "message": "Импорт df733c4 теряет отрицательные и пустые ответы. Пропуски не восстановлены как «нет»; преобразованные диагнозы не подтверждены."
+          },
+          {
+            "code": "smoking_export_recomputed",
+            "message": "Экспорт smoking не является исходным ответом: стаж рассчитан только по исходным полям, пропуски сохранены."
+          },
+          {
+            "code": "UNVALIDATED",
+            "message": "Медицинские правила не подтверждены врачом. Это демонстрация механики каталога."
+          },
+          {
+            "code": "AGE_40",
+            "message": "Граница 40 лет импортирована из spec/rules.json и требует проверки."
+          },
+          {
+            "code": "TEST_SCHEDULE",
+            "message": "Длительности, ресурсы, слоты и нулевой буфер переходов — тестовые. Порядок категорий требует проверки клиникой."
+          },
+          {
+            "code": "OPAQUE_GROUPS",
+            "message": "Состав каталожных групп не раскрыт. Пересечение с отдельными анализами неизвестно."
+          }
+        ],
+        "proposed_extras": [],
+        "screening": [
+          {
+            "rule_id": "scr_cvd",
+            "name": "Скрининг АГ, ИБС, сахарного диабета, глаукомы",
+            "outcome": "needs_input",
+            "reason": "Не указано, есть ли динамическое наблюдение по исключениям этого правила; пропуск не означает отрицательный ответ.",
+            "missing_fields": [
+              "registered_on"
+            ],
+            "source": "DSM174 прил. 1 п.1, прил. 2 п.1",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_cerebro",
+            "name": "Скрининг цереброваскулярных заболеваний",
+            "outcome": "needs_input",
+            "reason": "Не указано, есть ли динамическое наблюдение по исключениям этого правила; пропуск не означает отрицательный ответ.",
+            "missing_fields": [
+              "registered_on"
+            ],
+            "source": "DSM174 прил. 1 п.2, прил. 2 п.4",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_breast",
+            "name": "Скрининг рака молочной железы",
+            "outcome": "not_eligible",
+            "reason": "Пол не соответствует указанным критериям демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.3, прил. 2 п.2",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_cervix",
+            "name": "Скрининг рака шейки матки",
+            "outcome": "not_eligible",
+            "reason": "Пол не соответствует указанным критериям демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.4, прил. 2 п.3",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_colorectal",
+            "name": "Скрининг колоректального рака",
+            "outcome": "needs_input",
+            "reason": "Не указано, есть ли динамическое наблюдение по исключениям этого правила; пропуск не означает отрицательный ответ.",
+            "missing_fields": [
+              "registered_on"
+            ],
+            "source": "DSM174 прил. 1 п.5, прил. 2 п.5",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_hepatitis",
+            "name": "Скрининг гепатитов B и C",
+            "outcome": "needs_input",
+            "reason": "Не указано, есть ли динамическое наблюдение по исключениям этого правила; пропуск не означает отрицательный ответ.",
+            "missing_fields": [
+              "registered_on"
+            ],
+            "source": "DSM174 прил. 1 п.6 и прил. 2 п.6 в ред. приказа № 75 от 10.07.2026",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_lung",
+            "name": "Скрининг рака лёгкого",
+            "outcome": "needs_input",
+            "reason": "Не указано, есть ли динамическое наблюдение по исключениям этого правила; пропуск не означает отрицательный ответ.",
+            "missing_fields": [
+              "registered_on"
+            ],
+            "source": "DSM174 прил. 1 п.7 и прил. 2 п.7 (введены приказом № 75 от 10.07.2026)",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена.",
+              "Соответствие профессии перечню вредных работ по приказу № 170 проверяется отдельно."
+            ]
+          }
+        ],
+        "schedule": {
+          "status": "feasible",
+          "reason": null,
+          "route_action_ids": [
+            "prime_curator_initial",
+            "prime_blood_panel_40plus_group",
+            "prime_hba1c",
+            "prime_helicobacter_test",
+            "prime_hepatitis_bc_group",
+            "prime_lipids_glucose_group",
+            "prime_psa_total_free_group",
+            "prime_abdomen_thyroid_ultrasound_group",
+            "prime_echo_ecg_group",
+            "prime_neck_leg_vessels_doppler",
+            "prime_prostate_scrotum_ultrasound_group",
+            "prime_chest_ct",
+            "prime_ophthalmology_consult",
+            "prime_urology_consult",
+            "prime_endoscopy_group"
+          ],
+          "after_results_action_ids": [
+            "prime_curator_final"
+          ]
+        },
+        "reminder_draft": {
+          "status": "requires_clinician",
+          "due_date": null,
+          "basis": "требует назначения врача",
+          "sent": false
+        },
+        "versions": {
+          "engine": "demo-3",
+          "catalog": "demo-2",
+          "rules": "demo-2",
+          "slots": "demo-2",
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+          "screening": "demo-2"
+        },
+        "errors": []
+      },
+      "difference_reason": "Пакет extended и рассчитанные 25 пачка-лет совпадают. Отсутствующие отрицательные ответы об учёте не восстановлены: пять возрастных/рисковых скринингов требуют уточнения наблюдения. Истинная ветвь курения достаточна для OR, ответ о вредной работе не требуется для этой ветви. Скрининговые вопросы не блокируют маршрут PRIME."
+    },
+    {
+      "sample_number": 7,
+      "name": "М 50, на учёте по кишечнику, вредное производство",
+      "source_screen": {
+        "red_flag": false,
+        "free_rules": [
+          "scr_cvd",
+          "scr_cerebro",
+          "scr_hepatitis",
+          "scr_lung"
+        ],
+        "not_eligible": [
+          "scr_colorectal"
+        ],
+        "package": "prime_extended",
+        "package_name": "Check-up «Мужской расширенный после 40 лет»",
+        "free_in_package": [
+          "Гликированный гемоглобин"
+        ],
+        "partly_free_in_package": [
+          "Расширенные анализы крови (40+ показателей: гормоны, витамины, печёночные и почечные пробы)",
+          "Липидный профиль и глюкоза",
+          "Анализ на гепатиты B и C",
+          "УЗДГ сосудов шеи и ног",
+          "КТ грудной клетки"
+        ],
+        "not_for_pregnancy": [],
+        "extra": [],
+        "for_doctor": [
+          "Есть или было: Запоры, полипы или опухоль кишечника",
+          "На учёте: Запоры, полипы или опухоль кишечника"
+        ]
+      },
+      "actual": {
+        "status": "ready",
+        "demo": true,
+        "medical_validated": false,
+        "input_context": {
+          "input_format": "df733c4",
+          "as_of_date": "2026-09-30",
+          "visit_date": "2026-10-01",
+          "checkup_year": 2026,
+          "availability": "normal",
+          "age_full": 50,
+          "age_year": 50,
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+          "defaulted": [
+            "as_of_date",
+            "visit_date",
+            "availability"
+          ]
+        },
+        "package": {
+          "id": "prime_extended",
+          "name": "Check-up «Мужской расширенный после 40 лет»",
+          "price": null,
+          "source": "PRIME",
+          "title": "Кандидат по каталогу PRIME",
+          "reason": "Полный возраст 50: диапазон 40–120 лет; дата визита 2026-10-01; пол M.",
+          "url": "https://primegc.kz/services/check-up-muzhskoy-rasshirennyy-posle-40-let/",
+          "preliminary": false
+        },
+        "item_count": 15,
+        "items": [
+          {
+            "procedure_id": "prime_curator_consultation_group",
+            "name": "Консультация врача-куратора (первичная и итоговая)",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_blood_panel_40plus_group",
+            "name": "Расширенные анализы крови (40+ показателей: гормоны, витамины, печёночные и почечные пробы)",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cvd",
+                "match_degree": "unknown",
+                "outcome": "needs_input",
+                "explanation": "prime_overlap упоминает группу 40+ показателей, но её состав не раскрыт; совпадение отдельных анализов не подтверждено."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_lipids_glucose_group",
+            "name": "Липидный профиль и глюкоза",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cvd",
+                "match_degree": "partial",
+                "outcome": "needs_input",
+                "explanation": "В исходной подсказке есть липидный профиль; состав группы не приравнивается ко всем компонентам скрининга."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_hepatitis_bc_group",
+            "name": "Анализ на гепатиты B и C",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_hepatitis",
+                "match_degree": "partial",
+                "outcome": "needs_input",
+                "explanation": "Общая группа анализов B/C сопоставлена с экспресс-тестами anti-HCV и HBsAg только по исходной подсказке; метод и состав требуется уточнить."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_echo_ecg_group",
+            "name": "ЭхоКГ, ЭКГ",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_neck_leg_vessels_doppler",
+            "name": "УЗДГ сосудов шеи и ног",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cerebro",
+                "match_degree": "partial",
+                "outcome": "needs_input",
+                "explanation": "Исходная подсказка связывает исследование сосудов шеи и ног с УЗДГ брахиоцефального ствола; объёмы различаются, требуется уточнение."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_chest_ct",
+            "name": "КТ грудной клетки",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_lung",
+                "match_degree": "partial",
+                "outcome": "needs_input",
+                "explanation": "КТ грудной клетки сопоставлено исходной подсказкой с КТ грудной клетки и средостения; совпадение протокола и полного объёма не подтверждено."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_endoscopy_group",
+            "name": "Гастроскопия и колоноскопия под анестезией",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_helicobacter_test",
+            "name": "Тест на хеликобактер",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_urology_consult",
+            "name": "Консультация уролога",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_ophthalmology_consult",
+            "name": "Консультация офтальмолога",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_hba1c",
+            "name": "Гликированный гемоглобин",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": [
+              {
+                "screening_id": "scr_cvd",
+                "match_degree": "exact",
+                "outcome": "needs_input",
+                "explanation": "Явное соответствие на уровне компонента «гликированный гемоглобин»; это не весь скрининг и не подтверждение оплаты."
+              }
+            ]
+          },
+          {
+            "procedure_id": "prime_psa_total_free_group",
+            "name": "ПСА общий и свободный",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_prostate_scrotum_ultrasound_group",
+            "name": "УЗИ предстательной железы (ТРУЗИ) и мошонки",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_abdomen_thyroid_ultrasound_group",
+            "name": "УЗИ брюшной полости и щитовидной железы",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          }
+        ],
+        "questions": [],
+        "warnings": [
+          {
+            "code": "lossy_form_export",
+            "message": "Импорт df733c4 теряет отрицательные и пустые ответы. Пропуски не восстановлены как «нет»; преобразованные диагнозы не подтверждены."
+          },
+          {
+            "code": "smoking_export_recomputed",
+            "message": "Экспорт smoking не является исходным ответом: стаж рассчитан только по исходным полям, пропуски сохранены."
+          },
+          {
+            "code": "UNVALIDATED",
+            "message": "Медицинские правила не подтверждены врачом. Это демонстрация механики каталога."
+          },
+          {
+            "code": "AGE_40",
+            "message": "Граница 40 лет импортирована из spec/rules.json и требует проверки."
+          },
+          {
+            "code": "TEST_SCHEDULE",
+            "message": "Длительности, ресурсы, слоты и нулевой буфер переходов — тестовые. Порядок категорий требует проверки клиникой."
+          },
+          {
+            "code": "OPAQUE_GROUPS",
+            "message": "Состав каталожных групп не раскрыт. Пересечение с отдельными анализами неизвестно."
+          }
+        ],
+        "proposed_extras": [],
+        "screening": [
+          {
+            "rule_id": "scr_cvd",
+            "name": "Скрининг АГ, ИБС, сахарного диабета, глаукомы",
+            "outcome": "needs_input",
+            "reason": "Не указано, есть ли динамическое наблюдение по исключениям этого правила; пропуск не означает отрицательный ответ.",
+            "missing_fields": [
+              "registered_on"
+            ],
+            "source": "DSM174 прил. 1 п.1, прил. 2 п.1",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_cerebro",
+            "name": "Скрининг цереброваскулярных заболеваний",
+            "outcome": "needs_input",
+            "reason": "Не указано, есть ли динамическое наблюдение по исключениям этого правила; пропуск не означает отрицательный ответ.",
+            "missing_fields": [
+              "registered_on"
+            ],
+            "source": "DSM174 прил. 1 п.2, прил. 2 п.4",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_breast",
+            "name": "Скрининг рака молочной железы",
+            "outcome": "not_eligible",
+            "reason": "Пол не соответствует указанным критериям демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.3, прил. 2 п.2",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_cervix",
+            "name": "Скрининг рака шейки матки",
+            "outcome": "not_eligible",
+            "reason": "Пол не соответствует указанным критериям демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.4, прил. 2 п.3",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_colorectal",
+            "name": "Скрининг колоректального рака",
+            "outcome": "needs_input",
+            "reason": "Экспорт анкеты преобразовал широкий ответ в код colorectal. Он не подтверждает диагноз или основание динамического наблюдения; уточните у врача.",
+            "missing_fields": [
+              "registered"
+            ],
+            "source": "DSM174 прил. 1 п.5, прил. 2 п.5",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_hepatitis",
+            "name": "Скрининг гепатитов B и C",
+            "outcome": "needs_input",
+            "reason": "Не указано, есть ли динамическое наблюдение по исключениям этого правила; пропуск не означает отрицательный ответ.",
+            "missing_fields": [
+              "registered_on"
+            ],
+            "source": "DSM174 прил. 1 п.6 и прил. 2 п.6 в ред. приказа № 75 от 10.07.2026",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_lung",
+            "name": "Скрининг рака лёгкого",
+            "outcome": "needs_input",
+            "reason": "Не указано, есть ли динамическое наблюдение по исключениям этого правила; пропуск не означает отрицательный ответ.",
+            "missing_fields": [
+              "registered_on"
+            ],
+            "source": "DSM174 прил. 1 п.7 и прил. 2 п.7 (введены приказом № 75 от 10.07.2026)",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена.",
+              "Соответствие профессии перечню вредных работ по приказу № 170 проверяется отдельно."
+            ]
+          }
+        ],
+        "schedule": {
+          "status": "feasible",
+          "reason": null,
+          "route_action_ids": [
+            "prime_curator_initial",
+            "prime_blood_panel_40plus_group",
+            "prime_hba1c",
+            "prime_helicobacter_test",
+            "prime_hepatitis_bc_group",
+            "prime_lipids_glucose_group",
+            "prime_psa_total_free_group",
+            "prime_abdomen_thyroid_ultrasound_group",
+            "prime_echo_ecg_group",
+            "prime_neck_leg_vessels_doppler",
+            "prime_prostate_scrotum_ultrasound_group",
+            "prime_chest_ct",
+            "prime_ophthalmology_consult",
+            "prime_urology_consult",
+            "prime_endoscopy_group"
+          ],
+          "after_results_action_ids": [
+            "prime_curator_final"
+          ]
+        },
+        "reminder_draft": {
+          "status": "requires_clinician",
+          "due_date": null,
+          "basis": "требует назначения врача",
+          "sent": false
+        },
+        "versions": {
+          "engine": "demo-3",
+          "catalog": "demo-2",
+          "rules": "demo-2",
+          "slots": "demo-2",
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+          "screening": "demo-2"
+        },
+        "errors": []
+      },
+      "difference_reason": "Пакет extended совпадает. Широкий ответ bowel и полученный из него registered=colorectal не устанавливают рак кишечника: scr_colorectal требует уточнения вместо исключения. Истинная ветвь вредной работы сохранена; неизвестное наблюдение по другим правилам также требует уточнения. Состав PRIME и его маршрут не меняются."
+    },
+    {
+      "sample_number": 8,
+      "name": "Ребёнок, мальчик 10 лет",
+      "source_screen": {
+        "red_flag": false,
+        "free_rules": [],
+        "not_eligible": [],
+        "package": "prime_child",
+        "package_name": "Check-up «Детский» 1–17 лет",
+        "free_in_package": [],
+        "partly_free_in_package": [],
+        "not_for_pregnancy": [],
+        "extra": [],
+        "for_doctor": []
+      },
+      "actual": {
+        "status": "ready",
+        "demo": true,
+        "medical_validated": false,
+        "input_context": {
+          "input_format": "df733c4",
+          "as_of_date": "2026-09-30",
+          "visit_date": "2026-10-01",
+          "checkup_year": 2026,
+          "availability": "normal",
+          "age_full": 10,
+          "age_year": 10,
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+          "defaulted": [
+            "as_of_date",
+            "visit_date",
+            "availability"
+          ]
+        },
+        "package": {
+          "id": "prime_child",
+          "name": "Мини Check-up «Детский» 1–17 лет",
+          "price": null,
+          "source": "PRIME",
+          "title": "Кандидат по каталогу PRIME",
+          "reason": "Полный возраст 10: диапазон 1–17 лет; дата визита 2026-10-01; пол M.",
+          "url": "https://primegc.kz/services/mini-check-up-paket-detskiy-1-17-let/",
+          "preliminary": false
+        },
+        "item_count": 8,
+        "items": [
+          {
+            "procedure_id": "prime_pediatric_full_consult",
+            "name": "Консультация педиатра с полным осмотром",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_ophthalmology_consult",
+            "name": "Консультация офтальмолога",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_blood_count",
+            "name": "Общий анализ крови",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_urinalysis",
+            "name": "Общий анализ мочи",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_child_glucose_biochemistry_group",
+            "name": "Глюкоза крови, основные биохимические показатели",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_abdomen_ultrasound",
+            "name": "УЗИ брюшной полости",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_ecg",
+            "name": "ЭКГ",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          },
+          {
+            "procedure_id": "prime_pediatric_conclusion",
+            "name": "Заключение педиатра с рекомендациями",
+            "required": true,
+            "conditional": false,
+            "clinical_flags": [],
+            "screening_matches": []
+          }
+        ],
+        "questions": [],
+        "warnings": [
+          {
+            "code": "lossy_form_export",
+            "message": "Импорт df733c4 теряет отрицательные и пустые ответы. Пропуски не восстановлены как «нет»; преобразованные диагнозы не подтверждены."
+          },
+          {
+            "code": "UNVALIDATED",
+            "message": "Медицинские правила не подтверждены врачом. Это демонстрация механики каталога."
+          },
+          {
+            "code": "AGE_40",
+            "message": "Граница 40 лет импортирована из spec/rules.json и требует проверки."
+          },
+          {
+            "code": "TEST_SCHEDULE",
+            "message": "Длительности, ресурсы, слоты и нулевой буфер переходов — тестовые. Порядок категорий требует проверки клиникой."
+          },
+          {
+            "code": "OPAQUE_GROUPS",
+            "message": "Состав каталожных групп не раскрыт. Пересечение с отдельными анализами неизвестно."
+          }
+        ],
+        "proposed_extras": [],
+        "screening": [
+          {
+            "rule_id": "scr_cvd",
+            "name": "Скрининг АГ, ИБС, сахарного диабета, глаукомы",
+            "outcome": "not_eligible",
+            "reason": "Возраст по году достижения не входит в перечень демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.1, прил. 2 п.1",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_cerebro",
+            "name": "Скрининг цереброваскулярных заболеваний",
+            "outcome": "not_eligible",
+            "reason": "Возраст по году достижения не входит в перечень демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.2, прил. 2 п.4",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_breast",
+            "name": "Скрининг рака молочной железы",
+            "outcome": "not_eligible",
+            "reason": "Пол не соответствует указанным критериям демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.3, прил. 2 п.2",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_cervix",
+            "name": "Скрининг рака шейки матки",
+            "outcome": "not_eligible",
+            "reason": "Пол не соответствует указанным критериям демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.4, прил. 2 п.3",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_colorectal",
+            "name": "Скрининг колоректального рака",
+            "outcome": "not_eligible",
+            "reason": "Возраст по году достижения не входит в перечень демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.5, прил. 2 п.5",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_hepatitis",
+            "name": "Скрининг гепатитов B и C",
+            "outcome": "not_eligible",
+            "reason": "Возраст по году достижения ниже границы демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.6 и прил. 2 п.6 в ред. приказа № 75 от 10.07.2026",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена."
+            ]
+          },
+          {
+            "rule_id": "scr_lung",
+            "name": "Скрининг рака лёгкого",
+            "outcome": "not_eligible",
+            "reason": "Возраст по году достижения не входит в перечень демоправила.",
+            "missing_fields": [],
+            "source": "DSM174 прил. 1 п.7 и прил. 2 п.7 (введены приказом № 75 от 10.07.2026)",
+            "source_path": "reference/df733c4/spec/rules.json:screening",
+            "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+            "validation_status": "demo_unvalidated",
+            "medical_validated": false,
+            "limitations": [
+              "Это не подтверждение права на бесплатную услугу, запись или персональное назначение повтора.",
+              "Сведения о прошлом прохождении не предоставлены; фактическая периодичность не установлена.",
+              "Соответствие профессии перечню вредных работ по приказу № 170 проверяется отдельно."
+            ]
+          }
+        ],
+        "schedule": {
+          "status": "feasible",
+          "reason": null,
+          "route_action_ids": [
+            "prime_blood_count",
+            "prime_child_glucose_biochemistry_group",
+            "prime_urinalysis",
+            "prime_abdomen_ultrasound",
+            "prime_ecg",
+            "prime_ophthalmology_consult",
+            "prime_pediatric_full_consult"
+          ],
+          "after_results_action_ids": [
+            "prime_pediatric_conclusion"
+          ]
+        },
+        "reminder_draft": {
+          "status": "requires_clinician",
+          "due_date": null,
+          "basis": "требует назначения врача",
+          "sent": false
+        },
+        "versions": {
+          "engine": "demo-3",
+          "catalog": "demo-2",
+          "rules": "demo-2",
+          "slots": "demo-2",
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+          "screening": "demo-2"
+        },
+        "errors": []
+      },
+      "difference_reason": "Выбран детский mini, 8 исходных строк. Расширенный вариант показан отдельной альтернативой для педиатра, не добавлен в состав. Правила взрослого скрининга явно отмечены not_eligible по возрасту; прежний экран просто не показывал этот блок. Имя mini уточняет выбранный вариант того же prime_child."
+    },
+    {
+      "sample_number": 9,
+      "name": "М 45, боль в груди — красный флаг",
+      "source_screen": {
+        "red_flag": true
+      },
+      "actual": {
+        "status": "review",
+        "demo": true,
+        "medical_validated": false,
+        "input_context": {
+          "input_format": "df733c4",
+          "as_of_date": "2026-09-30",
+          "visit_date": "2026-10-01",
+          "checkup_year": 2026,
+          "availability": "normal",
+          "age_full": 45,
+          "age_year": 45,
+          "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+          "defaulted": [
+            "as_of_date",
+            "visit_date",
+            "availability"
+          ]
+        },
+        "package": null,
+        "item_count": 0,
+        "items": [],
+        "questions": [],
+        "warnings": [
+          {
+            "code": "lossy_form_export",
+            "message": "Импорт df733c4 теряет отрицательные и пустые ответы. Пропуски не восстановлены как «нет»; преобразованные диагнозы не подтверждены."
+          },
+          {
+            "code": "URGENT",
+            "message": "Боль или давление в груди: подбор остановлен, требуется обращение к врачу; при острой боли — 103 (исходное правило клиники).",
+            "source": "reference/df733c4/app/config/fields.py: urgent; spec/rules.json:cmp_chest_pain",
+            "validation_status": "demo_unvalidated"
+          }
+        ],
+        "proposed_extras": [],
+        "screening": [],
+        "schedule": {
+          "status": "not_run",
+          "reason": "Подбор остановлен по ответу о текущем самочувствии.",
+          "route_action_ids": [],
+          "after_results_action_ids": []
+        },
+        "reminder_draft": {
+          "status": "requires_clinician",
+          "due_date": null,
+          "basis": null,
+          "sent": false
+        },
+        "versions": {
+          "engine": "demo-3",
+          "catalog": "demo-2",
+          "rules": "demo-2",
+          "slots": "demo-2"
+        },
+        "errors": []
+      },
+      "difference_reason": "Известный urgent=chest_pain останавливает подбор до вопросов анамнеза: review, package=null, schedule=not_run. Это соответствует ветке остановки исходного red_flag, без оценки срочности, score или подбора пакета."
+    }
+  ]
+}

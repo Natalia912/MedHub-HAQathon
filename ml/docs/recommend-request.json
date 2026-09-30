@@ -1,0 +1,41 @@
+{
+  "patient": {
+    "input_version": "clinic_v2",
+    "sex": "M",
+    "for_child": false,
+    "birth_date": "1991-01-10",
+    "urgent": "none",
+    "conditions": [
+      "none"
+    ],
+    "registered": [
+      "none"
+    ],
+    "family_history": [
+      "none"
+    ],
+    "smoking": {
+      "pack_years": 0
+    },
+    "hazardous_work_10y": false,
+    "last_screening": {
+      "scr_cvd": "never",
+      "scr_cerebro": "never",
+      "scr_breast": "never",
+      "scr_cervix": "never",
+      "scr_colorectal": "never",
+      "scr_hepatitis": "never",
+      "scr_lung": "never"
+    },
+    "attached_to": "unknown",
+    "dysuria": "no",
+    "blood_thinners": "no",
+    "companion": "yes"
+  },
+  "context": {
+    "as_of_date": "2026-09-30",
+    "checkup_year": 2026,
+    "visit_date": "2026-10-01",
+    "availability": "normal"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "original_sha256": "c17560d285867691142cbb06ee79a7f7e22c5512aebbf2fa7aa4ebe503329c51",
+  "amended_sha256": "5d60c6004fdf86645f0d678291e850601008d5288c66a46367c1a7bb6dae1693",
+  "original_preserved_in": "reports/scenarios/expected_frozen.json",
+  "amendments": [
+    {
+      "state_id": "S09-A",
+      "path": "states.14.expected.recommend.screening.scr_breast",
+      "before": "review",
+      "after": "candidate",
+      "classification": "MAPPING/CONTRACT",
+      "source_doc_ref": "word/document.xml:316",
+      "source_quote": "scr_breast соответствует формальным условиям, но беременность оставляет клиническое review для маммографии",
+      "reason": "Первичная транскрипция смешала исход формальных критериев отдельной госпрограммы с независимым клиническим ограничением выбранной услуги PRIME. В screening.scr_breast.when закреплённого снимка нет not_pregnant; такое условие есть у scr_hepatitis. Исправлен только путь screening outcome. Рекомендация и план остаются review; clinical_flags маммографии, ограничение КТ и schedule.not_run не изменены. Это исправление сопоставления полей, а не медицинской границы или ожидаемого допуска."
+    },
+    {
+      "state_id": "S09-B",
+      "path": "states.15.expected.recommend.screening.scr_breast",
+      "before": "review",
+      "after": "candidate",
+      "classification": "MAPPING/CONTRACT",
+      "source_doc_ref": "word/document.xml:316; word/document.xml:317",
+      "source_quote": "scr_breast соответствует формальным условиям, но беременность оставляет клиническое review для маммографии",
+      "reason": "Удаление КТ не меняет формальные критерии scr_breast и не разрешает оставшуюся маммографию. В первичной транскрипции статус услуги ошибочно помещён в исход отдельного скрининга. Сохраняются исходные проверки удаления только КТ, пометки маммографии, независимого совпадения со скринингом и review/not_run."
+    }
+  ],
+  "checking_changes": [
+    {
+      "states": ["S08-A", "S23-D", "S24-B"],
+      "classification": "MAPPING/CONTRACT",
+      "reason": "Верификатор больше не требует полноценного рассчитанного состава или найденного расписания от ожидаемого глобального needs_input либо намеренно ошибочного запроса 422. Проверяются именно запрет поиска, пустые маршруты/карта, точный код ошибки. Принятые составы и diff проверяются на независимых допустимых шагах соответствующей карточки."
+    },
+    {
+      "states": ["S04", "S05", "S06", "S08", "S09", "S10", "S12", "S13", "S15", "S18", "S20", "S24"],
+      "classification": "MAPPING/CONTRACT",
+      "reason": "Дополнены ранее отсутствовавшие привязки исходных утверждений к уже доступным конкретным проверкам истории H0, двух действий куратора, непрозрачных групп, after_results и пустой плановой карты. Сами ожидаемые медицинские и технические свойства не изменены."
+    }
+  ]
+}

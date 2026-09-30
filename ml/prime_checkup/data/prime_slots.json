@@ -1,0 +1,673 @@
+{
+  "version": "demo-2",
+  "source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+  "technical": true,
+  "patient_window": [
+    540,
+    1020
+  ],
+  "transition_minutes": 0,
+  "resources": [
+    "Тестовая лаборатория",
+    "Тестовый кабинет диагностики",
+    "Тестовый кабинет КТ / маммографии",
+    "Тестовый кабинет консультаций",
+    "Тестовая эндоскопия",
+    "Тестовый кабинет заключений"
+  ],
+  "procedures": {
+    "prime_curator_initial": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовый кабинет консультаций"
+      ],
+      "predecessors": [],
+      "category": -1
+    },
+    "prime_blood_count": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовая лаборатория"
+      ],
+      "predecessors": [],
+      "category": 0
+    },
+    "prime_urinalysis": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовая лаборатория"
+      ],
+      "predecessors": [],
+      "category": 0
+    },
+    "prime_child_glucose_biochemistry_group": {
+      "duration_minutes": 20,
+      "resources": [
+        "Тестовая лаборатория"
+      ],
+      "predecessors": [],
+      "category": 0
+    },
+    "prime_child_extended_labs_group": {
+      "duration_minutes": 20,
+      "resources": [
+        "Тестовая лаборатория"
+      ],
+      "predecessors": [],
+      "category": 0
+    },
+    "prime_basic_blood_group": {
+      "duration_minutes": 20,
+      "resources": [
+        "Тестовая лаборатория"
+      ],
+      "predecessors": [],
+      "category": 0
+    },
+    "prime_lipids_glucose_group": {
+      "duration_minutes": 20,
+      "resources": [
+        "Тестовая лаборатория"
+      ],
+      "predecessors": [],
+      "category": 0
+    },
+    "prime_thyroid_vitamins_group": {
+      "duration_minutes": 20,
+      "resources": [
+        "Тестовая лаборатория"
+      ],
+      "predecessors": [],
+      "category": 0
+    },
+    "prime_liver_kidney_urine_group": {
+      "duration_minutes": 20,
+      "resources": [
+        "Тестовая лаборатория"
+      ],
+      "predecessors": [],
+      "category": 0
+    },
+    "prime_helicobacter_test": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовая лаборатория"
+      ],
+      "predecessors": [],
+      "category": 0
+    },
+    "prime_ferritin_iron_folate_group": {
+      "duration_minutes": 20,
+      "resources": [
+        "Тестовая лаборатория"
+      ],
+      "predecessors": [],
+      "category": 0
+    },
+    "prime_hba1c": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовая лаборатория"
+      ],
+      "predecessors": [],
+      "category": 0
+    },
+    "prime_psa_total_free_group": {
+      "duration_minutes": 20,
+      "resources": [
+        "Тестовая лаборатория"
+      ],
+      "predecessors": [],
+      "category": 0
+    },
+    "prime_blood_panel_40plus_group": {
+      "duration_minutes": 20,
+      "resources": [
+        "Тестовая лаборатория"
+      ],
+      "predecessors": [],
+      "category": 0
+    },
+    "prime_hepatitis_bc_group": {
+      "duration_minutes": 20,
+      "resources": [
+        "Тестовая лаборатория"
+      ],
+      "predecessors": [],
+      "category": 0
+    },
+    "prime_tumor_markers_expanded_group": {
+      "duration_minutes": 20,
+      "resources": [
+        "Тестовая лаборатория"
+      ],
+      "predecessors": [],
+      "category": 0
+    },
+    "prime_pap_test": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовая лаборатория"
+      ],
+      "predecessors": [],
+      "category": 0
+    },
+    "prime_abdomen_ultrasound": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовый кабинет диагностики"
+      ],
+      "predecessors": [],
+      "category": 1
+    },
+    "prime_ecg": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовый кабинет диагностики"
+      ],
+      "predecessors": [],
+      "category": 1
+    },
+    "prime_child_extended_ultrasound_group": {
+      "duration_minutes": 20,
+      "resources": [
+        "Тестовый кабинет диагностики"
+      ],
+      "predecessors": [],
+      "category": 1
+    },
+    "prime_child_ecg_neurosonography_group": {
+      "duration_minutes": 20,
+      "resources": [
+        "Тестовый кабинет диагностики"
+      ],
+      "predecessors": [],
+      "category": 1
+    },
+    "prime_echocardiography": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовый кабинет диагностики"
+      ],
+      "predecessors": [],
+      "category": 1
+    },
+    "prime_neck_leg_vessels_doppler": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовый кабинет диагностики"
+      ],
+      "predecessors": [],
+      "category": 1
+    },
+    "prime_transvaginal_ultrasound": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовый кабинет диагностики"
+      ],
+      "predecessors": [],
+      "category": 1
+    },
+    "prime_breast_ultrasound": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовый кабинет диагностики"
+      ],
+      "predecessors": [],
+      "category": 1
+    },
+    "prime_prostate_bladder_scrotum_ultrasound_group": {
+      "duration_minutes": 20,
+      "resources": [
+        "Тестовый кабинет диагностики"
+      ],
+      "predecessors": [],
+      "category": 1
+    },
+    "prime_echo_ecg_group": {
+      "duration_minutes": 20,
+      "resources": [
+        "Тестовый кабинет диагностики"
+      ],
+      "predecessors": [],
+      "category": 1
+    },
+    "prime_female_extended_ultrasound_group": {
+      "duration_minutes": 20,
+      "resources": [
+        "Тестовый кабинет диагностики"
+      ],
+      "predecessors": [],
+      "category": 1
+    },
+    "prime_prostate_scrotum_ultrasound_group": {
+      "duration_minutes": 20,
+      "resources": [
+        "Тестовый кабинет диагностики"
+      ],
+      "predecessors": [],
+      "category": 1
+    },
+    "prime_abdomen_thyroid_ultrasound_group": {
+      "duration_minutes": 20,
+      "resources": [
+        "Тестовый кабинет диагностики"
+      ],
+      "predecessors": [],
+      "category": 1
+    },
+    "prime_lung_ct": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовый кабинет КТ / маммографии"
+      ],
+      "predecessors": [],
+      "category": 2
+    },
+    "prime_chest_ct": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовый кабинет КТ / маммографии"
+      ],
+      "predecessors": [],
+      "category": 2
+    },
+    "prime_mammography_2d3d": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовый кабинет КТ / маммографии"
+      ],
+      "predecessors": [],
+      "category": 2
+    },
+    "prime_pediatric_full_consult": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовый кабинет консультаций"
+      ],
+      "predecessors": [],
+      "category": 3
+    },
+    "prime_ophthalmology_consult": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовый кабинет консультаций"
+      ],
+      "predecessors": [],
+      "category": 3
+    },
+    "prime_child_specialists_group": {
+      "duration_minutes": 20,
+      "resources": [
+        "Тестовый кабинет консультаций"
+      ],
+      "predecessors": [],
+      "category": 3
+    },
+    "prime_ophthalmology_pressure_exam": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовый кабинет консультаций"
+      ],
+      "predecessors": [],
+      "category": 3
+    },
+    "prime_gynecology_consult": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовый кабинет консультаций"
+      ],
+      "predecessors": [],
+      "category": 3
+    },
+    "prime_ophthalmology_if_indicated": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовый кабинет консультаций"
+      ],
+      "predecessors": [],
+      "category": 3
+    },
+    "prime_urology_consult": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовый кабинет консультаций"
+      ],
+      "predecessors": [],
+      "category": 3
+    },
+    "prime_endoscopy_group": {
+      "duration_minutes": 20,
+      "resources": [
+        "Тестовая эндоскопия"
+      ],
+      "predecessors": [],
+      "category": 4
+    },
+    "prime_child_curator_conclusion": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовый кабинет заключений"
+      ],
+      "predecessors": [],
+      "category": 5
+    },
+    "prime_curator_final": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовый кабинет заключений"
+      ],
+      "predecessors": [
+        "prime_curator_initial"
+      ],
+      "category": 5
+    },
+    "prime_pediatric_conclusion": {
+      "duration_minutes": 10,
+      "resources": [
+        "Тестовый кабинет заключений"
+      ],
+      "predecessors": [],
+      "category": 5
+    }
+  },
+  "slots": {
+    "normal": {
+      "prime_curator_initial": [
+        [
+          540,
+          550
+        ]
+      ],
+      "prime_basic_blood_group": [
+        [
+          550,
+          570
+        ]
+      ],
+      "prime_blood_count": [
+        [
+          550,
+          560
+        ]
+      ],
+      "prime_blood_panel_40plus_group": [
+        [
+          550,
+          570
+        ]
+      ],
+      "prime_child_extended_labs_group": [
+        [
+          550,
+          570
+        ]
+      ],
+      "prime_child_glucose_biochemistry_group": [
+        [
+          560,
+          580
+        ]
+      ],
+      "prime_ferritin_iron_folate_group": [
+        [
+          570,
+          590
+        ]
+      ],
+      "prime_hba1c": [
+        [
+          570,
+          580
+        ]
+      ],
+      "prime_helicobacter_test": [
+        [
+          590,
+          600
+        ]
+      ],
+      "prime_hepatitis_bc_group": [
+        [
+          600,
+          620
+        ]
+      ],
+      "prime_lipids_glucose_group": [
+        [
+          620,
+          640
+        ]
+      ],
+      "prime_liver_kidney_urine_group": [
+        [
+          600,
+          620
+        ]
+      ],
+      "prime_pap_test": [
+        [
+          570,
+          580
+        ]
+      ],
+      "prime_psa_total_free_group": [
+        [
+          640,
+          660
+        ]
+      ],
+      "prime_thyroid_vitamins_group": [
+        [
+          660,
+          680
+        ]
+      ],
+      "prime_tumor_markers_expanded_group": [
+        [
+          640,
+          660
+        ]
+      ],
+      "prime_urinalysis": [
+        [
+          580,
+          590
+        ]
+      ],
+      "prime_abdomen_thyroid_ultrasound_group": [
+        [
+          680,
+          700
+        ]
+      ],
+      "prime_abdomen_ultrasound": [
+        [
+          680,
+          690
+        ]
+      ],
+      "prime_breast_ultrasound": [
+        [
+          680,
+          690
+        ]
+      ],
+      "prime_child_ecg_neurosonography_group": [
+        [
+          680,
+          700
+        ]
+      ],
+      "prime_child_extended_ultrasound_group": [
+        [
+          700,
+          720
+        ]
+      ],
+      "prime_ecg": [
+        [
+          690,
+          700
+        ]
+      ],
+      "prime_echo_ecg_group": [
+        [
+          700,
+          720
+        ]
+      ],
+      "prime_echocardiography": [
+        [
+          700,
+          710
+        ]
+      ],
+      "prime_female_extended_ultrasound_group": [
+        [
+          680,
+          700
+        ]
+      ],
+      "prime_neck_leg_vessels_doppler": [
+        [
+          720,
+          730
+        ]
+      ],
+      "prime_prostate_bladder_scrotum_ultrasound_group": [
+        [
+          680,
+          700
+        ]
+      ],
+      "prime_prostate_scrotum_ultrasound_group": [
+        [
+          730,
+          750
+        ]
+      ],
+      "prime_transvaginal_ultrasound": [
+        [
+          710,
+          720
+        ]
+      ],
+      "prime_chest_ct": [
+        [
+          750,
+          760
+        ]
+      ],
+      "prime_lung_ct": [
+        [
+          750,
+          760
+        ]
+      ],
+      "prime_mammography_2d3d": [
+        [
+          760,
+          770
+        ]
+      ],
+      "prime_child_specialists_group": [
+        [
+          770,
+          790
+        ]
+      ],
+      "prime_gynecology_consult": [
+        [
+          770,
+          780
+        ]
+      ],
+      "prime_ophthalmology_consult": [
+        [
+          770,
+          780
+        ]
+      ],
+      "prime_ophthalmology_if_indicated": [
+        [
+          780,
+          790
+        ]
+      ],
+      "prime_ophthalmology_pressure_exam": [
+        [
+          780,
+          790
+        ]
+      ],
+      "prime_pediatric_full_consult": [
+        [
+          780,
+          790
+        ]
+      ],
+      "prime_urology_consult": [
+        [
+          780,
+          790
+        ]
+      ],
+      "prime_endoscopy_group": [
+        [
+          790,
+          810
+        ]
+      ],
+      "prime_child_curator_conclusion": [],
+      "prime_pediatric_conclusion": [],
+      "prime_curator_final": []
+    },
+    "busy": {
+      "prime_curator_initial": [],
+      "prime_basic_blood_group": [],
+      "prime_blood_count": [],
+      "prime_blood_panel_40plus_group": [],
+      "prime_child_extended_labs_group": [],
+      "prime_child_glucose_biochemistry_group": [],
+      "prime_ferritin_iron_folate_group": [],
+      "prime_hba1c": [],
+      "prime_helicobacter_test": [],
+      "prime_hepatitis_bc_group": [],
+      "prime_lipids_glucose_group": [],
+      "prime_liver_kidney_urine_group": [],
+      "prime_pap_test": [],
+      "prime_psa_total_free_group": [],
+      "prime_thyroid_vitamins_group": [],
+      "prime_tumor_markers_expanded_group": [],
+      "prime_urinalysis": [],
+      "prime_abdomen_thyroid_ultrasound_group": [],
+      "prime_abdomen_ultrasound": [],
+      "prime_breast_ultrasound": [],
+      "prime_child_ecg_neurosonography_group": [],
+      "prime_child_extended_ultrasound_group": [],
+      "prime_ecg": [],
+      "prime_echo_ecg_group": [],
+      "prime_echocardiography": [],
+      "prime_female_extended_ultrasound_group": [],
+      "prime_neck_leg_vessels_doppler": [],
+      "prime_prostate_bladder_scrotum_ultrasound_group": [],
+      "prime_prostate_scrotum_ultrasound_group": [],
+      "prime_transvaginal_ultrasound": [],
+      "prime_chest_ct": [],
+      "prime_lung_ct": [],
+      "prime_mammography_2d3d": [],
+      "prime_child_specialists_group": [],
+      "prime_gynecology_consult": [],
+      "prime_ophthalmology_consult": [],
+      "prime_ophthalmology_if_indicated": [],
+      "prime_ophthalmology_pressure_exam": [],
+      "prime_pediatric_full_consult": [],
+      "prime_urology_consult": [],
+      "prime_endoscopy_group": [],
+      "prime_child_curator_conclusion": [],
+      "prime_pediatric_conclusion": [],
+      "prime_curator_final": []
+    }
+  }
+}

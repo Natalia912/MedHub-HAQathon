@@ -1,0 +1,50 @@
+{
+  "command": "python -m tools.run_scenarios",
+  "execution_kind": "FastAPI TestClient + native scheduler, no Uvicorn/browser",
+  "started_at_utc": "2026-09-30T09:13:29.970776+00:00",
+  "summary": {
+    "cards": 25,
+    "states": 48,
+    "scenario_http_requests": 92,
+    "health_http_requests": 1,
+    "total_http_requests": 93,
+    "scheduler_fixture_calls": 2,
+    "assertions": 2354,
+    "verdicts": {
+      "PASS": 2353,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "OUT_OF_SCOPE": 1,
+      "NOT_RUN": 0
+    },
+    "state_verdicts": {
+      "PASS": 47,
+      "PARTIAL_SCOPE": 1
+    },
+    "document_assertions": 124,
+    "document_verdicts": {
+      "PASS": 121,
+      "FAIL": 0,
+      "BLOCKED": 0,
+      "OUT_OF_SCOPE": 3,
+      "NOT_RUN": 0
+    },
+    "card_verdicts": {
+      "PASS": 24,
+      "OUT_OF_SCOPE": 1
+    },
+    "cross_state_assertions": 6,
+    "cross_state_verdicts": {
+      "PASS": 6
+    },
+    "historical_parity_verdicts": {
+      "PASS": 338
+    },
+    "historical_evidence_unchanged": "PASS",
+    "supplemental_html_requests": 0
+  },
+  "result_sha256": "5b9f398e601d1b7b3dcc2f003d390854aaba4f3d96b16a85d86ec31fe37a992b",
+  "historical_files_checked": 68,
+  "modified_business_fields": [],
+  "original_docx_sha256": "837a0d3d446575b3b3d37574344be7293783f5e40813e64d4e5688829af01879"
+}

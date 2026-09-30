@@ -1,0 +1,29 @@
+{
+  "inspection_kind": "static_source_audit_not_scenario_execution",
+  "scenario_source_sha": "744d7f79e6872a31572dda9d75269a8a8b7bcd4a",
+  "catalog_source_sha": "df733c43d5ab655ef08036366a44bae04e59182f",
+  "findings": [
+    {"id": "SRC-01", "kind": "SOURCE_COMPARISON", "result": "Main и снимок сценариев имеют одинаковый git tree; packages, screening, day_route_order и prime_prep структурно совпадают с источником локального каталога df733c4."},
+    {"id": "SRC-02", "kind": "IMPLEMENTATION_CONFLICT", "result": "В main app/main.py определены только GET /, /health, /fields. Локальные selection.py, choice_route.py и TWO_STEP_API.md отсутствуют. Альтернативный ml.router из engine/PR4 к приложению не подключён.", "evidence": ["d52847ad1cfcfab54fcdaec7061bffc93496d283/app/main.py:15", "c2f39680aee388365daa180329a58edfb0f4081c/app/main.py", "c2f39680aee388365daa180329a58edfb0f4081c/ml/router.py:19"]},
+    {"id": "SRC-03", "kind": "IMPLEMENTATION_CONFLICT", "result": "Альтернативный plan принимает input и selected-названия и строит маршрут без проверки red_flags, полученных от predict. Он не является эквивалентом demo-3.", "evidence": ["c2f39680aee388365daa180329a58edfb0f4081c/ml/router.py:19", "c2f39680aee388365daa180329a58edfb0f4081c/ml/engine.py:284"]},
+    {"id": "SRC-04", "kind": "IMPLEMENTATION_CONFLICT", "result": "Альтернативный пакет выбирается по age_year; пропуски курения подменяются нулём; hazardous_work_10y проходит через bool(); даты будущих повторов строятся от checkup_year; draft-правила добавляют услуги в items. Поведение не переносилось и альтернативные тесты не запускались.", "evidence": ["c2f39680aee388365daa180329a58edfb0f4081c/ml/engine.py:73", "c2f39680aee388365daa180329a58edfb0f4081c/ml/engine.py:144", "c2f39680aee388365daa180329a58edfb0f4081c/ml/engine.py:149", "c2f39680aee388365daa180329a58edfb0f4081c/ml/engine.py:218", "c2f39680aee388365daa180329a58edfb0f4081c/ml/engine.py:264"]},
+    {"id": "SRC-05", "kind": "SOURCE_CONFLICT", "result": "Скрининг лёгких содержит quit_years_max=15, тогда как note и сохранённый текст приказа №75 говорят «менее 15 лет». Оператор на границе не выбирался медицинской догадкой.", "evidence": ["d52847ad1cfcfab54fcdaec7061bffc93496d283/spec/rules.json:screening.scr_lung", "d52847ad1cfcfab54fcdaec7061bffc93496d283/clinical/normativ/DSM75_2026-07-10_screening_changes_rus.txt:84"]},
+    {"id": "SRC-06", "kind": "SCOPE", "result": "17 prime_catalog, 20 anamnesis_rules и 5 prep_catalog появились после df733c4. Они не заменяют union пакетов. ANAMNESIS_DRAFT не получает клинического одобрения вследствие присутствия в источнике."},
+    {"id": "SRC-07", "kind": "CONTRACT_PRIORITY", "result": "Удалённый predict-контракт и README не отменяют согласованный двухэтапный локальный API, отдельные скрининги, происхождение ответов и отсутствие персональных дат без основания."}
+  ],
+  "baseline_adapter_gaps_to_check": [
+    {"field": "registered", "observation": "В current это самостоятельный список диагнозов. Исходный локальный адаптер мог считать conditions=[none] отрицанием учёта. Для current это не следует из фактов; старые derived registered остаются неоднозначными."},
+    {"field": "smoking", "observation": "В current pack_years и quit_years_ago вводятся напрямую; old df733c4 рассчитывал их из исходных ответов. Исходный локальный адаптер воспринимал любой smoking как производный экспорт и мог терять прямые current числа."},
+    {"field": "last_screening", "observation": "Current экспортирует вложенный словарь реальных годов. Old YEAR-1 хранится как диапазон без provenance known_year. По ключу, который отсутствует, нельзя восстановить «никогда». Нужна явная техническая форма H0."},
+    {"field": "discharge/dysuria/anesthesia_reaction/blood_thinners/allergy/companion", "observation": "В current шесть select используют yes/no/unsure. Исходная ClinicInput не принимала unsure для этих полей."},
+    {"field": "hazardous_work_10y", "observation": "Current boolean false сериализуется как false, question не имеет возрастного show_if. Исходный локальный адаптер использовал старую видимость 50–70. Строку no нельзя превращать в true через bool()."},
+    {"field": "risk_group", "observation": "Поле присутствует среди текущих 30. Исходная ClinicInput его не принимала. Предоставленный новый scr_hepatitis больше не использует risk_group; это не основание возобновить отменённую ветку."},
+    {"field": "urgent", "observation": "Current enum none/chest_pain/dyspnea/stroke_signs. other_now есть только в df733c4; совместимость не означает, что current-профиль содержит этот вариант."},
+    {"field": "applicability", "observation": "Current visible() считает возраст как checkup_year−birth_year. Это видимость удалённой формы, а не возраст в полных годах и не подтверждённая клиническая применимость."}
+  ],
+  "limitations": [
+    "Это сверка предоставленных файлов проекта; действующее медицинское/правовое регулирование независимо не подтверждалось.",
+    "Разрывы исходного адаптера отмечены до исправлений: их итоговый статус находится в сценарном отчёте, а не определяется этим статическим аудитом.",
+    "Файл DOCX и его утверждения разбираются отдельным runner; эта проверка не заявляет 25/48 сценариев выполненными."
+  ]
+}

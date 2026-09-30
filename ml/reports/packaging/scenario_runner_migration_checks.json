@@ -1,0 +1,7 @@
+{
+  "StateRun": true,
+  "cross_state_checks": true,
+  "document_coverage": true,
+  "scenario_assertions_byte_identical": true,
+  "fixture_sha256": "5d60c6004fdf86645f0d678291e850601008d5288c66a46367c1a7bb6dae1693"
+}
